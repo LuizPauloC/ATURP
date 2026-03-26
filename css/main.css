@@ -1,0 +1,72 @@
+/* -----GERAL----- */
+* {
+	box-sizing: border-box;
+	-webkit-tap-highlight-color: transparent;
+	font-family:
+		ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+:root {
+	--dark-green: #047857;
+	--light-green: #059669;
+	--ice-white: #E5E5E5;
+	--light-gray: #f2f5f5;
+	--dark-gray: #242424;
+	--black: #0F1112;
+	--title-size-desk: 4.5rem;
+	font-size: 17px;
+}
+.l-container {
+	width: 100%;
+	margin: 0 auto;
+	padding-left: 24px;
+	padding-right: 24px;
+}
+
+/* -----SITE LOADING----- */
+.is-loading body {
+	visibility: hidden;
+}
+body {
+	font-family:
+		ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+	opacity: 0;
+	transition: opacity 300ms ease;
+}
+body.is-ready {
+	opacity: 1;
+}
+
+/* -----BUTTON----- */
+.btn {
+	min-height: 3.25rem;
+	min-width: 3.25rem;
+	border: 0px;
+	border-radius: 30px;
+	color: #fff;
+	font-weight: 600;
+}
+.btn:hover {
+	cursor: pointer;
+}
+
+/* -----MEDIA QUERIES----- */
+/* TABLET SCREEN */
+@media screen and (min-width: 768px) {
+	.l-container {
+		padding-left: 48px;
+		padding-right: 48px;
+	}
+}
+/* DESKTOP SCREEN */
+@media screen and (min-width: 1024px) {
+}
+/* BIG DESKTOP SCREEN */
+@media screen and (min-width: 1280px) {
+	.l-container {
+		width: 1280px;
+	}
+}
+/* WIDE DESKTOP SCREEN */
+@media screen and (min-width: 1400px) {
+}
