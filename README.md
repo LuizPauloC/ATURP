@@ -8,15 +8,12 @@ Um website moderno e responsivo para a Associação de Turismo de Pancas (ATURP)
 
 - 📱 **Design Responsivo** - Otimizado para dispositivos mobile, tablet e desktop
 - 🎨 **Interface Moderna** - Design clean e intuitivo
-- 🌐 **Multilíngue** - Suporte para múltiplos idiomas
-- 📍 **Páginas Dinâmicas** - Páginas criadas dinamicamente com JS
 
 ## 🛠️ Tecnologias Utilizadas
 
 - **HTML5** - Estrutura semântica
 - **CSS3** - Estilização avançada e responsive design
 - **JavaScript** - Interatividade e funcionalidades dinâmicas
-- **JSON** - Gerenciamento de dados de páginas
 
 ## 📁 Estrutura do Projeto
 
@@ -24,8 +21,6 @@ Um website moderno e responsivo para a Associação de Turismo de Pancas (ATURP)
 ATURP/
 ├── css/                   # Estilos
 ├── js/                    # Scripts
-├── json/                  # Jsons
-├── pages/                 # Demais páginas
 ├── assets/
 │   └── img/               # Imagens do projeto
 ├── index.html             # Página principal
