@@ -1,59 +1,54 @@
 <!doctype html>
-<html lang="pt-br">
+<html lang="pt-BR">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Pancas Guia Turístico</title>
-		<!-- ICON -->
-		<!-- <link rel="icon" type="image/png" href="./assets/img/page-icon.png" /> -->
-		<!-- STYLES -->
 		<link rel="stylesheet" href="css/reset.css" />
 		<link rel="stylesheet" href="css/main.css" />
 		<link rel="stylesheet" href="css/index.css" />
 		<link rel="stylesheet" href="css/nav-modal.css" />
-		<!--!Font Awesome Free v7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.-->
 	</head>
-	<body>
-		<header>
-			<nav>
-				<div class="logo">
-					<a href="/index.html">
-						<img
-							src="./assets/img/aturp-logo-nobk.png"
-							alt="Logo da ATURP - Associação de Turismo de Pancas"
-							width="auto"
-							height="35px"
-						/>
-					</a>
+	<body id="page-top">
+		<header class="site-header">
+			<nav class="site-header__nav" aria-label="Navegação principal">
+				<div class="layout-container site-header__nav-inner">
+					<div class="logo">
+						<a href="./index.html">
+							<img
+								src="./assets/img/aturp-logo-nobk.png"
+								alt="Logo da ATURP - Associação de Turismo de Pancas"
+								height="35"
+							/>
+						</a>
+					</div>
 				</div>
 			</nav>
 		</header>
-		<!-----HERO----->
-		<section class="hero">
+		<section class="hero" aria-labelledby="hero-title">
 			<div class="back-title-container" aria-hidden="true">
-				<span class="back-title">PANCAS</span>
+				<span class="back-title"></span>
 			</div>
-			<div class="hero-content layout-container">
-				<h1>Venha conhecer<br />Pancas</h1>
+			<div class="hero__content layout-container">
+				<h1 id="hero-title">Venha conhecer<br />Pancas</h1>
 				<p>
 					Descubra as formações rochosas mais impressionantes do Espírito Santo. Aventura, gastronomia e natureza
 					em um só destino.
 				</p>
 				<div class="hero__actions">
-					<button type="button" class="hero-btn btn">
+					<button type="button" class="hero__button hero__button--primary btn" data-scroll="#experiences">
 						<img src="assets/img/compass.png" alt="" class="btn-icon" />
 						Explorar Aventuras
 					</button>
-					<button type="button" class="hero-btn btn">Planejar Estadia</button>
+					<a href="./pages/onde-ficar.html" class="hero__button hero__button--secondary btn">Planejar Estadia</a>
 				</div>
-				<div class="hero__scroll-indicator">
-					<img src="assets/img/down-arrow.png" alt="seta-indicando-scroll-para-baixo" class="down-arrow" />
+				<div class="hero__scroll-indicator" aria-hidden="true">
+					<img src="assets/img/down-arrow.png" alt="" aria-hidden="true" class="down-arrow" />
 				</div>
 			</div>
 		</section>
-		<!-----MAIN----->
 		<main>
-			<section class="section__fast-guide">
+			<section id="fast-guide" class="fast-guide">
 				<div class="layout-container">
 					<hgroup>
 						<p class="eyebrow">Guia Rápido</p>
@@ -63,9 +58,12 @@
 						</h2>
 					</hgroup>
 					<div class="tiles-grid">
-						<a href="" class="guide-tile">
+						<a href="./pages/onde-ficar.html"
+							class="guide-tile"
+							aria-label="Ir para os contatos úteis e planejar sua estadia"
+						>
 							<div class="tile-icon">
-								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" aria-hidden="true">
 									<path
 										d="M32 32c17.7 0 32 14.3 32 32l0 224 224 0 0-128c0-17.7 14.3-32 32-32l160 0c53 0 96 43 96 96l0 224c0 17.7-14.3 32-32 32s-32-14.3-32-32l0-64-448 0 0 64c0 17.7-14.3 32-32 32S0 465.7 0 448L0 64C0 46.3 14.3 32 32 32zm80 160a64 64 0 1 1 128 0 64 64 0 1 1 -128 0z"
 									/>
@@ -73,17 +71,22 @@
 							</div>
 							<div class="tile-content">
 								<h3>Onde Ficar</h3>
-								<p>Pousadas, hotéis e camping com vista para os Pontões</p>
+								<p>Pousadas, hotéis e camping</p>
 							</div>
-							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="right-arrow">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="right-arrow" aria-hidden="true">
 								<path
 									d="M502.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L402.7 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l370.7 0-105.4 105.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"
 								/>
 							</svg>
 						</a>
-						<a href="" class="guide-tile">
+						<button
+							type="button"
+							class="guide-tile"
+							data-scroll="#contacts"
+							aria-label="Ir para os contatos úteis e planejar onde comer"
+						>
 							<div class="tile-icon">
-								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" aria-hidden="true">
 									<path
 										d="M63.9 14.4C63.1 6.2 56.2 0 48 0s-15.1 6.2-16 14.3L17.9 149.7c-1.3 6-1.9 12.1-1.9 18.2 0 45.9 35.1 83.6 80 87.7L96 480c0 17.7 14.3 32 32 32s32-14.3 32-32l0-224.4c44.9-4.1 80-41.8 80-87.7 0-6.1-.6-12.2-1.9-18.2L223.9 14.3C223.1 6.2 216.2 0 208 0s-15.1 6.2-15.9 14.4L178.5 149.9c-.6 5.7-5.4 10.1-11.1 10.1-5.8 0-10.6-4.4-11.2-10.2L143.9 14.6C143.2 6.3 136.3 0 128 0s-15.2 6.3-15.9 14.6L99.8 149.8c-.5 5.8-5.4 10.2-11.2 10.2-5.8 0-10.6-4.4-11.1-10.1L63.9 14.4zM448 0C432 0 320 32 320 176l0 112c0 35.3 28.7 64 64 64l32 0 0 128c0 17.7 14.3 32 32 32s32-14.3 32-32l0-448c0-17.7-14.3-32-32-32z"
 									/>
@@ -93,15 +96,20 @@
 								<h3>Onde Comer</h3>
 								<p>Culinária capixaba e sabores da terra</p>
 							</div>
-							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="right-arrow">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="right-arrow" aria-hidden="true">
 								<path
 									d="M502.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L402.7 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l370.7 0-105.4 105.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"
 								/>
 							</svg>
-						</a>
-						<a href="" class="guide-tile">
+						</button>
+						<button
+							type="button"
+							class="guide-tile"
+							data-scroll="#experiences"
+							aria-label="Ir para a seção de experiências"
+						>
 							<div class="tile-icon">
-								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" aria-hidden="true">
 									<path
 										d="M256.5 0c14.7 0 28.2 8.1 35.2 21l216 400c6.7 12.4 6.4 27.4-.8 39.5-7.2 12.1-20.3 19.5-34.3 19.5l-432 0c-14.1 0-27.1-7.4-34.3-19.5s-7.5-27.1-.8-39.5l216-400 2.9-4.6C231.7 6.2 243.6 0 256.5 0zM170.4 249.9l26.8 26.8c6.2 6.2 16.4 6.2 22.6 0l43.3-43.3c6-6 14.1-9.4 22.6-9.4l42.8 0-72.1-133.5-86.1 159.4z"
 									/>
@@ -111,15 +119,20 @@
 								<h3>O que Fazer</h3>
 								<p>Trilhas, voo livre e ecoturismo</p>
 							</div>
-							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="right-arrow">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="right-arrow" aria-hidden="true">
 								<path
 									d="M502.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L402.7 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l370.7 0-105.4 105.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"
 								/>
 							</svg>
-						</a>
-						<a href="" class="guide-tile">
+						</button>
+						<button
+							type="button"
+							class="guide-tile"
+							data-scroll="#fast-guide"
+							aria-label="Voltar ao início do guia rápido"
+						>
 							<div class="tile-icon">
-								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
+								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" aria-hidden="true">
 									<path
 										d="M576 48c0-11.1-5.7-21.4-15.2-27.2s-21.2-6.4-31.1-1.4L413.5 77.5 234.1 17.6c-8.1-2.7-16.8-2.1-24.4 1.7l-128 64C70.8 88.8 64 99.9 64 112l0 352c0 11.1 5.7 21.4 15.2 27.2s21.2 6.4 31.1 1.4l116.1-58.1 173.3 57.8c-4.3-6.4-8.5-13.1-12.6-19.9-11-18.3-21.9-39.3-30-61.8l-101.2-33.7 0-284.5 128 42.7 0 99.3c31-35.8 77-58.4 128-58.4 22.6 0 44.2 4.4 64 12.5L576 48zM512 224c-66.3 0-120 52.8-120 117.9 0 68.9 64.1 150.4 98.6 189.3 11.6 13 31.3 13 42.9 0 34.5-38.9 98.6-120.4 98.6-189.3 0-65.1-53.7-117.9-120-117.9zM472 344a40 40 0 1 1 80 0 40 40 0 1 1 -80 0z"
 									/>
@@ -129,23 +142,23 @@
 								<h3>Guia Rápido</h3>
 								<p>Serviços, contatos e como chegar</p>
 							</div>
-							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="right-arrow">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="right-arrow" aria-hidden="true">
 								<path
 									d="M502.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L402.7 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l370.7 0-105.4 105.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"
 								/>
 							</svg>
-						</a>
+						</button>
 					</div>
 				</div>
 			</section>
 
-			<section class="section__about-pancas">
+			<section id="about-pancas" class="about-pancas">
 				<div class="layout-container">
 					<div class="about-pancas__grid">
 						<div class="about-pancas__content">
 							<hgroup>
-								<p class="eyebrow bk-bg">Por que Pancas?</p>
-								<h2 class="section-title bk-bg">Monumento Natural<br />dos Pontões</h2>
+								<p class="eyebrow eyebrow--on-dark">Por que Pancas?</p>
+								<h2 class="section-title section-title--on-dark">Monumento Natural<br />dos Pontões</h2>
 							</hgroup>
 							<p class="about-pancas__description">
 								Pancas abriga um dos fenômenos geológicos mais impressionantes do Brasil: os Pontões Capixabas.
@@ -159,55 +172,55 @@
 							</p>
 							<div class="highlight-grid">
 								<div class="highlight-text">
-									<p>Lorem</p>
-									<p>Lorem</p>
+									<p>720 m</p>
+									<p>de altitude em alguns dos pontões mais marcantes da região</p>
 								</div>
 								<div class="highlight-text">
-									<p>Lorem</p>
-									<p>Lorem</p>
+									<p>2008</p>
+									<p>ano de criação do Monumento Natural dos Pontões Capixabas</p>
 								</div>
 								<div class="highlight-text">
-									<p>Lorem</p>
-									<p>Lorem</p>
+									<p>500 mi</p>
+									<p>de anos de história geológica preservados na paisagem</p>
 								</div>
 							</div>
 						</div>
 						<div class="about-pancas__image">
-							<img src="assets/img/pontoes-capixabas-card.jpg" alt="foto-da-pedra-do-camelo" />
+							<img src="assets/img/pontoes-capixabas-card.jpg" alt="Vista dos Pontões Capixabas em Pancas" />
 						</div>
 					</div>
 				</div>
 			</section>
 
-			<section class="section__experiences">
+			<section id="experiences" class="experiences">
 				<div class="layout-container">
 					<hgroup>
 						<p class="eyebrow">Experiências</p>
 						<h2 class="section-title">Destaques</h2>
 					</hgroup>
 					<div class="cards-grid">
-						<a href="" class="experience__card trail-card">
-							<div class="card-content">
+						<article class="experience__card trail-card">
+							<div class="experience-card__content">
 								<p class="card-text">Pedra do Camelo, Pedra do Vidal, Pedra da Boca</p>
 								<p class="card-title">Trilhas & Ecoturismo</p>
 							</div>
-						</a>
-						<a href="" class="experience__card free-flight-card">
-							<div class="card-content">
+						</article>
+						<article class="experience__card free-flight-card">
+							<div class="experience-card__content">
 								<p class="card-text">Rampas de decolagem com vista panorâmica</p>
-								<p class="card-title">Vôo Livre</p>
+								<p class="card-title">Voo Livre</p>
 							</div>
-						</a>
-						<a href="" class="experience__card gastronomy-card">
-							<div class="card-content">
+						</article>
+						<article class="experience__card gastronomy-card">
+							<div class="experience-card__content">
 								<p class="card-text">Sabores da terra capixaba</p>
 								<p class="card-title">Gastronomia Local</p>
 							</div>
-						</a>
+						</article>
 					</div>
-					<button type="button" class="experiences__btn">
-						<p>Ver todas as experiências</p>
-						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="right-arrow">
+					<button type="button" class="experiences__btn" data-scroll="#contacts">
+						<span>Ver todas as experiências</span>
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="right-arrow" aria-hidden="true">
 							<path
 								d="M502.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L402.7 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l370.7 0-105.4 105.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"
 							/>
@@ -216,25 +229,36 @@
 				</div>
 			</section>
 		</main>
-		<!-----MENU BUTTON----->
-		<button type="button" class="menu-btn btn" aria-label="Abrir menu">
+		<button
+			type="button"
+			class="menu-btn btn"
+			aria-label="Abrir menu"
+			aria-controls="nav-modal"
+			aria-expanded="false"
+		>
 			<img src="assets/img/compass.png" alt="" aria-hidden="true" />
 		</button>
 
-		<!-- Overlay -->
 		<div class="nav-modal-overlay" aria-hidden="true"></div>
 
-		<!-- Painel lateral do modal -->
-		<nav class="nav-modal" role="dialog" aria-modal="true" aria-label="Menu de navegação">
+		<aside
+			id="nav-modal"
+			class="nav-modal"
+			role="dialog"
+			aria-modal="true"
+			aria-labelledby="nav-modal-title"
+			aria-hidden="true"
+			tabindex="-1"
+			inert
+		>
 			<div class="nav-modal__header">
-				<p class="nav-modal__eyebrow">Navegação — Pancas, ES</p>
+				<h2 id="nav-modal-title" class="nav-modal__eyebrow">Navegação - Pancas, ES</h2>
 			</div>
 
-			<div class="nav-modal__links">
-				<a href="/index.html" class="nav-modal__link is-active">
+			<nav class="nav-modal__links" aria-label="Links rápidos">
+				<a href="#page-top" class="nav-modal__link is-active" data-scroll="#page-top" aria-current="page">
 					<span class="nav-modal__link-icon">
-						<!-- Ícone: casa -->
-						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" aria-hidden="true">
 							<path
 								d="M575.8 255.5c0 18-15 32.1-32 32.1l-32 0 .7 160.2c0 2.7-.2 5.4-.5 8.1l0 16.2c0 22.1-17.9 40-40 40l-16 0c-1.1 0-2.2 0-3.3-.1c-1.4 .1-2.8 .1-4.2 .1l-40 0-30.3 0c-22.1 0-40-17.9-40-40l0-40 0-64c0-17.7-14.3-32-32-32l-64 0c-17.7 0-32 14.3-32 32l0 64 0 40c0 22.1-17.9 40-40 40l-30 0-41.7 0c-1.5 0-3-.1-4.5-.2c-1.2 .1-2.4 .2-3.6 .2l-16 0c-22.1 0-40-17.9-40-40l0-112c0-.9 0-1.9 .1-2.8l0-69.7-32 0c-18 0-32-14-32-32.1c0-9 3-17 10-24L266.4 8c7-7 15-8 22-8s15 2 21 7L564.8 231.5c8 7 12 15 11 24z"
 							/>
@@ -244,10 +268,9 @@
 					<span class="nav-modal__link-coord">19°13'S 40°51'W</span>
 				</a>
 
-				<a href="/hospedagem.html" class="nav-modal__link">
+				<a href="./pages/onde-ficar.html" class="nav-modal__link">
 					<span class="nav-modal__link-icon">
-						<!-- Ícone: cama -->
-						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" aria-hidden="true">
 							<path
 								d="M32 32c17.7 0 32 14.3 32 32l0 224 224 0 0-128c0-17.7 14.3-32 32-32l160 0c53 0 96 43 96 96l0 224c0 17.7-14.3 32-32 32s-32-14.3-32-32l0-64-448 0 0 64c0 17.7-14.3 32-32 32S0 465.7 0 448L0 64C0 46.3 14.3 32 32 32zm80 160a64 64 0 1 1 128 0 64 64 0 1 1 -128 0z"
 							/>
@@ -257,10 +280,9 @@
 					<span class="nav-modal__link-coord">19°13'12"S</span>
 				</a>
 
-				<a href="/gastronomia.html" class="nav-modal__link">
+				<a href="#contacts" class="nav-modal__link" data-scroll="#contacts">
 					<span class="nav-modal__link-icon">
-						<!-- Ícone: garfo/faca -->
-						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" aria-hidden="true">
 							<path
 								d="M63.9 14.4C63.1 6.2 56.2 0 48 0s-15.1 6.2-16 14.3L17.9 149.7c-1.3 6-1.9 12.1-1.9 18.2 0 45.9 35.1 83.6 80 87.7L96 480c0 17.7 14.3 32 32 32s32-14.3 32-32l0-224.4c44.9-4.1 80-41.8 80-87.7 0-6.1-.6-12.2-1.9-18.2L223.9 14.3C223.1 6.2 216.2 0 208 0s-15.1 6.2-15.9 14.4L178.5 149.9c-.6 5.7-5.4 10.1-11.1 10.1-5.8 0-10.6-4.4-11.2-10.2L143.9 14.6C143.2 6.3 136.3 0 128 0s-15.2 6.3-15.9 14.6L99.8 149.8c-.5 5.8-5.4 10.2-11.2 10.2-5.8 0-10.6-4.4-11.1-10.1L63.9 14.4zM448 0C432 0 320 32 320 176l0 112c0 35.3 28.7 64 64 64l32 0 0 128c0 17.7 14.3 32 32 32s32-14.3 32-32l0-448c0-17.7-14.3-32-32-32z"
 							/>
@@ -270,10 +292,9 @@
 					<span class="nav-modal__link-coord">40°51'08"W</span>
 				</a>
 
-				<a href="/experiencias.html" class="nav-modal__link">
+				<a href="#experiences" class="nav-modal__link" data-scroll="#experiences">
 					<span class="nav-modal__link-icon">
-						<!-- Ícone: montanha/trilha -->
-						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" aria-hidden="true">
 							<path
 								d="M256.5 0c14.7 0 28.2 8.1 35.2 21l216 400c6.7 12.4 6.4 27.4-.8 39.5-7.2 12.1-20.3 19.5-34.3 19.5l-432 0c-14.1 0-27.1-7.4-34.3-19.5s-7.5-27.1-.8-39.5l216-400 2.9-4.6C231.7 6.2 243.6 0 256.5 0zM170.4 249.9l26.8 26.8c6.2 6.2 16.4 6.2 22.6 0l43.3-43.3c6-6 14.1-9.4 22.6-9.4l42.8 0-72.1-133.5-86.1 159.4z"
 							/>
@@ -283,10 +304,9 @@
 					<span class="nav-modal__link-coord">ALT 420m</span>
 				</a>
 
-				<a href="/guia.html" class="nav-modal__link">
+				<a href="#fast-guide" class="nav-modal__link" data-scroll="#fast-guide">
 					<span class="nav-modal__link-icon">
-						<!-- Ícone: mapa/pin -->
-						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" aria-hidden="true">
 							<path
 								d="M576 48c0-11.1-5.7-21.4-15.2-27.2s-21.2-6.4-31.1-1.4L413.5 77.5 234.1 17.6c-8.1-2.7-16.8-2.1-24.4 1.7l-128 64C70.8 88.8 64 99.9 64 112l0 352c0 11.1 5.7 21.4 15.2 27.2s21.2 6.4 31.1 1.4l116.1-58.1 173.3 57.8c-4.3-6.4-8.5-13.1-12.6-19.9-11-18.3-21.9-39.3-30-61.8l-101.2-33.7 0-284.5 128 42.7 0 99.3c31-35.8 77-58.4 128-58.4 22.6 0 44.2 4.4 64 12.5L576 48zM512 224c-66.3 0-120 52.8-120 117.9 0 68.9 64.1 150.4 98.6 189.3 11.6 13 31.3 13 42.9 0 34.5-38.9 98.6-120.4 98.6-189.3 0-65.1-53.7-117.9-120-117.9zM472 344a40 40 0 1 1 80 0 40 40 0 1 1 -80 0z"
 							/>
@@ -296,10 +316,9 @@
 					<span class="nav-modal__link-coord">ES-080</span>
 				</a>
 
-				<a href="/sobre.html" class="nav-modal__link">
+				<a href="#about-pancas" class="nav-modal__link" data-scroll="#about-pancas">
 					<span class="nav-modal__link-icon">
-						<!-- Ícone: pessoas/grupo -->
-						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" aria-hidden="true">
 							<path
 								d="M96 128a128 128 0 1 1 256 0A128 128 0 1 1 96 128zM0 482.3C0 383.8 79.8 304 178.3 304l91.4 0C368.2 304 448 383.8 448 482.3c0 16.4-13.3 29.7-29.7 29.7L29.7 512C13.3 512 0 498.7 0 482.3zM609.3 512l-137.8 0c5.4-9.4 8.6-20.3 8.6-32l0-8c0-60.7-27.1-115.2-69.8-151.8c2.4-.1 4.7-.2 7.1-.2l61.4 0C567.8 320 640 392.2 640 481.3c0 17-13.8 30.7-30.7 30.7zM432 256c-31 0-59-12.6-79.3-32.9C372.4 196.5 384 163.6 384 128c0-26.8-6.6-52.1-18.3-74.3C384.3 40.1 407.2 32 432 32c61.9 0 112 50.1 112 112s-50.1 112-112 112z"
 							/>
@@ -308,26 +327,24 @@
 					<span class="nav-modal__link-label">Sobre a ATURP</span>
 					<span class="nav-modal__link-coord">EST. 2024</span>
 				</a>
-			</div>
+			</nav>
 
-			<button class="nav-modal__close" aria-label="Fechar menu">
-				<!-- Ícone: X -->
-				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+			<button type="button" class="nav-modal__close" aria-label="Fechar menu">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" aria-hidden="true">
 					<path
 						d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"
 					/>
 				</svg>
 			</button>
-		</nav>
-		<!-----FOOTER----->
-		<footer>
-			<div style="border-bottom: 2px solid #343a42">
-				<section class="layout-container">
-					<div class="footer__contacts">
-						<h2>CONTATOS</h2>
-						<div class="contacts__grid">
+		</aside>
+		<footer id="site-footer">
+			<div class="footer__top-divider">
+				<section id="contacts" class="layout-container footer__contacts">
+					<h2>CONTATOS</h2>
+					<div class="contacts__grid">
+						<a href="tel:192" aria-label="Ligar para o SAMU no número 192">
 							<div class="contacts__card">
-								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" aria-hidden="true">
 									<path
 										d="M208.5 32c0-17.7 14.3-32 32-32l32 0c17.7 0 32 14.3 32 32l0 140.9 122-70.4c15.3-8.8 34.9-3.6 43.7 11.7l16 27.7c8.8 15.3 3.6 34.9-11.7 43.7l-122 70.4 122 70.4c15.3 8.8 20.6 28.4 11.7 43.7l-16 27.7c-8.8 15.3-28.4 20.6-43.7 11.7l-122-70.4 0 140.9c0 17.7-14.3 32-32 32l-32 0c-17.7 0-32-14.3-32-32l0-140.9-122 70.4c-15.3 8.8-34.9 3.6-43.7-11.7l-16-27.7c-8.8-15.3-3.6-34.9 11.7-43.7l122-70.4-122-70.4c-15.3-8.8-20.5-28.4-11.7-43.7l16-27.7c8.8-15.3 28.4-20.5 43.7-11.7l122 70.4 0-140.9z"
 									/>
@@ -337,8 +354,10 @@
 									<p>192</p>
 								</div>
 							</div>
+						</a>
+						<a href="tel:190" aria-label="Ligar para a Polícia no número 190">
 							<div class="contacts__card">
-								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" aria-hidden="true">
 									<path
 										d="M256 0c4.6 0 9.2 1 13.4 2.9L457.8 82.8c22 9.3 38.4 31 38.3 57.2-.5 99.2-41.3 280.7-213.6 363.2-16.7 8-36.1 8-52.8 0-172.4-82.5-213.1-264-213.6-363.2-.1-26.2 16.3-47.9 38.3-57.2L242.7 2.9C246.9 1 251.4 0 256 0z"
 									/>
@@ -348,8 +367,10 @@
 									<p>190</p>
 								</div>
 							</div>
+						</a>
+						<a href="tel:193" aria-label="Ligar para os Bombeiros no número 193">
 							<div class="contacts__card">
-								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" aria-hidden="true">
 									<path
 										d="M241 87.1l15 20.7 15-20.7C296 52.5 336.2 32 378.9 32 452.4 32 512 91.6 512 165.1l0 2.6c0 112.2-139.9 242.5-212.9 298.2-12.4 9.4-27.6 14.1-43.1 14.1s-30.8-4.6-43.1-14.1C139.9 410.2 0 279.9 0 167.7l0-2.6C0 91.6 59.6 32 133.1 32 175.8 32 216 52.5 241 87.1z"
 									/>
@@ -359,8 +380,10 @@
 									<p>193</p>
 								</div>
 							</div>
+						</a>
+						<a href="tel:+5527123456789" aria-label="Ligar para o contato de turismo no número 27 12345-6789">
 							<div class="contacts__card">
-								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" aria-hidden="true">
 									<path
 										d="M256 512a256 256 0 1 0 0-512 256 256 0 1 0 0 512zm50.7-186.9L162.4 380.6c-19.4 7.5-38.5-11.6-31-31l55.5-144.3c3.3-8.5 9.9-15.1 18.4-18.4l144.3-55.5c19.4-7.5 38.5 11.6 31 31L325.1 306.7c-3.2 8.5-9.9 15.1-18.4 18.4zM288 256a32 32 0 1 0 -64 0 32 32 0 1 0 64 0z"
 									/>
@@ -370,37 +393,37 @@
 									<p>(27) 12345-6789</p>
 								</div>
 							</div>
-						</div>
+						</a>
 					</div>
 				</section>
 			</div>
 
 			<section class="layout-container">
-				<div class="links_info__container">
+				<div class="footer__meta">
 					<div class="footer__links">
-						<div class="links__grid">
-							<div class="links__content_container">
+						<div class="footer-links__grid">
+							<div class="footer-links__column">
 								<h3>EXPLORAR</h3>
-								<a href="">Hospedagem</a>
-								<a href="">Gastronomia</a>
-								<a href="">Experiências</a>
+								<a href="./pages/onde-ficar.html">Hospedagem</a>
+								<a href="#contacts" data-scroll="#contacts">Gastronomia</a>
+								<a href="#experiences" data-scroll="#experiences">Experiências</a>
 							</div>
-							<div class="links__content_container">
+							<div class="footer-links__column">
 								<h3>SERVIÇOS</h3>
-								<a href="">Guia do Turista</a>
-								<a href="">Sobre a ATURP</a>
+								<a href="#fast-guide" data-scroll="#fast-guide">Guia do Turista</a>
+								<a href="#about-pancas" data-scroll="#about-pancas">Sobre a ATURP</a>
 							</div>
 						</div>
 					</div>
 
 					<div class="footer__info">
-						<div class="info__grid">
-							<div class="info__content_container">
+						<div class="footer-info__grid">
+							<div class="footer-info__column">
 								<h3>LOCALIZAÇÃO</h3>
-								<p class="info__p">Pancas, ES — Brasil</p>
+								<p class="info__p">Pancas, ES - Brasil</p>
 								<p class="info__p_secondary">19°13'S 40°51'W Altitude: 420m</p>
 							</div>
-							<div class="info__content_container">
+							<div class="footer-info__column">
 								<h3>COMO CHEGAR</h3>
 								<p class="info__p">Via ES-080 a partir de Colatina</p>
 								<p class="info__p_secondary">~3h de Vitória</p>
@@ -411,13 +434,12 @@
 				<hr />
 
 				<div class="footer__bottom">
-					<p>&copy; 2026 ATURP — Associação de Turismo de Pancas</p>
+					<p>&copy; 2026 ATURP - Associação de Turismo de Pancas</p>
 					<p>Monumento Natural dos Pontões Capixabas</p>
 				</div>
 			</section>
 		</footer>
 		<script src="./js/script.js"></script>
-		<script src="./js/index.js"></script>
 		<script src="./js/nav-modal.js"></script>
 	</body>
 </html>

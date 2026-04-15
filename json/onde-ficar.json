@@ -1,0 +1,122 @@
+{
+	"hotel": [
+		{
+			"title": "Hotel Vale dos Pontoes",
+			"description": "Hospedagem no centro de Pancas com quartos amplos, café da manha regional e fácil acesso aos principais roteiros da cidade.",
+			"amenities": [
+				{ "icon": "wifi", "label": "Wi-Fi" },
+				{ "icon": "coffee", "label": "Café da manhã" },
+				{ "icon": "car", "label": "Estacionamento" }
+			],
+			"location": {
+				"label": "Rua Principal, Centro de Pancas",
+				"url": "https://www.google.com/maps/search/?api=1&query=Centro+de+Pancas+ES"
+			},
+			"landmark": "A 5 min da Praça Central e a 12km da rampa de voo livre.",
+			"social": {
+				"label": "@hotelvaledospontoes",
+				"url": "https://www.instagram.com/"
+			},
+			"whatsapp": "https://wa.me/5527999990001?text=Ola%2C%20quero%20reservar%20o%20Hotel%20Vale%20dos%20Pontoes."
+		},
+		{
+			"title": "Hotel Serra Verde",
+			"description": "Opcao pratica para quem busca conforto e apoio logistico antes de trilhas, passeios e experiencias de aventura na regiao.",
+			"amenities": [
+				{ "icon": "bed", "label": "Quartos climatizados" },
+				{ "icon": "car", "label": "Garagem coberta" },
+				{ "icon": "wifi", "label": "Internet rapida" }
+			],
+			"location": {
+				"label": "Avenida do Mirante, bairro Centro",
+				"url": "https://www.google.com/maps/search/?api=1&query=Avenida+do+Mirante+Pancas+ES"
+			},
+			"landmark": "A 2 km da Pedra da Colina e proximo aos restaurantes centrais.",
+			"social": {
+				"label": "@hotelserraverde",
+				"url": "https://www.facebook.com/"
+			},
+			"whatsapp": "https://wa.me/5527999990002?text=Ola%2C%20gostaria%20de%20fazer%20uma%20reserva%20no%20Hotel%20Serra%20Verde."
+		}
+	],
+	"pousada": [
+		{
+			"title": "Pousada Recanto da Colina",
+			"description": "Ambiente acolhedor para casais e familias, com jardim, cafe da manha artesanal e atmosfera tranquila em meio ao verde.",
+			"amenities": [
+				{ "icon": "coffee", "label": "Cafe artesanal" },
+				{ "icon": "tree", "label": "Area verde" },
+				{ "icon": "wifi", "label": "Wi-Fi nas areas comuns" }
+			],
+			"location": {
+				"label": "Estrada da Colina, zona rural de Pancas",
+				"url": "https://www.google.com/maps/search/?api=1&query=Estrada+da+Colina+Pancas+ES"
+			},
+			"landmark": "A 2 km da Pedra da Colina e com vista aberta para os Pontoes.",
+			"social": {
+				"label": "@recantodacolina",
+				"url": "https://www.instagram.com/"
+			},
+			"whatsapp": "https://wa.me/5527999990003?text=Ola%2C%20quero%20saber%20sobre%20as%20diarias%20da%20Pousada%20Recanto%20da%20Colina."
+		},
+		{
+			"title": "Pousada Pedra do Camelo",
+			"description": "Base estrategica para quem quer explorar trilhas e mirantes sem abrir mao de atendimento pessoal e clima de interior.",
+			"amenities": [
+				{ "icon": "bed", "label": "Suites privativas" },
+				{ "icon": "coffee", "label": "Cafe incluso" },
+				{ "icon": "mountain", "label": "Vista para os Pontoes" }
+			],
+			"location": {
+				"label": "Comunidade Pedra do Camelo, Pancas",
+				"url": "https://www.google.com/maps/search/?api=1&query=Pedra+do+Camelo+Pancas+ES"
+			},
+			"landmark": "A poucos minutos do inicio das trilhas da Pedra do Camelo.",
+			"social": {
+				"label": "@pousadapedradocamelo",
+				"url": "https://www.instagram.com/"
+			},
+			"whatsapp": "https://wa.me/5527999990004?text=Ola%2C%20quero%20reservar%20na%20Pousada%20Pedra%20do%20Camelo."
+		}
+	],
+	"camping": [
+		{
+			"title": "Camping Alto dos Pontoes",
+			"description": "Area para barracas com visual marcante, estrutura simples de apoio e clima ideal para quem quer amanhecer cercado pela paisagem.",
+			"amenities": [
+				{ "icon": "tree", "label": "Sombras naturais" },
+				{ "icon": "fire", "label": "Espaco para fogueira" },
+				{ "icon": "mountain", "label": "Mirante proximo" }
+			],
+			"location": {
+				"label": "Alto dos Pontoes, interior de Pancas",
+				"url": "https://www.google.com/maps/search/?api=1&query=Alto+dos+Pontoes+Pancas+ES"
+			},
+			"landmark": "A 10 min da rampa de voo livre e com acesso rapido aos mirantes.",
+			"social": {
+				"label": "@campingaltodospontoes",
+				"url": "https://www.instagram.com/"
+			},
+			"whatsapp": "https://wa.me/5527999990005?text=Ola%2C%20gostaria%20de%20reservar%20uma%20vaga%20no%20Camping%20Alto%20dos%20Pontoes."
+		},
+		{
+			"title": "Camping Pedra da Aventura",
+			"description": "Espaco para viajantes de perfil outdoor, com area gramada, ponto de apoio e atmosfera voltada para grupos e mochileiros.",
+			"amenities": [
+				{ "icon": "tree", "label": "Area gramada" },
+				{ "icon": "car", "label": "Acesso para carro" },
+				{ "icon": "wifi", "label": "Internet no apoio" }
+			],
+			"location": {
+				"label": "Estrada dos Mirantes, Pancas",
+				"url": "https://www.google.com/maps/search/?api=1&query=Estrada+dos+Mirantes+Pancas+ES"
+			},
+			"landmark": "A 3 km da Pedra da Boca e em rota para os principais circuitos de ecoturismo.",
+			"social": {
+				"label": "@campingpedradaaventura",
+				"url": "https://www.instagram.com/"
+			},
+			"whatsapp": "https://wa.me/5527999990006?text=Ola%2C%20quero%20consultar%20disponibilidade%20no%20Camping%20Pedra%20da%20Aventura."
+		}
+	]
+}

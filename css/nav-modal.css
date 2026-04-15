@@ -70,6 +70,7 @@
 	transition: all 0.2s ease;
 }
 .nav-modal__link:hover,
+.nav-modal__link:focus-visible,
 .nav-modal__link.is-active {
 	background-color: #1b1d1e;
 	color: #fff;
@@ -91,6 +92,7 @@
 	opacity: 0.7;
 }
 .nav-modal__link:hover .nav-modal__link-icon svg,
+.nav-modal__link:focus-visible .nav-modal__link-icon svg,
 .nav-modal__link.is-active .nav-modal__link-icon svg {
 	opacity: 1;
 	fill: var(--light-green);
@@ -113,6 +115,7 @@
 	white-space: nowrap;
 }
 .nav-modal__link:hover .nav-modal__link-coord,
+.nav-modal__link:focus-visible .nav-modal__link-coord,
 .nav-modal__link.is-active .nav-modal__link-coord {
 	opacity: 1;
 }
@@ -134,6 +137,12 @@
 	transition: all 0.2s ease;
 }
 .nav-modal__close:hover {
+	background-color: #2f3131;
+	color: #fff;
+}
+.nav-modal__close:focus-visible {
+	outline: 2px solid var(--light-green);
+	outline-offset: 3px;
 	background-color: #2f3131;
 	color: #fff;
 }
