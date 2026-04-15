@@ -58,6 +58,25 @@ body.is-ready {
 	cursor: pointer;
 }
 
+/* -----HEADER----- */
+.site-header__desktop-nav {
+	display: none;
+}
+
+.site-header__desktop-nav a {
+	color: #fff;
+	font-size: 0.95rem;
+	font-weight: 600;
+	text-decoration: none;
+	transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+.site-header__desktop-nav a:hover,
+.site-header__desktop-nav a:focus-visible {
+	color: var(--light-green);
+	opacity: 1;
+}
+
 /* -----MENU----- */
 .menu-btn {
 	position: fixed;
@@ -226,6 +245,14 @@ footer hr {
 	.layout-container {
 		padding-left: 48px;
 		padding-right: 48px;
+	}
+
+	.site-header__desktop-nav {
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+		gap: 1.5rem;
+		margin-left: auto;
 	}
 
 	.contacts__grid {

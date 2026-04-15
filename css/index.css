@@ -35,7 +35,7 @@
 	flex-direction: column;
 	align-items: center;
 	width: 100%;
-	height: 100dvh;
+	height: 100vh;
 	background-color: #425065;
 	background-image:
 		linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0)),

@@ -33,7 +33,7 @@
 .stay-hero {
 	display: flex;
 	align-items: flex-end;
-	min-height: 72dvh;
+	min-height: 72vh;
 	padding-top: 8rem;
 	padding-bottom: 3.5rem;
 	background-color: #1d281f;
@@ -263,7 +263,6 @@
 
 .stay-card__link,
 .stay-card__social {
-	width: max-content;
 	color: var(--dark-green);
 	font-weight: 600;
 	text-decoration: none;
@@ -277,11 +276,21 @@
 }
 
 .stay-card__link {
+	width: 100%;
+	max-width: 100%;
+	min-width: 0;
+	align-items: center;
 	flex-wrap: wrap;
 }
 
+.stay-card__social {
+	width: max-content;
+}
+
 .stay-card__link-text {
+	min-width: 0;
 	line-height: 1.5;
+	overflow-wrap: anywhere;
 }
 
 .stay-card__inline-icon {
