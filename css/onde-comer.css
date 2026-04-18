@@ -13,8 +13,8 @@
 	padding-bottom: 3.5rem;
 	background-color: #36231d;
 	background-image:
-		linear-gradient(180deg, rgba(24, 12, 8, 0.42) 0%, rgba(24, 12, 8, 0.7) 52%, rgba(16, 9, 7, 0.94) 100%),
-		url("../assets/img/background.jpg");
+		linear-gradient(180deg, rgba(8, 10, 11, 0.6) 0%, rgba(8, 10, 11, 0.9) 52%, rgba(8, 10, 11, 0.94) 100%),
+		url("../assets/img/moqueca.jpg");
 	background-position: center;
 	background-size: cover;
 }
