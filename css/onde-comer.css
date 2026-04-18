@@ -1,0 +1,170 @@
+/* -----PAGE THEME----- */
+.food-page {
+	--directory-accent: #c86f4f;
+	--directory-accent-strong: #99503a;
+}
+
+/* -----HERO----- */
+.food-hero {
+	display: flex;
+	align-items: flex-end;
+	min-height: 72vh;
+	padding-top: 8rem;
+	padding-bottom: 3.5rem;
+	background-color: #36231d;
+	background-image:
+		linear-gradient(180deg, rgba(24, 12, 8, 0.42) 0%, rgba(24, 12, 8, 0.7) 52%, rgba(16, 9, 7, 0.94) 100%),
+		url("../assets/img/background.jpg");
+	background-position: center;
+	background-size: cover;
+}
+
+.food-hero__content {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+}
+
+.food-hero__title {
+	max-width: 12ch;
+	color: #fff;
+	font-size: clamp(2.5rem, 7vw, 4.75rem);
+	font-weight: 700;
+	line-height: 0.95;
+}
+
+.food-hero__description {
+	max-width: 40rem;
+	margin-top: 1.5rem;
+	color: #f2e9e5;
+	font-size: 1rem;
+	line-height: 1.7;
+}
+
+/* -----FILTERS----- */
+.food-filter-groups {
+	display: grid;
+	gap: 1.5rem;
+	margin-top: 2.5rem;
+}
+
+.food-filter-group {
+	display: grid;
+	gap: 0.75rem;
+}
+
+.food-filter-group__title {
+	color: #5b3628;
+	font-size: 0.95rem;
+	font-weight: 700;
+	letter-spacing: 0.02em;
+}
+
+.food-filters {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.75rem;
+}
+
+.food-filter {
+	min-height: 3rem;
+	padding: 0 1.25rem;
+	border: 1px solid #d8c8c1;
+	border-radius: 999px;
+	background-color: #fff;
+	color: var(--black);
+	font: inherit;
+	font-weight: 600;
+	transition:
+		background-color 0.2s ease,
+		color 0.2s ease,
+		border-color 0.2s ease,
+		transform 0.2s ease;
+	box-shadow: 3px 3px 6px rgb(0 0 0 / 0.08);
+}
+
+.food-filter:hover,
+.food-filter:focus-visible {
+	cursor: pointer;
+	border-color: var(--directory-accent);
+	color: var(--directory-accent-strong);
+	transform: translateY(-1px);
+}
+
+.food-filter.is-active {
+	border-color: var(--directory-accent);
+	background-color: var(--directory-accent);
+	color: #fff;
+}
+
+.food-filter:focus-visible,
+.menu-btn:focus-visible {
+	outline: 2px solid var(--directory-accent);
+	outline-offset: 3px;
+}
+
+/* -----FOOD CARD CONTENT----- */
+.food-card__specialty {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.55rem;
+	margin-top: 0.7rem;
+	color: #7c4a35;
+	font-size: 0.93rem;
+	font-weight: 600;
+	line-height: 1.5;
+}
+
+.food-card__specialty-icon,
+.food-card__hour-icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	flex: 0 0 auto;
+	color: var(--directory-accent);
+}
+
+.food-card__specialty-icon svg,
+.food-card__hour-icon svg {
+	width: 1rem;
+	height: 1rem;
+	fill: currentColor;
+}
+
+.food-card__hours {
+	display: flex;
+	flex-direction: column;
+	gap: 0.7rem;
+	margin-top: 1.25rem;
+}
+
+.food-card__hour {
+	display: flex;
+	align-items: center;
+	gap: 0.6rem;
+	color: #374151;
+	font-size: 0.95rem;
+	line-height: 1.6;
+}
+
+.food-card__hour-text {
+	display: inline-flex;
+	flex-direction: column;
+}
+
+/* -----BREAKPOINTS----- */
+@media screen and (min-width: 768px) {
+	.food-hero {
+		min-height: 76dvh;
+		padding-top: 9rem;
+		padding-bottom: 4rem;
+	}
+
+	.food-hero__description {
+		font-size: 1.05rem;
+	}
+
+	.food-filter-groups {
+		gap: 1.75rem;
+	}
+}

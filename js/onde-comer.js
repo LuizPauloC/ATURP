@@ -1,62 +1,17 @@
 (function () {
 	const grid = document.querySelector('[data-directory-grid]');
-	const filterButtons = [...document.querySelectorAll('[data-filter]')];
-	const DATA_URL = '../json/onde-ficar.json';
-	const CATEGORY_ORDER = ['hotel', 'pousada', 'camping'];
+	const mealButtons = [...document.querySelectorAll('[data-meal-filter]')];
+	const typeButtons = [...document.querySelectorAll('[data-type-filter]')];
+	const DATA_URL = '../json/onde-comer.json';
 	const ICONS = {
-		wifi: `
-			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-				<path d="M2 8.82A15.91 15.91 0 0 1 12 5c3.85 0 7.38 1.36 10 3.64" />
-				<path d="M5 12.86A10.94 10.94 0 0 1 12 10c2.73 0 5.23 1 7 2.67" />
-				<path d="M8.5 16.4A5.97 5.97 0 0 1 12 15c1.36 0 2.61.46 3.6 1.23" />
-				<path d="M12 19h.01" />
+		cutlery: `
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" aria-hidden="true" focusable="false">
+				<path d="M63.9 14.4C63.1 6.2 56.2 0 48 0S32.9 6.2 32 14.3L17.9 149.7c-1.3 6-1.9 12.1-1.9 18.2 0 45.9 35.1 83.6 80 87.7V480c0 17.7 14.3 32 32 32s32-14.3 32-32V255.6c44.9-4.1 80-41.8 80-87.7 0-6.1-.6-12.2-1.9-18.2L223.9 14.3C223.1 6.2 216.2 0 208 0s-15.1 6.2-15.9 14.4l-13.6 135.5c-.6 5.7-5.4 10.1-11.1 10.1-5.8 0-10.6-4.4-11.2-10.2L143.9 14.6C143.2 6.3 136.3 0 128 0s-15.2 6.3-15.9 14.6L99.8 149.8c-.5 5.8-5.4 10.2-11.2 10.2-5.8 0-10.6-4.4-11.1-10.1L63.9 14.4zM448 0c-16 0-128 32-128 176v112c0 35.3 28.7 64 64 64h32v128c0 17.7 14.3 32 32 32s32-14.3 32-32V32c0-17.7-14.3-32-32-32z"/>
 			</svg>
 		`,
-		coffee: `
-			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-				<path d="M10 2v2" />
-				<path d="M14 2v2" />
-				<path d="M16 8h1a4 4 0 1 1 0 8h-1" />
-				<path d="M4 8h12v7a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4Z" />
-				<path d="M6 22h10" />
-			</svg>
-		`,
-		car: `
-			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-				<path d="M14 16H9" />
-				<path d="M15 5H9l-4 6v5h14v-5l-4-6Z" />
-				<circle cx="7" cy="16" r="1" />
-				<circle cx="17" cy="16" r="1" />
-			</svg>
-		`,
-		bed: `
-			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-				<path d="M2 4v16" />
-				<path d="M2 10h19a1 1 0 0 1 1 1v4H2Z" />
-				<path d="M6 10V7a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3" />
-				<path d="M22 20v-3" />
-			</svg>
-		`,
-		tree: `
-			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-				<path d="m12 13-2-2" />
-				<path d="m12 13 2-2" />
-				<path d="M12 21v-8" />
-				<path d="M4 11a8 8 0 0 1 16 0" />
-				<path d="M7 11a5 5 0 0 1 10 0" />
-				<path d="M5 15h14" />
-			</svg>
-		`,
-		fire: `
-			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-				<path d="M12 3s4 2.5 4 7a4 4 0 1 1-8 0c0-1.9.8-3.5 2-4.8" />
-				<path d="M12 14c1.2.8 2 2.1 2 3.5a2 2 0 1 1-4 0c0-1 .4-1.9 1-2.6" />
-			</svg>
-		`,
-		mountain: `
-			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-				<path d="m8 3 4 6 5-3 4 15H3L8 3Z" />
-				<path d="m11 12 1-3 2 3" />
+		clock: `
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" aria-hidden="true" focusable="false">
+				<path d="M256 48a208 208 0 1 0 0 416 208 208 0 1 0 0-416zm0 464A256 256 0 1 1 256 0a256 256 0 1 1 0 512zM232 128c0-13.3 10.7-24 24-24s24 10.7 24 24v103l71 47.4c11 7.4 14 22.3 6.7 33.3-7.4 11-22.3 14-33.3 6.7l-81.7-54.5A24 24 0 0 1 232 244V128z"/>
 			</svg>
 		`,
 		whatsapp: `
@@ -75,9 +30,13 @@
 			</svg>
 		`
 	};
-	let staysByCategory = {};
+	const activeFilters = {
+		meal: 'all',
+		type: 'all'
+	};
+	let places = [];
 
-	if (!grid || !filterButtons.length) return;
+	if (!grid || !mealButtons.length || !typeButtons.length) return;
 
 	function renderStatus(message) {
 		const status = document.createElement('p');
@@ -86,35 +45,12 @@
 		grid.replaceChildren(status);
 	}
 
-	function setActiveFilter(category) {
-		filterButtons.forEach((button) => {
-			const isActive = button.dataset.filter === category;
+	function setActiveButtons(buttons, datasetKey, value) {
+		buttons.forEach((button) => {
+			const isActive = button.dataset[datasetKey] === value;
 			button.classList.toggle('is-active', isActive);
 			button.setAttribute('aria-pressed', String(isActive));
 		});
-	}
-
-	function getVisibleStays(category) {
-		if (category === 'all') {
-			return CATEGORY_ORDER.flatMap((key) => staysByCategory[key] ?? []);
-		}
-
-		return staysByCategory[category] ?? [];
-	}
-
-	function createAmenityItem(amenity) {
-		const item = document.createElement('li');
-		item.className = 'stay-card__amenity';
-
-		const icon = document.createElement('span');
-		icon.className = 'stay-card__amenity-icon';
-		icon.innerHTML = ICONS[amenity.icon] ?? ICONS.wifi;
-
-		const label = document.createElement('span');
-		label.textContent = amenity.label;
-
-		item.append(icon, label);
-		return item;
 	}
 
 	function createExternalLink(className, label, href, ariaLabel) {
@@ -159,23 +95,57 @@
 		}
 	}
 
-	function createStayCard(stay) {
+	function createHourItem(hour) {
+		const row = document.createElement('div');
+		row.className = 'food-card__hour';
+
+		const icon = createIcon('clock', 'food-card__hour-icon');
+		const text = document.createElement('span');
+		text.className = 'food-card__hour-text';
+
+		const line = document.createElement('span');
+		line.textContent = `${hour.label}: ${hour.value}`;
+
+		text.appendChild(line);
+		row.append(icon, text);
+		return row;
+	}
+
+	function getVisiblePlaces() {
+		return places.filter((place) => {
+			const matchesMeal =
+				activeFilters.meal === 'all' || place.mealMoments.includes(activeFilters.meal);
+			const matchesType =
+				activeFilters.type === 'all' || place.establishmentTypes.includes(activeFilters.type);
+
+			return matchesMeal && matchesType;
+		});
+	}
+
+	function createFoodCard(place) {
 		const card = document.createElement('article');
 		card.className = 'directory-card';
 		card.setAttribute('role', 'listitem');
 
 		const title = document.createElement('h3');
 		title.className = 'directory-card__title';
-		title.textContent = stay.title;
+		title.textContent = place.title;
+
+		const specialty = document.createElement('p');
+		specialty.className = 'food-card__specialty';
+		specialty.append(
+			createIcon('cutlery', 'food-card__specialty-icon'),
+			document.createTextNode(place.specialty)
+		);
 
 		const description = document.createElement('p');
 		description.className = 'directory-card__description';
-		description.textContent = stay.description;
+		description.textContent = place.description;
 
-		const amenities = document.createElement('ul');
-		amenities.className = 'stay-card__amenities';
-		stay.amenities.forEach((amenity) => {
-			amenities.appendChild(createAmenityItem(amenity));
+		const hours = document.createElement('div');
+		hours.className = 'food-card__hours';
+		place.hours.forEach((hour) => {
+			hours.appendChild(createHourItem(hour));
 		});
 
 		const footer = document.createElement('div');
@@ -187,54 +157,54 @@
 		const location = createExternalLink(
 			'directory-card__link',
 			'',
-			stay.location.url,
-			`Abrir localização de ${stay.title} no Google Maps`
+			place.location.url,
+			`Abrir localização de ${place.title} no Google Maps`
 		);
-		appendLinkContent(location, stay.location.label, { leadingIcon: 'location', trailingIcon: 'external' });
+		appendLinkContent(location, place.location.label, { leadingIcon: 'location', trailingIcon: 'external' });
 
 		const landmark = document.createElement('p');
 		landmark.className = 'directory-card__landmark';
-		landmark.textContent = stay.landmark;
+		landmark.textContent = place.landmark;
 
 		const social = createExternalLink(
 			'directory-card__social',
-			stay.social.label,
-			stay.social.url,
-			`Abrir rede social de ${stay.title}`
+			place.social.label,
+			place.social.url,
+			`Abrir rede social de ${place.title}`
 		);
 
 		const cta = createExternalLink(
 			'directory-card__cta',
 			'',
-			stay.whatsapp,
-			`Reservar ${stay.title} pelo WhatsApp`
+			place.whatsapp,
+			`Entrar em contato com ${place.title} pelo WhatsApp`
 		);
-		appendLinkContent(cta, 'Reservar no WhatsApp', { trailingIcon: 'whatsapp' });
+		appendLinkContent(cta, 'Chamar no WhatsApp', { trailingIcon: 'whatsapp' });
 
 		footer.append(divider, location, landmark, social, cta);
-		card.append(title, description, amenities, footer);
+		card.append(title, specialty, description, hours, footer);
 		return card;
 	}
 
-	function renderCards(category) {
-		const stays = getVisibleStays(category);
+	function renderCards() {
+		const visiblePlaces = getVisiblePlaces();
 		grid.setAttribute('aria-busy', 'false');
 
-		if (!stays.length) {
-			renderStatus('Nenhuma hospedagem encontrada para este filtro.');
+		if (!visiblePlaces.length) {
+			renderStatus('Nenhum estabelecimento encontrado para esta combinação de filtros.');
 			return;
 		}
 
 		const fragment = document.createDocumentFragment();
-		stays.forEach((stay) => {
-			fragment.appendChild(createStayCard(stay));
+		visiblePlaces.forEach((place) => {
+			fragment.appendChild(createFoodCard(place));
 		});
 
 		grid.replaceChildren(fragment);
 	}
 
-	async function loadStays() {
-		renderStatus('Carregando hospedagens...');
+	async function loadPlaces() {
+		renderStatus('Carregando estabelecimentos...');
 
 		try {
 			const response = await fetch(DATA_URL);
@@ -243,27 +213,33 @@
 			}
 
 			const data = await response.json();
-			staysByCategory = CATEGORY_ORDER.reduce((acc, key) => {
-				acc[key] = Array.isArray(data[key]) ? data[key] : [];
-				return acc;
-			}, {});
+			places = Array.isArray(data) ? data : Array.isArray(data.places) ? data.places : [];
 
-			setActiveFilter('all');
-			renderCards('all');
+			setActiveButtons(mealButtons, 'mealFilter', activeFilters.meal);
+			setActiveButtons(typeButtons, 'typeFilter', activeFilters.type);
+			renderCards();
 		} catch (error) {
 			grid.setAttribute('aria-busy', 'false');
-			renderStatus('Não foi possível carregar as hospedagens. Verifique o arquivo JSON ou sirva o site por um servidor local.');
+			renderStatus('Não foi possível carregar os estabelecimentos. Verifique o arquivo JSON ou sirva o site por um servidor local.');
 			console.error(error);
 		}
 	}
 
-	filterButtons.forEach((button) => {
+	mealButtons.forEach((button) => {
 		button.addEventListener('click', () => {
-			const category = button.dataset.filter ?? 'all';
-			setActiveFilter(category);
-			renderCards(category);
+			activeFilters.meal = button.dataset.mealFilter ?? 'all';
+			setActiveButtons(mealButtons, 'mealFilter', activeFilters.meal);
+			renderCards();
 		});
 	});
 
-	loadStays();
+	typeButtons.forEach((button) => {
+		button.addEventListener('click', () => {
+			activeFilters.type = button.dataset.typeFilter ?? 'all';
+			setActiveButtons(typeButtons, 'typeFilter', activeFilters.type);
+			renderCards();
+		});
+	});
+
+	loadPlaces();
 })();

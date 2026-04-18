@@ -1,0 +1,126 @@
+[
+	{
+		"title": "Restaurante Sabor dos Pontoes",
+		"specialty": "Comida caseira",
+		"description": "Almoco completo com pratos regionais, atendimento acolhedor e ambiente pratico para quem esta circulando pelo centro.",
+		"mealMoments": ["almoco", "jantar"],
+		"establishmentTypes": ["restaurante"],
+		"hours": [
+			{ "label": "Seg-Sab", "value": "11h as 22h" },
+			{ "label": "Dom", "value": "11h as 15h" }
+		],
+		"location": {
+			"label": "Rua Principal, Centro de Pancas",
+			"url": "https://www.google.com/maps/search/?api=1&query=Centro+de+Pancas+ES"
+		},
+		"landmark": "Ao lado da Praca Central e a poucos minutos da area comercial.",
+		"social": {
+			"label": "@sabordospontoes",
+			"url": "https://www.instagram.com/"
+		},
+		"whatsapp": "https://wa.me/5527999991001?text=Ola%2C%20quero%20mais%20informacoes%20sobre%20o%20Restaurante%20Sabor%20dos%20Pontoes."
+	},
+	{
+		"title": "Cafe da Praca",
+		"specialty": "Cafe artesanal",
+		"description": "Espaco leve para cafe da manha e pausas durante o dia, com bolos, salgados e bebidas preparadas na hora.",
+		"mealMoments": ["cafe-da-manha", "lanches"],
+		"establishmentTypes": ["cafe"],
+		"hours": [
+			{ "label": "Seg-Sex", "value": "7h as 19h" },
+			{ "label": "Sab-Dom", "value": "8h as 13h" }
+		],
+		"location": {
+			"label": "Avenida do Mirante, Centro",
+			"url": "https://www.google.com/maps/search/?api=1&query=Avenida+do+Mirante+Pancas+ES"
+		},
+		"landmark": "Em frente a area da feira e perto das principais lojas do centro.",
+		"social": {
+			"label": "@cafedapraca.pancas",
+			"url": "https://www.instagram.com/"
+		},
+		"whatsapp": "https://wa.me/5527999991002?text=Ola%2C%20gostaria%20de%20saber%20mais%20sobre%20o%20Cafe%20da%20Praca."
+	},
+	{
+		"title": "Lanchonete Mirante",
+		"specialty": "Sanduiches e sucos",
+		"description": "Opcao agil para lanche reforcado, com sanduiches prensados, porcoes e bebidas geladas para o fim de tarde.",
+		"mealMoments": ["almoco", "lanches", "jantar"],
+		"establishmentTypes": ["lanchonete"],
+		"hours": [
+			{ "label": "Ter-Sab", "value": "11h as 23h" },
+			{ "label": "Dom", "value": "17h as 23h" }
+		],
+		"location": {
+			"label": "Rua do Mirante, bairro Centro",
+			"url": "https://www.google.com/maps/search/?api=1&query=Rua+do+Mirante+Pancas+ES"
+		},
+		"landmark": "Subindo a rua do mirante, perto da saida para os principais atrativos.",
+		"social": {
+			"label": "@mirantelanches",
+			"url": "https://www.instagram.com/"
+		},
+		"whatsapp": "https://wa.me/5527999991003?text=Ola%2C%20quero%20falar%20com%20a%20Lanchonete%20Mirante."
+	},
+	{
+		"title": "Restaurante Roca Capixaba",
+		"specialty": "Pratos regionais",
+		"description": "Cardapio voltado para receitas do interior, ideal para quem quer almocar com calma depois das trilhas e passeios.",
+		"mealMoments": ["almoco"],
+		"establishmentTypes": ["restaurante"],
+		"hours": [
+			{ "label": "Qua-Seg", "value": "11h30 as 15h30" }
+		],
+		"location": {
+			"label": "Estrada da Colina, zona rural de Pancas",
+			"url": "https://www.google.com/maps/search/?api=1&query=Estrada+da+Colina+Pancas+ES"
+		},
+		"landmark": "No caminho para a Pedra da Colina, com estacionamento em frente.",
+		"social": {
+			"label": "@rocacapixaba",
+			"url": "https://www.instagram.com/"
+		},
+		"whatsapp": "https://wa.me/5527999991004?text=Ola%2C%20quero%20mais%20informacoes%20sobre%20o%20Restaurante%20Roca%20Capixaba."
+	},
+	{
+		"title": "Cafeteria Pedra do Camelo",
+		"specialty": "Doces e cafe especial",
+		"description": "Ambiente aconchegante para cafe da manha tardio ou pausa da tarde, com doces artesanais e bebidas especiais.",
+		"mealMoments": ["cafe-da-manha", "lanches"],
+		"establishmentTypes": ["cafe"],
+		"hours": [
+			{ "label": "Seg-Sab", "value": "8h as 18h" }
+		],
+		"location": {
+			"label": "Comunidade Pedra do Camelo, Pancas",
+			"url": "https://www.google.com/maps/search/?api=1&query=Pedra+do+Camelo+Pancas+ES"
+		},
+		"landmark": "Proxima ao acesso da trilha e com vista para os pontoes.",
+		"social": {
+			"label": "@cafeteriapedradocamelo",
+			"url": "https://www.instagram.com/"
+		},
+		"whatsapp": "https://wa.me/5527999991005?text=Ola%2C%20gostaria%20de%20falar%20com%20a%20Cafeteria%20Pedra%20do%20Camelo."
+	},
+	{
+		"title": "Lanchonete Central",
+		"specialty": "Salgados e porcoes",
+		"description": "Ponto de encontro para lanches noturnos, porcoes compartilhadas e atendimento rapido no centro da cidade.",
+		"mealMoments": ["lanches", "jantar"],
+		"establishmentTypes": ["lanchonete"],
+		"hours": [
+			{ "label": "Seg-Qui", "value": "16h as 22h30" },
+			{ "label": "Sex-Sab", "value": "16h as 0h" }
+		],
+		"location": {
+			"label": "Travessa Central, Centro de Pancas",
+			"url": "https://www.google.com/maps/search/?api=1&query=Travessa+Central+Pancas+ES"
+		},
+		"landmark": "A uma quadra da Praca Central e perto do comercio noturno.",
+		"social": {
+			"label": "@lanchonetecentralpancas",
+			"url": "https://www.instagram.com/"
+		},
+		"whatsapp": "https://wa.me/5527999991006?text=Ola%2C%20quero%20entrar%20em%20contato%20com%20a%20Lanchonete%20Central."
+	}
+]
