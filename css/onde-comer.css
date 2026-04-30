@@ -2,6 +2,8 @@
 .food-page {
 	--directory-accent: #c86f4f;
 	--directory-accent-strong: #99503a;
+	--directory-filter-border: #d8c8c1;
+	--directory-filter-shadow: rgb(0 0 0 / 0.08);
 }
 
 /* -----HERO----- */
@@ -14,7 +16,7 @@
 	background-color: #36231d;
 	background-image:
 		linear-gradient(180deg, rgba(8, 10, 11, 0.6) 0%, rgba(8, 10, 11, 0.9) 52%, rgba(8, 10, 11, 0.94) 100%),
-		url("../assets/img/moqueca.jpg");
+		url("../assets/food/moqueca-capixaba.jpg");
 	background-position: center;
 	background-size: cover;
 }
@@ -58,49 +60,6 @@
 	font-size: 0.95rem;
 	font-weight: 700;
 	letter-spacing: 0.02em;
-}
-
-.food-filters {
-	display: flex;
-	flex-wrap: wrap;
-	gap: 0.75rem;
-}
-
-.food-filter {
-	min-height: 3rem;
-	padding: 0 1.25rem;
-	border: 1px solid #d8c8c1;
-	border-radius: 999px;
-	background-color: #fff;
-	color: var(--black);
-	font: inherit;
-	font-weight: 600;
-	transition:
-		background-color 0.2s ease,
-		color 0.2s ease,
-		border-color 0.2s ease,
-		transform 0.2s ease;
-	box-shadow: 3px 3px 6px rgb(0 0 0 / 0.08);
-}
-
-.food-filter:hover,
-.food-filter:focus-visible {
-	cursor: pointer;
-	border-color: var(--directory-accent);
-	color: var(--directory-accent-strong);
-	transform: translateY(-1px);
-}
-
-.food-filter.is-active {
-	border-color: var(--directory-accent);
-	background-color: var(--directory-accent);
-	color: #fff;
-}
-
-.food-filter:focus-visible,
-.menu-btn:focus-visible {
-	outline: 2px solid var(--directory-accent);
-	outline-offset: 3px;
 }
 
 /* -----FOOD CARD CONTENT----- */

@@ -1,34 +1,3 @@
-/* -----NAV----- */
-.site-header__nav {
-	position: fixed;
-	width: 100%;
-	border-bottom: 1px solid #77777750;
-	background-color: #00000080;
-	backdrop-filter: blur(10px);
-	z-index: 100;
-}
-
-.site-header__nav-inner {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	padding-top: 1rem;
-	padding-bottom: 1rem;
-}
-
-.logo:hover {
-	cursor: pointer;
-}
-
-.logo a {
-	display: inline-flex;
-}
-
-.logo img {
-	display: block;
-	width: auto;
-}
-
 /* -----HERO----- */
 .hero {
 	display: flex;
@@ -39,7 +8,7 @@
 	background-color: #425065;
 	background-image:
 		linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0)),
-		url("../assets/img/paisagem-grande.JPG");
+		url("../assets/hero/home-pancas-landscape.jpg");
 	background-size: cover;
 	background-position: center;
 	overflow: hidden;
@@ -165,41 +134,12 @@ main {
 	align-items: center;
 	width: 100%;
 	background-color: #f9f9f9;
-	background-image: url("../assets/img/background.jpg");
-	background-size: 600px;
-	background-position: center;
 }
 
 .fast-guide,
 .about-pancas,
-.experiences,
-.footer__contacts {
+.experiences {
 	scroll-margin-top: 96px;
-}
-
-.eyebrow {
-	color: var(--dark-green);
-	text-transform: uppercase;
-	margin-bottom: 0.75rem;
-}
-
-.eyebrow--on-dark {
-	color: var(--light-green);
-}
-
-.section-title {
-	color: var(--black);
-	font-size: 30px;
-	font-weight: 700;
-	line-height: 2.25rem;
-}
-
-.section-title span {
-	color: #c3c6cc;
-}
-
-.section-title--on-dark {
-	color: #fff;
 }
 
 /* -----FAST GUIDE----- */
@@ -418,19 +358,19 @@ main {
 .trail-card {
 	background-image:
 		linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0)),
-		url("../assets/img/trilha-card.jpg");
+		url("../assets/cards/trilha-pancas-portrait.jpg");
 }
 
 .free-flight-card {
 	background-image:
 		linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0)),
-		url("../assets/img/voo-livre-card.jpg");
+		url("../assets/cards/voo-livre-pancas.jpg");
 }
 
 .gastronomy-card {
 	background-image:
 		linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0)),
-		url("../assets/img/pontoes-capixabas-card.jpg");
+		url("../assets/cards/pontoes-capixabas-portrait.jpg");
 }
 
 .experiences__btn {
@@ -472,8 +412,7 @@ main {
 
 .hero__button:focus-visible,
 .guide-tile:focus-visible,
-.experiences__btn:focus-visible,
-.menu-btn:focus-visible {
+.experiences__btn:focus-visible {
 	outline: 2px solid var(--light-green);
 	outline-offset: 3px;
 }

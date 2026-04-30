@@ -1,34 +1,4 @@
-/* -----SHARED DIRECTORY LAYOUT----- */
-.site-header__nav {
-	position: fixed;
-	width: 100%;
-	border-bottom: 1px solid #77777750;
-	background-color: #00000080;
-	backdrop-filter: blur(10px);
-	z-index: 100;
-}
-
-.site-header__nav-inner {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	padding-top: 1rem;
-	padding-bottom: 1rem;
-}
-
-.logo:hover {
-	cursor: pointer;
-}
-
-.logo a {
-	display: inline-flex;
-}
-
-.logo img {
-	display: block;
-	width: auto;
-}
-
+/* -----DIRECTORY LAYOUT----- */
 .directory-page {
 	width: 100%;
 	background-color: #f9f9f9;
@@ -36,30 +6,8 @@
 	--directory-accent-strong: var(--dark-green);
 }
 
-.directory-section,
-#contacts {
+.directory-section {
 	scroll-margin-top: 96px;
-}
-
-.eyebrow {
-	color: var(--dark-green);
-	text-transform: uppercase;
-	margin-bottom: 0.75rem;
-}
-
-.eyebrow--on-dark {
-	color: var(--light-green);
-}
-
-.section-title {
-	color: var(--black);
-	font-size: 30px;
-	font-weight: 700;
-	line-height: 2.25rem;
-}
-
-.section-title--on-dark {
-	color: #fff;
 }
 
 .directory-section {
@@ -69,6 +17,48 @@
 
 .directory-section__intro {
 	max-width: 44rem;
+}
+
+.directory-filters {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.75rem;
+}
+
+.directory-filter {
+	min-height: 3rem;
+	padding: 0 1.25rem;
+	border: 1px solid var(--directory-filter-border, #d1d5db);
+	border-radius: 999px;
+	background-color: #fff;
+	color: var(--black);
+	font: inherit;
+	font-weight: 600;
+	box-shadow: 3px 3px 6px var(--directory-filter-shadow, rgb(0 0 0 / 0.1));
+	transition:
+		background-color 0.2s ease,
+		color 0.2s ease,
+		border-color 0.2s ease,
+		transform 0.2s ease;
+}
+
+.directory-filter:hover,
+.directory-filter:focus-visible {
+	cursor: pointer;
+	border-color: var(--directory-accent);
+	color: var(--directory-accent-strong);
+	transform: translateY(-1px);
+}
+
+.directory-filter.is-active {
+	border-color: var(--directory-accent);
+	background-color: var(--directory-accent);
+	color: #fff;
+}
+
+.directory-filter:focus-visible {
+	outline: 2px solid var(--directory-accent);
+	outline-offset: 3px;
 }
 
 .directory-grid {
