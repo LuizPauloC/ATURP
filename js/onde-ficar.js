@@ -2,7 +2,7 @@
 	const grid = document.querySelector('[data-directory-grid]');
 	const filterButtons = [...document.querySelectorAll('[data-filter]')];
 	const DATA_URL = '../json/onde-ficar.json';
-	const CATEGORY_ORDER = ['hotel', 'pousada', 'camping'];
+	const CATEGORY_ORDER = ['pousada', 'camping'];
 	const ICONS = {
 		wifi: `
 			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">

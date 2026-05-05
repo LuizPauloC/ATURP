@@ -1,126 +1,203 @@
 [
 	{
-		"title": "Restaurante Sabor dos Pontoes",
-		"specialty": "Comida caseira",
-		"description": "Almoco completo com pratos regionais, atendimento acolhedor e ambiente pratico para quem esta circulando pelo centro.",
+		"title": "Chocolates Cocau",
+		"specialty": "Chocolates artesanais bean to bar",
+		"description": "Agroindústria rural que transforma o cacau de Pancas em chocolates artesanais, com foco em origem local e visita sensorial.",
+		"mealMoments": ["lanches"],
+		"establishmentTypes": ["cafe"],
+		"hours": [
+			{ "label": "Atendimento", "value": "Sob consulta" }
+		],
+		"location": {
+			"label": "Zona Rural, Córrego São Luís",
+			"url": "https://maps.app.goo.gl/nhdE5MtnfwYWAbs7A"
+		},
+		"landmark": "Propriedade rural no Córrego São Luís, em área verde de Pancas.",
+		"social": {
+			"label": "@cocau_agroindustria",
+			"url": "https://www.instagram.com/cocau_agroindustria"
+		},
+		"whatsapp": "https://wa.me/5527999481051?text=Ola%2C%20quero%20mais%20informacoes%20sobre%20a%20Chocolates%20Cocau."
+	},
+	{
+		"title": "Recanto da Prata",
+		"specialty": "Comida rural, carnes e bebidas",
+		"description": "Restaurante rural no Córrego da Prata, indicado para refeições com clima tranquilo e cozinha de interior.",
 		"mealMoments": ["almoco", "jantar"],
 		"establishmentTypes": ["restaurante"],
 		"hours": [
-			{ "label": "Seg-Sab", "value": "11h as 22h" },
-			{ "label": "Dom", "value": "11h as 15h" }
+			{ "label": "Atendimento", "value": "Sob consulta" }
 		],
 		"location": {
-			"label": "Rua Principal, Centro de Pancas",
-			"url": "https://www.google.com/maps/search/?api=1&query=Centro+de+Pancas+ES"
+			"label": "Zona Rural, Córrego da Prata",
+			"url": "https://maps.app.goo.gl/SPUMDi1QrdBCs3uR9"
 		},
-		"landmark": "Ao lado da Praca Central e a poucos minutos da area comercial.",
+		"landmark": "Na Estrada para o Córrego da Prata, em rota rural de Pancas.",
 		"social": {
-			"label": "@sabordospontoes",
-			"url": "https://www.instagram.com/"
+			"label": "@recantodapratapancas",
+			"url": "https://www.instagram.com/recantodapratapancas"
 		},
-		"whatsapp": "https://wa.me/5527999991001?text=Ola%2C%20quero%20mais%20informacoes%20sobre%20o%20Restaurante%20Sabor%20dos%20Pontoes."
+		"whatsapp": "https://wa.me/5527988545005?text=Ola%2C%20quero%20mais%20informacoes%20sobre%20o%20Recanto%20da%20Prata."
 	},
 	{
-		"title": "Cafe da Praca",
-		"specialty": "Cafe artesanal",
-		"description": "Espaco leve para cafe da manha e pausas durante o dia, com bolos, salgados e bebidas preparadas na hora.",
+		"title": "Geleia Vovô Marquinho",
+		"specialty": "Geleias artesanais",
+		"description": "Produção artesanal de geleias em diversos sabores, feita em Pancas para encomendas, eventos e lembranças gastronômicas.",
 		"mealMoments": ["cafe-da-manha", "lanches"],
 		"establishmentTypes": ["cafe"],
 		"hours": [
-			{ "label": "Seg-Sex", "value": "7h as 19h" },
-			{ "label": "Sab-Dom", "value": "8h as 13h" }
+			{ "label": "Encomendas", "value": "Sob consulta" }
 		],
 		"location": {
-			"label": "Avenida do Mirante, Centro",
-			"url": "https://www.google.com/maps/search/?api=1&query=Avenida+do+Mirante+Pancas+ES"
+			"label": "Rua Turmalina, 900, Centro",
+			"url": "https://maps.app.goo.gl/AJ2fT7XtRTKQ2QfUA"
 		},
-		"landmark": "Em frente a area da feira e perto das principais lojas do centro.",
+		"landmark": "Casa no Centro de Pancas, com atendimento orientado por encomenda.",
 		"social": {
-			"label": "@cafedapraca.pancas",
-			"url": "https://www.instagram.com/"
+			"label": "@geleiavovomarquinho",
+			"url": "https://www.instagram.com/geleiavovomarquinho"
 		},
-		"whatsapp": "https://wa.me/5527999991002?text=Ola%2C%20gostaria%20de%20saber%20mais%20sobre%20o%20Cafe%20da%20Praca."
+		"whatsapp": "https://wa.me/5527997615836?text=Ola%2C%20quero%20mais%20informacoes%20sobre%20a%20Geleia%20Vovo%20Marquinho."
 	},
 	{
-		"title": "Lanchonete Mirante",
-		"specialty": "Sanduiches e sucos",
-		"description": "Opcao agil para lanche reforcado, com sanduiches prensados, porcoes e bebidas geladas para o fim de tarde.",
-		"mealMoments": ["almoco", "lanches", "jantar"],
-		"establishmentTypes": ["lanchonete"],
-		"hours": [
-			{ "label": "Ter-Sab", "value": "11h as 23h" },
-			{ "label": "Dom", "value": "17h as 23h" }
-		],
-		"location": {
-			"label": "Rua do Mirante, bairro Centro",
-			"url": "https://www.google.com/maps/search/?api=1&query=Rua+do+Mirante+Pancas+ES"
-		},
-		"landmark": "Subindo a rua do mirante, perto da saida para os principais atrativos.",
-		"social": {
-			"label": "@mirantelanches",
-			"url": "https://www.instagram.com/"
-		},
-		"whatsapp": "https://wa.me/5527999991003?text=Ola%2C%20quero%20falar%20com%20a%20Lanchonete%20Mirante."
-	},
-	{
-		"title": "Restaurante Roca Capixaba",
-		"specialty": "Pratos regionais",
-		"description": "Cardapio voltado para receitas do interior, ideal para quem quer almocar com calma depois das trilhas e passeios.",
-		"mealMoments": ["almoco"],
-		"establishmentTypes": ["restaurante"],
-		"hours": [
-			{ "label": "Qua-Seg", "value": "11h30 as 15h30" }
-		],
-		"location": {
-			"label": "Estrada da Colina, zona rural de Pancas",
-			"url": "https://www.google.com/maps/search/?api=1&query=Estrada+da+Colina+Pancas+ES"
-		},
-		"landmark": "No caminho para a Pedra da Colina, com estacionamento em frente.",
-		"social": {
-			"label": "@rocacapixaba",
-			"url": "https://www.instagram.com/"
-		},
-		"whatsapp": "https://wa.me/5527999991004?text=Ola%2C%20quero%20mais%20informacoes%20sobre%20o%20Restaurante%20Roca%20Capixaba."
-	},
-	{
-		"title": "Cafeteria Pedra do Camelo",
-		"specialty": "Doces e cafe especial",
-		"description": "Ambiente aconchegante para cafe da manha tardio ou pausa da tarde, com doces artesanais e bebidas especiais.",
+		"title": "Sítio Esteves Jorge",
+		"specialty": "Café conilon especial",
+		"description": "Experiência rural do grão à xícara, com café conilon especial, chá e mel produzidos no sítio.",
 		"mealMoments": ["cafe-da-manha", "lanches"],
 		"establishmentTypes": ["cafe"],
 		"hours": [
-			{ "label": "Seg-Sab", "value": "8h as 18h" }
+			{ "label": "Ter-Sáb", "value": "7h às 9h e 16h às 18h" },
+			{ "label": "Dom-Seg", "value": "Fechado" }
 		],
 		"location": {
-			"label": "Comunidade Pedra do Camelo, Pancas",
-			"url": "https://www.google.com/maps/search/?api=1&query=Pedra+do+Camelo+Pancas+ES"
+			"label": "Zona Rural, Córrego Palmito Crú, Lajinha",
+			"url": "https://maps.app.goo.gl/viqLRYb8sAr2fLuY6"
 		},
-		"landmark": "Proxima ao acesso da trilha e com vista para os pontoes.",
+		"landmark": "No Córrego Palmito Crú, em Lajinha, com proposta de turismo ligado ao café.",
 		"social": {
-			"label": "@cafeteriapedradocamelo",
-			"url": "https://www.instagram.com/"
+			"label": "@sitio_estevesjorge",
+			"url": "https://www.instagram.com/sitio_estevesjorge"
 		},
-		"whatsapp": "https://wa.me/5527999991005?text=Ola%2C%20gostaria%20de%20falar%20com%20a%20Cafeteria%20Pedra%20do%20Camelo."
+		"whatsapp": "https://wa.me/5527997918881?text=Ola%2C%20quero%20mais%20informacoes%20sobre%20o%20Sitio%20Esteves%20Jorge."
 	},
 	{
-		"title": "Lanchonete Central",
-		"specialty": "Salgados e porcoes",
-		"description": "Ponto de encontro para lanches noturnos, porcoes compartilhadas e atendimento rapido no centro da cidade.",
+		"title": "Biscoiteria da Ana",
+		"specialty": "Biscoitos e quitutes artesanais",
+		"description": "Produção artesanal de biscoitos e quitutes rurais, boa para levar sabores locais como lembrança da viagem.",
+		"mealMoments": ["cafe-da-manha", "lanches"],
+		"establishmentTypes": ["cafe"],
+		"hours": [
+			{ "label": "Encomendas", "value": "Sob consulta" }
+		],
+		"location": {
+			"label": "Zona Rural, Córrego Paranazinho",
+			"url": "https://www.google.com/maps/search/?api=1&query=Biscoiteria+da+Ana+C%C3%B3rrego+Paranazinho+Pancas+ES"
+		},
+		"landmark": "Produção rural no Córrego Paranazinho, com contato direto para pedidos.",
+		"social": {
+			"label": "@biscoiteriadaana",
+			"url": "https://www.instagram.com/biscoiteriadaana"
+		},
+		"whatsapp": "https://wa.me/5527997852765?text=Ola%2C%20quero%20mais%20informacoes%20sobre%20a%20Biscoiteria%20da%20Ana."
+	},
+	{
+		"title": "Rancho Burguer",
+		"specialty": "Hambúrguer artesanal e comida caseira",
+		"description": "Espaço rústico com hambúrgueres artesanais, café colonial, refeições caseiras e pesque-pague para lazer em família.",
+		"mealMoments": ["cafe-da-manha", "almoco", "lanches", "jantar"],
+		"establishmentTypes": ["restaurante", "lanchonete"],
+		"hours": [
+			{ "label": "Atendimento", "value": "Sob consulta" }
+		],
+		"location": {
+			"label": "Zona Rural, Córrego São Bento, Lajinha",
+			"url": "https://maps.app.goo.gl/2jTEjCmbd5pxffyn8"
+		},
+		"landmark": "No Córrego São Bento, com ambiente rural para refeições e lazer.",
+		"social": {
+			"label": "@ranchoburgerpancas",
+			"url": "https://www.instagram.com/ranchoburgerpancas"
+		},
+		"whatsapp": "https://wa.me/5527995274492?text=Ola%2C%20quero%20mais%20informacoes%20sobre%20o%20Rancho%20Burguer."
+	},
+	{
+		"title": "Bendita Mistura",
+		"specialty": "Lanches, cafeteria e confeitaria",
+		"description": "Opção central para lanches, doces, pães e refeições rápidas, com atendimento prático no comércio de Pancas.",
+		"mealMoments": ["cafe-da-manha", "almoco", "lanches", "jantar"],
+		"establishmentTypes": ["cafe", "lanchonete", "restaurante"],
+		"hours": [
+			{ "label": "Atendimento", "value": "Sob consulta" }
+		],
+		"location": {
+			"label": "Avenida José Nunes Miranda, Centro",
+			"url": "https://maps.app.goo.gl/W69zMWuFaZf8nwXN8"
+		},
+		"landmark": "No Centro de Pancas, próximo ao eixo comercial da Avenida José Nunes Miranda.",
+		"social": {
+			"label": "@benditamisturapancas",
+			"url": "https://www.instagram.com/benditamisturapancas"
+		},
+		"whatsapp": "https://wa.me/5527997238164?text=Ola%2C%20quero%20mais%20informacoes%20sobre%20a%20Bendita%20Mistura."
+	},
+	{
+		"title": "Cervejaria Schumacher Beer",
+		"specialty": "Cervejas e chopes artesanais",
+		"description": "Cervejaria artesanal de Pancas voltada a cervejas, chopes e bebidas para consumo em momentos de encontro e lazer.",
 		"mealMoments": ["lanches", "jantar"],
 		"establishmentTypes": ["lanchonete"],
 		"hours": [
-			{ "label": "Seg-Qui", "value": "16h as 22h30" },
-			{ "label": "Sex-Sab", "value": "16h as 0h" }
+			{ "label": "Atendimento", "value": "Sob consulta" }
 		],
 		"location": {
-			"label": "Travessa Central, Centro de Pancas",
-			"url": "https://www.google.com/maps/search/?api=1&query=Travessa+Central+Pancas+ES"
+			"label": "Córrego da Perdida, Zona Rural",
+			"url": "https://maps.app.goo.gl/aa15Tdn3jppPHFy48"
 		},
-		"landmark": "A uma quadra da Praca Central e perto do comercio noturno.",
+		"landmark": "Na zona rural de Pancas, com referência ao Córrego da Perdida/Lajinha.",
 		"social": {
-			"label": "@lanchonetecentralpancas",
-			"url": "https://www.instagram.com/"
+			"label": "@schumacherbeer_oficial",
+			"url": "https://www.instagram.com/schumacherbeer_oficial"
 		},
-		"whatsapp": "https://wa.me/5527999991006?text=Ola%2C%20quero%20entrar%20em%20contato%20com%20a%20Lanchonete%20Central."
+		"whatsapp": "https://wa.me/5527996027679?text=Ola%2C%20quero%20mais%20informacoes%20sobre%20a%20Schumacher%20Beer."
+	},
+	{
+		"title": "Delícias da Santina",
+		"specialty": "Doces e salgados artesanais",
+		"description": "Atendimento por delivery para encomendas de delícias caseiras, indicado para lanches, eventos e pedidos sob demanda.",
+		"mealMoments": ["lanches"],
+		"establishmentTypes": ["cafe"],
+		"hours": [
+			{ "label": "Encomendas", "value": "Sob consulta" }
+		],
+		"location": {
+			"label": "Pancas, ES",
+			"url": "https://www.google.com/maps/search/?api=1&query=Del%C3%ADcias+da+Santina+Pancas+ES"
+		},
+		"landmark": "Somente delivery",
+		"social": {
+			"label": "WhatsApp",
+			"url": "https://wa.me/5527999616212"
+		},
+		"whatsapp": "https://wa.me/5527999616212?text=Ola%2C%20quero%20mais%20informacoes%20sobre%20a%20Delicias%20da%20Santina."
+	},
+	{
+		"title": "Na Brasa",
+		"specialty": "Gastrobar e grelhados",
+		"description": "Gastrobar de Pancas para quem busca lanches, porções e pratos na brasa em clima descontraído.",
+		"mealMoments": ["almoco", "lanches", "jantar"],
+		"establishmentTypes": ["restaurante", "lanchonete"],
+		"hours": [
+			{ "label": "Atendimento", "value": "Sob consulta" }
+		],
+		"location": {
+			"label": "Pancas, ES",
+			"url": "https://www.google.com/maps/search/?api=1&query=Na+Brasa+Gastrobar+Pancas+ES"
+		},
+		"landmark": "Endereço não informado; confirme o ponto de atendimento antes de ir.",
+		"social": {
+			"label": "@prefironabrasa",
+			"url": "https://www.instagram.com/prefironabrasa"
+		},
+		"whatsapp": "https://wa.me/5527995087778?text=Ola%2C%20quero%20mais%20informacoes%20sobre%20o%20Na%20Brasa."
 	}
 ]
