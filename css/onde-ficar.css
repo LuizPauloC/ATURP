@@ -1,0 +1,95 @@
+/* -----HERO----- */
+.stay-hero {
+	display: flex;
+	align-items: flex-end;
+	min-height: 72vh;
+	padding-top: 8rem;
+	padding-bottom: 3.5rem;
+	background-color: #1d281f;
+	background-image:
+		linear-gradient(180deg, rgba(8, 10, 11, 0.60) 0%, rgba(8, 10, 11, 0.90) 52%, rgba(8, 10, 11, 0.94) 100%),
+		url("../assets/lodging/pousada-bedroom.jpg");
+	background-position: center;
+	background-size: cover;
+}
+
+.stay-hero__content {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+}
+
+.stay-hero__title {
+	max-width: 14ch;
+	color: #fff;
+	font-size: clamp(2.5rem, 7vw, 4.75rem);
+	font-weight: 700;
+	line-height: 0.95;
+}
+
+.stay-hero__description {
+	max-width: 38rem;
+	margin-top: 1.5rem;
+	color: #e5e7eb;
+	font-size: 1rem;
+	line-height: 1.7;
+}
+
+.stay-page {
+	--directory-accent: var(--light-green);
+	--directory-accent-strong: var(--dark-green);
+	--directory-filter-border: #d1d5db;
+	--directory-filter-shadow: rgb(0 0 0 / 0.1);
+}
+
+.stay-page .directory-filters {
+	margin-top: 2.5rem;
+}
+
+/* -----STAY CARD CONTENT----- */
+.stay-card__amenities {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.75rem 1rem;
+	margin-top: 1.25rem;
+	padding: 0;
+	list-style: none;
+}
+
+.stay-card__amenity {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.55rem;
+	color: #374151;
+	font-size: 0.92rem;
+	font-weight: 500;
+}
+
+.stay-card__amenity-icon {
+	display: inline-flex;
+	color: var(--light-green);
+}
+
+.stay-card__amenity svg {
+	width: 1rem;
+	height: 1rem;
+	fill: none;
+	stroke: currentColor;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+	stroke-width: 1.8;
+	flex: 0 0 auto;
+}
+
+/* -----BREAKPOINTS----- */
+@media screen and (min-width: 768px) {
+	.stay-hero {
+		min-height: 76dvh;
+		padding-top: 9rem;
+		padding-bottom: 4rem;
+	}
+
+	.stay-hero__description {
+		font-size: 1.05rem;
+	}
+}

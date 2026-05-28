@@ -1,0 +1,215 @@
+{
+	"pousada": [
+		{
+			"title": "Hospedagem RM",
+			"description": "Hospedagem prática em Pancas, indicada para quem busca apoio simples, contato rápido e base para circular pela região.",
+			"amenities": [
+				{ "icon": "bed", "label": "Hospedagem" },
+				{ "icon": "wifi", "label": "Contato direto" },
+				{ "icon": "car", "label": "Acesso urbano" }
+			],
+			"location": {
+				"label": "Pancas, ES",
+				"url": "https://maps.app.goo.gl/SgiprUq9WoojXWXAA"
+			},
+			"landmark": "Hospedagem no município de Pancas; confirme o endereço completo antes da chegada.",
+			"social": {
+				"label": "@hospedagensrm",
+				"url": "https://www.instagram.com/hospedagensrm/"
+			},
+			"whatsapp": "https://wa.me/5527998125067?text=Ola%2C%20quero%20consultar%20disponibilidade%20na%20Hospedagem%20RM."
+		},
+		{
+			"title": "Colina Deck House",
+			"description": "Casa de temporada no Alto Mutum Preto, com proposta de descanso em meio à paisagem rural de Pancas.",
+			"amenities": [
+				{ "icon": "bed", "label": "Casa de temporada" },
+				{ "icon": "wifi", "label": "Wi-Fi" },
+				{ "icon": "car", "label": "Estacionamento" }
+			],
+			"location": {
+				"label": "Córrego Alto Mutum Preto, Zona Rural",
+				"url": "https://maps.app.goo.gl/dhux6bCXnh1iyoRX7"
+			},
+			"landmark": "No Alto Mutum Preto, região rural ligada aos roteiros de natureza de Pancas.",
+			"social": {
+				"label": "@colinadeckhouse",
+				"url": "https://www.instagram.com/colinadeckhouse"
+			},
+			"whatsapp": "https://wa.me/5527999687766?text=Ola%2C%20quero%20consultar%20disponibilidade%20na%20Colina%20Deck%20House."
+		},
+		{
+			"title": "Rota da Colina",
+			"description": "Sítio para famílias e grupos que buscam tranquilidade rural, piscina e proximidade com a rampa de voo livre.",
+			"amenities": [
+				{ "icon": "bed", "label": "Casa inteira" },
+				{ "icon": "wifi", "label": "Wi-Fi" },
+				{ "icon": "tree", "label": "Área rural" }
+			],
+			"location": {
+				"label": "Sítio Rota da Colina, Pancas",
+				"url": "https://maps.app.goo.gl/FQ6Ya6yHGr7aXXmx6"
+			},
+			"landmark": "Próximo à Rampa de Voo Livre e à Pedra da Colina.",
+			"social": {
+				"label": "@rotadacolina_sitio",
+				"url": "https://www.instagram.com/rotadacolina_sitio"
+			},
+			"whatsapp": "https://wa.me/5527996332409?text=Ola%2C%20quero%20consultar%20disponibilidade%20no%20Rota%20da%20Colina."
+		},
+		{
+			"title": "Pousada Jardim de Pedras",
+			"description": "Pousada no Monumento Natural dos Pontões Capixabas, com clima de natureza, jardim, cozinha de apoio e café da manhã.",
+			"amenities": [
+				{ "icon": "coffee", "label": "Café da manhã" },
+				{ "icon": "wifi", "label": "Wi-Fi" },
+				{ "icon": "mountain", "label": "Pontões Capixabas" }
+			],
+			"location": {
+				"label": "Estrada Córrego Santa Rosa Km 2.3, Laginha",
+				"url": "https://maps.app.goo.gl/ZRZ3DRE3Cbo4y27aA"
+			},
+			"landmark": "Dentro do Monumento Natural dos Pontões Capixabas, a cerca de 7 km de Laginha.",
+			"social": {
+				"label": "@pousadajardimdepedras",
+				"url": "https://www.instagram.com/pousadajardimdepedras"
+			},
+			"whatsapp": "https://wa.me/5527997696141?text=Ola%2C%20quero%20consultar%20disponibilidade%20na%20Pousada%20Jardim%20de%20Pedras."
+		},
+		{
+			"title": "Pousada Vale das Águas",
+			"description": "Pousada para hospedagem em Pancas, indicada para quem prefere contato direto, ambiente rural e reserva sob consulta.",
+			"amenities": [
+				{ "icon": "tree", "label": "Chácara" },
+				{ "icon": "bed", "label": "Hospedagem rural" },
+				{ "icon": "car", "label": "Acesso local" }
+			],
+			"location": {
+				"label": "Pancas, ES",
+				"url": "https://maps.app.goo.gl/ZrcjgCNA542TkLQ37"
+			},
+			"landmark": "Referência de hospedagem listada pela Prefeitura de Pancas.",
+			"social": {
+				"label": "@valedasaguaspancas",
+				"url": "https://www.instagram.com/valedasaguaspancas/"
+			},
+			"whatsapp": "https://wa.me/5527997484752?text=Ola%2C%20quero%20consultar%20disponibilidade%20na%20Chacara%20Vovo%20Nelson."
+		},
+		{
+			"title": "Recanto da Prata",
+			"description": "Pousada rural no Córrego da Prata, com proposta simples e tranquila para quem quer se hospedar no interior de Pancas.",
+			"amenities": [
+				{ "icon": "bed", "label": "Pousada rural" },
+				{ "icon": "tree", "label": "Área verde" },
+				{ "icon": "car", "label": "Acesso rural" }
+			],
+			"location": {
+				"label": "Córrego da Prata, Pancas",
+				"url": "https://maps.app.goo.gl/kskkb1Aty7Nnkvvf9"
+			},
+			"landmark": "No Córrego da Prata, também conhecido pelo atendimento gastronômico rural.",
+			"social": {
+				"label": "@recantodapratapancas",
+				"url": "https://www.instagram.com/recantodapratapancas"
+			},
+			"whatsapp": "https://wa.me/5527988545005?text=Ola%2C%20quero%20consultar%20disponibilidade%20no%20Recanto%20da%20Prata."
+		},
+		{
+			"title": "Cantinho do Sabiá",
+			"description": "Hospedagem rural com clima de sítio, indicada para descansar em família e aproveitar a natureza de Pancas.",
+			"amenities": [
+				{ "icon": "tree", "label": "Natureza" },
+				{ "icon": "bed", "label": "Casa rural" },
+				{ "icon": "car", "label": "Acesso local" }
+			],
+			"location": {
+				"label": "Pancas, ES",
+				"url": "https://maps.app.goo.gl/9yZPP2DBcqGr1isL6"
+			},
+			"landmark": "Confirme o acesso e a referência exata com o anfitrião antes da chegada.",
+			"social": {
+				"label": "@pancas_cantinhodosabia",
+				"url": "https://www.instagram.com/pancas_cantinhodosabia"
+			},
+			"whatsapp": "https://wa.me/5527998049904?text=Ola%2C%20quero%20consultar%20disponibilidade%20no%20Cantinho%20do%20Sabia."
+		},
+		{
+			"title": "Casa Nova D'nois",
+			"description": "Casa rural em Alto Mutum Preto para famílias, com contato direto com a natureza e acesso em parte asfaltado.",
+			"amenities": [
+				{ "icon": "bed", "label": "Casa inteira" },
+				{ "icon": "tree", "label": "Vista rural" },
+				{ "icon": "wifi", "label": "Wi-Fi" }
+			],
+			"location": {
+				"label": "Córrego Sossego, Alto Mutum Preto",
+				"url": "https://maps.app.goo.gl/sGRe1RVAmBbZjnNaA"
+			},
+			"landmark": "Na zona rural de Alto Mutum Preto, a cerca de 15 km da sede de Pancas e perto da rota da rampa de voo livre.",
+			"social": {
+				"label": "@casa_nova_dnois",
+				"url": "https://www.instagram.com/casa_nova_dnois"
+			},
+			"whatsapp": "https://wa.me/5527998354150?text=Ola%2C%20quero%20consultar%20disponibilidade%20na%20Casa%20Nova%20Dnois."
+		},
+		{
+			"title": "Recanto Rústico",
+			"description": "Hospedagem no Córrego São Luís com casa para grupos e chalé para casais, em ambiente rural com represa e natureza.",
+			"amenities": [
+				{ "icon": "bed", "label": "Casa e chalé" },
+				{ "icon": "tree", "label": "Área verde" },
+				{ "icon": "mountain", "label": "Paisagem rural" }
+			],
+			"location": {
+				"label": "Córrego São Luís, Zona Rural",
+				"url": "https://maps.app.goo.gl/XB465XrdfrTxirnR7"
+			},
+			"landmark": "No Córrego São Luís, com estrutura voltada a descanso, grupos e casais.",
+			"social": {
+				"label": "@recanto_rustico_",
+				"url": "https://www.instagram.com/recanto_rustico_"
+			},
+			"whatsapp": "https://wa.me/5527996125902?text=Ola%2C%20quero%20consultar%20disponibilidade%20no%20Recanto%20Rustico."
+		},
+		{
+			"title": "Recanto Natural",
+			"description": "Recanto rural de Pancas para hospedagem e lazer em contato com a natureza, com atendimento por reserva direta.",
+			"amenities": [
+				{ "icon": "tree", "label": "Natureza" },
+				{ "icon": "bed", "label": "Hospedagem rural" },
+				{ "icon": "car", "label": "Acesso local" }
+			],
+			"location": {
+				"label": "Pancas, ES",
+				"url": "https://maps.app.goo.gl/JNJ6xvpN9fYUpNsbA"
+			},
+			"landmark": "Recanto em área natural de Pancas; confirme a referência exata com o responsável.",
+			"social": {
+				"label": "@recanto.natural",
+				"url": "https://www.instagram.com/recanto.natural"
+			},
+			"whatsapp": "https://wa.me/5527997275925?text=Ola%2C%20quero%20consultar%20disponibilidade%20no%20Recanto%20Natural."
+		}
+	],
+	"camping": [
+		{
+			"title": "Recanto das Montanhas",
+			"description": "Pousada em Pancas com ambiente de vale e montanhas, proposta familiar e área para quem busca tranquilidade e camping.",
+			"amenities": [
+				{ "icon": "mountain", "label": "Vista para montanhas" },
+				{ "icon": "bed", "label": "Pousada" },
+				{ "icon": "tree", "label": "Área de camping" }
+			],
+			"location": {
+				"label": "Rua Projetada Oscar Lourenço da Silva, Pancas",
+				"url": "https://maps.app.goo.gl/FrtepigBcdrAH8sR6"
+			},
+			"landmark": "Na região do bairro Oscar Lourenço da Silva, em meio ao vale de Pancas.",
+			"social": {
+				"label": "@recantodasmontanhaspancas",
+				"url": "https://www.instagram.com/recantodasmontanhaspancas"
+			},
+			"whatsapp": "https://wa.me/5527996942277?text=Ola%2C%20quero%20consultar%20disponibilidade%20no%20Recanto%20das%20Montanhas."
+		}
+	]
+}

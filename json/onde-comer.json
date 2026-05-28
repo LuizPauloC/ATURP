@@ -1,0 +1,203 @@
+[
+	{
+		"title": "Chocolates Cocau",
+		"specialty": "Chocolates artesanais bean to bar",
+		"description": "Agroindústria rural que transforma o cacau de Pancas em chocolates artesanais, com foco em origem local e visita sensorial.",
+		"mealMoments": ["lanches"],
+		"establishmentTypes": ["cafe"],
+		"hours": [
+			{ "label": "Atendimento", "value": "Sob consulta" }
+		],
+		"location": {
+			"label": "Zona Rural, Córrego São Luís",
+			"url": "https://maps.app.goo.gl/nhdE5MtnfwYWAbs7A"
+		},
+		"landmark": "Propriedade rural no Córrego São Luís, em área verde de Pancas.",
+		"social": {
+			"label": "@cocau_agroindustria",
+			"url": "https://www.instagram.com/cocau_agroindustria"
+		},
+		"whatsapp": "https://wa.me/5527999481051?text=Ola%2C%20quero%20mais%20informacoes%20sobre%20a%20Chocolates%20Cocau."
+	},
+	{
+		"title": "Recanto da Prata",
+		"specialty": "Comida rural, carnes e bebidas",
+		"description": "Restaurante rural no Córrego da Prata, indicado para refeições com clima tranquilo e cozinha de interior.",
+		"mealMoments": ["almoco", "jantar"],
+		"establishmentTypes": ["restaurante"],
+		"hours": [
+			{ "label": "Atendimento", "value": "Sob consulta" }
+		],
+		"location": {
+			"label": "Zona Rural, Córrego da Prata",
+			"url": "https://maps.app.goo.gl/SPUMDi1QrdBCs3uR9"
+		},
+		"landmark": "Na Estrada para o Córrego da Prata, em rota rural de Pancas.",
+		"social": {
+			"label": "@recantodapratapancas",
+			"url": "https://www.instagram.com/recantodapratapancas"
+		},
+		"whatsapp": "https://wa.me/5527988545005?text=Ola%2C%20quero%20mais%20informacoes%20sobre%20o%20Recanto%20da%20Prata."
+	},
+	{
+		"title": "Geleia Vovô Marquinho",
+		"specialty": "Geleias artesanais",
+		"description": "Produção artesanal de geleias em diversos sabores, feita em Pancas para encomendas, eventos e lembranças gastronômicas.",
+		"mealMoments": ["cafe-da-manha", "lanches"],
+		"establishmentTypes": ["cafe"],
+		"hours": [
+			{ "label": "Encomendas", "value": "Sob consulta" }
+		],
+		"location": {
+			"label": "Rua Turmalina, 900, Centro",
+			"url": "https://maps.app.goo.gl/AJ2fT7XtRTKQ2QfUA"
+		},
+		"landmark": "Casa no Centro de Pancas, com atendimento orientado por encomenda.",
+		"social": {
+			"label": "@geleiavovomarquinho",
+			"url": "https://www.instagram.com/geleiavovomarquinho"
+		},
+		"whatsapp": "https://wa.me/5527997615836?text=Ola%2C%20quero%20mais%20informacoes%20sobre%20a%20Geleia%20Vovo%20Marquinho."
+	},
+	{
+		"title": "Sítio Esteves Jorge",
+		"specialty": "Café conilon especial",
+		"description": "Experiência rural do grão à xícara, com café conilon especial, chá e mel produzidos no sítio.",
+		"mealMoments": ["cafe-da-manha", "lanches"],
+		"establishmentTypes": ["cafe"],
+		"hours": [
+			{ "label": "Ter-Sáb", "value": "7h às 9h e 16h às 18h" },
+			{ "label": "Dom-Seg", "value": "Fechado" }
+		],
+		"location": {
+			"label": "Zona Rural, Córrego Palmito Crú, Lajinha",
+			"url": "https://maps.app.goo.gl/viqLRYb8sAr2fLuY6"
+		},
+		"landmark": "No Córrego Palmito Crú, em Lajinha, com proposta de turismo ligado ao café.",
+		"social": {
+			"label": "@sitio_estevesjorge",
+			"url": "https://www.instagram.com/sitio_estevesjorge"
+		},
+		"whatsapp": "https://wa.me/5527997918881?text=Ola%2C%20quero%20mais%20informacoes%20sobre%20o%20Sitio%20Esteves%20Jorge."
+	},
+	{
+		"title": "Biscoiteria da Ana",
+		"specialty": "Biscoitos e quitutes artesanais",
+		"description": "Produção artesanal de biscoitos e quitutes rurais, boa para levar sabores locais como lembrança da viagem.",
+		"mealMoments": ["cafe-da-manha", "lanches"],
+		"establishmentTypes": ["cafe"],
+		"hours": [
+			{ "label": "Encomendas", "value": "Sob consulta" }
+		],
+		"location": {
+			"label": "Zona Rural, Córrego Paranazinho",
+			"url": "https://www.google.com/maps/search/?api=1&query=Biscoiteria+da+Ana+C%C3%B3rrego+Paranazinho+Pancas+ES"
+		},
+		"landmark": "Produção rural no Córrego Paranazinho, com contato direto para pedidos.",
+		"social": {
+			"label": "@biscoiteriadaana",
+			"url": "https://www.instagram.com/biscoiteriadaana"
+		},
+		"whatsapp": "https://wa.me/5527997852765?text=Ola%2C%20quero%20mais%20informacoes%20sobre%20a%20Biscoiteria%20da%20Ana."
+	},
+	{
+		"title": "Rancho Burguer",
+		"specialty": "Hambúrguer artesanal e comida caseira",
+		"description": "Espaço rústico com hambúrgueres artesanais, café colonial, refeições caseiras e pesque-pague para lazer em família.",
+		"mealMoments": ["cafe-da-manha", "almoco", "lanches", "jantar"],
+		"establishmentTypes": ["restaurante", "lanchonete"],
+		"hours": [
+			{ "label": "Atendimento", "value": "Sob consulta" }
+		],
+		"location": {
+			"label": "Zona Rural, Córrego São Bento, Lajinha",
+			"url": "https://maps.app.goo.gl/2jTEjCmbd5pxffyn8"
+		},
+		"landmark": "No Córrego São Bento, com ambiente rural para refeições e lazer.",
+		"social": {
+			"label": "@ranchoburgerpancas",
+			"url": "https://www.instagram.com/ranchoburgerpancas"
+		},
+		"whatsapp": "https://wa.me/5527995274492?text=Ola%2C%20quero%20mais%20informacoes%20sobre%20o%20Rancho%20Burguer."
+	},
+	{
+		"title": "Bendita Mistura",
+		"specialty": "Lanches, cafeteria e confeitaria",
+		"description": "Opção central para lanches, doces, pães e refeições rápidas, com atendimento prático no comércio de Pancas.",
+		"mealMoments": ["cafe-da-manha", "almoco", "lanches", "jantar"],
+		"establishmentTypes": ["cafe", "lanchonete", "restaurante"],
+		"hours": [
+			{ "label": "Atendimento", "value": "Sob consulta" }
+		],
+		"location": {
+			"label": "Avenida José Nunes Miranda, Centro",
+			"url": "https://maps.app.goo.gl/W69zMWuFaZf8nwXN8"
+		},
+		"landmark": "No Centro de Pancas, próximo ao eixo comercial da Avenida José Nunes Miranda.",
+		"social": {
+			"label": "@benditamisturapancas",
+			"url": "https://www.instagram.com/benditamisturapancas"
+		},
+		"whatsapp": "https://wa.me/5527997238164?text=Ola%2C%20quero%20mais%20informacoes%20sobre%20a%20Bendita%20Mistura."
+	},
+	{
+		"title": "Cervejaria Schumacher Beer",
+		"specialty": "Cervejas e chopes artesanais",
+		"description": "Cervejaria artesanal de Pancas voltada a cervejas, chopes e bebidas para consumo em momentos de encontro e lazer.",
+		"mealMoments": ["lanches", "jantar"],
+		"establishmentTypes": ["lanchonete"],
+		"hours": [
+			{ "label": "Atendimento", "value": "Sob consulta" }
+		],
+		"location": {
+			"label": "Córrego da Perdida, Zona Rural",
+			"url": "https://maps.app.goo.gl/aa15Tdn3jppPHFy48"
+		},
+		"landmark": "Na zona rural de Pancas, com referência ao Córrego da Perdida/Lajinha.",
+		"social": {
+			"label": "@schumacherbeer_oficial",
+			"url": "https://www.instagram.com/schumacherbeer_oficial"
+		},
+		"whatsapp": "https://wa.me/5527996027679?text=Ola%2C%20quero%20mais%20informacoes%20sobre%20a%20Schumacher%20Beer."
+	},
+	{
+		"title": "Delícias da Santina",
+		"specialty": "Doces e salgados artesanais",
+		"description": "Atendimento por delivery para encomendas de delícias caseiras, indicado para lanches, eventos e pedidos sob demanda.",
+		"mealMoments": ["lanches"],
+		"establishmentTypes": ["cafe"],
+		"hours": [
+			{ "label": "Encomendas", "value": "Sob consulta" }
+		],
+		"location": {
+			"label": "Pancas, ES",
+			"url": "https://www.google.com/maps/search/?api=1&query=Del%C3%ADcias+da+Santina+Pancas+ES"
+		},
+		"landmark": "Somente delivery",
+		"social": {
+			"label": "WhatsApp",
+			"url": "https://wa.me/5527999616212"
+		},
+		"whatsapp": "https://wa.me/5527999616212?text=Ola%2C%20quero%20mais%20informacoes%20sobre%20a%20Delicias%20da%20Santina."
+	},
+	{
+		"title": "Na Brasa",
+		"specialty": "Gastrobar e grelhados",
+		"description": "Gastrobar de Pancas para quem busca lanches, porções e pratos na brasa em clima descontraído.",
+		"mealMoments": ["almoco", "lanches", "jantar"],
+		"establishmentTypes": ["restaurante", "lanchonete"],
+		"hours": [
+			{ "label": "Atendimento", "value": "Sob consulta" }
+		],
+		"location": {
+			"label": "Pancas, ES",
+			"url": "https://www.google.com/maps/search/?api=1&query=Na+Brasa+Gastrobar+Pancas+ES"
+		},
+		"landmark": "Endereço não informado; confirme o ponto de atendimento antes de ir.",
+		"social": {
+			"label": "@prefironabrasa",
+			"url": "https://www.instagram.com/prefironabrasa"
+		},
+		"whatsapp": "https://wa.me/5527995087778?text=Ola%2C%20quero%20mais%20informacoes%20sobre%20o%20Na%20Brasa."
+	}
+]
