@@ -1,6 +1,7 @@
 [
 	{
 		"title": "Chocolates Cocau",
+		"image": "/assets/food-cards/chocolates_cocau.jpg",
 		"specialty": "Chocolates artesanais bean to bar",
 		"description": "Agroindústria rural que transforma o cacau de Pancas em chocolates artesanais, com foco em origem local e visita sensorial.",
 		"mealMoments": ["lanches"],
@@ -21,6 +22,7 @@
 	},
 	{
 		"title": "Recanto da Prata",
+		"image": "/assets/food-cards/recanto_da_prata.jpg",
 		"specialty": "Comida rural, carnes e bebidas",
 		"description": "Restaurante rural no Córrego da Prata, indicado para refeições com clima tranquilo e cozinha de interior.",
 		"mealMoments": ["almoco", "jantar"],
@@ -41,6 +43,7 @@
 	},
 	{
 		"title": "Geleia Vovô Marquinho",
+		"image": "/assets/food-cards/geleia_vovo_marquinhos.jpg",
 		"specialty": "Geleias artesanais",
 		"description": "Produção artesanal de geleias em diversos sabores, feita em Pancas para encomendas, eventos e lembranças gastronômicas.",
 		"mealMoments": ["cafe-da-manha", "lanches"],
@@ -61,6 +64,7 @@
 	},
 	{
 		"title": "Sítio Esteves Jorge",
+		"image": "/assets/food-cards/esteves_jorge.jpg",
 		"specialty": "Café conilon especial",
 		"description": "Experiência rural do grão à xícara, com café conilon especial, chá e mel produzidos no sítio.",
 		"mealMoments": ["cafe-da-manha", "lanches"],
@@ -82,6 +86,7 @@
 	},
 	{
 		"title": "Biscoiteria da Ana",
+		"image": "/assets/food-cards/biscoiteria_da_ana.jpg",
 		"specialty": "Biscoitos e quitutes artesanais",
 		"description": "Produção artesanal de biscoitos e quitutes rurais, boa para levar sabores locais como lembrança da viagem.",
 		"mealMoments": ["cafe-da-manha", "lanches"],
@@ -102,6 +107,7 @@
 	},
 	{
 		"title": "Rancho Burguer",
+		"image": "/assets/food-cards/rancho_burguer.jpg",
 		"specialty": "Hambúrguer artesanal e comida caseira",
 		"description": "Espaço rústico com hambúrgueres artesanais, café colonial, refeições caseiras e pesque-pague para lazer em família.",
 		"mealMoments": ["cafe-da-manha", "almoco", "lanches", "jantar"],
@@ -122,6 +128,7 @@
 	},
 	{
 		"title": "Bendita Mistura",
+		"image": "/assets/food-cards/bendita_mistura.jpg",
 		"specialty": "Lanches, cafeteria e confeitaria",
 		"description": "Opção central para lanches, doces, pães e refeições rápidas, com atendimento prático no comércio de Pancas.",
 		"mealMoments": ["cafe-da-manha", "almoco", "lanches", "jantar"],
@@ -142,6 +149,7 @@
 	},
 	{
 		"title": "Cervejaria Schumacher Beer",
+		"image": "/assets/food-cards/schumacher_beer.jpg",
 		"specialty": "Cervejas e chopes artesanais",
 		"description": "Cervejaria artesanal de Pancas voltada a cervejas, chopes e bebidas para consumo em momentos de encontro e lazer.",
 		"mealMoments": ["lanches", "jantar"],
@@ -182,6 +190,7 @@
 	},
 	{
 		"title": "Na Brasa",
+		"image": "/assets/food-cards/na_brasa.jpg",
 		"specialty": "Gastrobar e grelhados",
 		"description": "Gastrobar de Pancas para quem busca lanches, porções e pratos na brasa em clima descontraído.",
 		"mealMoments": ["almoco", "lanches", "jantar"],

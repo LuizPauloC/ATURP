@@ -2,6 +2,7 @@
 	"pousada": [
 		{
 			"title": "Hospedagem RM",
+			"image": "/assets/stay-cards/hospedagens_rm.jpg",
 			"description": "Hospedagem prática em Pancas, indicada para quem busca apoio simples, contato rápido e base para circular pela região.",
 			"amenities": [
 				{ "icon": "bed", "label": "Hospedagem" },
@@ -21,6 +22,7 @@
 		},
 		{
 			"title": "Colina Deck House",
+			"image": "/assets/stay-cards/colina_deck_house.jpg",
 			"description": "Casa de temporada no Alto Mutum Preto, com proposta de descanso em meio à paisagem rural de Pancas.",
 			"amenities": [
 				{ "icon": "bed", "label": "Casa de temporada" },
@@ -40,6 +42,7 @@
 		},
 		{
 			"title": "Rota da Colina",
+			"image": "/assets/stay-cards/rota_da_colina.jpg",
 			"description": "Sítio para famílias e grupos que buscam tranquilidade rural, piscina e proximidade com a rampa de voo livre.",
 			"amenities": [
 				{ "icon": "bed", "label": "Casa inteira" },
@@ -59,6 +62,7 @@
 		},
 		{
 			"title": "Pousada Jardim de Pedras",
+			"image": "/assets/stay-cards/jardim_de_pedras.jpg",
 			"description": "Pousada no Monumento Natural dos Pontões Capixabas, com clima de natureza, jardim, cozinha de apoio e café da manhã.",
 			"amenities": [
 				{ "icon": "coffee", "label": "Café da manhã" },
@@ -116,6 +120,7 @@
 		},
 		{
 			"title": "Cantinho do Sabiá",
+			"image": "/assets/stay-cards/cantinho_do_sabia.jpg",
 			"description": "Hospedagem rural com clima de sítio, indicada para descansar em família e aproveitar a natureza de Pancas.",
 			"amenities": [
 				{ "icon": "tree", "label": "Natureza" },
@@ -135,6 +140,7 @@
 		},
 		{
 			"title": "Casa Nova D'nois",
+			"image": "/assets/stay-cards/casa_nova_d'nois.jpg",
 			"description": "Casa rural em Alto Mutum Preto para famílias, com contato direto com a natureza e acesso em parte asfaltado.",
 			"amenities": [
 				{ "icon": "bed", "label": "Casa inteira" },
@@ -154,6 +160,7 @@
 		},
 		{
 			"title": "Recanto Rústico",
+			"image": "/assets/stay-cards/recanto_rustico.jpg",
 			"description": "Hospedagem no Córrego São Luís com casa para grupos e chalé para casais, em ambiente rural com represa e natureza.",
 			"amenities": [
 				{ "icon": "bed", "label": "Casa e chalé" },
@@ -173,6 +180,7 @@
 		},
 		{
 			"title": "Recanto Natural",
+			"image": "/assets/stay-cards/recanto_natural.jpg",
 			"description": "Recanto rural de Pancas para hospedagem e lazer em contato com a natureza, com atendimento por reserva direta.",
 			"amenities": [
 				{ "icon": "tree", "label": "Natureza" },
@@ -194,6 +202,7 @@
 	"camping": [
 		{
 			"title": "Recanto das Montanhas",
+			"image": "/assets/stay-cards/recanto_das_montanhas.jpg",
 			"description": "Pousada em Pancas com ambiente de vale e montanhas, proposta familiar e área para quem busca tranquilidade e camping.",
 			"amenities": [
 				{ "icon": "mountain", "label": "Vista para montanhas" },

@@ -111,6 +111,17 @@
 		return row;
 	}
 
+	function createCardImage(imagePath, title) {
+		if (!imagePath) return null;
+
+		const image = document.createElement('img');
+		image.className = 'directory-card__image';
+		image.src = imagePath;
+		image.setAttribute('alt', title);
+		image.decoding = 'async';
+		return image;
+	}
+
 	function getVisiblePlaces() {
 		return places.filter((place) => {
 			const matchesMeal =
@@ -130,6 +141,8 @@
 		const title = document.createElement('h3');
 		title.className = 'directory-card__title';
 		title.textContent = place.title;
+
+		const image = createCardImage(place.image, place.title);
 
 		const specialty = document.createElement('p');
 		specialty.className = 'food-card__specialty';
@@ -182,7 +195,7 @@
 		appendLinkContent(cta, 'Chamar no WhatsApp', { trailingIcon: 'whatsapp' });
 
 		footer.append(divider, location, landmark, social, cta);
-		card.append(title, specialty, description, hours, footer);
+		card.append(title, ...(image ? [image] : []), specialty, description, hours, footer);
 		return card;
 	}
 

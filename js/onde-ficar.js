@@ -159,6 +159,17 @@
 		}
 	}
 
+	function createCardImage(imagePath, title) {
+		if (!imagePath) return null;
+
+		const image = document.createElement('img');
+		image.className = 'directory-card__image';
+		image.src = imagePath;
+		image.setAttribute('alt', title);
+		image.decoding = 'async';
+		return image;
+	}
+
 	function createStayCard(stay) {
 		const card = document.createElement('article');
 		card.className = 'directory-card';
@@ -167,6 +178,8 @@
 		const title = document.createElement('h3');
 		title.className = 'directory-card__title';
 		title.textContent = stay.title;
+
+		const image = createCardImage(stay.image, stay.title);
 
 		const description = document.createElement('p');
 		description.className = 'directory-card__description';
@@ -212,7 +225,7 @@
 		appendLinkContent(cta, 'Reservar no WhatsApp', { trailingIcon: 'whatsapp' });
 
 		footer.append(divider, location, landmark, social, cta);
-		card.append(title, description, amenities, footer);
+		card.append(title, ...(image ? [image] : []), description, amenities, footer);
 		return card;
 	}
 
