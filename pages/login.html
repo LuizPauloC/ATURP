@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Administrativo | ATURP</title>
+    <link rel="stylesheet" href="../css/login.css">
+</head>
+<body>
+    <main class="login-page">
+        <section class="login-card" aria-labelledby="login-title">
+            <div class="login-card__brand">
+                <img
+                    src="../assets/branding/aturp-logo-horizontal-transparent.png"
+                    alt="ATURP"
+                    class="login-card__logo"
+                />
+            </div>
+
+            <form class="login-form" method="post">
+                <div class="login-form__field">
+                    <label for="username">Usuário</label>
+                    <input
+                        type="text"
+                        id="username"
+                        name="username"
+                        autocomplete="username"
+                        placeholder="seu usuario"
+                        required
+                    />
+                </div>
+
+                <div class="login-form__field">
+                    <label for="password">Senha</label>
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        autocomplete="current-password"
+                        placeholder="sua senha"
+                        required
+                    />
+                </div>
+
+                <!-- <button class="login-form__submit" type="submit">Entrar</button> -->
+                 <a href="./dashboard.html" class="login-form__submit">Entrar</a>
+            </form>
+        </section>
+    </main>
+</body>
+</html>

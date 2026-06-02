@@ -25,7 +25,7 @@
 					<div class="site-header__desktop-nav" aria-label="Navegação rápida">
 						<a href="./pages/onde-ficar.html">Onde ficar</a>
 						<a href="./pages/onde-comer.html">Onde comer</a>
-						<a href="#experiences" data-scroll="#experiences">Explorar</a>
+						<a href="./pages/o-que-fazer.html">O que fazer</a>
 						<a href="./pages/guia-rapido.html">Guia</a>
 					</div>
 				</div>
@@ -42,10 +42,10 @@
 					em um só destino.
 				</p>
 				<div class="hero__actions">
-					<button type="button" class="hero__button hero__button--primary btn" data-scroll="#experiences">
+					<a href="./pages/o-que-fazer.html" class="hero__button hero__button--primary btn">
 						<img src="assets/icons/compass-navigation.png" alt="" class="btn-icon" />
 						Explorar Aventuras
-					</button>
+					</a>
 					<a href="./pages/onde-ficar.html" class="hero__button hero__button--secondary btn">Planejar Estadia</a>
 				</div>
 				<div class="hero__scroll-indicator" aria-hidden="true">
@@ -107,11 +107,10 @@
 								/>
 							</svg>
 						</a>
-						<button
-							type="button"
+						<a
+							href="./pages/o-que-fazer.html"
 							class="guide-tile"
-							data-scroll="#experiences"
-							aria-label="Ir para a seção de experiências"
+							aria-label="Ir para a página de o que fazer"
 						>
 							<div class="tile-icon">
 								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" aria-hidden="true">
@@ -129,7 +128,7 @@
 									d="M502.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L402.7 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l370.7 0-105.4 105.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"
 								/>
 							</svg>
-						</button>
+						</a>
 						<a
 							href="./pages/guia-rapido.html"
 							class="guide-tile"
@@ -196,7 +195,13 @@
 				</div>
 			</section>
 
-			<section id="experiences" class="experiences">
+			<section>
+				<div class="layout-container">
+					<img src="assets/events/imagem-exemplo-atividades.png" width="100%"> 
+				</div>
+			</section>
+
+			<!-- <section id="experiences" class="experiences">
 				<div class="layout-container">
 					<hgroup>
 						<p class="eyebrow">Experiências</p>
@@ -231,7 +236,7 @@
 						</svg>
 					</button>
 				</div>
-			</section>
+			</section> -->
 		</main>
 		<button
 			type="button"
@@ -269,7 +274,6 @@
 						</svg>
 					</span>
 					<span class="nav-modal__link-label">Início</span>
-					<span class="nav-modal__link-coord">19°13'S 40°51'W</span>
 				</a>
 
 				<a href="./pages/onde-ficar.html" class="nav-modal__link">
@@ -281,7 +285,6 @@
 						</svg>
 					</span>
 					<span class="nav-modal__link-label">Onde Ficar</span>
-					<span class="nav-modal__link-coord">19°13'12"S</span>
 				</a>
 
 				<a href="./pages/onde-comer.html" class="nav-modal__link">
@@ -293,10 +296,9 @@
 						</svg>
 					</span>
 					<span class="nav-modal__link-label">Onde Comer</span>
-					<span class="nav-modal__link-coord">40°51'08"W</span>
 				</a>
 
-				<a href="#experiences" class="nav-modal__link" data-scroll="#experiences">
+				<a href="./pages/o-que-fazer.html" class="nav-modal__link">
 					<span class="nav-modal__link-icon">
 						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" aria-hidden="true">
 							<path
@@ -305,7 +307,6 @@
 						</svg>
 					</span>
 					<span class="nav-modal__link-label">O que Fazer</span>
-					<span class="nav-modal__link-coord">ALT 420m</span>
 				</a>
 
 				<a href="./pages/guia-rapido.html" class="nav-modal__link">
@@ -317,7 +318,6 @@
 						</svg>
 					</span>
 					<span class="nav-modal__link-label">Guia do Turista</span>
-					<span class="nav-modal__link-coord">ES-080</span>
 				</a>
 
 				<a href="#about-pancas" class="nav-modal__link" data-scroll="#about-pancas">
@@ -329,7 +329,10 @@
 						</svg>
 					</span>
 					<span class="nav-modal__link-label">Sobre a ATURP</span>
-					<span class="nav-modal__link-coord">EST. 2024</span>
+				</a>
+
+				<a href="./pages/login.html" class="nav-modal__link--admin">
+					<span class="nav-modal__link-admin-label">Login</span>
 				</a>
 			</nav>
 
@@ -410,7 +413,7 @@
 								<h3>EXPLORAR</h3>
 								<a href="./pages/onde-ficar.html">Hospedagem</a>
 								<a href="./pages/onde-comer.html">Gastronomia</a>
-								<a href="#experiences" data-scroll="#experiences">Experiências</a>
+								<a href="./pages/o-que-fazer.html">Experiências</a>
 							</div>
 							<div class="footer-links__column">
 								<h3>SERVIÇOS</h3>

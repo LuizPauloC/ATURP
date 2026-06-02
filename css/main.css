@@ -99,11 +99,30 @@ body.is-ready {
 }
 
 .site-header__desktop-nav a {
+	position: relative;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
 	color: #fff;
 	font-size: 0.95rem;
 	font-weight: 600;
 	text-decoration: none;
 	transition: color 0.2s ease, opacity 0.2s ease;
+	height: 40px;
+	text-align: center;
+}
+
+.site-header__desktop-nav a::after {
+	content: "";
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	height: 2px;
+	background-color: var(--light-green);
+	transform: scaleX(0);
+	transform-origin: center;
+	transition: transform 0.2s ease;
 }
 
 .site-header__desktop-nav a:hover,
@@ -112,8 +131,15 @@ body.is-ready {
 	opacity: 1;
 }
 
+.site-header__desktop-nav a:hover::after,
+.site-header__desktop-nav a:focus-visible::after {
+	transform: scaleX(1);
+}
+
 /* -----TYPOGRAPHY----- */
 .eyebrow {
+	position: relative;
+	font-weight:600;
 	color: var(--dark-green);
 	text-transform: uppercase;
 	margin-bottom: 0.75rem;
@@ -121,6 +147,17 @@ body.is-ready {
 
 .eyebrow--on-dark {
 	color: var(--light-green);
+}
+
+.eyebrow::after {
+	content: "";
+	position: absolute;
+	margin-left: 10px;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 50px;
+	height: 2px;
+	background-color: currentColor;
 }
 
 .section-title {
