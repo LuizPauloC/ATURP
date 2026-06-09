@@ -1,0 +1,245 @@
+/* -----HERO----- */
+.page-hero {
+	display: flex;
+	align-items: flex-end;
+	min-height: 72vh;
+	padding-top: 8rem;
+	padding-bottom: 3.5rem;
+	background-color: #36231d;
+	background-image:
+		linear-gradient(180deg, rgba(8, 10, 11, 0.6) 0%, rgba(8, 10, 11, 0.9) 52%, rgba(8, 10, 11, 0.94) 100%),
+		url("../assets/hero/o-que-fazer.jpg");
+	background-position: center;
+	background-size: cover;
+}
+
+.page-hero__content {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+}
+
+.page-hero__title {
+	max-width: 12ch;
+	color: #fff;
+	font-size: clamp(2.5rem, 7vw, 4.75rem);
+	font-weight: 700;
+	line-height: 0.95;
+}
+
+.page-hero__description {
+	max-width: 40rem;
+	margin-top: 1.5rem;
+	color: #f2e9e5;
+	font-size: 1rem;
+	line-height: 1.7;
+}
+/* -----MAIN----- */
+.main-content {
+	background-color: #f9f9f9;
+}
+
+/* -----ELEMENTOS EM DESTAQUE----- */
+.discover-section {
+	padding-top: 80px;
+	padding-bottom: 80px;
+}
+
+.discover-section__featured-group {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+	margin-top: 2.5rem;
+}
+
+.featured-card {
+	position: relative;
+	height: 180px;
+	border-radius: 1rem;
+	overflow: hidden;
+	background-size: cover;
+	background-position: center;
+	transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Imagens temporárias */
+.featured-card--mirantes { background-image: url('../assets/placeholders/mirantes.jpg'); }
+.featured-card--trilhas { background-image: url('../assets/placeholders/trilhas.jpg'); }
+.featured-card--eventos { background-image: url('../assets/placeholders/eventos.jpeg'); }
+
+.featured-card__link {
+	text-decoration: none;
+	display: block;
+	height: 100%;
+}
+
+.featured-card__overlay {
+	position: absolute;
+	inset: 0;
+	background: #05966940;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.featured-card__title {
+	color: #fff;
+	font-size: 2.125rem;
+	font-weight: 700;
+	margin: 0;
+	text-shadow: 0 0 10px #000;
+}
+
+.featured-card:hover {
+	transform: translateY(-3px);;
+}
+
+/* -----EVENTOS----- */
+.events-section__calendar-grid {
+	display: flex;
+	flex-direction: row;
+	gap: 16px; 
+	max-width: 100%; 
+	overflow-x: auto;
+	overflow-y: hidden;
+	white-space: nowrap; 
+	padding: 16px; 
+	box-sizing: border-box;
+}
+
+.calendar-grid__event-card {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	flex-shrink: 0; 
+	height: 256px;
+	width: 176px; 
+	background-color: #059669;
+	color: white;
+	border-radius: 8px;
+	overflow-y: hidden;
+}
+
+.calendar-grid__event-card:hover {
+	cursor: pointer;
+}
+
+.event-card__content-wrapper{
+	display: flex;
+	flex-direction: column;
+	height: max-content;
+	width: 100%;
+	gap: 3px;
+	padding: 30px 16px;
+	text-wrap: initial;
+	background-color: #00000080;
+}
+
+.event-card__event-title {
+	font-size: 1.2rem;
+	font-weight: 600;
+}
+
+.event-card__event-local, .event-card__event-date {
+	font-size: 0.8rem;
+	font-weight: 400;
+}
+
+.event-card__event-local::before {
+	display: inline-block;
+}
+
+.event-card__event-date::before {
+	display: inline-block;
+}
+
+/* -----CATEGORIAS----- */
+.discover-section__categories-grid {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	margin-top: 2.5rem;
+}
+
+.category-card {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 190px;
+	background-color: #fff;
+	border: 1px solid #f3f4f6;
+	border-radius: 1rem;
+	padding: 24px 16px;
+	text-decoration: none;
+	box-shadow: 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+	transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.category-card:hover {
+	transform: translateY(-3px);	
+}
+
+.category-card__icon-wrapper {
+	width: 64px;
+	height: 64px;
+	background-color: #4a584415;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 14px;
+}
+
+.category-card__icon {
+	width: 32px;
+	height: 32px;
+}
+
+.category-card__name {
+	color: var(--black);
+	font-size: 1rem;
+	font-weight: 600;
+	text-align: center;
+	transition: color 0.1s ease;
+}
+
+.category-card:hover .category-card__name {
+	color: var(--dark-green);
+}
+
+/* -----MEDIA QUERIES----- */
+@media (min-width: 768px) {
+	.discover-section__featured-group {
+		flex-direction: row;
+	}
+
+	.featured-card {
+		flex: 1;
+		height: 260px;
+	}
+
+	.calendar-grid__event-card {
+		width: 220px;
+		height: 320px;
+		transition: 0.3s;
+	}
+
+	.calendar-grid__event-card:hover {
+		transform: scale(102%);
+	}
+
+	.event-card__event-title {
+		font-size: 1.25rem;
+	}
+
+	.event-card__event-local, .event-card__event-date {
+	font-size: 0.8rem;
+}
+
+	.discover-section__categories-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+		gap: 20px;
+	}
+} 

@@ -71,6 +71,16 @@ body.is-ready {
 	background-color: #00000080;
 	backdrop-filter: blur(10px);
 	z-index: 100;
+	transition: background-color ease 0.5s;
+}
+
+.site-header__nav.solid-color {
+	background-color: #0f1112;
+}
+
+.header-trigger {
+	height: 0px;
+	width: 100%;
 }
 
 .site-header__nav-inner {

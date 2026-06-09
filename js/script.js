@@ -22,9 +22,23 @@ document.addEventListener('click', (event) => {
 	}
 });
 
+// Faz a transição do loading para o conteúdo principal
 document.addEventListener('DOMContentLoaded', () => {
 	document.body.classList.add('is-ready');
 	window.requestAnimationFrame(() => {
 		document.documentElement.classList.remove('is-loading');
 	});
+});
+
+// Deixa o header em cor sólida ao rolar a página
+const header = document.querySelector('.site-header__nav');
+const pixelsLimit = 200; 
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > pixelsLimit) {
+    header.classList.add('solid-color');
+  }
+  else {
+    header.classList.remove('solid-color');
+  }
 });
