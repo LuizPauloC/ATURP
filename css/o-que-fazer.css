@@ -62,10 +62,9 @@
 	transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Imagens temporárias */
-.featured-card--mirantes { background-image: url('../assets/placeholders/mirantes.jpg'); }
-.featured-card--trilhas { background-image: url('../assets/placeholders/trilhas.jpg'); }
-.featured-card--eventos { background-image: url('../assets/placeholders/eventos.jpeg'); }
+.featured-card--mirantes { background-color: #059669; }
+.featured-card--trilhas { background-color: #059669; }
+.featured-card--eventos { background-color: #059669; }
 
 .featured-card__link {
 	text-decoration: none;
@@ -131,26 +130,44 @@
 	width: 100%;
 	gap: 3px;
 	padding: 30px 16px;
-	text-wrap: initial;
-	background-color: #00000080;
+	background-image: linear-gradient(to top ,#00000090, #00000090, #00000060, #00000000);
 }
 
 .event-card__event-title {
 	font-size: 1.2rem;
 	font-weight: 600;
+	margin-bottom: 5px;
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: normal;
+	line-height: 1.4;
 }
 
 .event-card__event-local, .event-card__event-date {
+	display: flex;
+	align-items: center;
+	gap: 3px;
 	font-size: 0.8rem;
 	font-weight: 400;
+	width: 100%;
+	overflow: hidden;
 }
 
-.event-card__event-local::before {
-	display: inline-block;
+.event-card__local-icon, .event-card__date-icon {
+	flex-shrink: 0;
+	width: 20px;
+	height: 20px;
+	fill: #fff;
 }
 
-.event-card__event-date::before {
-	display: inline-block;
+.event-card__text {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	min-width: 0;
 }
 
 /* -----CATEGORIAS----- */
@@ -230,7 +247,7 @@
 	}
 
 	.event-card__event-title {
-		font-size: 1.25rem;
+		font-size: 1.5rem;
 	}
 
 	.event-card__event-local, .event-card__event-date {
@@ -242,4 +259,4 @@
 		grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 		gap: 20px;
 	}
-} 
+}

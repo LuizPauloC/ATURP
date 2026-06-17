@@ -1,0 +1,339 @@
+/* ----- ESTILIZAÇÃO DA PÁGINA DE EVENTOS ----- */
+
+/* Wrapper Principal */
+.event-page-main {
+	padding-top: 100px;
+	padding-bottom: 80px;
+	background-color: var(--light-gray);
+	min-height: 85vh;
+}
+
+/* Link de Voltar */
+.back-link-container {
+	margin-bottom: 2rem;
+}
+
+.back-link {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	color: var(--dark-green);
+	font-weight: 600;
+	text-decoration: none;
+	transition: color 0.2s ease, transform 0.2s ease;
+	font-size: 0.95rem;
+	width: max-content;
+}
+
+.back-link:hover {
+	color: var(--light-green);
+	transform: translateX(-4px);
+}
+
+.back-link__icon {
+	width: 16px;
+	height: 16px;
+	fill: currentColor;
+}
+
+/* Grid de Layout de Detalhes */
+.event-details-grid {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 2.5rem;
+}
+
+@media (min-width: 992px) {
+	.event-details-grid {
+		grid-template-columns: 1.6fr 1fr;
+	}
+}
+
+/* Coluna da Esquerda: Imagens e Descrição */
+.event-detail__media {
+	display: flex;
+	flex-direction: column;
+	gap: 1.25rem;
+}
+
+.event-detail__main-image-wrapper {
+	width: 100%;
+	height: 300px;
+	border-radius: 12px;
+	overflow: hidden;
+	box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+	background-color: #ddd;
+}
+
+@media (min-width: 768px) {
+	.event-detail__main-image-wrapper {
+		height: 420px;
+	}
+}
+
+.event-detail__main-image {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.event-detail__main-image:hover {
+	transform: scale(1.03);
+}
+
+/* Galeria de Thumbnails */
+.event-detail__gallery {
+	display: flex;
+	gap: 12px;
+	overflow-x: auto;
+	padding-bottom: 8px;
+}
+
+.event-detail__thumb-btn {
+	padding: 0;
+	border: 3px solid transparent;
+	background: none;
+	border-radius: 8px;
+	overflow: hidden;
+	width: 80px;
+	height: 60px;
+	flex-shrink: 0;
+	cursor: pointer;
+	transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+@media (min-width: 768px) {
+	.event-detail__thumb-btn {
+		width: 100px;
+		height: 75px;
+	}
+}
+
+.event-detail__thumb-btn:hover {
+	transform: translateY(-2px);
+}
+
+.event-detail__thumb-btn.is-active {
+	border-color: var(--light-green);
+}
+
+.event-detail__thumb-image {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+/* Informações de Texto */
+.event-detail__info-content {
+	background-color: #fff;
+	border-radius: 12px;
+	padding: 2rem;
+	box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+	margin-top: 1.5rem;
+}
+
+.event-detail__title {
+	color: var(--black);
+	font-size: clamp(1.75rem, 4vw, 2.5rem);
+	font-weight: 700;
+	line-height: 1.2;
+	margin-bottom: 1.5rem;
+}
+
+.event-detail__section-title {
+	font-size: 1.25rem;
+	color: var(--black);
+	font-weight: 600;
+	margin-bottom: 1rem;
+	position: relative;
+	padding-bottom: 8px;
+}
+
+.event-detail__section-title::after {
+	content: "";
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 40px;
+	height: 3px;
+	background-color: var(--light-green);
+	border-radius: 2px;
+}
+
+.event-detail__description-text {
+	color: #4b5563;
+	font-size: 1.05rem;
+	line-height: 1.7;
+}
+
+/* Coluna da Direita: Sidebar com Programação e Contatos */
+.event-detail__sidebar {
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+}
+
+.event-detail__card {
+	background-color: #fff;
+	border-radius: 12px;
+	padding: 2rem;
+	box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+	border: 1px solid #f3f4f6;
+}
+
+.event-detail__card-title {
+	font-size: 1.25rem;
+	color: var(--black);
+	font-weight: 700;
+	margin-bottom: 1.5rem;
+	border-bottom: 2px solid #f3f4f6;
+	padding-bottom: 10px;
+}
+
+.event-detail__meta-list {
+	display: flex;
+	flex-direction: column;
+	gap: 1.25rem;
+}
+
+.event-detail__meta-item {
+	display: flex;
+	align-items: flex-start;
+	gap: 12px;
+}
+
+.event-detail__meta-icon {
+	width: 22px;
+	height: 22px;
+	fill: var(--light-green);
+	flex-shrink: 0;
+	margin-top: 2px;
+}
+
+.event-detail__meta-label {
+	font-size: 0.85rem;
+	color: #6b7280;
+	font-weight: 600;
+	text-transform: uppercase;
+	margin-bottom: 2px;
+}
+
+.event-detail__meta-value {
+	color: #1f2937;
+	font-size: 1rem;
+	font-weight: 500;
+	line-height: 1.4;
+}
+
+.event-detail__maps-btn {
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	color: var(--dark-green);
+	font-weight: 600;
+	text-decoration: none;
+	font-size: 0.9rem;
+	margin-top: 6px;
+	transition: color 0.2s;
+}
+
+.event-detail__maps-btn:hover {
+	color: var(--light-green);
+	text-decoration: underline;
+}
+
+.event-detail__maps-icon {
+	width: 14px;
+	height: 14px;
+	fill: currentColor;
+}
+
+/* Botões de Ação / Contato */
+.event-detail__ctas {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	margin-top: 1rem;
+}
+
+.event-detail__cta-btn {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+	height: 3.25rem;
+	border-radius: 30px;
+	font-size: 1rem;
+	font-weight: 600;
+	text-decoration: none;
+	transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.event-detail__cta-btn--whatsapp {
+	background-color: #25d366;
+	color: #fff;
+	box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3);
+}
+
+.event-detail__cta-btn--whatsapp:hover {
+	background-color: #1ebd5b;
+	box-shadow: 0 6px 14px rgba(37, 211, 102, 0.4);
+	transform: translateY(-2px);
+}
+
+.event-detail__cta-btn--social {
+	background-color: #1b1d1e;
+	color: #fff;
+	border: 1px solid #374151;
+}
+
+.event-detail__cta-btn--social:hover {
+	background-color: #374151;
+	transform: translateY(-2px);
+}
+
+.event-detail__cta-icon {
+	width: 20px;
+	height: 20px;
+	fill: currentColor;
+}
+
+/* Statuses (Loading / Error) */
+.event-loading-status, .event-error-status {
+	grid-column: 1 / -1;
+	text-align: center;
+	padding: 4rem 2rem;
+	background-color: #fff;
+	border-radius: 12px;
+	box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+	color: #4b5563;
+	font-size: 1.125rem;
+}
+
+.event-error-status {
+	border-top: 4px solid #ef4444;
+}
+
+.event-error-status h3 {
+	color: #ef4444;
+	font-size: 1.5rem;
+	font-weight: 700;
+	margin-bottom: 1rem;
+}
+
+.event-error-status .btn-home {
+	display: inline-flex;
+	margin-top: 1.5rem;
+	background-color: var(--light-green);
+	color: #fff;
+	padding: 10px 24px;
+	border-radius: 30px;
+	text-decoration: none;
+	font-weight: 600;
+	transition: background-color 0.2s;
+}
+
+.event-error-status .btn-home:hover {
+	background-color: var(--dark-green);
+}

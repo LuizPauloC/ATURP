@@ -1,0 +1,82 @@
+[
+	{
+		"id": "feira-cultural",
+		"title": "Feira Cultural de Artesanato, Comidas Típicas e Shows Regionais da Cidade de Pancas",
+		"description": "A tradicional feira cultural de Pancas com muito artesanato local, comidas típicas capixabas, chopp artesanal e shows ao vivo de artistas regionais. Um ponto de encontro perfeito para toda a família.",
+		"local": "Praça Padre Braz Marino, Centro",
+		"date": "25 Jun. 26 > 27 Jun. 26",
+		"time": "A partir das 18:00",
+		"image": "/assets/events/feira_cultural.jpg",
+		"photos": [
+			"/assets/events/feira_cultural.jpg",
+			"/assets/events/feira_galeria_1.jpg",
+			"/assets/events/feira_galeria_2.jpg"
+		],
+		"location_url": "https://maps.app.goo.gl/nhdE5MtnfwYWAbs7A",
+		"social": {
+			"label": "@turismopancas",
+			"url": "https://www.instagram.com/turismopancas"
+		},
+		"whatsapp": "https://wa.me/5527999998888?text=Ola%2C%20gostaria%20de%20saber%20mais%20sobre%20a%20Feira%20Cultural."
+	},
+	{
+		"id": "festival-balonismo",
+		"title": "Festival de Balonismo",
+		"description": "O espetáculo dos balões coloridos sobrevoando os majestosos pontões de Pancas. O maior festival de balonismo do Espírito Santo, reunindo pilotos de todo o país para competições de precisão e voos panorâmicos.",
+		"local": "Monumento Natural dos Pontões Capixabas",
+		"date": "15 Ago. 26 > 18 Ago. 26",
+		"time": "Voos das 06:00 às 17:00",
+		"image": "/assets/events/balonismo.jpg",
+		"photos": [
+			"/assets/events/balonismo.jpg",
+			"/assets/events/balonismo_galeria_1.jpg",
+			"/assets/events/balonismo_galeria_2.jpg"
+		],
+		"location_url": "https://maps.app.goo.gl/SPUMDi1QrdBCs3uR9",
+		"social": {
+			"label": "@balonismopancas",
+			"url": "https://www.instagram.com/balonismopancas"
+		},
+		"whatsapp": "https://wa.me/5527999997777?text=Ola%2C%20gostaria%20de%20saber%20mais%20sobre%20o%20Festival%20de%20Balonismo."
+	},
+	{
+		"id": "encontro-voo-livre",
+		"title": "Encontro de Voo Livre",
+		"description": "O céu de Pancas fica repleto de parapentes e asas-deltas. Um evento repleto de adrenalina que atrai atletas internacionais para a Rampa Clementino, reconhecida mundialmente pela sua beleza e excelentes térmicas.",
+		"local": "Rampa de Voo Livre Clementino",
+		"date": "12 Set. 26 > 14 Set. 26",
+		"time": "Das 08:00 às 17:00",
+		"image": "/assets/events/voo_livre.jpg",
+		"photos": [
+			"/assets/events/voo_livre.jpg",
+			"/assets/events/voolivre_galeria_1.jpg",
+			"/assets/events/voolivre_galeria_2.jpg"
+		],
+		"location_url": "https://maps.app.goo.gl/viqLRYb8sAr2fLuY6",
+		"social": {
+			"label": "@voolivrepancas",
+			"url": "https://www.instagram.com/voolivrepancas"
+		},
+		"whatsapp": "https://wa.me/5527999996666?text=Ola%2C%20gostaria%20de%20saber%20mais%20sobre%20o%20Encontro%20de%20Voo%20Livre."
+	},
+	{
+		"id": "caminhada-ecologica",
+		"title": "Caminhada Ecológica",
+		"description": "Explore as belezas naturais escondidas de Pancas. Uma caminhada guiada passando por riachos, floresta nativa de Mata Atlântica e vistas incríveis dos pontões capixabas. Indicada para todas as idades.",
+		"local": "Distrito de Lajinha de Pancas",
+		"date": "04 Out. 26",
+		"time": "Concentração às 07:00",
+		"image": "/assets/events/caminhada.jpg",
+		"photos": [
+			"/assets/events/caminhada.jpg",
+			"/assets/events/caminhada_galeria_1.jpg",
+			"/assets/events/caminhada_galeria_2.jpg"
+		],
+		"location_url": "https://maps.app.goo.gl/2jTEjCmbd5pxffyn8",
+		"social": {
+			"label": "@turismopancas",
+			"url": "https://www.instagram.com/turismopancas"
+		},
+		"whatsapp": "https://wa.me/5527999998888?text=Ola%2C%20gostaria%20de%20saber%20mais%20sobre%20a%20Caminhada%20Ecologica."
+	}
+]
