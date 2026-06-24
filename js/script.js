@@ -42,3 +42,10 @@ window.addEventListener('scroll', () => {
     header.classList.remove('solid-color');
   }
 });
+
+// Atualiza o ano no rodapé
+const yearElement = document.getElementById('current-year');
+if (yearElement) {
+  const currentYear = new Date().getFullYear();
+  yearElement.textContent = currentYear;
+}

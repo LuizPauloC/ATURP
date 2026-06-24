@@ -213,7 +213,7 @@
 	async function fetchEventDetails() {
 		const id = getEventId();
 		if (!id) {
-			renderStatus('Evento não especificado na URL.', true);
+			renderStatus('Evento não especificado.', true);
 			return;
 		}
 
@@ -222,7 +222,7 @@
 		try {
 			const response = await fetch(DATA_URL);
 			if (!response.ok) {
-				throw new Error(`Falha ao carregar JSON (${response.status})`);
+				throw new Error(`Falha ao carregar evento (${response.status})`);
 			}
 
 			const data = await response.json();

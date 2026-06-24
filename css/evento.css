@@ -59,7 +59,7 @@
 .event-detail__main-image-wrapper {
 	width: 100%;
 	height: 300px;
-	border-radius: 12px;
+	border-radius: 5px;
 	overflow: hidden;
 	box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
 	background-color: #ddd;
@@ -127,7 +127,7 @@
 /* Informações de Texto */
 .event-detail__info-content {
 	background-color: #fff;
-	border-radius: 12px;
+	border-radius: 5px;
 	padding: 2rem;
 	box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
 	margin-top: 1.5rem;
@@ -144,21 +144,10 @@
 .event-detail__section-title {
 	font-size: 1.25rem;
 	color: var(--black);
-	font-weight: 600;
+	font-weight: 400;
 	margin-bottom: 1rem;
 	position: relative;
 	padding-bottom: 8px;
-}
-
-.event-detail__section-title::after {
-	content: "";
-	position: absolute;
-	left: 0;
-	bottom: 0;
-	width: 40px;
-	height: 3px;
-	background-color: var(--light-green);
-	border-radius: 2px;
 }
 
 .event-detail__description-text {
@@ -176,7 +165,7 @@
 
 .event-detail__card {
 	background-color: #fff;
-	border-radius: 12px;
+	border-radius: 5px;
 	padding: 2rem;
 	box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
 	border: 1px solid #f3f4f6;
@@ -263,7 +252,7 @@
 	justify-content: center;
 	gap: 10px;
 	height: 3.25rem;
-	border-radius: 30px;
+	border-radius: 15px;
 	font-size: 1rem;
 	font-weight: 600;
 	text-decoration: none;
@@ -311,12 +300,8 @@
 	font-size: 1.125rem;
 }
 
-.event-error-status {
-	border-top: 4px solid #ef4444;
-}
-
 .event-error-status h3 {
-	color: #ef4444;
+	color: #d30000;
 	font-size: 1.5rem;
 	font-weight: 700;
 	margin-bottom: 1rem;
@@ -328,7 +313,7 @@
 	background-color: var(--light-green);
 	color: #fff;
 	padding: 10px 24px;
-	border-radius: 30px;
+	border-radius: 15px;
 	text-decoration: none;
 	font-weight: 600;
 	transition: background-color 0.2s;

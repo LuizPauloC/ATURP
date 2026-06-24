@@ -38,22 +38,11 @@
 .nav-modal__header {
 	display: flex;
 	flex-direction: row;
-	justify-content: space-between;
+	justify-content: flex-end;
 	align-items: center;
-	margin-bottom: 2rem;
+	margin-bottom: 0.5rem;
 	padding-bottom: 1rem;
 	border-bottom: 1px solid #ffffff10;
-}
-.nav-modal__eyebrow {
-	color: #4b5563;
-	font-size: 11px;
-	font-weight: 600;
-	letter-spacing: 0.15em;
-	text-transform: uppercase;
-	margin: 0;
-	line-height: 1;
-	display: flex;
-	align-items: center;
 }
 
 /* Links de navegação */
@@ -120,7 +109,7 @@
 /* Link login */
 .nav-modal__link--admin {
 	width: fit-content;
-	margin-top: auto;
+	margin: auto 0 70px auto;
 	border: 1px solid #ffffff14;
 	padding: 1rem 3rem;
 	border-radius: 0.75rem;
@@ -140,10 +129,9 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	width: 2rem;
-	height: 2rem;
+	width: 3rem;
+	height: 3rem;
 	border: 0;
-	border-radius: 50%;
 	background-color: #1b1d1e00;
 	color: #9ca3af;
 	cursor: pointer;
