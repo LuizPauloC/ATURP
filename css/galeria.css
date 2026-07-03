@@ -1,0 +1,168 @@
+/* Gallery Page Layout */
+.gallery-main {
+	padding-top: 8rem; /* Space for the fixed header */
+	padding-bottom: 5rem;
+}
+
+.gallery-title {
+	font-size: clamp(2.25rem, 6vw, 3.5rem);
+	font-weight: 800;
+	color: var(--black);
+	margin-bottom: 3rem;
+	position: relative;
+	width: max-content;
+}
+
+.gallery-title::after {
+	content: "";
+	position: absolute;
+	left: 0;
+	bottom: -10px;
+	width: 60px;
+	height: 4px;
+	background-color: var(--light-green);
+	border-radius: 2px;
+}
+
+/* Gallery Section - Masonry Grid using Column-Count */
+.gallery-section {
+	column-count: 1;
+	column-gap: 16px;
+}
+
+/* Responsive columns based on screensize */
+@media screen and (min-width: 480px) {
+	.gallery-section {
+		column-count: 2;
+		column-gap: 16px;
+	}
+}
+
+@media screen and (min-width: 768px) {
+	.gallery-section {
+		column-count: 3;
+		column-gap: 20px;
+	}
+}
+
+@media screen and (min-width: 1024px) {
+	.gallery-section {
+		column-count: 4;
+		column-gap: 24px;
+	}
+}
+
+/* Gallery Item Styling */
+.gallery-item {
+	display: inline-block; /* Prevents item from breaking across columns */
+	width: 100%;
+	margin-bottom: 16px;
+	border-radius: 12px;
+	overflow: hidden;
+	box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+	transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+	            box-shadow 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+	background-color: var(--light-gray);
+	break-inside: avoid; /* Standard masonry behaviour */
+	cursor: pointer;
+}
+
+.gallery-item:hover {
+	transform: translateY(-6px);
+	box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.gallery-item img {
+	display: block;
+	width: 100%;
+	height: auto;
+	object-fit: cover;
+	transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img {
+	transform: scale(1.04);
+}
+
+/* Body sticky footer layout specifically for this page */
+body {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
+.gallery-main {
+	flex-grow: 1;
+}
+
+/* Fallback / Empty State Style */
+.gallery-fallback {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	padding: 4rem 2rem;
+	background: rgba(255, 255, 255, 0.6);
+	backdrop-filter: blur(8px);
+	border: 1px solid rgba(0, 0, 0, 0.05);
+	border-radius: 16px;
+	margin: 2rem auto;
+	max-width: 500px;
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+}
+
+.gallery-fallback__icon {
+	width: 80px;
+	height: 80px;
+	color: #9ca3af;
+	margin-bottom: 1.5rem;
+	background: var(--light-gray);
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: transform 0.3s ease;
+}
+
+.gallery-fallback:hover .gallery-fallback__icon {
+	color: var(--light-green);
+}
+
+.gallery-fallback__icon svg {
+	width: 40px;
+	height: 40px;
+}
+
+.gallery-fallback__text {
+	font-size: 1.25rem;
+	font-weight: 600;
+	color: var(--dark-gray);
+	margin-bottom: 0.5rem;
+}
+
+.gallery-fallback__subtext {
+	font-size: 0.95rem;
+	color: #6b7280;
+	margin-bottom: 1.5rem;
+	max-width: 30ch;
+	line-height: 1.5;
+}
+
+.gallery-fallback__btn {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	padding: 0.75rem 1.5rem;
+	background-color: var(--light-green);
+	color: #fff;
+	text-decoration: none;
+	font-weight: 600;
+	border-radius: 30px;
+}
+
+/* Auto-hide fallback if gallery section contains items or is not empty */
+.gallery-main:has(.gallery-item) .gallery-fallback,
+.gallery-section:not(:empty) ~ .gallery-fallback {
+	/* display: none; */
+}

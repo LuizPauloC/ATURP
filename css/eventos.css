@@ -1,0 +1,151 @@
+:root {
+	--directory-accent: #059669;
+	--directory-accent-strong: #047857;
+}
+
+.events-tabs {
+	display: flex;
+	gap: 10px;
+	margin-bottom: 2rem;
+	border-bottom: 1px solid #e5e7eb;
+	padding-bottom: 10px;
+	overflow-x: auto;
+	white-space: nowrap;
+}
+
+.events-tab-btn {
+	background: none;
+	border: none;
+	padding: 8px 16px;
+	font-size: 1rem;
+	font-weight: 600;
+	color: #6b7280;
+	cursor: pointer;
+	border-radius: 6px;
+	transition: all 0.2s ease;
+}
+
+.events-tab-btn.active {
+	background-color: var(--directory-accent);
+	color: #fff;
+}
+
+.events-section-container {
+	display: none;
+}
+
+.events-section-container.active {
+	display: block;
+}
+
+.events-section__calendar-grid {
+	display: flex;
+	flex-direction: row;
+	gap: 16px;
+	max-width: 100%;
+	overflow-x: auto;
+	overflow-y: hidden;
+	white-space: nowrap;
+	padding: 16px;
+	box-sizing: border-box;
+	scrollbar-width: thin;
+}
+
+.calendar-grid__event-card {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	flex-shrink: 0;
+	height: 320px;
+	width: 220px;
+	background-color: #059669;
+	color: white;
+	border-radius: 8px;
+	overflow: hidden;
+	text-decoration: none;
+	position: relative;
+	transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease;
+}
+
+.calendar-grid__event-card:hover {
+	transform: translateY(-4px);
+	box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
+}
+
+.event-card__content-wrapper {
+	display: flex;
+	flex-direction: column;
+	height: max-content;
+	width: 100%;
+	gap: 3px;
+	padding: 30px 16px;
+	background-image: linear-gradient(to top, #00000090, #00000090, #00000060, #00000000);
+	box-sizing: border-box;
+}
+
+.event-card__event-title {
+	font-size: 1.2rem;
+	font-weight: 600;
+	margin-bottom: 5px;
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: normal;
+	line-height: 1.4;
+}
+
+.event-card__event-local,
+.event-card__event-date {
+	display: flex;
+	align-items: center;
+	gap: 3px;
+	font-size: 0.8rem;
+	font-weight: 400;
+	color: #e5e7eb;
+	width: 100%;
+	overflow: hidden;
+}
+
+.event-card__local-icon,
+.event-card__date-icon {
+	flex-shrink: 0;
+	width: 20px;
+	height: 20px;
+	fill: #fff;
+}
+
+.event-card__text {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	min-width: 0;
+}
+
+.status-tag {
+	position: absolute;
+	top: 15px;
+	right: 15px;
+	background-color: rgba(0, 0, 0, 0.6);
+	backdrop-filter: blur(4px);
+	padding: 4px 10px;
+	border-radius: 6px;
+	font-size: 0.75rem;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+	z-index: 10;
+}
+
+.status-tag--confirmado {
+	border-left: 3px solid #10b981;
+}
+
+.status-tag--passado {
+	border-left: 3px solid #6b7280;
+}
+
+.status-tag--confirmar {
+	border-left: 3px solid #f59e0b;
+}

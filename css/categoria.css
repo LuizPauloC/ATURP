@@ -1,0 +1,55 @@
+:root {
+	--directory-accent: #059669;
+	--directory-accent-strong: #047857;
+}
+
+.difficulty-tag {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5rem;
+	margin-top: 0.75rem;
+	font-size: 0.875rem;
+	font-weight: 700;
+	padding: 0.25rem 0.75rem;
+	border-radius: 999px;
+	width: fit-content;
+}
+
+.difficulty-tag--facil {
+	background-color: #d1fae5;
+	color: #065f46;
+}
+
+.difficulty-tag--media {
+	background-color: #fef3c7;
+	color: #92400e;
+}
+
+.difficulty-tag--dificil {
+	background-color: #fee2e2;
+	color: #991b1b;
+}
+
+.detail-meta-list {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+	margin-top: 1rem;
+	list-style: none;
+	padding: 0;
+}
+
+.detail-meta-item {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	font-size: 0.9rem;
+	color: #4b5563;
+}
+
+.detail-meta-icon {
+	width: 16px;
+	height: 16px;
+	fill: var(--directory-accent);
+	flex-shrink: 0;
+}

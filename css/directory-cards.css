@@ -225,7 +225,7 @@
 	justify-content: center;
 	min-height: 3rem;
 	padding: 0 1.25rem;
-	border-radius: 999px;
+	border-radius: 10px;
 	background-color: var(--directory-accent);
 	color: #fff;
 	font-weight: 700;
@@ -245,6 +245,51 @@
 	background-color: var(--directory-accent-strong);
 	transform: translateY(-1px);
 }
+
+.directory-card__title-link {
+	color: inherit;
+	text-decoration: none;
+	transition: color 0.2s ease;
+}
+
+.directory-card__title-link:hover {
+	color: var(--directory-accent-strong);
+	text-decoration: underline;
+}
+
+.directory-card__image-link {
+	display: block;
+	margin-top: 0.85rem;
+	border-radius: 10px;
+	overflow: hidden;
+}
+
+.directory-card__image-link .directory-card__image {
+	margin-top: 0;
+	transition: transform 0.3s ease;
+}
+
+.directory-card__image-link:hover .directory-card__image {
+	transform: scale(1.02);
+}
+
+.directory-card__details-link {
+	display: inline-flex;
+	align-items: center;
+	color: var(--directory-accent-strong);
+	font-weight: 600;
+	text-decoration: none;
+	font-size: 0.95rem;
+	margin-top: 0.25rem;
+	width: max-content;
+	transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.directory-card__details-link:hover {
+	color: var(--directory-accent);
+	transform: translateX(4px);
+}
+
 
 /* -----BREAKPOINTS----- */
 @media screen and (min-width: 768px) {

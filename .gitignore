@@ -1,1 +1,16 @@
 codex/
+.env
+*.log
+*.bak
+*.backup
+*.zip
+*.tar
+*.gz
+*.rar
+
+config/database.php
+
+uploads/*
+!uploads/.htaccess
+
+PRIVADO/

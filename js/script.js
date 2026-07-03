@@ -34,14 +34,16 @@ document.addEventListener('DOMContentLoaded', () => {
 const header = document.querySelector('.site-header__nav');
 const pixelsLimit = 200; 
 
-window.addEventListener('scroll', () => {
-  if (window.scrollY > pixelsLimit) {
-    header.classList.add('solid-color');
-  }
-  else {
-    header.classList.remove('solid-color');
-  }
-});
+if (header) {
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > pixelsLimit) {
+      header.classList.add('solid-color');
+    }
+    else {
+      header.classList.remove('solid-color');
+    }
+  });
+}
 
 // Atualiza o ano no rodapé
 const yearElement = document.getElementById('current-year');

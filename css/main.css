@@ -611,3 +611,31 @@ footer hr {
 		display: none;
 	}
 }
+
+/* ----- LINK DE VOLTAR ----- */
+.back-link-container {
+	margin-bottom: 2rem;
+}
+
+.back-link {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	color: var(--dark-green);
+	font-weight: 600;
+	text-decoration: none;
+	transition: color 0.2s ease, transform 0.2s ease;
+	font-size: 0.95rem;
+	width: max-content;
+}
+
+.back-link:hover {
+	color: var(--light-green);
+	transform: translateX(-4px);
+}
+
+.back-link__icon {
+	width: 16px;
+	height: 16px;
+	fill: currentColor;
+}

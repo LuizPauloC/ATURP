@@ -16,7 +16,7 @@
 	background-color: #36231d;
 	background-image:
 		linear-gradient(180deg, rgba(8, 10, 11, 0.6) 0%, rgba(8, 10, 11, 0.9) 52%, rgba(8, 10, 11, 0.94) 100%),
-		url("../assets/food/moqueca-capixaba.jpg");
+		url("../assets/hero/moqueca-capixaba.jpg");
 	background-position: center;
 	background-size: cover;
 }

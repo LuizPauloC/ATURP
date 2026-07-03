@@ -8,7 +8,7 @@
 	background-color: #1d281f;
 	background-image:
 		linear-gradient(180deg, rgba(8, 10, 11, 0.60) 0%, rgba(8, 10, 11, 0.90) 52%, rgba(8, 10, 11, 0.94) 100%),
-		url("../assets/lodging/pousada-bedroom.jpg");
+		url("../assets/hero/pousada-bedroom.jpg");
 	background-position: center;
 	background-size: cover;
 }

@@ -62,9 +62,15 @@
 	transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.featured-card--mirantes { background-color: #059669; }
-.featured-card--trilhas { background-color: #059669; }
-.featured-card--eventos { background-color: #059669; }
+.featured-card--experiencias {
+	background-color: #059669;
+}
+.featured-card--eventos {
+	background-color: #059669;
+}
+.featured-card--outros {
+	background-color: #059669;
+}
 
 .featured-card__link {
 	text-decoration: none;

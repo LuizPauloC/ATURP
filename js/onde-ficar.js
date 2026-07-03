@@ -1,7 +1,7 @@
 (function () {
 	const grid = document.querySelector('[data-directory-grid]');
 	const filterButtons = [...document.querySelectorAll('[data-filter]')];
-	const DATA_URL = '../json/onde-ficar.json';
+	const DATA_URL = './api/legacy_itens.php?cat=onde-ficar';
 	const CATEGORY_ORDER = ['pousada', 'camping'];
 	const ICONS = {
 		wifi: `
@@ -73,7 +73,7 @@
 			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" aria-hidden="true" focusable="false">
 				<path d="M384 64C366.3 64 352 78.3 352 96C352 113.7 366.3 128 384 128L466.7 128L265.3 329.4C252.8 341.9 252.8 362.2 265.3 374.7C277.8 387.2 298.1 387.2 310.6 374.7L512 173.3L512 256C512 273.7 526.3 288 544 288C561.7 288 576 273.7 576 256L576 96C576 78.3 561.7 64 544 64L384 64zM144 160C99.8 160 64 195.8 64 240L64 496C64 540.2 99.8 576 144 576L400 576C444.2 576 480 540.2 480 496L480 416C480 398.3 465.7 384 448 384C430.3 384 416 398.3 416 416L416 496C416 504.8 408.8 512 400 512L144 512C135.2 512 128 504.8 128 496L128 240C128 231.2 135.2 224 144 224L224 224C241.7 224 256 209.7 256 192C256 174.3 241.7 160 224 160L144 160z"/>
 			</svg>
-		`
+		`,
 	};
 	let staysByCategory = {};
 
@@ -145,10 +145,7 @@
 		if (leadingIcon) {
 			const main = document.createElement('span');
 			main.className = 'directory-card__link-main';
-			main.append(
-				createIcon(leadingIcon, 'directory-card__icon directory-card__icon--leading'),
-				text
-			);
+			main.append(createIcon(leadingIcon, 'directory-card__icon directory-card__icon--leading'), text);
 			link.appendChild(main);
 		} else {
 			link.appendChild(text);
@@ -170,24 +167,55 @@
 		return image;
 	}
 
+	function slugify(text) {
+		return text
+			.toString()
+			.toLowerCase()
+			.normalize('NFD')
+			.replace(/[\u0300-\u036f]/g, '')
+			.replace(/\s+/g, '-')
+			.replace(/[^\w\-]+/g, '')
+			.replace(/\-\-+/g, '-')
+			.replace(/^-+/, '')
+			.replace(/-+$/, '');
+	}
+
 	function createStayCard(stay) {
 		const card = document.createElement('article');
 		card.className = 'directory-card';
 		card.setAttribute('role', 'listitem');
 
+		const detailUrl = `./detalhe.php?type=onde-ficar&id=${slugify(stay.title)}`;
+
 		const title = document.createElement('h3');
 		title.className = 'directory-card__title';
-		title.textContent = stay.title;
+
+		const titleLink = document.createElement('a');
+		titleLink.className = 'directory-card__title-link';
+		titleLink.href = detailUrl;
+		titleLink.textContent = stay.title;
+		title.appendChild(titleLink);
 
 		const image = createCardImage(stay.image, stay.title);
+		let imageElement = null;
+
+		if (image) {
+			const imageLink = document.createElement('a');
+			imageLink.className = 'directory-card__image-link';
+			imageLink.href = detailUrl;
+			imageLink.appendChild(image);
+			imageElement = imageLink;
+		}
 
 		const description = document.createElement('p');
 		description.className = 'directory-card__description';
-		description.textContent = stay.description;
+		description.textContent = stay.description || '';
 
 		const amenities = document.createElement('ul');
 		amenities.className = 'stay-card__amenities';
-		stay.amenities.forEach((amenity) => {
+
+		const stayAmenities = Array.isArray(stay.amenities) ? stay.amenities : [];
+		stayAmenities.forEach((amenity) => {
 			amenities.appendChild(createAmenityItem(amenity));
 		});
 
@@ -200,32 +228,29 @@
 		const location = createExternalLink(
 			'directory-card__link',
 			'',
-			stay.location.url,
-			`Abrir localização de ${stay.title} no Google Maps`
+			stay.location?.url || '#',
+			`Abrir localização de ${stay.title} no Google Maps`,
 		);
-		appendLinkContent(location, stay.location.label, { leadingIcon: 'location', trailingIcon: 'external' });
-
-		const landmark = document.createElement('p');
-		landmark.className = 'directory-card__landmark';
-		landmark.textContent = stay.landmark;
+		appendLinkContent(location, stay.location?.label || 'Ver localização', {
+			leadingIcon: 'location',
+			trailingIcon: 'external',
+		});
 
 		const social = createExternalLink(
 			'directory-card__social',
-			stay.social.label,
-			stay.social.url,
-			`Abrir rede social de ${stay.title}`
+			stay.social?.label || 'Instagram',
+			stay.social?.url || '#',
+			`Abrir rede social de ${stay.title}`,
 		);
 
-		const cta = createExternalLink(
-			'directory-card__cta',
-			'',
-			stay.whatsapp,
-			`Reservar ${stay.title} pelo WhatsApp`
-		);
-		appendLinkContent(cta, 'Reservar no WhatsApp', { trailingIcon: 'whatsapp' });
+		const cta = document.createElement('a');
+		cta.className = 'directory-card__cta';
+		cta.href = detailUrl;
+		appendLinkContent(cta, 'Ver mais detalhes →');
 
-		footer.append(divider, location, landmark, social, cta);
-		card.append(title, ...(image ? [image] : []), description, amenities, footer);
+		footer.append(divider, location, social, cta);
+		card.append(title, ...(imageElement ? [imageElement] : []), description, amenities, footer);
+
 		return card;
 	}
 
@@ -265,7 +290,7 @@
 			renderCards('all');
 		} catch (error) {
 			grid.setAttribute('aria-busy', 'false');
-			renderStatus('Não foi possível carregar as hospedagens. Verifique o arquivo JSON ou sirva o site por um servidor local.');
+			renderStatus('Não foi possível carregar as hospedagens no momento. Tente novamente em instantes.');
 			console.error(error);
 		}
 	}

@@ -2,7 +2,7 @@
 	const grid = document.querySelector('[data-directory-grid]');
 	const mealButtons = [...document.querySelectorAll('[data-meal-filter]')];
 	const typeButtons = [...document.querySelectorAll('[data-type-filter]')];
-	const DATA_URL = '../json/onde-comer.json';
+	const DATA_URL = './api/legacy_itens.php?cat=onde-comer';
 	const ICONS = {
 		cutlery: `
 			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" aria-hidden="true" focusable="false">
@@ -133,6 +133,16 @@
 		});
 	}
 
+	function slugify(text) {
+		return text.toString().toLowerCase()
+			.normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+			.replace(/\s+/g, '-')
+			.replace(/[^\w\-]+/g, '')
+			.replace(/\-\-+/g, '-')
+			.replace(/^-+/, '')
+			.replace(/-+$/, '');
+	}
+
 	function createFoodCard(place) {
 		const card = document.createElement('article');
 		card.className = 'directory-card';
@@ -140,9 +150,22 @@
 
 		const title = document.createElement('h3');
 		title.className = 'directory-card__title';
-		title.textContent = place.title;
+		
+		const titleLink = document.createElement('a');
+		titleLink.className = 'directory-card__title-link';
+		titleLink.href = `./detalhe.php?type=onde-comer&id=${slugify(place.title)}`;
+		titleLink.textContent = place.title;
+		title.appendChild(titleLink);
 
 		const image = createCardImage(place.image, place.title);
+		let imageElement = null;
+		if (image) {
+			const imageLink = document.createElement('a');
+			imageLink.className = 'directory-card__image-link';
+			imageLink.href = `./detalhe.php?type=onde-comer&id=${slugify(place.title)}`;
+			imageLink.appendChild(image);
+			imageElement = imageLink;
+		}
 
 		const specialty = document.createElement('p');
 		specialty.className = 'food-card__specialty';
@@ -175,10 +198,6 @@
 		);
 		appendLinkContent(location, place.location.label, { leadingIcon: 'location', trailingIcon: 'external' });
 
-		const landmark = document.createElement('p');
-		landmark.className = 'directory-card__landmark';
-		landmark.textContent = place.landmark;
-
 		const social = createExternalLink(
 			'directory-card__social',
 			place.social.label,
@@ -186,16 +205,13 @@
 			`Abrir rede social de ${place.title}`
 		);
 
-		const cta = createExternalLink(
-			'directory-card__cta',
-			'',
-			place.whatsapp,
-			`Entrar em contato com ${place.title} pelo WhatsApp`
-		);
-		appendLinkContent(cta, 'Chamar no WhatsApp', { trailingIcon: 'whatsapp' });
+		const cta = document.createElement('a');
+		cta.className = 'directory-card__cta';
+		cta.href = `./detalhe.php?type=onde-comer&id=${slugify(place.title)}`;
+		appendLinkContent(cta, 'Ver mais detalhes →');
 
-		footer.append(divider, location, landmark, social, cta);
-		card.append(title, ...(image ? [image] : []), specialty, description, hours, footer);
+		footer.append(divider, location, social, cta);
+		card.append(title, ...(imageElement ? [imageElement] : []), specialty, description, hours, footer);
 		return card;
 	}
 
@@ -233,7 +249,7 @@
 			renderCards();
 		} catch (error) {
 			grid.setAttribute('aria-busy', 'false');
-			renderStatus('Não foi possível carregar os estabelecimentos. Verifique o arquivo JSON ou sirva o site por um servidor local.');
+			renderStatus('Não foi possível carregar os estabelecimentos no momento. Tente novamente em instantes.');
 			console.error(error);
 		}
 	}

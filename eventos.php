@@ -1,0 +1,179 @@
+<?php
+$pageTitle = 'Eventos | ATURP - Pancas, ES';
+$customCss = ['./css/eventos.css'];
+require_once __DIR__ . '/includes/security.php';
+include 'includes/header.php';
+require_once __DIR__ . '/config/database.php';
+
+$pdo = getDbConnection();
+$stmt = $pdo->query("
+    SELECT slug, titulo, imagem_capa, data_inicio, data_fim, local_nome, endereco
+    FROM eventos
+    WHERE deletado_em IS NULL AND ativo = 1
+    ORDER BY data_inicio ASC
+");
+$eventos = $stmt->fetchAll();
+
+$hoje = new DateTime();
+$todos = [];
+$proximos = [];
+$passados = [];
+$confirmacao = [];
+
+foreach($eventos as $ev) {
+    if (!$ev['data_inicio'] || !$ev['data_fim'] || $ev['data_inicio'] == '0000-00-00 00:00:00') {
+        $confirmacao[] = $ev;
+    } else {
+        $dataInicio = new DateTime($ev['data_inicio']);
+        if ($dataInicio >= $hoje) {
+            $proximos[] = $ev;
+        } else {
+            $passados[] = $ev;
+        }
+    }
+    $todos[] = $ev;
+}
+
+function renderEventCard($ev, $statusClass, $statusLabel) {
+    $link = "./detalhe.php?type=evento&id=" . urlencode($ev['slug']);
+    $imagem = aturpPublicImageSrc($ev['imagem_capa'] ?? '', 'assets/placeholders/eventos.jpeg');
+    
+    $dataStr = "A definir";
+    if ($ev['data_inicio'] && $ev['data_inicio'] != '0000-00-00 00:00:00') {
+        $di = new DateTime($ev['data_inicio']);
+        $df = new DateTime($ev['data_fim']);
+        
+        $meses = ['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez'];
+        $di_str = sprintf("%02d %s. %s", $di->format('d'), $meses[$di->format('n')-1], $di->format('y'));
+        
+        if ($ev['data_inicio'] !== $ev['data_fim']) {
+            $df_str = sprintf("%02d %s. %s", $df->format('d'), $meses[$df->format('n')-1], $df->format('y'));
+            $dataStr = "$di_str > $df_str";
+        } else {
+            $dataStr = $di_str;
+        }
+    }
+    
+    $local = aturpHtml($ev['local_nome'] ?: $ev['endereco']);
+    $titulo = aturpHtml($ev['titulo']);
+    $imagem = aturpHtml($imagem);
+    
+    return <<<HTML
+    <a href="{$link}" class="calendar-grid__event-card" style="background-image: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.6) 50%, rgba(0, 0, 0, 0.2) 100%), url('{$imagem}'); background-size: cover; background-position: center;">
+        <div class="status-tag status-tag--{$statusClass}">{$statusLabel}</div>
+        <div class="event-card__content-wrapper">
+            <h3 class="event-card__event-title">{$titulo}</h3>
+            <span class="event-card__event-local">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" class="event-card__local-icon"><path d="M128 252.6C128 148.4 214 64 320 64C426 64 512 148.4 512 252.6C512 371.9 391.8 514.9 341.6 569.4C329.8 582.2 310.1 582.2 298.3 569.4C248.1 514.9 127.9 371.9 127.9 252.6zM320 320C355.3 320 384 291.3 384 256C384 220.7 355.3 192 320 192C284.7 192 256 220.7 256 256C256 291.3 284.7 320 320 320z"/></svg>
+                <span class="event-card__text">{$local}</span>
+            </span>
+            <span class="event-card__event-date">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" class="event-card__date-icon"><path d="M216 64C229.3 64 240 74.7 240 88L240 128L400 128L400 88C400 74.7 410.7 64 424 64C437.3 64 448 74.7 448 88L448 128L480 128C515.3 128 544 156.7 544 192L544 480C544 515.3 515.3 544 480 544L160 544C124.7 544 96 515.3 96 480L96 192C96 156.7 124.7 128 160 128L192 128L192 88C192 74.7 202.7 64 216 64zM480 496C488.8 496 496 488.8 496 480L496 416L408 416L408 496L480 496zM496 368L496 288L408 288L408 368L496 368zM360 368L360 288L280 288L280 368L360 368zM232 368L232 288L144 288L144 368L232 368zM144 416L144 480C144 488.8 151.2 496 160 496L232 496L232 416L144 416zM280 416L280 496L360 496L360 416L280 416zM216 176L160 176C151.2 176 144 183.2 144 192L144 240L496 240L496 192C496 183.2 488.8 176 480 176L216 176z"/></svg>
+                <span class="event-card__text">{$dataStr}</span>
+            </span>
+        </div>
+    </a>
+HTML;
+}
+?>
+
+<section class="page-hero" aria-labelledby="page-hero-title" style="background-image: linear-gradient(180deg, rgba(8, 10, 11, 0.6) 0%, rgba(8, 10, 11, 0.9) 52%, rgba(8, 10, 11, 0.94) 100%), url('./assets/placeholders/eventos.jpeg'); background-position: center; background-size: cover; min-height: 50vh; display: flex; align-items: flex-end; padding-bottom: 3.5rem; padding-top: 8rem;">
+    <div class="page-hero__content layout-container">
+        <p class="eyebrow eyebrow--on-dark">Calendário</p>
+        <h1 id="page-hero-title" class="page-hero__title section-title--on-dark" style="color: #fff; font-size: clamp(2.5rem, 7vw, 4.75rem); font-weight: 700; line-height: 0.95;">Todos os Eventos</h1>
+        <p class="page-hero__description" style="max-width: 40rem; margin-top: 1.5rem; color: #e5e5e5; font-size: 1rem; line-height: 1.7;">
+            Acompanhe a agenda cultural, esportiva e de lazer em Pancas. Programe sua viagem e venha festejar conosco!
+        </p>
+    </div>
+</section>
+
+<main class="layout-container" style="padding-top: 3rem; padding-bottom: 5rem;">
+    <div class="back-link-container" style="margin-bottom: 2rem;">
+        <a href="./o-que-fazer.php" class="back-link">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="back-link__icon" width="16" height="16" style="width: 16px; height: 16px; fill: currentColor;">
+                <path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z" />
+            </svg>
+            Voltar para O que fazer
+        </a>
+    </div>
+
+    <div class="events-tabs">
+        <button class="events-tab-btn active" onclick="switchTab(event, 'todos')">Todos</button>
+        <button class="events-tab-btn" onclick="switchTab(event, 'proximos')">Próximos Eventos</button>
+        <button class="events-tab-btn" onclick="switchTab(event, 'passados')">Eventos passados</button>
+        <button class="events-tab-btn" onclick="switchTab(event, 'confirmacao')">Em confirmação</button>
+    </div>
+
+    <!-- ABA: TODOS -->
+    <div id="section-todos" class="events-section-container active">
+        <div class="events-section__calendar-grid">
+            <?php
+            if (empty($todos)) echo "<p style='grid-column: 1/-1; text-align: center; color: #888;'>Nenhum evento encontrado.</p>";
+            foreach ($todos as $ev) {
+                $isConfirmacao = (!$ev['data_inicio'] || $ev['data_inicio'] == '0000-00-00 00:00:00');
+                $isPassado = !$isConfirmacao && (new DateTime($ev['data_inicio']) < clone $hoje);
+                
+                $statusClass = $isConfirmacao ? 'confirmar' : ($isPassado ? 'passado' : 'confirmado');
+                $statusLabel = $isConfirmacao ? 'A confirmar' : ($isPassado ? 'Passado' : 'Confirmado');
+                
+                echo renderEventCard($ev, $statusClass, $statusLabel);
+            }
+            ?>
+        </div>
+    </div>
+
+    <!-- ABA: PROXIMOS -->
+    <div id="section-proximos" class="events-section-container">
+        <div class="events-section__calendar-grid">
+            <?php
+            if (empty($proximos)) echo "<p style='grid-column: 1/-1; text-align: center; color: #888;'>Nenhum evento próximo programado.</p>";
+            foreach ($proximos as $ev) {
+                echo renderEventCard($ev, 'confirmado', 'Confirmado');
+            }
+            ?>
+        </div>
+    </div>
+
+    <!-- ABA: PASSADOS -->
+    <div id="section-passados" class="events-section-container">
+        <div class="events-section__calendar-grid">
+            <?php
+            if (empty($passados)) echo "<p style='grid-column: 1/-1; text-align: center; color: #888;'>Nenhum evento passado.</p>";
+            foreach ($passados as $ev) {
+                echo renderEventCard($ev, 'passado', 'Passado');
+            }
+            ?>
+        </div>
+    </div>
+
+    <!-- ABA: CONFIRMACAO -->
+    <div id="section-confirmacao" class="events-section-container">
+        <div class="events-section__calendar-grid">
+            <?php
+            if (empty($confirmacao)) echo "<p style='grid-column: 1/-1; text-align: center; color: #888;'>Nenhum evento em confirmação.</p>";
+            foreach ($confirmacao as $ev) {
+                echo renderEventCard($ev, 'confirmar', 'A confirmar');
+            }
+            ?>
+        </div>
+    </div>
+</main>
+
+<script>
+function switchTab(event, tabId) {
+	document.querySelectorAll('.events-tab-btn').forEach((btn) => {
+		btn.classList.remove('active');
+	});
+
+	document.querySelectorAll('.events-section-container').forEach((section) => {
+		section.classList.remove('active');
+	});
+
+	event.currentTarget.classList.add('active');
+	document.getElementById('section-' + tabId).classList.add('active');
+}
+</script>
+
+<?php
+include 'includes/footer.php';
+?>
