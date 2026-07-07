@@ -134,7 +134,10 @@ include 'includes/header.php';
 						$stmt = $pdo->query("
 							SELECT nome, slug, icone_svg
 							FROM categorias
-							WHERE tipo_aplicacao = 'item' AND ativo = 1 AND deletado_em IS NULL
+							WHERE tipo_aplicacao = 'item'
+								AND slug <> 'servicos'
+								AND ativo = 1
+								AND deletado_em IS NULL
 							ORDER BY ordem ASC
 						");
 						while ($cat = $stmt->fetch()):

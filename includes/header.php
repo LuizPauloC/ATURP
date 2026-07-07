@@ -44,6 +44,7 @@ $assetUrl = function ($path) use ($assetVersion) {
 						<a href="./onde-ficar.php">Onde ficar</a>
 						<a href="./onde-comer.php">Onde comer</a>
 						<a href="./o-que-fazer.php">O que fazer</a>
+						<a href="./servicos.php">Serviços</a>
 						<a href="./guia-rapido.php">Guia</a>
 					</div>
 					<button

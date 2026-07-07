@@ -5,7 +5,7 @@
 		'evento': './api/public_eventos.php',
 		'onde-ficar': './api/legacy_itens.php?cat=onde-ficar',
 		'onde-comer': './api/legacy_itens.php?cat=onde-comer',
-		'servicos': './api/legacy_itens.php?cat=servicos',
+		'servicos': './api/public_servicos.php',
 		'experiencias': './api/legacy_itens.php?cat=experiencias'
 };
 
@@ -217,7 +217,7 @@
 				homeUrl = './onde-comer.php';
 				homeLabel = 'Voltar para onde comer';
 			} else if (type === 'servicos') {
-				homeUrl = './categoria.php?cat=servicos';
+				homeUrl = './servicos.php';
 				homeLabel = 'Voltar para serviços';
 			}
 
@@ -637,7 +637,7 @@
 				backLink.href = './onde-comer.php';
 				backLink.innerHTML = `${backLinkIcon} Voltar para Onde comer`;
 			} else if (type === 'servicos') {
-				backLink.href = './categoria.php?cat=servicos';
+				backLink.href = './servicos.php';
 				backLink.innerHTML = `${backLinkIcon} Voltar para Serviços`;
 			} else {
 				backLink.href = './o-que-fazer.php';

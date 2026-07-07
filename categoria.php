@@ -5,6 +5,12 @@ require_once __DIR__ . '/includes/security.php';
 
 // Pega o slug da URL
 $catSlug = $_GET['cat'] ?? '';
+
+if ($catSlug === 'servicos') {
+    header('Location: ./servicos.php', true, 302);
+    exit;
+}
+
 $categoria = null;
 $itens = [];
 
@@ -54,9 +60,6 @@ include 'includes/header.php';
     <div class="back-link-container layout-container" style="padding-top: 2rem; margin-bottom: 0;">
         <?php
         $backLink = './o-que-fazer.php';
-        if ($catSlug === 'servicos') {
-            $backLink = './index.php';
-        }
         ?>
         <a href="<?= $backLink ?>" class="back-link">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="back-link__icon" width="16" height="16" style="width: 16px; height: 16px; fill: currentColor;">
