@@ -140,6 +140,288 @@
 		}
 	}
 
+	function getDetailTypeMeta(type) {
+		const metas = {
+			'evento': {
+				label: 'Eventos',
+				singular: 'Evento',
+				url: './o-que-fazer.php',
+				backLabel: 'Voltar para O que fazer',
+				aboutLabel: 'Sobre o Evento',
+			},
+			'onde-ficar': {
+				label: 'Hospedagens',
+				singular: 'Hospedagem',
+				url: './onde-ficar.php',
+				backLabel: 'Voltar para Onde ficar',
+				aboutLabel: 'Sobre a Hospedagem',
+			},
+			'onde-comer': {
+				label: 'Gastronomia',
+				singular: 'Estabelecimento',
+				url: './onde-comer.php',
+				backLabel: 'Voltar para Onde comer',
+				aboutLabel: 'Sobre o Estabelecimento',
+			},
+			'servicos': {
+				label: 'Servicos',
+				singular: 'Servico',
+				url: './servicos.php',
+				backLabel: 'Voltar para Servicos',
+				aboutLabel: 'Sobre o Servico',
+			},
+			'experiencias': {
+				label: 'Experiencias',
+				singular: 'Experiencia',
+				url: './o-que-fazer.php',
+				backLabel: 'Voltar para Experiencias',
+				aboutLabel: 'Sobre a Experiencia',
+			},
+		};
+
+		return metas[type] || metas.evento;
+	}
+
+	function renderBreadcrumb(item, type) {
+		const breadcrumb = document.querySelector('[data-detail-breadcrumb]');
+		if (!breadcrumb) return;
+
+		const meta = getDetailTypeMeta(type);
+		breadcrumb.innerHTML = `
+			<a href="./index.php" class="detail-breadcrumb__link">Inicio</a>
+			<span class="detail-breadcrumb__separator" aria-hidden="true">/</span>
+			<a href="${escapeHtml(meta.url)}" class="detail-breadcrumb__link">${escapeHtml(meta.label)}</a>
+			<span class="detail-breadcrumb__separator" aria-hidden="true">/</span>
+			<span class="detail-breadcrumb__current">${escapeHtml(item?.title || meta.singular)}</span>
+		`;
+	}
+
+	function hostingIconSvg(path, className) {
+		return `
+			<span class="${className}" aria-hidden="true">
+				<svg viewBox="0 0 24 24" focusable="false">
+					${path}
+				</svg>
+			</span>
+		`;
+	}
+
+	function getHostingSummaryIcon(key) {
+		const icons = {
+			type: '<path d="M4 10.5 12 4l8 6.5v8.25a1.25 1.25 0 0 1-1.25 1.25H5.25A1.25 1.25 0 0 1 4 18.75V10.5Zm5 9.5v-5.25A1.75 1.75 0 0 1 10.75 13h2.5A1.75 1.75 0 0 1 15 14.75V20" />',
+			price: '<path d="M7 7.5h8.25A3.75 3.75 0 0 1 19 11.25v0A3.75 3.75 0 0 1 15.25 15H9l-4 3.5V7.5h2Z" /><path d="M11 9.75v3.5M13.5 9.75v3.5" />',
+			daily: '<path d="M5 7.5A2.5 2.5 0 0 1 7.5 5h9A2.5 2.5 0 0 1 19 7.5v9a2.5 2.5 0 0 1-2.5 2.5h-9A2.5 2.5 0 0 1 5 16.5v-9Z" /><path d="M8 10h8M8 14h5" />',
+			checkin: '<path d="M5 12h10M11 8l4 4-4 4" /><path d="M19 5v14" />',
+			checkout: '<path d="M19 12H9M13 8l-4 4 4 4" /><path d="M5 5v14" />',
+		};
+
+		return hostingIconSvg(icons[key] || icons.type, 'detail__hosting-summary-icon');
+	}
+
+	function getHostingAmenityIcon(label) {
+		const normalized = String(label || '').toLowerCase();
+		let path = '<path d="M5 12.5 9.5 17 19 7" />';
+
+		if (normalized.includes('wi-fi') || normalized.includes('wifi')) {
+			path = '<path d="M5 10a11 11 0 0 1 14 0" /><path d="M8 13a6.5 6.5 0 0 1 8 0" /><path d="M11.4 16.2a1 1 0 0 1 1.2 0" />';
+		} else if (normalized.includes('estacionamento')) {
+			path = '<path d="M7 19V5h6.25a4.25 4.25 0 0 1 0 8.5H7" /><path d="M7 13.5h6.25" />';
+		} else if (normalized.includes('ar-condicionado')) {
+			path = '<path d="M12 4v16M6 7l12 10M18 7 6 17" /><path d="m9 5 3-1 3 1M9 19l3 1 3-1" />';
+		} else if (normalized.includes('piscina')) {
+			path = '<path d="M4 16c2 0 2-1 4-1s2 1 4 1 2-1 4-1 2 1 4 1" /><path d="M4 19c2 0 2-1 4-1s2 1 4 1 2-1 4-1 2 1 4 1" /><path d="M9 14V6h5a2 2 0 0 1 2 2" />';
+		} else if (normalized.includes('cozinha') || normalized.includes('cafe') || normalized.includes('manha')) {
+			path = '<path d="M7 4v16M11 4v6a4 4 0 0 1-4 4" /><path d="M17 4v16M17 4c2 1.5 3 3.5 3 6s-1 4.5-3 6" />';
+		} else if (normalized.includes('acessibilidade')) {
+			path = '<path d="M12 6.5a1.75 1.75 0 1 0 0-3.5 1.75 1.75 0 0 0 0 3.5Z" /><path d="M5 9h14M12 9v4l3 7M12 13l-3 7" />';
+		} else if (normalized.includes('pets')) {
+			path = '<path d="M8 11c1.4 0 2.5 1.2 4 1.2s2.6-1.2 4-1.2c2.1 0 3.5 1.6 3.5 3.5 0 2.3-1.9 4.5-4.4 4.5-1.3 0-2-.7-3.1-.7s-1.8.7-3.1.7c-2.5 0-4.4-2.2-4.4-4.5C4.5 12.6 5.9 11 8 11Z" /><path d="M7.5 8.5v0M11 7v0M13 7v0M16.5 8.5v0" />';
+		}
+
+		return hostingIconSvg(path, 'detail__hosting-chip-icon');
+	}
+
+	function renderContactIcon(path) {
+		return hostingIconSvg(path, 'detail__contact-icon');
+	}
+
+	function formatWhatsappLabel(value) {
+		let digits = String(value || '').replace(/\D/g, '');
+		if (digits.length > 11 && digits.startsWith('55')) {
+			digits = digits.slice(2);
+		}
+
+		if (digits.length === 11) {
+			return `(${digits.slice(0, 2)}) ${digits.slice(2, 7)}-${digits.slice(7)}`;
+		}
+
+		if (digits.length === 10) {
+			return `(${digits.slice(0, 2)}) ${digits.slice(2, 6)}-${digits.slice(6)}`;
+		}
+
+		return digits;
+	}
+
+	function formatWebsiteLabel(value) {
+		const safeUrl = safeExternalUrl(value);
+		if (safeUrl === '#') return '';
+
+		try {
+			const url = new URL(safeUrl);
+			return url.hostname.replace(/^www\./, '');
+		} catch {
+			return '';
+		}
+	}
+
+	function getHostingMapUrl(item) {
+		const explicitUrl = safeExternalUrl(item.location?.url || '');
+		if (explicitUrl !== '#') {
+			return explicitUrl;
+		}
+
+		const locationLabel = item.location?.label || 'Pancas, ES';
+		const query = [item.title, locationLabel].filter(Boolean).join(', ');
+		return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`;
+	}
+
+	function renderHostingContactRow(type, label, href = '') {
+		if (!label) return '';
+
+		const icons = {
+			location: '<path d="M12 21s6-5.3 6-11a6 6 0 1 0-12 0c0 5.7 6 11 6 11Z" /><path d="M12 12.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z" />',
+			phone: '<path d="M6.5 4.75 9 4l2 4-1.75 1.2a11 11 0 0 0 5.55 5.55L16 13l4 2-0.75 2.5c-.22.74-.91 1.24-1.68 1.19C10.8 18.26 5.74 13.2 5.31 6.43c-.05-.77.45-1.46 1.19-1.68Z" />',
+			instagram: '<path d="M7.75 4h8.5A3.75 3.75 0 0 1 20 7.75v8.5A3.75 3.75 0 0 1 16.25 20h-8.5A3.75 3.75 0 0 1 4 16.25v-8.5A3.75 3.75 0 0 1 7.75 4Z" /><path d="M12 15.25a3.25 3.25 0 1 0 0-6.5 3.25 3.25 0 0 0 0 6.5Z" /><path d="M17 7.2v.1" />',
+			website: '<path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Z" /><path d="M3.6 9h16.8M3.6 15h16.8M12 3c2.1 2.25 3.15 5.25 3.15 9S14.1 18.75 12 21c-2.1-2.25-3.15-5.25-3.15-9S9.9 5.25 12 3Z" />',
+		};
+		const content = href && safeExternalUrl(href) !== '#'
+			? `<a href="${escapeHtml(safeExternalUrl(href))}" target="_blank" rel="noopener noreferrer">${escapeHtml(label)}</a>`
+			: escapeHtml(label);
+
+		return `
+			<li class="detail__contact-row">
+				${renderContactIcon(icons[type] || icons.location)}
+				<span>${content}</span>
+			</li>
+		`;
+	}
+
+	function renderHostingContactHtml(item) {
+		const extra = item.hostingExtra || {};
+		const locationLabel = item.location?.label || 'Pancas, ES';
+		const whatsappLabel = formatWhatsappLabel(item.whatsapp);
+		const instagramLabel = item.social?.label || '';
+		const instagramUrl = item.social?.url || '';
+		const websiteLabel = formatWebsiteLabel(item.website);
+		const dailyPrice = String(extra.mediaDiaria || '').trim();
+		const reservationUrl = item.ticket?.url || extra.linkReserva || '';
+		const mapUrl = getHostingMapUrl(item);
+
+		return `
+			<h3 class="detail__contact-title">CONTATO E LOCALIZACAO</h3>
+			<ul class="detail__contact-list">
+				${renderHostingContactRow('location', locationLabel)}
+				${renderHostingContactRow('phone', whatsappLabel, item.whatsapp)}
+				${renderHostingContactRow('instagram', instagramLabel, instagramUrl)}
+				${renderHostingContactRow('website', websiteLabel, item.website)}
+			</ul>
+			${dailyPrice || reservationUrl || mapUrl ? '<div class="detail__contact-divider"></div>' : ''}
+			${dailyPrice ? `<p class="detail__contact-price">Diaria media a partir de <strong>${escapeHtml(dailyPrice)}</strong></p>` : ''}
+			<div class="detail__contact-actions">
+				${safeExternalUrl(reservationUrl) !== '#' ? `
+					<a class="detail__contact-reserve" href="${escapeHtml(safeExternalUrl(reservationUrl))}" target="_blank" rel="noopener noreferrer">
+						${renderContactIcon('<path d="M7 4v3M17 4v3M5 9h14M7.75 6h8.5A2.75 2.75 0 0 1 19 8.75v8.5A2.75 2.75 0 0 1 16.25 20h-8.5A2.75 2.75 0 0 1 5 17.25v-8.5A2.75 2.75 0 0 1 7.75 6Z" /><path d="m9 14 2 2 4-4" />')}
+						Reservar hospedagem
+					</a>
+				` : ''}
+				${safeExternalUrl(mapUrl) !== '#' ? `<a class="detail__contact-map-link" href="${escapeHtml(safeExternalUrl(mapUrl))}" target="_blank" rel="noopener noreferrer">Ver no mapa</a>` : ''}
+			</div>
+		`;
+	}
+
+	function renderHostingMapCard(item) {
+		const locationLabel = item.location?.label || 'Pancas, ES';
+		const mapUrl = getHostingMapUrl(item);
+		const card = document.createElement('div');
+		card.className = 'detail__map-card';
+
+		const mapContent = safeExternalUrl(mapUrl) !== '#'
+			? `<iframe src="https://maps.google.com/maps?q=${encodeURIComponent(item.title + ', ' + locationLabel)}&t=&z=15&ie=UTF8&iwloc=&output=embed" class="detail__map-frame" allowfullscreen="" loading="lazy" title="Mapa de localizacao de ${escapeHtml(item.title)}"></iframe>`
+			: '<div class="detail__map-placeholder">Mapa</div>';
+
+		card.innerHTML = `
+			${mapContent}
+			<p class="detail__map-caption">Localizacao aproximada · ${escapeHtml(locationLabel)}</p>
+		`;
+
+		return card;
+	}
+
+	function renderHostingExtraSection(item) {
+		if (!item.hostingExtra || typeof item.hostingExtra !== 'object') {
+			return null;
+		}
+
+		const extra = item.hostingExtra;
+		const summaryItems = [
+			['type', 'Tipo de hospedagem', extra.tipo],
+			['price', 'Faixa de preco', extra.faixaPreco],
+			['daily', 'Media de diaria', extra.mediaDiaria],
+			['checkin', 'Check-in', extra.checkin],
+			['checkout', 'Check-out', extra.checkout],
+		].filter(([, , value]) => String(value ?? '').trim() !== '');
+
+		const amenities = Array.isArray(item.amenities)
+			? item.amenities
+				.map((amenity) => String(amenity?.label || '').trim())
+				.filter(Boolean)
+			: [];
+		const observation = String(extra.observacoesUteis || '').trim();
+
+		if (summaryItems.length === 0 && amenities.length === 0 && !observation) {
+			return null;
+		}
+
+		const section = document.createElement('section');
+		section.className = 'detail__hosting-section';
+		section.innerHTML = `
+			<div class="detail__hosting-header">
+				<p class="detail__hosting-eyebrow">Hospedagem</p>
+				<h2 class="detail__hosting-title">Detalhes da estadia</h2>
+				<p class="detail__hosting-intro">Informacoes cadastradas para ajudar no planejamento antes do contato direto.</p>
+			</div>
+			${summaryItems.length > 0 ? `
+				<div class="detail__hosting-summary">
+					${summaryItems.map(([iconKey, label, value]) => `
+						<div class="detail__hosting-summary-item">
+							${getHostingSummaryIcon(iconKey)}
+							<div>
+								<span class="detail__hosting-summary-label">${escapeHtml(label)}</span>
+								<strong class="detail__hosting-summary-value">${escapeHtml(value)}</strong>
+							</div>
+						</div>
+					`).join('')}
+				</div>
+			` : ''}
+			${amenities.length > 0 ? `
+				<div class="detail__hosting-feature-group">
+					<h3 class="detail__hosting-subtitle">Comodidades e diferenciais</h3>
+					<div class="detail__hosting-chips">
+						${amenities.map((label) => `<span class="detail__hosting-chip">${getHostingAmenityIcon(label)}${escapeHtml(label)}</span>`).join('')}
+					</div>
+				</div>
+			` : ''}
+			${observation ? `
+				<div class="detail__hosting-note">
+					<span class="detail__hosting-note-label">Observacao util</span>
+					<p>${escapeHtml(observation)}</p>
+				</div>
+			` : ''}
+		`;
+
+		return section;
+	}
+
 	function renderTemporaryExtraCard(item, type) {
 		const linkRow = (label, url, text) => {
 			const safeUrl = safeExternalUrl(url);
@@ -149,19 +431,6 @@
 		};
 
 		const configs = {
-			'onde-ficar': {
-				title: 'Dados cadastrados da hospedagem',
-				extra: item.hostingExtra,
-				rows: (extra) => [
-					['Tipo', extra.tipo],
-					['Faixa de preco', extra.faixaPreco],
-					['Media de diaria', extra.mediaDiaria],
-					['Check-in', extra.checkin],
-					['Check-out', extra.checkout],
-					['Observacoes uteis', extra.observacoesUteis],
-					linkRow('Link de reserva', extra.linkReserva, 'Abrir link de reserva'),
-				],
-			},
 			'onde-comer': {
 				title: 'Dados cadastrados de gastronomia',
 				extra: item.gastronomyExtra,
@@ -336,6 +605,8 @@
 
 	function renderItemDetails(item, type) {
 		document.title = `${item.title} | Detalhes | ATURP - Pancas, ES`;
+		const detailMeta = getDetailTypeMeta(type);
+		renderBreadcrumb(item, type);
 
 		// 1. Coluna da Esquerda (Mídia, Título e Descrição)
 		const leftCol = document.createElement('div');
@@ -351,7 +622,7 @@
 
 		const descTitle = document.createElement('h2');
 		descTitle.className = 'detail__section-title';
-		descTitle.textContent = type === 'evento' ? 'Sobre o Evento' : (type === 'onde-ficar' ? 'Sobre a Hospedagem' : (type === 'onde-comer' ? 'Sobre o Estabelecimento' : 'Sobre o Serviço'));
+		descTitle.textContent = detailMeta.aboutLabel;
 
 		const descText = document.createElement('p');
 		descText.className = 'detail__description-text';
@@ -420,6 +691,13 @@
 		}
 
 		leftCol.appendChild(textCard);
+
+		if (type === 'onde-ficar') {
+			const hostingExtraSection = renderHostingExtraSection(item);
+			if (hostingExtraSection) {
+				leftCol.appendChild(hostingExtraSection);
+			}
+		}
 
 		// 2. Coluna da Direita (Sidebar com Informações e Contatos)
 		const rightCol = document.createElement('div');
@@ -519,6 +797,8 @@
 					` : ''}
 				</ul>
 			`;
+			infoCard.classList.add('detail__contact-card');
+			infoHtml = renderHostingContactHtml(item);
 		} else if (type === 'onde-comer') {
 			const mealLabels = {
 				'cafe-da-manha': 'Café da manhã',
@@ -622,13 +902,17 @@
 		infoCard.innerHTML = infoHtml;
 		rightCol.appendChild(infoCard);
 
+		if (type === 'onde-ficar') {
+			rightCol.appendChild(renderHostingMapCard(item));
+		}
+
 		const temporaryExtraCard = renderTemporaryExtraCard(item, type);
 		if (temporaryExtraCard) {
 			rightCol.appendChild(temporaryExtraCard);
 		}
 
 		// Card de Comodidades / Destaques
-		if (item.amenities && item.amenities.length > 0) {
+		if (type !== 'onde-ficar' && item.amenities && item.amenities.length > 0) {
 			const amenitiesCard = document.createElement('div');
 			amenitiesCard.className = 'detail__card';
 			
@@ -676,7 +960,7 @@
 		}
 
 		// Card de Contatos
-		if ((item.ticket && item.ticket.url && item.ticket.url !== 'null') || (item.social && item.social.url && item.social.url !== 'null') || (item.whatsapp && item.whatsapp !== 'null')) {
+		if (type !== 'onde-ficar' && ((item.ticket && item.ticket.url && item.ticket.url !== 'null') || (item.social && item.social.url && item.social.url !== 'null') || (item.whatsapp && item.whatsapp !== 'null'))) {
 			const contactCard = document.createElement('div');
 			contactCard.className = 'detail__card';
 
