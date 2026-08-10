@@ -27,7 +27,8 @@ try {
     $stmt = $pdo->query("
         SELECT
             slug, titulo, descricao_completa, imagem_capa, data_inicio,
-            data_fim, local_nome, endereco, telefone_contato, link_ingressos
+            data_fim, local_nome, endereco, telefone_contato, link_ingressos,
+            preco_base
         FROM eventos
         WHERE deletado_em IS NULL AND ativo = 1
         ORDER BY data_inicio ASC
@@ -59,6 +60,7 @@ try {
         
         $image = publicImagePath($ev['imagem_capa'] ?? '');
         $linkInfo = publicHttpUrl($ev['link_ingressos'] ?? '');
+        $price = trim((string) ($ev['preco_base'] ?? ''));
 
         $place = [
             'id' => $ev['slug'],
@@ -74,10 +76,15 @@ try {
                 'url' => ''
             ],
             'description' => $ev['descricao_completa'],
+            'price' => $price,
+            'ticket' => [
+                'label' => $linkInfo ? 'Ingressos e informações' : '',
+                'url' => $linkInfo
+            ],
             'whatsapp' => $ev['telefone_contato'] ? 'https://wa.me/' . preg_replace('/\D/', '', $ev['telefone_contato']) : '',
             'social' => [
-                'label' => $linkInfo ? 'Mais informacoes' : '',
-                'url' => $linkInfo
+                'label' => '',
+                'url' => ''
             ]
         ];
         

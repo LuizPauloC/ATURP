@@ -131,18 +131,21 @@ include 'includes/header.php';
 
 					<div class="discover-section__categories-grid">
 						<?php
-						$stmt = $pdo->query("
+						$serviceSlugAliases = aturpCategorySlugAliases('servicos');
+						$serviceSlugPlaceholders = implode(', ', array_fill(0, count($serviceSlugAliases), '?'));
+						$stmt = $pdo->prepare("
 							SELECT nome, slug, icone_svg
 							FROM categorias
 							WHERE tipo_aplicacao = 'item'
-								AND slug <> 'servicos'
+								AND slug NOT IN ($serviceSlugPlaceholders)
 								AND ativo = 1
 								AND deletado_em IS NULL
 							ORDER BY ordem ASC
 						");
+						$stmt->execute($serviceSlugAliases);
 						while ($cat = $stmt->fetch()):
 						?>
-						<a href="./categoria.php?cat=<?= rawurlencode($cat['slug']) ?>" class="category-card">
+						<a href="./categoria.php?cat=<?= rawurlencode(aturpCanonicalCategorySlug($cat['slug'])) ?>" class="category-card">
 							<div class="category-card__icon-wrapper">
 								<?php
 								$defaultIcon = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M448 0H64C28.7 0 0 28.7 0 64v384c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64V64c0-35.3-28.7-64-64-64zm0 448H64V64h384v384z"/></svg>';

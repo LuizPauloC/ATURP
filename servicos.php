@@ -53,13 +53,16 @@ try {
     require_once __DIR__ . '/config/database.php';
     $pdo = getDbConnection();
 
+    $serviceSlugAliases = aturpCategorySlugAliases('servicos');
+    $serviceSlugPlaceholders = implode(', ', array_fill(0, count($serviceSlugAliases), '?'));
+
     $stmt = $pdo->prepare("
         SELECT id, nome
         FROM categorias
-        WHERE slug = ? AND ativo = 1 AND deletado_em IS NULL
+        WHERE slug IN ($serviceSlugPlaceholders) AND ativo = 1 AND deletado_em IS NULL
         LIMIT 1
     ");
-    $stmt->execute(['servicos']);
+    $stmt->execute($serviceSlugAliases);
     $categoria = $stmt->fetch();
 
     if ($categoria) {

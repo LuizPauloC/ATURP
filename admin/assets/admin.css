@@ -252,6 +252,103 @@ body.dark-theme {
     box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
 }
 
+.btn-danger {
+    background: rgba(239, 68, 68, 0.14);
+    color: #fecaca;
+}
+
+.btn-danger:hover {
+    background: rgba(239, 68, 68, 0.24);
+}
+
+.toast-container {
+    position: fixed;
+    top: 18px;
+    right: 18px;
+    z-index: 200;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    pointer-events: none;
+}
+
+.toast {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: min(360px, calc(100vw - 36px));
+    max-width: calc(100vw - 36px);
+    padding: 16px 18px;
+    border-radius: 8px;
+    background: #ecfdf5;
+    border: 1px solid #a7f3d0;
+    color: #047857;
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.24);
+    font-size: 0.95rem;
+    font-weight: 500;
+    animation: toastIn 0.22s ease-out both;
+}
+
+.toast--error {
+    background: #fef2f2;
+    border-color: #fecaca;
+    color: #b91c1c;
+}
+
+.toast--leaving {
+    animation: toastOut 0.18s ease-in both;
+}
+
+.toast__icon {
+    position: relative;
+    display: inline-flex;
+    width: 18px;
+    height: 18px;
+    flex: 0 0 18px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 999px;
+    background: #059669;
+    color: #fff;
+    font-size: 0.8rem;
+    font-weight: 800;
+}
+
+.toast--success .toast__icon::before {
+    content: "";
+    width: 8px;
+    height: 4px;
+    border-left: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    transform: rotate(-45deg) translate(1px, -1px);
+}
+
+.toast--error .toast__icon {
+    background: #dc2626;
+}
+
+@keyframes toastIn {
+    from {
+        opacity: 0;
+        transform: translateY(-14px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes toastOut {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-14px);
+    }
+}
+
 /* Stats Dashboard */
 .stats-grid {
     display: grid;
@@ -331,12 +428,45 @@ body.dark-theme {
     background: rgba(0, 0, 0, 0.2);
 }
 
+.table-sort {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    border: 0;
+    background: transparent;
+    color: inherit;
+    cursor: pointer;
+    font: inherit;
+    letter-spacing: inherit;
+    padding: 0;
+    text-align: left;
+    text-transform: inherit;
+}
+
+.table-sort.active {
+    color: var(--text-main);
+}
+
+.table-sort svg {
+    transition: transform 0.18s ease, opacity 0.18s ease;
+}
+
+.table-sort.is-desc svg {
+    transform: rotate(180deg);
+}
+
 .data-table tr {
     transition: background-color 0.2s;
 }
 
 .data-table tbody tr:hover {
     background: var(--bg-panel-hover);
+}
+
+.table-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
 }
 
 .data-table tbody tr:last-child td {
@@ -360,7 +490,7 @@ body.dark-theme {
 .modal-overlay {
     position: fixed;
     top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.72);
     backdrop-filter: blur(4px);
     display: flex;
     align-items: center;
@@ -378,6 +508,7 @@ body.dark-theme {
 .modal {
     width: 100%;
     max-width: 600px;
+    background: #111827;
     border-radius: 24px;
     transform: translateY(0);
     transition: transform 0.3s;
@@ -440,4 +571,542 @@ body.dark-theme {
     outline: none;
     border-color: var(--primary);
     background: rgba(0, 0, 0, 0.3);
+}
+
+.form-control::placeholder {
+    color: rgba(243, 244, 246, 0.42);
+}
+
+textarea.form-control {
+    resize: none;
+}
+
+.image-control__current {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.image-control__current small {
+    color: var(--text-muted);
+}
+
+.image-control__remove {
+    border: 1px solid rgba(239, 68, 68, 0.32);
+    border-radius: 8px;
+    background: rgba(239, 68, 68, 0.1);
+    color: #fecaca;
+    cursor: pointer;
+    font: inherit;
+    font-size: 0.85rem;
+    padding: 8px 10px;
+}
+
+.image-control__remove:hover {
+    background: rgba(239, 68, 68, 0.18);
+}
+
+select.form-control option,
+select.form-control optgroup {
+    background: #0f1115;
+    color: var(--text-main);
+}
+
+.filter-checklist {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+    padding: 14px 16px;
+    background: rgba(0, 0, 0, 0.18);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+}
+
+.filter-checklist__group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.filter-checklist__group-title {
+    margin: 0;
+    color: rgba(156, 163, 175, 0.72);
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.filter-checklist__option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0;
+    color: var(--text-main);
+    cursor: pointer;
+}
+
+.filter-checklist__input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.filter-checklist__box {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 18px;
+    width: 18px;
+    height: 18px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background: rgba(0, 0, 0, 0.28);
+    transition: background-color 0.2s, border-color 0.2s, box-shadow 0.2s;
+}
+
+.filter-checklist__box::after {
+    content: '';
+    width: 8px;
+    height: 4px;
+    border-left: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    transform: rotate(-45deg) scale(0);
+    transition: transform 0.18s ease;
+}
+
+.filter-checklist__input:checked + .filter-checklist__box {
+    background: #2851cc;
+    border-color: #2851cc;
+}
+
+.filter-checklist__input:checked + .filter-checklist__box::after {
+    transform: translateY(-1px) rotate(-45deg) scale(1);
+}
+
+.filter-checklist__input:focus-visible + .filter-checklist__box {
+    box-shadow: 0 0 0 3px rgba(40, 81, 204, 0.28);
+}
+
+.filter-checklist__name {
+    color: var(--text-main);
+    font-size: 0.95rem;
+    line-height: 1.35;
+    margin-left: 10px;
+}
+
+.filter-checklist__empty,
+.filter-checklist__hint {
+    margin: 0;
+    color: var(--text-muted);
+    font-size: 0.88rem;
+}
+
+.filter-checklist__hint {
+    display: block;
+    margin-top: 8px;
+}
+
+.hosting-extra,
+.gastronomy-extra,
+.services-extra,
+.experiences-extra {
+    margin: 28px 0 24px;
+    padding: 18px;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    background: rgba(0, 0, 0, 0.16);
+}
+
+.hosting-extra__header,
+.gastronomy-extra__header,
+.services-extra__header,
+.experiences-extra__header {
+    margin-bottom: 18px;
+}
+
+.hosting-extra__header h3,
+.gastronomy-extra__header h3,
+.services-extra__header h3,
+.experiences-extra__header h3 {
+    margin: 0;
+    color: var(--text-main);
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.hosting-extra__grid,
+.gastronomy-extra__grid,
+.services-extra__grid,
+.experiences-extra__grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.hosting-extra__grid .form-group,
+.gastronomy-extra__grid .form-group,
+.services-extra__grid .form-group,
+.experiences-extra__grid .form-group {
+    margin-bottom: 0;
+}
+
+.hosting-extra__wide,
+.gastronomy-extra__wide,
+.services-extra__wide,
+.experiences-extra__wide {
+    grid-column: 1 / -1;
+}
+
+.hosting-extra__options,
+.hosting-extra__toggles,
+.gastronomy-extra__options,
+.gastronomy-extra__toggles,
+.services-extra__options,
+.services-extra__toggles,
+.experiences-extra__options,
+.experiences-extra__toggles {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px 14px;
+    padding: 14px 16px;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    background: rgba(0, 0, 0, 0.18);
+}
+
+.hosting-extra__option,
+.hosting-extra__toggle,
+.gastronomy-extra__option,
+.gastronomy-extra__toggle,
+.services-extra__option,
+.services-extra__toggle,
+.experiences-extra__option,
+.experiences-extra__toggle {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0;
+    color: var(--text-main);
+    cursor: pointer;
+}
+
+.hosting-extra__checkbox,
+.hosting-extra__toggle input,
+.gastronomy-extra__checkbox,
+.gastronomy-extra__toggle input,
+.services-extra__checkbox,
+.services-extra__toggle input,
+.experiences-extra__checkbox,
+.experiences-extra__toggle input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.hosting-extra__box,
+.gastronomy-extra__box,
+.services-extra__box,
+.experiences-extra__box {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 18px;
+    width: 18px;
+    height: 18px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background: rgba(0, 0, 0, 0.28);
+    transition: background-color 0.2s, border-color 0.2s, box-shadow 0.2s;
+}
+
+.hosting-extra__box::after,
+.gastronomy-extra__box::after,
+.services-extra__box::after,
+.experiences-extra__box::after {
+    content: '';
+    width: 8px;
+    height: 4px;
+    border-left: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    transform: rotate(-45deg) scale(0);
+    transition: transform 0.18s ease;
+}
+
+.hosting-extra__checkbox:checked + .hosting-extra__box,
+.gastronomy-extra__checkbox:checked + .gastronomy-extra__box,
+.services-extra__checkbox:checked + .services-extra__box,
+.experiences-extra__checkbox:checked + .experiences-extra__box {
+    background: #2851cc;
+    border-color: #2851cc;
+}
+
+.hosting-extra__checkbox:checked + .hosting-extra__box::after,
+.gastronomy-extra__checkbox:checked + .gastronomy-extra__box::after,
+.services-extra__checkbox:checked + .services-extra__box::after,
+.experiences-extra__checkbox:checked + .experiences-extra__box::after {
+    transform: translateY(-1px) rotate(-45deg) scale(1);
+}
+
+.hosting-extra__switch,
+.gastronomy-extra__switch,
+.services-extra__switch,
+.experiences-extra__switch {
+    position: relative;
+    flex: 0 0 42px;
+    width: 42px;
+    height: 24px;
+    border: 1px solid var(--border-color);
+    border-radius: 999px;
+    background: rgba(0, 0, 0, 0.3);
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+.hosting-extra__switch::after,
+.gastronomy-extra__switch::after,
+.services-extra__switch::after,
+.experiences-extra__switch::after {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 16px;
+    height: 16px;
+    border-radius: 999px;
+    background: #fff;
+    transition: transform 0.2s;
+}
+
+.hosting-extra__toggle input:checked + .hosting-extra__switch,
+.gastronomy-extra__toggle input:checked + .gastronomy-extra__switch,
+.services-extra__toggle input:checked + .services-extra__switch,
+.experiences-extra__toggle input:checked + .experiences-extra__switch {
+    background: #2851cc;
+    border-color: #2851cc;
+}
+
+.hosting-extra__toggle input:checked + .hosting-extra__switch::after,
+.gastronomy-extra__toggle input:checked + .gastronomy-extra__switch::after,
+.services-extra__toggle input:checked + .services-extra__switch::after,
+.experiences-extra__toggle input:checked + .experiences-extra__switch::after {
+    transform: translateX(18px);
+}
+
+.hosting-extra__checkbox:focus-visible + .hosting-extra__box,
+.hosting-extra__toggle input:focus-visible + .hosting-extra__switch,
+.gastronomy-extra__checkbox:focus-visible + .gastronomy-extra__box,
+.gastronomy-extra__toggle input:focus-visible + .gastronomy-extra__switch,
+.services-extra__checkbox:focus-visible + .services-extra__box,
+.services-extra__toggle input:focus-visible + .services-extra__switch,
+.experiences-extra__checkbox:focus-visible + .experiences-extra__box,
+.experiences-extra__toggle input:focus-visible + .experiences-extra__switch {
+    box-shadow: 0 0 0 3px rgba(40, 81, 204, 0.28);
+}
+
+.opening-hours {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    width: 100%;
+    padding: 14px;
+    background: rgba(0, 0, 0, 0.18);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+}
+
+.opening-hours__blocks {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.opening-hours__block {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding: 14px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+}
+
+.opening-hours__block-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.opening-hours__day-range {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+    align-items: center;
+    gap: 8px;
+    flex: 1;
+}
+
+.opening-hours__day-start,
+.opening-hours__day-end {
+    min-width: 0;
+    padding: 10px 12px;
+    border-radius: 10px;
+}
+
+.opening-hours__day-separator {
+    color: var(--text-muted);
+    font-weight: 700;
+}
+
+.opening-hours__clear {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 38px;
+    width: 38px;
+    height: 38px;
+    border: 1px solid rgba(239, 68, 68, 0.28);
+    border-radius: 10px;
+    background: rgba(239, 68, 68, 0.1);
+    color: #fecaca;
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 1;
+    cursor: pointer;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+.opening-hours__clear:hover {
+    background: rgba(239, 68, 68, 0.18);
+    border-color: rgba(239, 68, 68, 0.42);
+}
+
+.opening-hours__ranges {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.opening-hours__range {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto minmax(0, 1fr);
+    align-items: center;
+    gap: 8px;
+}
+
+.opening-hours__time {
+    min-width: 0;
+    padding: 10px 12px;
+    border-radius: 10px;
+    font-size: 0.95rem;
+}
+
+.opening-hours__range-label {
+    color: var(--text-muted);
+    font-size: 0.86rem;
+    font-weight: 700;
+}
+
+.opening-hours__footer {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.opening-hours__add {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 38px;
+    padding: 9px 14px;
+    border-radius: 10px;
+    border: 1px solid rgba(40, 81, 204, 0.35);
+    background: rgba(40, 81, 204, 0.14);
+    color: #dbeafe;
+    font-family: inherit;
+    font-size: 0.9rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.2s, opacity 0.2s;
+}
+
+.opening-hours__add:hover:not(:disabled) {
+    background: rgba(40, 81, 204, 0.24);
+}
+
+.opening-hours__add:disabled {
+    cursor: not-allowed;
+    opacity: 0.52;
+}
+
+.opening-hours__notice {
+    color: var(--text-muted);
+    font-size: 0.88rem;
+}
+
+.opening-hours__source {
+    display: none;
+}
+
+@media (max-width: 640px) {
+    .modal {
+        max-width: calc(100vw - 24px);
+        max-height: calc(100vh - 24px);
+    }
+
+    .modal-body {
+        padding: 24px 18px;
+    }
+
+    .hosting-extra,
+    .gastronomy-extra,
+    .services-extra,
+    .experiences-extra {
+        padding: 14px;
+    }
+
+    .hosting-extra__grid,
+    .hosting-extra__options,
+    .hosting-extra__toggles,
+    .gastronomy-extra__grid,
+    .gastronomy-extra__options,
+    .gastronomy-extra__toggles,
+    .services-extra__grid,
+    .services-extra__options,
+    .services-extra__toggles,
+    .experiences-extra__grid,
+    .experiences-extra__options,
+    .experiences-extra__toggles {
+        grid-template-columns: 1fr;
+    }
+
+    .opening-hours__block-header,
+    .opening-hours__footer {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .opening-hours__clear,
+    .opening-hours__add {
+        width: 100%;
+    }
+
+    .opening-hours__day-range,
+    .opening-hours__range {
+        grid-template-columns: 1fr;
+    }
+
+    .opening-hours__day-separator,
+    .opening-hours__range-label {
+        text-align: center;
+    }
 }

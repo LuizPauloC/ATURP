@@ -4,7 +4,7 @@ $customCss = ['./css/directory-cards.css', './css/categoria.css'];
 require_once __DIR__ . '/includes/security.php';
 
 // Pega o slug da URL
-$catSlug = $_GET['cat'] ?? '';
+$catSlug = aturpCanonicalCategorySlug($_GET['cat'] ?? '');
 
 if ($catSlug === 'servicos') {
     header('Location: ./servicos.php', true, 302);
@@ -19,8 +19,10 @@ if ($catSlug && preg_match('/^[a-z0-9-]{1,80}$/', $catSlug)) {
     require_once __DIR__ . '/config/database.php';
     $pdo = getDbConnection();
     
-    $stmt = $pdo->prepare("SELECT id, nome FROM categorias WHERE slug = ? AND ativo = 1 AND deletado_em IS NULL LIMIT 1");
-    $stmt->execute([$catSlug]);
+    $categorySlugAliases = aturpCategorySlugAliases($catSlug);
+    $categorySlugPlaceholders = implode(', ', array_fill(0, count($categorySlugAliases), '?'));
+    $stmt = $pdo->prepare("SELECT id, nome FROM categorias WHERE slug IN ($categorySlugPlaceholders) AND ativo = 1 AND deletado_em IS NULL LIMIT 1");
+    $stmt->execute($categorySlugAliases);
     $categoria = $stmt->fetch();
     
     if ($categoria) {

@@ -24,16 +24,96 @@ function publicServiceHttpUrl($value): string
     return $scheme && in_array(strtolower($scheme), ['http', 'https'], true) ? $value : '';
 }
 
+function decodePublicServiceExtraData($value): array
+{
+    if (is_array($value)) {
+        return $value;
+    }
+
+    $value = trim((string) ($value ?? ''));
+    if ($value === '') {
+        return [];
+    }
+
+    $decoded = json_decode($value, true);
+    return is_array($decoded) ? $decoded : [];
+}
+
+function publicServiceExtraLabelList($values, array $labels): string
+{
+    if (!is_array($values)) {
+        $values = array_map('trim', explode(',', (string) $values));
+    }
+
+    $formatted = [];
+    foreach ($values as $value) {
+        $slug = aturpCanonicalCategorySlug($value);
+        if (isset($labels[$slug])) {
+            $formatted[] = $labels[$slug];
+        }
+    }
+
+    return implode(', ', array_values(array_unique($formatted)));
+}
+
+function buildPublicServiceExtra(array $extra): array
+{
+    $typeLabels = [
+        'condutor-turistico' => 'Condutor turistico',
+        'imobiliaria' => 'Imobiliaria',
+        'materiais-construcao' => 'Materiais de construcao',
+        'transporte' => 'Transporte',
+        'comercio-local' => 'Comercio local',
+        'saude' => 'Saude',
+        'oficina' => 'Oficina',
+        'outros' => 'Outros',
+    ];
+    $areaLabels = [
+        'pancas' => 'Pancas',
+        'regiao' => 'Regiao',
+        'online' => 'Online',
+        'domicilio' => 'Atendimento em domicilio',
+    ];
+    $attendanceLabels = [
+        'presencial' => 'Presencial',
+        'whatsapp' => 'WhatsApp',
+        'delivery' => 'Delivery',
+        'agendamento' => 'Com agendamento',
+    ];
+    $paymentLabels = [
+        'pix' => 'Pix',
+        'cartao' => 'Cartao',
+        'dinheiro' => 'Dinheiro',
+    ];
+
+    $typeSlug = aturpCanonicalCategorySlug($extra['tipo_servico'] ?? '');
+    $areaSlug = aturpCanonicalCategorySlug($extra['area_atendimento'] ?? '');
+
+    return array_filter([
+        'tipoServico' => $typeLabels[$typeSlug] ?? '',
+        'areaAtendimento' => $areaLabels[$areaSlug] ?? '',
+        'formasAtendimento' => publicServiceExtraLabelList($extra['formas_atendimento'] ?? [], $attendanceLabels),
+        'aceitaAgendamento' => !empty($extra['aceita_agendamento']) ? 'Sim' : '',
+        'atendimento24h' => !empty($extra['atendimento_24h']) ? 'Sim' : '',
+        'linkServico' => publicServiceHttpUrl($extra['link_servico'] ?? ''),
+        'formasPagamento' => publicServiceExtraLabelList($extra['formas_pagamento'] ?? [], $paymentLabels),
+        'observacoesUteis' => trim((string) ($extra['observacoes_uteis'] ?? '')),
+    ], static fn($value) => $value !== '');
+}
+
 try {
     $pdo = getDbConnection();
+
+    $serviceSlugAliases = aturpCategorySlugAliases('servicos');
+    $serviceSlugPlaceholders = implode(', ', array_fill(0, count($serviceSlugAliases), '?'));
 
     $stmtCategoria = $pdo->prepare("
         SELECT id
         FROM categorias
-        WHERE slug = ? AND ativo = 1 AND deletado_em IS NULL
+        WHERE slug IN ($serviceSlugPlaceholders) AND ativo = 1 AND deletado_em IS NULL
         LIMIT 1
     ");
-    $stmtCategoria->execute(['servicos']);
+    $stmtCategoria->execute($serviceSlugAliases);
     $categoria = $stmtCategoria->fetch();
 
     if (!$categoria) {
@@ -45,7 +125,7 @@ try {
         SELECT
             id, slug, titulo, subtitulo, descricao_completa, imagem_capa,
             endereco, link_google_maps, telefone_whatsapp, instagram,
-            website, horario_funcionamento
+            website, horario_funcionamento, dados_extra
         FROM itens
         WHERE categoria_id = ? AND ativo = 1 AND deletado_em IS NULL
         ORDER BY titulo ASC
@@ -61,6 +141,8 @@ try {
         $mapUrl = publicServiceHttpUrl($item['link_google_maps'] ?? '');
         $website = publicServiceHttpUrl($item['website'] ?? '');
         $whatsappDigits = preg_replace('/\D/', '', (string) ($item['telefone_whatsapp'] ?? ''));
+        $serviceExtra = buildPublicServiceExtra(decodePublicServiceExtraData($item['dados_extra'] ?? null));
+        $serviceUrl = $serviceExtra['linkServico'] ?? '';
 
         $jsonOutput[] = [
             'id' => $item['id'],
@@ -85,6 +167,11 @@ try {
             ],
             'whatsapp' => $whatsappDigits !== '' ? 'https://wa.me/' . $whatsappDigits : '',
             'website' => $website,
+            'ticket' => $serviceUrl ? [
+                'label' => 'Abrir servico',
+                'url' => $serviceUrl,
+            ] : null,
+            'serviceExtra' => $serviceExtra,
             'photos' => array_values(array_filter([$image]))
         ];
     }

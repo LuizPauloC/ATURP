@@ -3,6 +3,9 @@
 // Centraliza inicializacao, seguranca e resposta JSON para as APIs do painel.
 
 ini_set('display_errors', '0');
+$aturpApiBufferLevel = ob_get_level();
+ob_start();
+
 require_once __DIR__ . '/../includes/session.php';
 require_once __DIR__ . '/../../config/database.php';
 require_once __DIR__ . '/../../includes/security.php';
@@ -11,11 +14,25 @@ startAdminSession();
 
 header('Content-Type: application/json; charset=utf-8');
 header('X-Content-Type-Options: nosniff');
-header('Cache-Control: no-store, no-cache, must-revalidate, max-age=0');
+header('Cache-Control: no-store, no-cache, must-revalidate, max-age=0, no-transform');
+header('Pragma: no-cache');
 
 function sendJson($data, $statusCode = 200) {
+    global $aturpApiBufferLevel;
+
+    $json = json_encode($data, JSON_UNESCAPED_UNICODE | JSON_INVALID_UTF8_SUBSTITUTE);
+    if ($json === false) {
+        error_log('Falha ao serializar JSON da API admin: ' . json_last_error_msg());
+        $statusCode = 500;
+        $json = '{"success":false,"error":"Erro ao gerar resposta JSON."}';
+    }
+
+    while (ob_get_level() > $aturpApiBufferLevel) {
+        ob_end_clean();
+    }
+
     http_response_code($statusCode);
-    echo json_encode($data, JSON_UNESCAPED_UNICODE);
+    echo $json;
     exit;
 }
 

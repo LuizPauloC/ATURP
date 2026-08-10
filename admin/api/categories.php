@@ -8,8 +8,17 @@ $method = $_SERVER['REQUEST_METHOD'];
 $action = $_GET['action'] ?? '';
 
 function generateSlug($string) {
-    $string = preg_replace('/[^\p{L}\d]+/u', '-', strtolower(trim($string)));
-    return trim($string, '-');
+    $string = trim((string) $string);
+    if (function_exists('iconv')) {
+        $converted = @iconv('UTF-8', 'ASCII//TRANSLIT//IGNORE', $string);
+        if ($converted !== false) {
+            $string = $converted;
+        }
+    }
+
+    $string = strtolower($string);
+    $string = preg_replace('/[^a-z0-9]+/', '-', $string);
+    return trim((string) $string, '-');
 }
 
 function normalizeCategoryPayload(array $data): array {

@@ -4,6 +4,103 @@ function aturpHtml($value): string
     return htmlspecialchars((string) ($value ?? ''), ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8');
 }
 
+function aturpCanonicalCategorySlug($value): string
+{
+    $slug = trim((string) ($value ?? ''));
+    if ($slug === '') {
+        return '';
+    }
+
+    $slug = strtr($slug, [
+        'Á' => 'A', 'À' => 'A', 'Â' => 'A', 'Ã' => 'A', 'Ä' => 'A',
+        'á' => 'a', 'à' => 'a', 'â' => 'a', 'ã' => 'a', 'ä' => 'a',
+        'É' => 'E', 'Ê' => 'E', 'Ë' => 'E',
+        'é' => 'e', 'ê' => 'e', 'ë' => 'e',
+        'Í' => 'I', 'Î' => 'I', 'Ï' => 'I',
+        'í' => 'i', 'î' => 'i', 'ï' => 'i',
+        'Ó' => 'O', 'Ô' => 'O', 'Õ' => 'O', 'Ö' => 'O',
+        'ó' => 'o', 'ô' => 'o', 'õ' => 'o', 'ö' => 'o',
+        'Ú' => 'U', 'Û' => 'U', 'Ü' => 'U',
+        'ú' => 'u', 'û' => 'u', 'ü' => 'u',
+        'Ç' => 'C', 'ç' => 'c',
+    ]);
+
+    if (function_exists('iconv')) {
+        $converted = @iconv('UTF-8', 'ASCII//TRANSLIT//IGNORE', $slug);
+        if ($converted !== false) {
+            $slug = $converted;
+        }
+    }
+
+    $slug = strtolower($slug);
+    $slug = preg_replace('/[^a-z0-9]+/', '-', $slug);
+    return trim((string) $slug, '-');
+}
+
+function aturpCategorySlugAliases($value): array
+{
+    $canonical = aturpCanonicalCategorySlug($value);
+    if ($canonical === '') {
+        return [];
+    }
+
+    $aliases = [$canonical];
+    $legacyAliases = [
+        'experiencias' => ['experiências'],
+        'servicos' => ['serviços'],
+        'historia-e-cultura' => ['história-e-cultura'],
+    ];
+
+    foreach ($legacyAliases[$canonical] ?? [] as $alias) {
+        $aliases[] = $alias;
+    }
+
+    return array_values(array_unique($aliases));
+}
+
+function aturpAllowedFilterSlugsForCategory($categorySlug): array
+{
+    $categorySlug = aturpCanonicalCategorySlug($categorySlug);
+
+    $allowed = [
+        'onde-comer' => [
+            'cafe-da-manha',
+            'almoco',
+            'lanches',
+            'jantar',
+            'cafe',
+            'restaurante',
+            'lanchonete',
+        ],
+        'onde-ficar' => [
+            'pousada',
+            'camping',
+        ],
+        'servicos' => [
+            'condutor-turistico',
+            'imobiliaria',
+            'materiais-construcao',
+        ],
+    ];
+
+    return $allowed[$categorySlug] ?? [];
+}
+
+function aturpIsFilterAllowedForCategory($slug, $categorySlug): bool
+{
+    $slug = aturpCanonicalCategorySlug($slug);
+    if ($slug === '') {
+        return false;
+    }
+
+    $allowedSlugs = aturpAllowedFilterSlugsForCategory($categorySlug);
+    if ($allowedSlugs === []) {
+        return true;
+    }
+
+    return in_array($slug, $allowedSlugs, true);
+}
+
 function aturpNormalizePublicImagePath($value): string
 {
     $rawValue = trim((string) ($value ?? ''));

@@ -140,6 +140,107 @@
 		}
 	}
 
+	function renderTemporaryExtraCard(item, type) {
+		const linkRow = (label, url, text) => {
+			const safeUrl = safeExternalUrl(url);
+			return safeUrl !== '#'
+				? [label, `<a href="${escapeHtml(safeUrl)}" target="_blank" rel="noopener noreferrer">${escapeHtml(text)}</a>`]
+				: null;
+		};
+
+		const configs = {
+			'onde-ficar': {
+				title: 'Dados cadastrados da hospedagem',
+				extra: item.hostingExtra,
+				rows: (extra) => [
+					['Tipo', extra.tipo],
+					['Faixa de preco', extra.faixaPreco],
+					['Media de diaria', extra.mediaDiaria],
+					['Check-in', extra.checkin],
+					['Check-out', extra.checkout],
+					['Observacoes uteis', extra.observacoesUteis],
+					linkRow('Link de reserva', extra.linkReserva, 'Abrir link de reserva'),
+				],
+			},
+			'onde-comer': {
+				title: 'Dados cadastrados de gastronomia',
+				extra: item.gastronomyExtra,
+				rows: (extra) => [
+					['Tipo de cozinha', extra.tipoCozinha],
+					['Faixa de preco', extra.faixaPreco],
+					['Refeicoes', extra.refeicoes],
+					['Servicos', extra.servicos],
+					['Aceita reserva', extra.aceitaReserva],
+					['Formas de pagamento', extra.formasPagamento],
+					['Observacoes uteis', extra.observacoesUteis],
+					linkRow('Link do cardapio', extra.linkCardapio, 'Abrir cardapio'),
+				],
+			},
+			'servicos': {
+				title: 'Dados cadastrados do servico',
+				extra: item.serviceExtra,
+				rows: (extra) => [
+					['Tipo de servico', extra.tipoServico],
+					['Area de atendimento', extra.areaAtendimento],
+					['Formas de atendimento', extra.formasAtendimento],
+					['Aceita agendamento', extra.aceitaAgendamento],
+					['Atendimento 24h', extra.atendimento24h],
+					['Formas de pagamento', extra.formasPagamento],
+					['Observacoes uteis', extra.observacoesUteis],
+					linkRow('Link do servico', extra.linkServico, 'Abrir servico'),
+				],
+			},
+			'experiencias': {
+				title: 'Dados cadastrados da experiencia',
+				extra: item.experienceExtra,
+				rows: (extra) => [
+					['Tipo de experiencia', extra.tipoExperiencia],
+					['Nivel de dificuldade', extra.nivelDificuldade],
+					['Duracao media', extra.duracaoMedia],
+					['Melhor periodo', extra.melhorPeriodo],
+					['Publico indicado', extra.publicoIndicado],
+					['Estrutura disponivel', extra.estruturaDisponivel],
+					['Agendamento obrigatorio', extra.agendamentoObrigatorio],
+					['Entrada gratuita', extra.entradaGratuita],
+					['Preco base', extra.precoBase],
+					['Observacoes uteis', extra.observacoesUteis],
+					linkRow('Link de informacoes', extra.linkInformacoes, 'Abrir informacoes'),
+				],
+			},
+		};
+
+		const config = configs[type];
+		if (!config || !config.extra || typeof config.extra !== 'object') {
+			return null;
+		}
+
+		const rows = config.rows(config.extra)
+			.filter(Boolean)
+			.filter(([, value]) => String(value ?? '').trim() !== '');
+
+		if (rows.length === 0) {
+			return null;
+		}
+
+		const card = document.createElement('div');
+		card.className = 'detail__card';
+		card.innerHTML = `
+			<h3 class="detail__card-title">${escapeHtml(config.title)}</h3>
+			<ul class="detail__meta-list">
+				${rows.map(([label, value]) => `
+					<li class="detail__meta-item">
+						<div>
+							<div class="detail__meta-label">${escapeHtml(label)}</div>
+							<div class="detail__meta-value">${String(value).includes('<a ') ? value : escapeHtml(value)}</div>
+						</div>
+					</li>
+				`).join('')}
+			</ul>
+		`;
+
+		return card;
+	}
+
 	function safeImageSrc(value) {
 		let normalized = String(value ?? '').trim();
 		if (/^[a-z][a-z0-9+.-]*:/i.test(normalized) || normalized.startsWith('//')) {
@@ -370,6 +471,17 @@
 							` : ''}
 						</div>
 					</li>
+					${item.price ? `
+						<li class="detail__meta-item">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" class="detail__meta-icon">
+								<path d="M64 64C28.7 64 0 92.7 0 128v64c0 8.8 7.2 16 16 16c26.5 0 48 21.5 48 48s-21.5 48-48 48c-8.8 0-16 7.2-16 16v64c0 35.3 28.7 64 64 64h448c35.3 0 64-28.7 64-64v-64c0-8.8-7.2-16-16-16c-26.5 0-48-21.5-48-48s21.5-48 48-48c8.8 0 16-7.2 16-16v-64c0-35.3-28.7-64-64-64H64zm64 96h320v192H128V160z"/>
+							</svg>
+							<div>
+								<div class="detail__meta-label">Valor base</div>
+								<div class="detail__meta-value">${escapeHtml(item.price)}</div>
+							</div>
+						</li>
+					` : ''}
 				</ul>
 			`;
 		} else if (type === 'onde-ficar') {
@@ -510,6 +622,11 @@
 		infoCard.innerHTML = infoHtml;
 		rightCol.appendChild(infoCard);
 
+		const temporaryExtraCard = renderTemporaryExtraCard(item, type);
+		if (temporaryExtraCard) {
+			rightCol.appendChild(temporaryExtraCard);
+		}
+
 		// Card de Comodidades / Destaques
 		if (item.amenities && item.amenities.length > 0) {
 			const amenitiesCard = document.createElement('div');
@@ -559,7 +676,7 @@
 		}
 
 		// Card de Contatos
-		if ((item.social && item.social.url && item.social.url !== 'null') || (item.whatsapp && item.whatsapp !== 'null')) {
+		if ((item.ticket && item.ticket.url && item.ticket.url !== 'null') || (item.social && item.social.url && item.social.url !== 'null') || (item.whatsapp && item.whatsapp !== 'null')) {
 			const contactCard = document.createElement('div');
 			contactCard.className = 'detail__card';
 
@@ -569,6 +686,21 @@
 
 			const ctasWrapper = document.createElement('div');
 			ctasWrapper.className = 'detail__ctas';
+
+			if (item.ticket && item.ticket.url && item.ticket.url !== 'null') {
+				const ticketBtn = document.createElement('a');
+				ticketBtn.href = safeExternalUrl(item.ticket.url);
+				ticketBtn.target = '_blank';
+				ticketBtn.rel = 'noopener noreferrer';
+				ticketBtn.className = 'detail__cta-btn detail__cta-btn--ticket';
+				ticketBtn.innerHTML = `
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" class="detail__cta-icon">
+						<path d="M384 64C366.3 64 352 78.3 352 96C352 113.7 366.3 128 384 128H466.7L265.4 329.4C252.9 341.9 252.9 362.2 265.4 374.7C277.9 387.2 298.2 387.2 310.7 374.7L512 173.3V256C512 273.7 526.3 288 544 288C561.7 288 576 273.7 576 256V96C576 78.3 561.7 64 544 64H384zM144 160C99.8 160 64 195.8 64 240V496C64 540.2 99.8 576 144 576H400C444.2 576 480 540.2 480 496V416C480 398.3 465.7 384 448 384C430.3 384 416 398.3 416 416V496C416 504.8 408.8 512 400 512H144C135.2 512 128 504.8 128 496V240C128 231.2 135.2 224 144 224H224C241.7 224 256 209.7 256 192C256 174.3 241.7 160 224 160H144z"/>
+					</svg>
+					${escapeHtml(item.ticket.label || 'Ingressos e informações')}
+				`;
+				ctasWrapper.appendChild(ticketBtn);
+			}
 
 			if (item.whatsapp && item.whatsapp !== 'null') {
 				const waBtn = document.createElement('a');
