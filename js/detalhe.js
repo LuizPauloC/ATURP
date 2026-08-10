@@ -357,6 +357,32 @@
 		return card;
 	}
 
+	function renderHostingIntroActions(item) {
+		const reservationUrl = safeExternalUrl(item.ticket?.url || item.hostingExtra?.linkReserva || '');
+		const whatsappUrl = safeExternalUrl(item.whatsapp || '');
+		const actions = [];
+
+		if (reservationUrl !== '#') {
+			actions.push(`
+				<a class="detail__info-button detail__info-button--primary" href="${escapeHtml(reservationUrl)}" target="_blank" rel="noopener noreferrer">
+					${renderContactIcon('<path d="M7 4v3M17 4v3M5 9h14M7.75 6h8.5A2.75 2.75 0 0 1 19 8.75v8.5A2.75 2.75 0 0 1 16.25 20h-8.5A2.75 2.75 0 0 1 5 17.25v-8.5A2.75 2.75 0 0 1 7.75 6Z" /><path d="m9 14 2 2 4-4" />')}
+					Reservar hospedagem
+				</a>
+			`);
+		}
+
+		if (whatsappUrl !== '#') {
+			actions.push(`
+				<a class="detail__info-button detail__info-button--secondary" href="${escapeHtml(whatsappUrl)}" target="_blank" rel="noopener noreferrer">
+					${renderContactIcon('<path d="M6.5 4.75 9 4l2 4-1.75 1.2a11 11 0 0 0 5.55 5.55L16 13l4 2-0.75 2.5c-.22.74-.91 1.24-1.68 1.19C10.8 18.26 5.74 13.2 5.31 6.43c-.05-.77.45-1.46 1.19-1.68Z" />')}
+					Falar no WhatsApp
+				</a>
+			`);
+		}
+
+		return actions.length > 0 ? `<div class="detail__info-actions">${actions.join('')}</div>` : '';
+	}
+
 	function renderHostingExtraSection(item) {
 		if (!item.hostingExtra || typeof item.hostingExtra !== 'object') {
 			return null;
@@ -628,15 +654,43 @@
 		descText.className = 'detail__description-text';
 		descText.textContent = item.description;
 
-		textCard.append(titleElement, descTitle, descText);
+		if (type === 'onde-ficar') {
+			textCard.classList.add('detail__info-content--hosting');
+
+			const eyebrow = document.createElement('p');
+			eyebrow.className = 'detail__info-eyebrow';
+			eyebrow.textContent = 'HOSPEDAGEM EM PANCAS';
+
+			const locationLine = document.createElement('p');
+			locationLine.className = 'detail__info-location';
+			locationLine.innerHTML = `
+				${renderContactIcon('<path d="M12 21s6-5.3 6-11a6 6 0 1 0-12 0c0 5.7 6 11 6 11Z" /><path d="M12 12.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z" />')}
+				${escapeHtml(item.location?.label || 'Pancas, ES')}
+			`;
+
+			const actions = document.createElement('div');
+			actions.innerHTML = renderHostingIntroActions(item);
+
+			textCard.append(eyebrow, titleElement, locationLine, descText);
+			if (actions.firstElementChild) {
+				textCard.append(actions.firstElementChild);
+			}
+		} else {
+			textCard.append(titleElement, descTitle, descText);
+		}
 
 		// Galeria de Fotos / Imagem principal
 		const rawPhotos = Array.isArray(item.photos) && item.photos.length > 0 ? item.photos : (item.image ? [item.image] : []);
 		const photos = rawPhotos.map(safeImageSrc).filter(Boolean);
+		const heroMedia = document.createElement('div');
+		heroMedia.className = 'detail__hero-media';
 		
 		if (photos.length > 0) {
 			const mainImageWrapper = document.createElement('div');
 			mainImageWrapper.className = 'detail__main-image-wrapper';
+			if (type === 'onde-ficar') {
+				mainImageWrapper.classList.add('detail__main-image-wrapper--wide');
+			}
 
 			const mainImage = document.createElement('img');
 			mainImage.className = 'detail__main-image';
@@ -651,7 +705,8 @@
 				openLightbox(photos, currentIndex !== -1 ? currentIndex : 0);
 			});
 
-			leftCol.appendChild(mainImageWrapper);
+			const mediaTarget = type === 'onde-ficar' ? heroMedia : leftCol;
+			mediaTarget.appendChild(mainImageWrapper);
 
 			// Se tiver mais de uma foto na galeria, renderiza thumbnails
 			if (photos.length > 1) {
@@ -686,7 +741,7 @@
 				});
 
 				mainImage.style.transition = 'opacity 0.15s ease-in-out';
-				leftCol.appendChild(galleryWrapper);
+				mediaTarget.appendChild(galleryWrapper);
 			}
 		}
 
@@ -1028,7 +1083,11 @@
 			rightCol.appendChild(contactCard);
 		}
 
-		container.replaceChildren(leftCol, rightCol);
+		if (type === 'onde-ficar' && heroMedia.children.length > 0) {
+			container.replaceChildren(heroMedia, leftCol, rightCol);
+		} else {
+			container.replaceChildren(leftCol, rightCol);
+		}
 	}
 
 	async function fetchItemDetails() {
