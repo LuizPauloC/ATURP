@@ -1,6 +1,7 @@
 <?php
 $pageTitle = $pageTitle ?? 'ATURP - Guia Turístico';
 $customCss = $customCss ?? [];
+$headerStartsTransparent = $headerStartsTransparent ?? false;
 $assetVersion = function ($path) {
 	$filePath = __DIR__ . '/../' . ltrim($path, './');
 	return file_exists($filePath) ? filemtime($filePath) : '1';
@@ -27,9 +28,9 @@ $assetUrl = function ($path) use ($assetVersion) {
 		<link rel="stylesheet" href="<?= htmlspecialchars($assetUrl($css)) ?>" />
 		<?php endforeach; ?>
 	</head>
-	<body id="page-top">
+	<body id="page-top" data-header-transparent="<?= $headerStartsTransparent ? 'true' : 'false' ?>">
 		<header class="site-header">
-			<nav class="site-header__nav" aria-label="Navegação principal">
+			<nav class="site-header__nav<?= $headerStartsTransparent ? '' : ' solid-color' ?>" aria-label="Navegação principal">
 				<div class="layout-container site-header__nav-inner">
 					<div class="logo">
 						<a href="./index.php">

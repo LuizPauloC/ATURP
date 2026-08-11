@@ -1,6 +1,7 @@
 <?php
 $pageTitle = 'Onde Comer | ATURP - Pancas, ES';
 $customCss = ['./css/directory-cards.css', './css/onde-comer.css'];
+$headerStartsTransparent = true;
 include 'includes/header.php';
 ?>
 
@@ -16,6 +17,13 @@ include 'includes/header.php';
 		</section>
 
 		<main class="directory-page food-page">
+			<?php
+			$breadcrumbs = [
+				['label' => 'Inicio', 'url' => './index.php'],
+				['label' => 'Onde comer'],
+			];
+			include 'includes/breadcrumb.php';
+			?>
 			<section id="food-list" class="directory-section" aria-labelledby="food-directory-title">
 				<div class="layout-container">
 					<div class="directory-section__intro">

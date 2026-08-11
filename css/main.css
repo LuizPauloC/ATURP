@@ -78,6 +78,39 @@ body.is-ready {
 	background-color: #0f1112;
 }
 
+/* ----- BREADCRUMB ----- */
+.site-breadcrumb {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+	padding-top: 1.35rem;
+	margin-bottom: 1rem;
+	color: #5f6f6a;
+	font-size: 0.92rem;
+	line-height: 1.4;
+}
+
+.site-breadcrumb__link {
+	color: var(--dark-green);
+	font-weight: 600;
+	text-decoration: none;
+	transition: color 0.2s ease;
+}
+
+.site-breadcrumb__link:hover {
+	color: var(--light-green);
+}
+
+.site-breadcrumb__separator {
+	color: #9ca3af;
+}
+
+.site-breadcrumb__current {
+	color: #263238;
+	font-weight: 600;
+}
+
 .header-trigger {
 	height: 0px;
 	width: 100%;
@@ -87,6 +120,7 @@ body.is-ready {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	gap: 1rem;
 	padding-top: 1rem;
 	padding-bottom: 1rem;
 }
@@ -106,6 +140,7 @@ body.is-ready {
 
 .site-header__desktop-nav {
 	display: none;
+	min-width: 0;
 }
 
 .site-header__desktop-nav a {
@@ -187,9 +222,7 @@ body.is-ready {
 
 /* -----MENU----- */
 .menu-btn {
-	position: fixed;
-	bottom: 22px;
-	right: 22px;
+	position: relative;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -197,6 +230,7 @@ body.is-ready {
 	width: 3.5rem;
 	height: 3.5rem;
 	z-index: 100;
+	flex: 0 0 auto;
 }
 
 .menu-btn img {
@@ -369,7 +403,7 @@ footer hr {
 		display: flex;
 		align-items: center;
 		justify-content: flex-end;
-		gap: 1.5rem;
+		gap: clamp(0.85rem, 2vw, 1.5rem);
 		margin-left: auto;
 	}
 
@@ -610,32 +644,4 @@ footer hr {
 	.mobile-bottom-nav {
 		display: none;
 	}
-}
-
-/* ----- LINK DE VOLTAR ----- */
-.back-link-container {
-	margin-bottom: 2rem;
-}
-
-.back-link {
-	display: inline-flex;
-	align-items: center;
-	gap: 8px;
-	color: var(--dark-green);
-	font-weight: 600;
-	text-decoration: none;
-	transition: color 0.2s ease, transform 0.2s ease;
-	font-size: 0.95rem;
-	width: max-content;
-}
-
-.back-link:hover {
-	color: var(--light-green);
-	transform: translateX(-4px);
-}
-
-.back-link__icon {
-	width: 16px;
-	height: 16px;
-	fill: currentColor;
 }

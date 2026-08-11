@@ -1,6 +1,7 @@
 <?php
 $pageTitle = 'Categoria | ATURP - Pancas, ES';
 $customCss = ['./css/directory-cards.css', './css/categoria.css'];
+$headerStartsTransparent = true;
 require_once __DIR__ . '/includes/security.php';
 
 // Pega o slug da URL
@@ -59,17 +60,14 @@ include 'includes/header.php';
 </section>
 
 <main class="directory-page">
-    <div class="back-link-container layout-container" style="padding-top: 2rem; margin-bottom: 0;">
-        <?php
-        $backLink = './o-que-fazer.php';
-        ?>
-        <a href="<?= $backLink ?>" class="back-link">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="back-link__icon" width="16" height="16" style="width: 16px; height: 16px; fill: currentColor;">
-                <path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z" />
-            </svg>
-            Voltar
-        </a>
-    </div>
+    <?php
+    $breadcrumbs = [
+        ['label' => 'Inicio', 'url' => './index.php'],
+        ['label' => 'O que fazer', 'url' => './o-que-fazer.php'],
+        ['label' => $categoria ? $categoria['nome'] : 'Categoria'],
+    ];
+    include 'includes/breadcrumb.php';
+    ?>
 
     <section class="directory-section">
         <div class="layout-container">

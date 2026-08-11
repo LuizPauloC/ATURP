@@ -146,36 +146,31 @@
 				label: 'Eventos',
 				singular: 'Evento',
 				url: './o-que-fazer.php',
-				backLabel: 'Voltar para O que fazer',
 				aboutLabel: 'Sobre o Evento',
 			},
 			'onde-ficar': {
 				label: 'Hospedagens',
 				singular: 'Hospedagem',
 				url: './onde-ficar.php',
-				backLabel: 'Voltar para Onde ficar',
 				aboutLabel: 'Sobre a Hospedagem',
 			},
 			'onde-comer': {
 				label: 'Gastronomia',
 				singular: 'Estabelecimento',
 				url: './onde-comer.php',
-				backLabel: 'Voltar para Onde comer',
 				aboutLabel: 'Sobre o Estabelecimento',
 			},
 			'servicos': {
-				label: 'Servicos',
-				singular: 'Servico',
+				label: 'Serviços',
+				singular: 'Serviço',
 				url: './servicos.php',
-				backLabel: 'Voltar para Servicos',
-				aboutLabel: 'Sobre o Servico',
+				aboutLabel: 'Sobre o Serviço',
 			},
 			'experiencias': {
-				label: 'Experiencias',
-				singular: 'Experiencia',
+				label: 'Experiências',
+				singular: 'Experiência',
 				url: './o-que-fazer.php',
-				backLabel: 'Voltar para Experiencias',
-				aboutLabel: 'Sobre a Experiencia',
+				aboutLabel: 'Sobre a Experiência',
 			},
 		};
 
@@ -1095,29 +1090,6 @@
 		if (!type) {
 			renderStatus('Tipo de item inválido.', true, 'evento');
 			return;
-		}
-
-		// Update Back Link
-		const backLink = document.querySelector('.back-link');
-		const backLinkIcon = `
-			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="back-link__icon">
-				<path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/>
-			</svg>
-		`;
-		if (backLink) {
-			if (type === 'onde-ficar') {
-				backLink.href = './onde-ficar.php';
-				backLink.innerHTML = `${backLinkIcon} Voltar para Onde ficar`;
-			} else if (type === 'onde-comer') {
-				backLink.href = './onde-comer.php';
-				backLink.innerHTML = `${backLinkIcon} Voltar para Onde comer`;
-			} else if (type === 'servicos') {
-				backLink.href = './servicos.php';
-				backLink.innerHTML = `${backLinkIcon} Voltar para Serviços`;
-			} else {
-				backLink.href = './o-que-fazer.php';
-				backLink.innerHTML = `${backLinkIcon} Voltar para O que fazer`;
-			}
 		}
 
 		const dataUrl = DATA_URLS[type] || DATA_URLS['evento'];

@@ -20,7 +20,7 @@
 
 .detail-breadcrumb__link {
 	color: var(--dark-green);
-	font-weight: 650;
+	font-weight: 600;
 	text-decoration: none;
 	transition: color 0.2s ease;
 }
@@ -191,7 +191,7 @@
 .detail__info-eyebrow {
 	color: var(--dark-green);
 	font-size: 0.8rem;
-	font-weight: 750;
+	font-weight: 600;
 	letter-spacing: 0.16em;
 	line-height: 1.2;
 	margin-bottom: 0.8rem;
@@ -201,14 +201,14 @@
 .detail__title {
 	color: var(--black);
 	font-size: clamp(1.75rem, 4vw, 2.5rem);
-	font-weight: 700;
+	font-weight: 600;
 	line-height: 1.2;
 	margin-bottom: 1.5rem;
 }
 
 .detail__info-content--hosting .detail__title {
 	font-size: clamp(2rem, 4.2vw, 2.85rem);
-	font-weight: 750;
+	font-weight: 600;
 	line-height: 1.08;
 	margin-bottom: 0.65rem;
 }
@@ -232,7 +232,7 @@
 .detail__section-title {
 	font-size: 1.25rem;
 	color: var(--black);
-	font-weight: 400;
+	font-weight: 600;
 	margin-bottom: 1rem;
 	position: relative;
 	padding-bottom: 8px;
@@ -267,7 +267,7 @@
 	padding: 0.68rem 1rem;
 	border-radius: 6px;
 	font-size: 0.94rem;
-	font-weight: 750;
+	font-weight: 600;
 	text-decoration: none;
 	border: 1px solid transparent;
 	transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
@@ -319,7 +319,7 @@
 .detail__hosting-eyebrow {
 	color: var(--dark-green);
 	font-size: 0.78rem;
-	font-weight: 800;
+	font-weight: 600;
 	text-transform: uppercase;
 	letter-spacing: 0.08em;
 }
@@ -327,7 +327,7 @@
 .detail__hosting-title {
 	color: var(--black);
 	font-size: 1.35rem;
-	font-weight: 750;
+	font-weight: 600;
 	line-height: 1.25;
 }
 
@@ -382,7 +382,7 @@
 	display: block;
 	color: #6b7773;
 	font-size: 0.76rem;
-	font-weight: 750;
+	font-weight: 600;
 	text-transform: uppercase;
 	line-height: 1.25;
 }
@@ -391,7 +391,7 @@
 	display: block;
 	color: #17211e;
 	font-size: 1.02rem;
-	font-weight: 750;
+	font-weight: 600;
 	line-height: 1.25;
 }
 
@@ -404,7 +404,7 @@
 .detail__hosting-subtitle {
 	color: #1f2937;
 	font-size: 1rem;
-	font-weight: 750;
+	font-weight: 600;
 	margin-bottom: 0.85rem;
 }
 
@@ -425,7 +425,7 @@
 	color: #075f45;
 	border: 1px solid #b9dfcd;
 	font-size: 0.9rem;
-	font-weight: 700;
+	font-weight: 600;
 	line-height: 1.2;
 }
 
@@ -465,7 +465,7 @@
 	display: block;
 	color: var(--dark-green);
 	font-size: 0.76rem;
-	font-weight: 800;
+	font-weight: 600;
 	text-transform: uppercase;
 	margin-bottom: 0.35rem;
 }
@@ -501,7 +501,7 @@
 .detail__card-title {
 	font-size: 1.08rem;
 	color: var(--black);
-	font-weight: 750;
+	font-weight: 600;
 	margin-bottom: 1.15rem;
 	border-bottom: 1px solid #e3ebe7;
 	padding-bottom: 0.75rem;
@@ -515,7 +515,7 @@
 .detail__contact-title {
 	color: var(--black);
 	font-size: 0.92rem;
-	font-weight: 800;
+	font-weight: 600;
 	letter-spacing: 0.03em;
 	text-transform: uppercase;
 	margin-bottom: 1rem;
@@ -583,7 +583,7 @@
 
 .detail__contact-price strong {
 	color: var(--black);
-	font-weight: 800;
+	font-weight: 600;
 }
 
 .detail__contact-actions {
@@ -601,7 +601,7 @@
 	justify-content: center;
 	gap: 0.55rem;
 	font-size: 0.94rem;
-	font-weight: 750;
+	font-weight: 600;
 	text-decoration: none;
 	transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
 }
@@ -702,7 +702,7 @@
 .detail__meta-value {
 	color: #1f2937;
 	font-size: 1rem;
-	font-weight: 500;
+	font-weight: 600;
 	line-height: 1.4;
 }
 
@@ -732,7 +732,7 @@
 	min-height: 2.9rem;
 	border-radius: 8px;
 	font-size: 0.95rem;
-	font-weight: 700;
+	font-weight: 600;
 	text-decoration: none;
 	border: 1px solid transparent;
 	transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
@@ -802,7 +802,7 @@
 .detail-error-status h3 {
 	color: #d30000;
 	font-size: 1.5rem;
-	font-weight: 700;
+	font-weight: 600;
 	margin-bottom: 1rem;
 }
 

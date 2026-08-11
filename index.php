@@ -1,6 +1,7 @@
 <?php
 $pageTitle = 'Pancas Guia Turístico';
 $customCss = ['css/index.css'];
+$headerStartsTransparent = true;
 require_once __DIR__ . '/includes/security.php';
 include 'includes/header.php';
 ?>

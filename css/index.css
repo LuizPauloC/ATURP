@@ -8,7 +8,7 @@
 	background-color: #425065;
 	background-image:
 		linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0)),
-		url("../assets/hero/home-pancas-landscape.jpg");
+		url('../assets/hero/home-pancas-landscape.jpg');
 	background-size: cover;
 	background-position: center;
 	overflow: hidden;
@@ -125,7 +125,7 @@ main {
 /* -----FAST GUIDE----- */
 .fast-guide {
 	width: 100%;
-	background-color: var(--light-gray);
+	background-color: #f9f9f9;
 	padding-top: 80px;
 	padding-bottom: 80px;
 }
@@ -195,7 +195,9 @@ main {
 	width: 1rem;
 	height: 1rem;
 	fill: #b6b6b6;
-	transition: transform 0.1s ease, fill 0.1s ease;
+	transition:
+		transform 0.1s ease,
+		fill 0.1s ease;
 }
 
 .guide-tile:hover,
@@ -226,12 +228,12 @@ main {
 .events-section__calendar-grid {
 	display: flex;
 	flex-direction: row;
-	gap: 16px; 
-	max-width: 100%; 
+	gap: 16px;
+	max-width: 100%;
 	overflow-x: auto;
 	overflow-y: hidden;
-	white-space: nowrap; 
-	padding: 16px; 
+	white-space: nowrap;
+	padding: 16px;
 	box-sizing: border-box;
 }
 
@@ -239,9 +241,9 @@ main {
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-end;
-	flex-shrink: 0; 
+	flex-shrink: 0;
 	height: 320px;
-	width: 220px; 
+	width: 220px;
 	background-color: #059669;
 	color: white;
 	border-radius: 8px;
@@ -252,14 +254,14 @@ main {
 	cursor: pointer;
 }
 
-.event-card__content-wrapper{
+.event-card__content-wrapper {
 	display: flex;
 	flex-direction: column;
 	height: max-content;
 	width: 100%;
 	gap: 3px;
 	padding: 30px 16px;
-	background-image: linear-gradient(to top ,#00000090, #00000090, #00000060, #00000000);
+	background-image: linear-gradient(to top, #00000090, #00000090, #00000060, #00000000);
 }
 
 .event-card__event-title {
@@ -275,7 +277,8 @@ main {
 	line-height: 1.4;
 }
 
-.event-card__event-local, .event-card__event-date {
+.event-card__event-local,
+.event-card__event-date {
 	display: flex;
 	align-items: center;
 	gap: 3px;
@@ -285,7 +288,8 @@ main {
 	overflow: hidden;
 }
 
-.event-card__local-icon, .event-card__date-icon {
+.event-card__local-icon,
+.event-card__date-icon {
 	flex-shrink: 0;
 	width: 20px;
 	height: 20px;
@@ -302,7 +306,7 @@ main {
 /* -----GALLERY----- */
 .gallery {
 	width: 100%;
-	background-color: var(--light-gray);
+	background-color: #f9f9f9;
 	padding-top: 40px;
 	padding-bottom: 80px;
 }
@@ -344,7 +348,8 @@ main {
 	fill: #fff;
 }
 
-.gallery__btn:hover, .gallery__btn svg {
+.gallery__btn:hover,
+.gallery__btn svg {
 	transform: rotate(30px);
 }
 
@@ -399,7 +404,8 @@ main {
 		font-size: 1.5rem;
 	}
 
-	.event-card__event-local, .event-card__event-date {
+	.event-card__event-local,
+	.event-card__event-date {
 		font-size: 0.8rem;
 	}
 }

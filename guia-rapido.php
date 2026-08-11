@@ -1,6 +1,7 @@
 <?php
 $pageTitle = 'Guia Rápido | ATURP - Pancas, ES';
 $customCss = ['./css/directory-cards.css', './css/guia-rapido.css'];
+$headerStartsTransparent = true;
 include 'includes/header.php';
 ?>
 
@@ -18,6 +19,13 @@ include 'includes/header.php';
 		</section>
 
 		<main class="directory-page quick-guide-page">
+			<?php
+			$breadcrumbs = [
+				['label' => 'Inicio', 'url' => './index.php'],
+				['label' => 'Guia'],
+			];
+			include 'includes/breadcrumb.php';
+			?>
 			<section
 				id="quick-access"
 				class="directory-section quick-guide__section quick-guide__section--soft"

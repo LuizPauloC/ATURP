@@ -1,6 +1,7 @@
 <?php
 $pageTitle = 'Serviços | ATURP - Pancas, ES';
 $customCss = ['./css/directory-cards.css', './css/servicos.css'];
+$headerStartsTransparent = true;
 
 require_once __DIR__ . '/includes/security.php';
 
@@ -100,6 +101,13 @@ include 'includes/header.php';
 </section>
 
 <main class="directory-page services-page">
+    <?php
+    $breadcrumbs = [
+        ['label' => 'Inicio', 'url' => './index.php'],
+        ['label' => 'Servicos'],
+    ];
+    include 'includes/breadcrumb.php';
+    ?>
     <section class="directory-section services-directory" aria-labelledby="services-directory-title">
         <div class="layout-container">
             <div class="directory-section__intro">

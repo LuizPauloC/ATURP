@@ -1,6 +1,7 @@
 <?php
 $pageTitle = 'Eventos | ATURP - Pancas, ES';
 $customCss = ['./css/eventos.css'];
+$headerStartsTransparent = true;
 require_once __DIR__ . '/includes/security.php';
 include 'includes/header.php';
 require_once __DIR__ . '/config/database.php';
@@ -88,14 +89,14 @@ HTML;
 </section>
 
 <main class="layout-container" style="padding-top: 3rem; padding-bottom: 5rem;">
-    <div class="back-link-container" style="margin-bottom: 2rem;">
-        <a href="./o-que-fazer.php" class="back-link">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="back-link__icon" width="16" height="16" style="width: 16px; height: 16px; fill: currentColor;">
-                <path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z" />
-            </svg>
-            Voltar para O que fazer
-        </a>
-    </div>
+    <?php
+    $breadcrumbs = [
+        ['label' => 'Inicio', 'url' => './index.php'],
+        ['label' => 'O que fazer', 'url' => './o-que-fazer.php'],
+        ['label' => 'Eventos'],
+    ];
+    include 'includes/breadcrumb.php';
+    ?>
 
     <div class="events-tabs">
         <button class="events-tab-btn active" onclick="switchTab(event, 'todos')">Todos</button>

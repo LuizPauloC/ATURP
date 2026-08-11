@@ -32,17 +32,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Deixa o header em cor sólida ao rolar a página
 const header = document.querySelector('.site-header__nav');
-const pixelsLimit = 200; 
+const pixelsLimit = 200;
 
 if (header) {
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > pixelsLimit) {
+  const startsTransparent = document.body?.dataset.headerTransparent === 'true';
+
+  const updateHeaderColor = () => {
+    if (!startsTransparent || window.scrollY > pixelsLimit) {
       header.classList.add('solid-color');
     }
     else {
       header.classList.remove('solid-color');
     }
-  });
+  };
+
+  updateHeaderColor();
+  window.addEventListener('scroll', updateHeaderColor);
 }
 
 // Atualiza o ano no rodapé

@@ -18,6 +18,13 @@ $invalidPhotos = 0;
 ?>
 
 <main class="gallery-main layout-container">
+    <?php
+    $breadcrumbs = [
+        ['label' => 'Inicio', 'url' => './index.php'],
+        ['label' => 'Galeria'],
+    ];
+    include 'includes/breadcrumb.php';
+    ?>
     <h1 class="gallery-title">Galeria de Fotos</h1>
     <section class="gallery-section">
         <?php foreach($fotos as $foto): ?>

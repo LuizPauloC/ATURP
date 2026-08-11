@@ -11,6 +11,7 @@ $pdo = getDbConnection();
 
 $pageTitle = 'O que fazer | ATURP - Pancas, ES';
 $customCss = ['./css/o-que-fazer.css'];
+$headerStartsTransparent = true;
 include 'includes/header.php';
 ?>
 
@@ -26,6 +27,13 @@ include 'includes/header.php';
 		</section>
 
 		<main class="main-content">
+			<?php
+			$breadcrumbs = [
+				['label' => 'Inicio', 'url' => './index.php'],
+				['label' => 'O que fazer'],
+			];
+			include 'includes/breadcrumb.php';
+			?>
 			<section class="discover-section">
 				<div class="layout-container">
 					<hgroup>

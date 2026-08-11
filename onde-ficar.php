@@ -1,6 +1,7 @@
 <?php
 $pageTitle = 'Onde Ficar | ATURP - Pancas, ES';
 $customCss = ['./css/directory-cards.css', './css/onde-ficar.css'];
+$headerStartsTransparent = true;
 include 'includes/header.php';
 ?>
 
@@ -16,6 +17,13 @@ include 'includes/header.php';
 		</section>
 
 		<main class="directory-page stay-page">
+			<?php
+			$breadcrumbs = [
+				['label' => 'Inicio', 'url' => './index.php'],
+				['label' => 'Onde ficar'],
+			];
+			include 'includes/breadcrumb.php';
+			?>
 			<section id="stay-list" class="directory-section" aria-labelledby="stay-directory-title">
 				<div class="layout-container">
 					<div class="directory-section__intro">
