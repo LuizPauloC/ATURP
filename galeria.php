@@ -1,6 +1,7 @@
 <?php
 $pageTitle = 'Pancas Guia Turístico';
 $customCss = ['css/galeria.css'];
+$customJs = ['js/galeria.js'];
 require_once __DIR__ . '/includes/security.php';
 include 'includes/header.php';
 require_once __DIR__ . '/config/database.php';
@@ -20,7 +21,7 @@ $invalidPhotos = 0;
 <main class="gallery-main layout-container">
     <?php
     $breadcrumbs = [
-        ['label' => 'Inicio', 'url' => './index.php'],
+        ['label' => 'Início', 'url' => './index.php'],
         ['label' => 'Galeria'],
     ];
     include 'includes/breadcrumb.php';
@@ -30,13 +31,13 @@ $invalidPhotos = 0;
         <?php foreach($fotos as $foto): ?>
             <?php $imageSrc = aturpPublicImageSrc($foto['url_imagem'] ?? ''); ?>
             <?php if (!$imageSrc) { $invalidPhotos++; continue; } ?>
-            <?php $renderedPhotos++; ?>
-            <div class="gallery-item">
-                <img src="<?= aturpHtml($imageSrc) ?>" alt="<?= aturpHtml($foto['legenda']) ?>" loading="lazy">
+            <?php $lightboxIndex = $renderedPhotos++; ?>
+            <button type="button" class="gallery-item" data-gallery-lightbox-index="<?= (int) $lightboxIndex ?>" data-caption="<?= aturpHtml($foto['legenda'] ?? '') ?>" aria-label="Abrir foto da galeria">
+                <img src="<?= aturpHtml($imageSrc) ?>" alt="<?= aturpHtml($foto['legenda'] ?? '') ?>" loading="lazy">
                 <?php if (!empty($foto['legenda'])): ?>
-                    <p style="text-align: center; font-size: 0.9rem; margin-top: 8px; color: #555;"><?= aturpHtml($foto['legenda']) ?></p>
+                    <p class="gallery-item__caption"><?= aturpHtml($foto['legenda']) ?></p>
                 <?php endif; ?>
-            </div>
+            </button>
         <?php endforeach; ?>
     </section>
 
@@ -57,6 +58,19 @@ $invalidPhotos = 0;
     </div>
     <?php endif; ?>
 </main>
+
+<dialog id="gallery-lightbox-dialog" class="lightbox-dialog" aria-label="Imagem da galeria">
+    <button type="button" class="lightbox-dialog__backdrop-closer" data-lightbox-close aria-label="Fechar imagem ampliada"></button>
+    <div class="lightbox-dialog__container">
+        <button type="button" class="lightbox-dialog__close" data-lightbox-close aria-label="Fechar imagem ampliada">&times;</button>
+        <button type="button" class="lightbox-dialog__arrow lightbox-dialog__arrow--prev" data-lightbox-prev aria-label="Imagem anterior">&lsaquo;</button>
+        <div class="lightbox-dialog__content">
+            <img class="lightbox-dialog__image" src="" alt="">
+            <p class="lightbox-dialog__caption"></p>
+        </div>
+        <button type="button" class="lightbox-dialog__arrow lightbox-dialog__arrow--next" data-lightbox-next aria-label="Proxima imagem">&rsaquo;</button>
+    </div>
+</dialog>
 
 <?php
 include 'includes/footer.php';

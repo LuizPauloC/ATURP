@@ -19,7 +19,7 @@ include 'includes/header.php';
 		<main class="directory-page stay-page">
 			<?php
 			$breadcrumbs = [
-				['label' => 'Inicio', 'url' => './index.php'],
+				['label' => 'Início', 'url' => './index.php'],
 				['label' => 'Onde ficar'],
 			];
 			include 'includes/breadcrumb.php';

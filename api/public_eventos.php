@@ -21,12 +21,51 @@ function publicHttpUrl($value): string {
     return $scheme && in_array(strtolower($scheme), ['http', 'https'], true) ? $value : '';
 }
 
+function publicEventEntityPhotos(PDO $pdo, string $type, int $entityId, string $coverImage = ''): array {
+    $photos = [];
+    $seen = [];
+    $addPhoto = static function ($value) use (&$photos, &$seen): void {
+        if (trim((string) ($value ?? '')) === '') {
+            return;
+        }
+
+        $image = publicImagePath($value);
+        if ($image === '') {
+            return;
+        }
+
+        $key = preg_replace('#^\./#', '', $image);
+        if (isset($seen[$key])) {
+            return;
+        }
+
+        $seen[$key] = true;
+        $photos[] = $image;
+    };
+
+    $addPhoto($coverImage);
+
+    $stmt = $pdo->prepare("
+        SELECT url_imagem
+        FROM fotos
+        WHERE entidade_tipo = ? AND entidade_id = ?
+        ORDER BY ordem ASC, id ASC
+    ");
+    $stmt->execute([$type, $entityId]);
+
+    foreach ($stmt->fetchAll() as $photo) {
+        $addPhoto($photo['url_imagem'] ?? '');
+    }
+
+    return $photos;
+}
+
 try {
     $pdo = getDbConnection();
     
     $stmt = $pdo->query("
         SELECT
-            slug, titulo, descricao_completa, imagem_capa, data_inicio,
+            id, slug, titulo, descricao_completa, imagem_capa, data_inicio,
             data_fim, local_nome, endereco, telefone_contato, link_ingressos,
             preco_base
         FROM eventos
@@ -67,7 +106,7 @@ try {
             'slug' => $ev['slug'],
             'title' => $ev['titulo'],
             'image' => $image,
-            'photos' => array_values(array_filter([$image])),
+            'photos' => publicEventEntityPhotos($pdo, 'evento', (int) $ev['id'], $ev['imagem_capa'] ?? '') ?: array_values(array_filter([$image])),
             'date' => $dataStr,
             'time' => $timeStr,
             'local' => $ev['local_nome'] ?: $ev['endereco'],
@@ -96,5 +135,5 @@ try {
 } catch (Throwable $e) {
     error_log($e->getMessage());
     http_response_code(500);
-    echo json_encode(['error' => 'Nao foi possivel carregar os eventos.'], JSON_UNESCAPED_UNICODE);
+    echo json_encode(['error' => 'Não foi possível carregar os eventos.'], JSON_UNESCAPED_UNICODE);
 }

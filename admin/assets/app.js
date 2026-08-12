@@ -77,9 +77,9 @@ document.addEventListener('DOMContentLoaded', () => {
             titlePlaceholder: 'Ex: Pousada Poesia',
             subtitleLabel: 'Tipo / diferencial',
             subtitlePlaceholder: 'Ex: Pousada familiar, camping, hospedagem rural',
-            descriptionLabel: 'Descricao da hospedagem',
-            descriptionPlaceholder: 'Descreva a hospedagem, estrutura, diferenciais e informacoes importantes para o visitante.',
-            addressLabel: 'Endereco da hospedagem',
+            descriptionLabel: 'Descrição da hospedagem',
+            descriptionPlaceholder: 'Descreva a hospedagem, estrutura, diferenciais e informações importantes para o visitante.',
+            addressLabel: 'Endereço da hospedagem',
             addressPlaceholder: 'Ex: Rua Principal, zona rural, Pancas - ES',
             mapLabel: 'Link do mapa da hospedagem',
             phoneLabel: 'Contato da hospedagem',
@@ -87,8 +87,8 @@ document.addEventListener('DOMContentLoaded', () => {
             instagramPlaceholder: 'Ex: pousadapoesia ou https://instagram.com/pousadapoesia',
             websiteLabel: 'Website oficial',
             websitePlaceholder: 'Ex: https://www.pousadapoesia.com.br',
-            hoursLabel: 'Horario de atendimento',
-            hoursPlaceholder: 'Ex: Seg-Dom: 08:00 as 20:00',
+            hoursLabel: 'Horário de atendimento',
+            hoursPlaceholder: 'Ex: Seg-Dom: 08:00 às 20:00',
             filtersLabel: 'Tipo de hospedagem',
             filtersHint: 'Selecione os filtros que melhor classificam esta hospedagem.',
             imageLabel: 'Foto de capa da hospedagem',
@@ -100,28 +100,28 @@ document.addEventListener('DOMContentLoaded', () => {
             key: 'gastronomia',
             categorySlug: 'onde-comer',
             title: 'Gastronomia',
-            subtitle: 'Gerencie restaurantes, lanchonetes e opcoes de alimentacao',
+            subtitle: 'Gerencie restaurantes, lanchonetes e opções de alimentação',
             newLabel: 'Novo estabelecimento',
             createTitle: 'Novo Estabelecimento de Gastronomia',
             editTitle: 'Editar Gastronomia',
             titleLabel: 'Nome do estabelecimento',
-            titlePlaceholder: 'Ex: Restaurante Vista dos Pontoes',
+            titlePlaceholder: 'Ex: Restaurante Vista dos Pontões',
             subtitleLabel: 'Especialidade / tipo de cozinha',
             subtitlePlaceholder: 'Ex: Comida caseira, cafeteria, lanchonete',
-            descriptionLabel: 'Descricao do estabelecimento',
-            descriptionPlaceholder: 'Descreva o estabelecimento, cardapio, especialidades e informacoes importantes.',
-            addressLabel: 'Endereco do estabelecimento',
+            descriptionLabel: 'Descrição do estabelecimento',
+            descriptionPlaceholder: 'Descreva o estabelecimento, cardápio, especialidades e informações importantes.',
+            addressLabel: 'Endereço do estabelecimento',
             addressPlaceholder: 'Ex: Avenida principal, Centro, Pancas - ES',
             mapLabel: 'Link do mapa do estabelecimento',
             phoneLabel: 'Contato do estabelecimento',
             phonePlaceholder: 'Ex: 5527999999999 ou https://wa.me/5527999999999',
             instagramPlaceholder: 'Ex: restaurantepancas ou https://instagram.com/restaurantepancas',
-            websiteLabel: 'Site ou cardapio',
+            websiteLabel: 'Site ou cardápio',
             websitePlaceholder: 'Ex: https://www.restaurante.com.br/cardapio',
-            hoursLabel: 'Horario de funcionamento',
-            hoursPlaceholder: 'Ex: Ter-Dom: 11:00 as 14:00, 18:00 as 22:00',
+            hoursLabel: 'Horário de funcionamento',
+            hoursPlaceholder: 'Ex: Ter-Dom: 11:00 às 14:00, 18:00 às 22:00',
             filtersLabel: 'Filtros de gastronomia',
-            filtersHint: 'Selecione momentos de refeicao e tipo do estabelecimento.',
+            filtersHint: 'Selecione momentos de refeição e tipo do estabelecimento.',
             imageLabel: 'Foto de capa do estabelecimento',
             activeLabel: 'Estabelecimento ativo no site',
             saveLabel: 'Salvar estabelecimento',
@@ -131,38 +131,38 @@ document.addEventListener('DOMContentLoaded', () => {
             key: 'servicos',
             categorySlug: 'servicos',
             title: 'Serviços',
-            subtitle: 'Gerencie servicos locais uteis ao visitante',
+            subtitle: 'Gerencie serviços locais úteis ao visitante',
             newLabel: 'Novo serviço',
             createTitle: 'Novo Serviço',
             editTitle: 'Editar Serviço',
             titleLabel: 'Nome do serviço/empresa',
-            titlePlaceholder: 'Ex: Condutor Turistico Pancas',
+            titlePlaceholder: 'Ex: Condutor Turístico Pancas',
             subtitleLabel: 'Tipo de serviço',
-            subtitlePlaceholder: 'Ex: Condutor turistico, imobiliaria, materiais de construcao',
-            descriptionLabel: 'Descricao do servico',
-            descriptionPlaceholder: 'Descreva o servico, atendimento, diferenciais e informacoes importantes.',
-            addressLabel: 'Endereco ou area de atendimento',
-            addressPlaceholder: 'Ex: Centro, Pancas - ES ou atendimento em toda a regiao',
-            mapLabel: 'Link do mapa do servico',
-            phoneLabel: 'Contato do servico',
+            subtitlePlaceholder: 'Ex: Condutor turístico, imobiliária, materiais de construção',
+            descriptionLabel: 'Descrição do serviço',
+            descriptionPlaceholder: 'Descreva o serviço, atendimento, diferenciais e informações importantes.',
+            addressLabel: 'Endereço ou área de atendimento',
+            addressPlaceholder: 'Ex: Centro, Pancas - ES ou atendimento em toda a região',
+            mapLabel: 'Link do mapa do serviço',
+            phoneLabel: 'Contato do serviço',
             phonePlaceholder: 'Ex: 5527999999999 ou https://wa.me/5527999999999',
             instagramPlaceholder: 'Ex: guia.pancas ou https://instagram.com/guia.pancas',
-            websiteLabel: 'Site do servico',
+            websiteLabel: 'Site do serviço',
             websitePlaceholder: 'Ex: https://www.servico.com.br',
-            hoursLabel: 'Horario de atendimento',
-            hoursPlaceholder: 'Ex: Seg-Sex: 08:00 as 18:00',
-            filtersLabel: 'Tipo de servico',
-            filtersHint: 'Selecione o filtro que melhor descreve este servico.',
-            imageLabel: 'Foto de capa do servico',
-            activeLabel: 'Servico ativo no site',
-            saveLabel: 'Salvar servico',
+            hoursLabel: 'Horário de atendimento',
+            hoursPlaceholder: 'Ex: Seg-Sex: 08:00 às 18:00',
+            filtersLabel: 'Tipo de serviço',
+            filtersHint: 'Selecione o filtro que melhor descreve este serviço.',
+            imageLabel: 'Foto de capa do serviço',
+            activeLabel: 'Serviço ativo no site',
+            saveLabel: 'Salvar serviço',
             emptyText: 'Nenhum serviço cadastrado.',
         },
         experiencias: {
             key: 'experiencias',
             categorySlug: 'experiencias',
             title: 'Experiências',
-            subtitle: 'Gerencie experiencias e atrativos do O que Fazer',
+            subtitle: 'Gerencie experiências e atrativos cadastrados',
             newLabel: 'Nova experiência',
             createTitle: 'Nova Experiência',
             editTitle: 'Editar Experiência',
@@ -170,23 +170,23 @@ document.addEventListener('DOMContentLoaded', () => {
             titlePlaceholder: 'Ex: Rota dos Pontões Capixabas',
             subtitleLabel: 'Tipo / destaque da experiência',
             subtitlePlaceholder: 'Ex: Trilha, voo livre, mirante, roteiro cultural',
-            descriptionLabel: 'Descricao da experiencia',
-            descriptionPlaceholder: 'Descreva a experiencia, nivel de dificuldade, duracao e orientacoes ao visitante.',
+            descriptionLabel: 'Descrição da experiência',
+            descriptionPlaceholder: 'Descreva a experiência, nível de dificuldade, duração e orientações ao visitante.',
             addressLabel: 'Local ou ponto de encontro',
             addressPlaceholder: 'Ex: Entrada da trilha, comunidade local, Pancas - ES',
-            mapLabel: 'Link do mapa da experiencia',
-            phoneLabel: 'Contato da experiencia',
+            mapLabel: 'Link do mapa da experiência',
+            phoneLabel: 'Contato da experiência',
             phonePlaceholder: 'Ex: 5527999999999 ou https://wa.me/5527999999999',
             instagramPlaceholder: 'Ex: aventura.pancas ou https://instagram.com/aventura.pancas',
-            websiteLabel: 'Site ou informacoes',
+            websiteLabel: 'Site ou informações',
             websitePlaceholder: 'Ex: https://www.experiencia.com.br',
-            hoursLabel: 'Dias e horarios recomendados',
-            hoursPlaceholder: 'Ex: Sab-Dom: 07:00 as 12:00',
-            filtersLabel: 'Filtros da experiencia',
-            filtersHint: 'Selecione filtros cadastrados para esta experiencia, quando houver.',
-            imageLabel: 'Foto de capa da experiencia',
-            activeLabel: 'Experiencia ativa no site',
-            saveLabel: 'Salvar experiencia',
+            hoursLabel: 'Dias e horários recomendados',
+            hoursPlaceholder: 'Ex: Sab-Dom: 07:00 às 12:00',
+            filtersLabel: 'Filtros da experiência',
+            filtersHint: 'Selecione filtros cadastrados para esta experiência, quando houver.',
+            imageLabel: 'Foto de capa da experiência',
+            activeLabel: 'Experiência ativa no site',
+            saveLabel: 'Salvar experiência',
             emptyText: 'Nenhuma experiência cadastrada.',
         },
         outros: {
@@ -201,9 +201,9 @@ document.addEventListener('DOMContentLoaded', () => {
             titlePlaceholder: 'Ex: Atrativo ou local de interesse',
             subtitleLabel: 'Resumo curto / especialidade',
             subtitlePlaceholder: 'Ex: Categoria, especialidade ou diferencial principal',
-            descriptionLabel: 'Descricao do item',
-            descriptionPlaceholder: 'Descreva o item, diferenciais e informacoes importantes para o visitante.',
-            addressLabel: 'Endereco / Localizacao',
+            descriptionLabel: 'Descrição do item',
+            descriptionPlaceholder: 'Descreva o item, diferenciais e informações importantes para o visitante.',
+            addressLabel: 'Endereço / Localização',
             addressPlaceholder: 'Ex: Avenida principal, Centro, Pancas - ES',
             mapLabel: 'Link do Google Maps',
             phoneLabel: 'Contato do item',
@@ -211,8 +211,8 @@ document.addEventListener('DOMContentLoaded', () => {
             instagramPlaceholder: 'Ex: perfil.pancas ou https://instagram.com/perfil.pancas',
             websiteLabel: 'Website',
             websitePlaceholder: 'Ex: https://www.site.com.br',
-            hoursLabel: 'Horario de funcionamento',
-            hoursPlaceholder: 'Ex: Seg-Sex: 08:00 as 12:00, 14:00 as 18:00',
+            hoursLabel: 'Horário de funcionamento',
+            hoursPlaceholder: 'Ex: Seg-Sex: 08:00 às 12:00, 14:00 às 18:00',
             filtersLabel: 'Filtros',
             filtersHint: 'Os filtros mudam conforme a categoria selecionada.',
             imageLabel: 'Foto de capa do item',
@@ -226,12 +226,12 @@ document.addEventListener('DOMContentLoaded', () => {
             { value: 'pousada', label: 'Pousada' },
             { value: 'hotel', label: 'Hotel' },
             { value: 'camping', label: 'Camping' },
-            { value: 'chale', label: 'Chale' },
-            { value: 'cama-e-cafe', label: 'Cama & Cafe' },
+            { value: 'chale', label: 'Chalé' },
+            { value: 'cama-e-cafe', label: 'Cama & Café' },
         ],
         priceOptions: [
-            { value: 'economico', label: 'Economico $' },
-            { value: 'intermediario', label: 'Intermediario $$' },
+            { value: 'economico', label: 'Econômico $' },
+            { value: 'intermediario', label: 'Intermediário $$' },
             { value: 'luxo', label: 'Luxo $$$' },
         ],
         amenityOptions: [
@@ -254,13 +254,13 @@ document.addEventListener('DOMContentLoaded', () => {
             { value: 'outros', label: 'Outros' },
         ],
         priceOptions: [
-            { value: 'economico', label: 'Economico $' },
-            { value: 'intermediario', label: 'Intermediario $$' },
+            { value: 'economico', label: 'Econômico $' },
+            { value: 'intermediario', label: 'Intermediário $$' },
             { value: 'alto', label: 'Alto $$$' },
         ],
         mealOptions: [
-            { value: 'cafe-da-manha', label: 'Cafe da manha' },
-            { value: 'almoco', label: 'Almoco' },
+            { value: 'cafe-da-manha', label: 'Café da manhã' },
+            { value: 'almoco', label: 'Almoço' },
             { value: 'lanches', label: 'Lanches' },
             { value: 'jantar', label: 'Jantar' },
         ],
@@ -271,26 +271,26 @@ document.addEventListener('DOMContentLoaded', () => {
         ],
         paymentOptions: [
             { value: 'pix', label: 'Pix' },
-            { value: 'cartao', label: 'Cartao' },
+            { value: 'cartao', label: 'Cartão' },
             { value: 'dinheiro', label: 'Dinheiro' },
         ],
     };
     const SERVICES_EXTRA_SCHEMA = {
         typeOptions: [
-            { value: 'condutor-turistico', label: 'Condutor turistico' },
-            { value: 'imobiliaria', label: 'Imobiliaria' },
-            { value: 'materiais-construcao', label: 'Materiais de construcao' },
+            { value: 'condutor-turistico', label: 'Condutor turístico' },
+            { value: 'imobiliaria', label: 'Imobiliária' },
+            { value: 'materiais-construcao', label: 'Materiais de construção' },
             { value: 'transporte', label: 'Transporte' },
-            { value: 'comercio-local', label: 'Comercio local' },
-            { value: 'saude', label: 'Saude' },
+            { value: 'comercio-local', label: 'Comércio local' },
+            { value: 'saude', label: 'Saúde' },
             { value: 'oficina', label: 'Oficina' },
             { value: 'outros', label: 'Outros' },
         ],
         areaOptions: [
             { value: 'pancas', label: 'Pancas' },
-            { value: 'regiao', label: 'Regiao' },
+            { value: 'regiao', label: 'Região' },
             { value: 'online', label: 'Online' },
-            { value: 'domicilio', label: 'Atendimento em domicilio' },
+            { value: 'domicilio', label: 'Atendimento em domicílio' },
         ],
         attendanceOptions: [
             { value: 'presencial', label: 'Presencial' },
@@ -300,7 +300,7 @@ document.addEventListener('DOMContentLoaded', () => {
         ],
         paymentOptions: [
             { value: 'pix', label: 'Pix' },
-            { value: 'cartao', label: 'Cartao' },
+            { value: 'cartao', label: 'Cartão' },
             { value: 'dinheiro', label: 'Dinheiro' },
         ],
     };
@@ -312,17 +312,17 @@ document.addEventListener('DOMContentLoaded', () => {
             { value: 'roteiro-cultural', label: 'Roteiro cultural' },
             { value: 'turismo-rural', label: 'Turismo rural' },
             { value: 'aventura', label: 'Aventura' },
-            { value: 'contemplacao', label: 'Contemplacao' },
+            { value: 'contemplacao', label: 'Contemplação' },
             { value: 'outros', label: 'Outros' },
         ],
         difficultyOptions: [
-            { value: 'facil', label: 'Facil' },
+            { value: 'facil', label: 'Fácil' },
             { value: 'moderado', label: 'Moderado' },
-            { value: 'dificil', label: 'Dificil' },
+            { value: 'dificil', label: 'Difícil' },
         ],
         audienceOptions: [
-            { value: 'familias', label: 'Familias' },
-            { value: 'criancas', label: 'Criancas' },
+            { value: 'familias', label: 'Famílias' },
+            { value: 'criancas', label: 'Crianças' },
             { value: 'casais', label: 'Casais' },
             { value: 'grupos', label: 'Grupos' },
             { value: 'aventureiros', label: 'Aventureiros' },
@@ -331,8 +331,8 @@ document.addEventListener('DOMContentLoaded', () => {
             { value: 'guia', label: 'Guia' },
             { value: 'estacionamento', label: 'Estacionamento' },
             { value: 'banheiro', label: 'Banheiro' },
-            { value: 'alimentacao', label: 'Alimentacao' },
-            { value: 'sinalizacao', label: 'Sinalizacao' },
+            { value: 'alimentacao', label: 'Alimentação' },
+            { value: 'sinalizacao', label: 'Sinalização' },
             { value: 'acessibilidade', label: 'Acessibilidade' },
         ],
     };
@@ -362,7 +362,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const text = document.createElement('span');
         text.className = 'toast__text';
-        text.textContent = message || (type === 'error' ? 'Nao foi possivel concluir a acao.' : 'Acao concluida.');
+        text.textContent = message || (type === 'error' ? 'Não foi possível concluir a ação.' : 'Ação concluída.');
 
         toast.append(icon, text);
         container.append(toast);
@@ -372,9 +372,48 @@ document.addEventListener('DOMContentLoaded', () => {
             toast.addEventListener('animationend', () => toast.remove(), { once: true });
         }, 4000);
     }
+
+    function uploadErrorReasonLabel(reason = '') {
+        const normalizedReason = String(reason)
+            .normalize('NFD')
+            .replace(/[\u0300-\u036f]/g, '')
+            .toLowerCase();
+
+        if (normalizedReason.includes('5 mb') || normalizedReason.includes('maior') || normalizedReason.includes('grande')) {
+            return 'tamanho acima de 5 MB';
+        }
+
+        if (normalizedReason.includes('tipo') || normalizedReason.includes('formato')) {
+            return 'formato inválido';
+        }
+
+        if (normalizedReason.includes('imagem invalida') || normalizedReason.includes('arquivo de imagem')) {
+            return 'arquivo de imagem inválido';
+        }
+
+        if (normalizedReason.includes('upload')) {
+            return 'falha no upload';
+        }
+
+        return 'arquivo incompatível';
+    }
+
+    function uploadErrorMessageFromSkipped(skipped = [], fallback = 'Erro ao enviar imagem.') {
+        if (!Array.isArray(skipped) || skipped.length === 0) {
+            return fallback;
+        }
+
+        const reasons = Array.from(new Set(skipped.map((item) => uploadErrorReasonLabel(item?.reason))));
+        const reasonText = reasons.length === 1 ? reasons[0] : reasons.join(', ');
+        return `${skipped.length} imagem(ns) ignorada(s): ${reasonText}.`;
+    }
+
+    function uploadErrorMessageFromApi(error, fallback = 'Erro ao enviar imagem.') {
+        return error ? uploadErrorReasonLabel(error) + '.' : fallback;
+    }
     const WEEK_DAYS = [
         { key: 'seg', short: 'Seg', display: 'Seg.', label: 'Segunda-feira' },
-        { key: 'ter', short: 'Ter', display: 'Ter.', label: 'Terca-feira' },
+        { key: 'ter', short: 'Ter', display: 'Ter.', label: 'Terça-feira' },
         { key: 'qua', short: 'Qua', display: 'Qua.', label: 'Quarta-feira' },
         { key: 'qui', short: 'Qui', display: 'Qui.', label: 'Quinta-feira' },
         { key: 'sex', short: 'Sex', display: 'Sex.', label: 'Sexta-feira' },
@@ -470,6 +509,33 @@ document.addEventListener('DOMContentLoaded', () => {
         return Object.values(ITEM_CONTEXTS).find((context) => context.categorySlug === categorySlug) || ITEM_CONTEXTS.outros;
     }
 
+    function findSchemaOptionLabel(options, value) {
+        const normalizedValue = normalizeCategorySlug(value);
+        if (!normalizedValue) {
+            return '';
+        }
+
+        return (options || []).find((option) => option.value === normalizedValue)?.label || '';
+    }
+
+    function getItemTypeLabelForTable(item, context = getItemContextForItem(item)) {
+        const extra = parseItemExtraData(item);
+        if (context.key === 'hospedagens') {
+            return findSchemaOptionLabel(HOSTING_EXTRA_SCHEMA.typeOptions, extra.tipo_hospedagem) || 'Sem tipo';
+        }
+        if (context.key === 'gastronomia') {
+            return findSchemaOptionLabel(GASTRONOMY_EXTRA_SCHEMA.cuisineOptions, extra.tipo_cozinha) || 'Sem tipo';
+        }
+        if (context.key === 'servicos') {
+            return findSchemaOptionLabel(SERVICES_EXTRA_SCHEMA.typeOptions, extra.tipo_servico) || 'Sem tipo';
+        }
+        if (context.key === 'experiencias') {
+            return findSchemaOptionLabel(EXPERIENCES_EXTRA_SCHEMA.typeOptions, extra.tipo_experiencia) || 'Sem tipo';
+        }
+
+        return item?.categoria_nome || 'Sem categoria';
+    }
+
     function normalizeSortText(value) {
         return String(value ?? '')
             .normalize('NFD')
@@ -484,6 +550,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (key === 'criado_em') {
             return new Date(item?.criado_em || 0).getTime() || 0;
+        }
+
+        if (key === 'tipo_item') {
+            return normalizeSortText(getItemTypeLabelForTable(item, getCurrentItemContext()));
         }
 
         return normalizeSortText(item?.[key]);
@@ -534,7 +604,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const headers = itemTable ? Array.from(itemTable.querySelectorAll('thead th')) : [];
         const sortableHeaders = [
             { index: 1, key: 'titulo' },
-            { index: 2, key: 'categoria_nome' },
+            { index: 2, key: 'tipo_item' },
             { index: 3, key: 'ativo' },
         ];
 
@@ -874,7 +944,7 @@ document.addEventListener('DOMContentLoaded', () => {
         fromText.className = 'opening-hours__range-label';
         fromText.textContent = 'de';
 
-        const startInput = createOpeningHoursTimeInput(range.start, 'Horario inicial');
+        const startInput = createOpeningHoursTimeInput(range.start, 'Horário inicial');
         startInput.dataset.timeRole = 'start';
         startInput.dataset.rangeIndex = String(rangeIndex);
 
@@ -882,7 +952,7 @@ document.addEventListener('DOMContentLoaded', () => {
         toText.className = 'opening-hours__range-label';
         toText.textContent = 'às';
 
-        const endInput = createOpeningHoursTimeInput(range.end, 'Horario final');
+        const endInput = createOpeningHoursTimeInput(range.end, 'Horário final');
         endInput.dataset.timeRole = 'end';
         endInput.dataset.rangeIndex = String(rangeIndex);
 
@@ -1300,6 +1370,28 @@ document.addEventListener('DOMContentLoaded', () => {
     // SPA Navigation Logic
     const navItems = document.querySelectorAll('.nav-item');
     const views = document.querySelectorAll('.view-section');
+    const menuToggle = document.getElementById('admin-menu-toggle');
+    const mobileMenuQuery = window.matchMedia('(max-width: 900px)');
+
+    function setAdminMenuOpen(isOpen) {
+        document.body.classList.toggle('admin-nav-open', isOpen);
+        if (menuToggle) {
+            menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+            menuToggle.setAttribute('aria-label', isOpen ? 'Fechar menu do painel' : 'Abrir menu do painel');
+        }
+    }
+
+    if (menuToggle) {
+        menuToggle.addEventListener('click', () => {
+            setAdminMenuOpen(!document.body.classList.contains('admin-nav-open'));
+        });
+    }
+
+    mobileMenuQuery.addEventListener?.('change', (event) => {
+        if (!event.matches) {
+            setAdminMenuOpen(false);
+        }
+    });
 
     navItems.forEach(item => {
         item.addEventListener('click', () => {
@@ -1322,6 +1414,14 @@ document.addEventListener('DOMContentLoaded', () => {
                     v.classList.remove('active');
                 }
             });
+
+            if (mobileMenuQuery.matches) {
+                document.body.classList.remove('admin-nav-open');
+                if (menuToggle) {
+                    menuToggle.setAttribute('aria-expanded', 'false');
+                    menuToggle.setAttribute('aria-label', 'Abrir menu do painel');
+                }
+            }
         });
     });
 
@@ -1413,10 +1513,384 @@ document.addEventListener('DOMContentLoaded', () => {
             fileInput.value = '';
         }
         if (status) {
-            status.textContent = 'Imagem removida. Salve para confirmar a alteracao.';
+            status.textContent = 'Imagem removida. Salve para confirmar a alteração.';
         }
         button.hidden = true;
     }
+
+    function entityPhotosApiUrl(action, params = {}) {
+        const query = new URLSearchParams({ action, ...params });
+        return `api/entity_photos.php?${query.toString()}`;
+    }
+
+    const ENTITY_PHOTOS_LIST_ENDPOINT = 'api/entity_photos.php?action=list';
+    const ENTITY_PHOTOS_CREATE_ENDPOINT = 'api/entity_photos.php?action=create';
+    const ENTITY_PHOTOS_SET_COVER_ENDPOINT = 'api/entity_photos.php?action=set_cover';
+    const ENTITY_PHOTOS_REORDER_ENDPOINT = 'api/entity_photos.php?action=reorder';
+
+    function renderEntityMediaManager(entityType, entityId, currentImage = '', title = 'Galeria de imagens') {
+        const safeEntityId = safeInt(entityId);
+        const safeCurrentImage = safeImagePath(currentImage);
+        const mediaTitle = String(title || 'Galeria de imagens').replace(/^Foto de capa\b/i, 'Fotos');
+
+        if (!safeEntityId) {
+            return `
+                <section class="entity-media" data-media-manager data-media-dropzone data-entity-type="${escapeAttr(entityType)}" data-entity-id="">
+                    <div class="entity-media__header">
+                        <h3>${escapeHtml(mediaTitle)}</h3>
+                    </div>
+                    <div class="entity-media__status">Salve este cadastro antes de gerenciar a galeria.</div>
+                </section>
+            `;
+        }
+
+        return `
+            <section class="entity-media" data-media-manager data-media-dropzone data-entity-type="${escapeAttr(entityType)}" data-entity-id="${safeEntityId}">
+                <div class="entity-media__header">
+                    <h3>${escapeHtml(mediaTitle)}</h3>
+                    <label class="entity-media__upload">
+                        <span class="entity-media__upload-icon" aria-hidden="true">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><path d="M304 112L192 112C183.2 112 176 119.2 176 128L176 512C176 520.8 183.2 528 192 528L448 528C456.8 528 464 520.8 464 512L464 272L376 272C336.2 272 304 239.8 304 200L304 112zM444.1 224L352 131.9L352 200C352 213.3 362.7 224 376 224L444.1 224zM128 128C128 92.7 156.7 64 192 64L325.5 64C342.5 64 358.8 70.7 370.8 82.7L493.3 205.3C505.3 217.3 512 233.6 512 250.6L512 512C512 547.3 483.3 576 448 576L192 576C156.7 576 128 547.3 128 512L128 128zM387.4 496L252.6 496C236.8 496 224 483.2 224 467.4C224 461 226.1 454.9 230 449.8L297.6 362.9C303 356 311.3 352 320 352C328.7 352 337 356 342.4 362.9L410 449.9C413.9 454.9 416 461.1 416 467.5C416 483.3 403.2 496.1 387.4 496.1zM240 288C257.7 288 272 302.3 272 320C272 337.7 257.7 352 240 352C222.3 352 208 337.7 208 320C208 302.3 222.3 288 240 288z"/></svg>
+                        </span>
+                        <small>Adicionar imagem</small>
+                        <input type="file" accept="image/jpeg,image/png,image/webp" multiple data-media-action="upload">
+                    </label>
+                </div>
+                <div class="entity-media__status" data-media-status>Carregando imagens...</div>
+                <div class="entity-media__grid" data-media-grid></div>
+            </section>
+        `;
+    }
+
+    function normalizeEntityMediaImageKey(value) {
+        return safeImagePath(value).replace(/^\.?\//, '');
+    }
+
+    function renderCurrentEntityCoverPreview(coverImage) {
+        return `
+            <article class="entity-media__thumb entity-media__thumb--legacy">
+                <div class="entity-media__image" style="background-image:url('../${escapeAttr(coverImage)}')">
+                    <span class="entity-media__cover-badge">Capa atual</span>
+                </div>
+            </article>
+        `;
+    }
+
+    function renderEntityPhotos(manager, payload) {
+        const grid = manager.querySelector('[data-media-grid]');
+        const status = manager.querySelector('[data-media-status]');
+        const hiddenInput = manager.closest('form')?.querySelector('[name="imagem_capa"]');
+        const photos = Array.isArray(payload?.photos) ? payload.photos : [];
+        const coverImage = safeImagePath(payload?.entity?.imagem_capa || '');
+        const coverImageKey = normalizeEntityMediaImageKey(coverImage);
+
+        if (hiddenInput) {
+            hiddenInput.value = coverImage ? `./${coverImage}` : '';
+        }
+
+        if (!grid || !status) {
+            return;
+        }
+
+        if (!photos.length) {
+            if (coverImage) {
+                status.textContent = 'Capa atual salva. Envie imagens para criar uma galeria editável.';
+                grid.innerHTML = renderCurrentEntityCoverPreview(coverImage);
+            } else {
+                status.textContent = 'Nenhuma imagem cadastrada.';
+                grid.innerHTML = '';
+            }
+            return;
+        }
+
+        const hasCoverInPhotos = coverImageKey !== '' && photos.some((photo) => (
+            normalizeEntityMediaImageKey(photo.url_imagem) === coverImageKey
+        ));
+        const currentCoverPreviewMarkup = coverImage && !hasCoverInPhotos ? renderCurrentEntityCoverPreview(coverImage) : '';
+
+        status.textContent = `${photos.length} imagem(ns) cadastrada(s).`;
+        grid.innerHTML = currentCoverPreviewMarkup + photos.map((photo, index) => {
+            const image = safeImagePath(photo.url_imagem);
+            if (!image) {
+                return '';
+            }
+
+            const photoId = safeInt(photo.id);
+            return `
+                <article class="entity-media__thumb" data-photo-id="${photoId}">
+                    <div class="entity-media__image" style="background-image:url('../${escapeAttr(image)}')">
+                        ${photo.is_cover ? '<span class="entity-media__cover-badge">Capa atual</span>' : ''}
+                    </div>
+                    <div class="entity-media__body">
+                        <input type="text" class="form-control entity-media__caption-input" value="${escapeAttr(photo.legenda || '')}" placeholder="Legenda da imagem" data-media-action="caption" data-photo-id="${photoId}">
+                        <div class="entity-media__actions">
+                            <button type="button" class="entity-media__button entity-media__button--icon" data-media-action="move-up" data-photo-id="${photoId}" title="Subir imagem" aria-label="Subir imagem" ${index === 0 ? 'disabled' : ''}>
+                                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><path d="M300.3 199.2C312.9 188.9 331.4 189.7 343.1 201.4L471.1 329.4C480.3 338.6 483 352.3 478 364.3C473 376.3 461.4 384 448.5 384L192.5 384C179.6 384 167.9 376.2 162.9 364.2C157.9 352.2 160.7 338.5 169.9 329.4L297.9 201.4L300.3 199.2z"/></svg>
+                            </button>
+                            <button type="button" class="entity-media__button entity-media__button--icon" data-media-action="move-down" data-photo-id="${photoId}" title="Descer imagem" aria-label="Descer imagem" ${index === photos.length - 1 ? 'disabled' : ''}>
+                                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><path d="M300.3 440.8C312.9 451 331.4 450.3 343.1 438.6L471.1 310.6C480.3 301.4 483 287.7 478 275.7C473 263.7 461.4 256 448.5 256L192.5 256C179.6 256 167.9 263.8 162.9 275.8C157.9 287.8 160.7 301.5 169.9 310.6L297.9 438.6L300.3 440.8z"/></svg>
+                            </button>
+                            <button type="button" class="entity-media__button entity-media__button--cover" data-media-action="cover" data-photo-id="${photoId}" aria-pressed="${photo.is_cover ? 'true' : 'false'}" ${photo.is_cover ? 'disabled' : ''}>Definir capa</button>
+                            <button type="button" class="entity-media__button entity-media__button--icon entity-media__button--danger" data-media-action="delete" data-photo-id="${photoId}" title="Excluir imagem" aria-label="Excluir imagem">
+                                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><path d="M262.2 48C248.9 48 236.9 56.3 232.2 68.8L216 112L120 112C106.7 112 96 122.7 96 136C96 149.3 106.7 160 120 160L520 160C533.3 160 544 149.3 544 136C544 122.7 533.3 112 520 112L424 112L407.8 68.8C403.1 56.3 391.2 48 377.8 48L262.2 48zM128 208L128 512C128 547.3 156.7 576 192 576L448 576C483.3 576 512 547.3 512 512L512 208L464 208L464 512C464 520.8 456.8 528 448 528L192 528C183.2 528 176 520.8 176 512L176 208L128 208zM288 280C288 266.7 277.3 256 264 256C250.7 256 240 266.7 240 280L240 456C240 469.3 250.7 480 264 480C277.3 480 288 469.3 288 456L288 280zM400 280C400 266.7 389.3 256 376 256C362.7 256 352 266.7 352 280L352 456C352 469.3 362.7 480 376 480C389.3 480 400 469.3 400 456L400 280z"/></svg>
+                            </button>
+                        </div>
+                    </div>
+                </article>
+            `;
+        }).join('');
+    }
+
+    function findEntityMediaManager(entityType, entityId) {
+        return Array.from(document.querySelectorAll('[data-media-manager]')).find((manager) => (
+            manager.dataset.entityType === String(entityType) &&
+            safeInt(manager.dataset.entityId) === safeInt(entityId)
+        )) || null;
+    }
+
+    async function loadEntityPhotos(entityType, entityId) {
+        const manager = findEntityMediaManager(entityType, entityId);
+        if (!manager) {
+            return;
+        }
+
+        const status = manager.querySelector('[data-media-status]');
+        if (status) {
+            status.textContent = 'Carregando imagens...';
+        }
+
+        try {
+            const result = await fetchJson(entityPhotosApiUrl('list', { tipo: entityType, id: safeInt(entityId) }));
+            if (result.success) {
+                renderEntityPhotos(manager, result.data);
+                markModalFormPristine();
+            } else if (status) {
+                status.textContent = result.error || 'Erro ao carregar imagens.';
+            }
+        } catch (err) {
+            console.error(err);
+            if (status) {
+                status.textContent = 'Erro ao carregar imagens.';
+            }
+        }
+    }
+
+    function initEntityMediaManagers() {
+        document.querySelectorAll('[data-media-manager][data-entity-id]').forEach((manager) => {
+            const entityType = manager.dataset.entityType;
+            const entityId = safeInt(manager.dataset.entityId);
+            if (entityType && entityId) {
+                loadEntityPhotos(entityType, entityId);
+            }
+        });
+    }
+
+    function refreshEntityMediaOwnerList(entityType) {
+        if (entityType === 'evento') {
+            loadEvents();
+            return;
+        }
+
+        loadItems();
+    }
+
+    async function uploadEntityPhotoFiles(manager, files) {
+        const entityType = manager?.dataset.entityType;
+        const entityId = safeInt(manager?.dataset.entityId);
+        if (!manager || !entityType || !entityId || !files.length) {
+            return;
+        }
+
+        const status = manager.querySelector('[data-media-status]');
+        if (status) {
+            status.textContent = 'Enviando imagens...';
+        }
+
+        const formData = new FormData();
+        formData.append('tipo', entityType);
+        formData.append('id', String(entityId));
+        files.forEach((file) => formData.append('images[]', file));
+
+        try {
+            const result = await fetchJson(entityPhotosApiUrl('create'), {
+                method: 'POST',
+                headers: csrfHeaders(),
+                body: formData,
+            }, false);
+
+            if (result.success) {
+                renderEntityPhotos(manager, result.data);
+                showToast(result.message || 'Imagem enviada.', 'success');
+                if (Array.isArray(result.data?.skipped) && result.data.skipped.length > 0) {
+                    showToast(uploadErrorMessageFromSkipped(result.data?.skipped, 'Algumas imagens foram ignoradas.'), 'warning');
+                }
+                refreshEntityMediaOwnerList(entityType);
+            } else {
+                showToast(uploadErrorMessageFromApi(result.error, 'Erro ao enviar imagem.'), 'error');
+            }
+        } catch (err) {
+            console.error(err);
+            showToast('Erro ao enviar imagem.', 'error');
+        } finally {
+            markModalFormPristine();
+        }
+    }
+
+    async function uploadEntityPhotos(input) {
+        const manager = input?.closest('[data-media-manager]');
+        const files = Array.from(input?.files || []);
+        await uploadEntityPhotoFiles(manager, files);
+        if (input) {
+            input.value = '';
+        }
+    }
+
+    function handleEntityMediaDrop(event) {
+        const dropzone = event.target.closest('[data-media-dropzone]');
+        if (!dropzone) {
+            return;
+        }
+
+        event.preventDefault();
+        dropzone.classList.remove('is-dragover');
+        const manager = dropzone.closest('[data-media-manager]');
+        const files = Array.from(event.dataTransfer.files || []);
+        uploadEntityPhotoFiles(manager, files);
+    }
+
+    async function setEntityPhotoCover(button) {
+        const manager = button?.closest('[data-media-manager]');
+        const photoId = safeInt(button?.dataset.photoId);
+        if (!manager || !photoId) {
+            return;
+        }
+
+        try {
+            const result = await fetchJson(entityPhotosApiUrl('set_cover', { id: photoId }), {
+                method: 'POST',
+                headers: csrfHeaders(),
+            }, false);
+
+            if (result.success) {
+                renderEntityPhotos(manager, result.data);
+                showToast(result.message || 'Capa atualizada.', 'success');
+                refreshEntityMediaOwnerList(manager.dataset.entityType);
+                markModalFormPristine();
+            } else {
+                showToast(result.error || 'Erro ao definir capa.', 'error');
+            }
+        } catch (err) {
+            console.error(err);
+            showToast('Erro ao definir capa.', 'error');
+        }
+    }
+
+    async function deleteEntityPhoto(button) {
+        const manager = button?.closest('[data-media-manager]');
+        const photoId = safeInt(button?.dataset.photoId);
+        if (!manager || !photoId || !confirm('Tem certeza que deseja excluir esta imagem?')) {
+            return;
+        }
+
+        try {
+            const result = await fetchJson(entityPhotosApiUrl('delete', { id: photoId }), {
+                method: 'POST',
+                headers: csrfHeaders(),
+            }, false);
+
+            if (result.success) {
+                renderEntityPhotos(manager, result.data);
+                showToast(result.message || 'Imagem removida.', 'success');
+                refreshEntityMediaOwnerList(manager.dataset.entityType);
+                markModalFormPristine();
+            } else {
+                showToast(result.error || 'Erro ao excluir imagem.', 'error');
+            }
+        } catch (err) {
+            console.error(err);
+            showToast('Erro ao excluir imagem.', 'error');
+        }
+    }
+
+    async function updateEntityPhotoCaption(input) {
+        const manager = input?.closest('[data-media-manager]');
+        const photoId = safeInt(input?.dataset.photoId);
+        if (!manager || !photoId) {
+            return;
+        }
+
+        const formData = new FormData();
+        formData.append('legenda', input.value.trim());
+
+        try {
+            const result = await fetchJson(entityPhotosApiUrl('update_legenda', { id: photoId }), {
+                method: 'POST',
+                headers: csrfHeaders(),
+                body: formData,
+            }, false);
+
+            if (result.success) {
+                renderEntityPhotos(manager, result.data);
+                showToast(result.message || 'Legenda atualizada.', 'success');
+                markModalFormPristine();
+            } else {
+                showToast(result.error || 'Erro ao atualizar legenda.', 'error');
+            }
+        } catch (err) {
+            console.error(err);
+            showToast('Erro ao atualizar legenda.', 'error');
+        }
+    }
+
+    async function reorderEntityPhotos(button) {
+        const manager = button?.closest('[data-media-manager]');
+        const photoId = safeInt(button?.dataset.photoId);
+        const direction = button?.dataset.mediaAction === 'move-up' ? -1 : 1;
+        const entityType = manager?.dataset.entityType;
+        const entityId = safeInt(manager?.dataset.entityId);
+
+        if (!manager || !photoId || !entityType || !entityId) {
+            return;
+        }
+
+        const ids = Array.from(manager.querySelectorAll('[data-photo-id].entity-media__thumb'))
+            .map((card) => safeInt(card.dataset.photoId))
+            .filter(Boolean);
+        const index = ids.indexOf(photoId);
+        const targetIndex = index + direction;
+        if (index < 0 || targetIndex < 0 || targetIndex >= ids.length) {
+            return;
+        }
+
+        [ids[index], ids[targetIndex]] = [ids[targetIndex], ids[index]];
+
+        try {
+            const result = await fetchJson(entityPhotosApiUrl('reorder', { tipo: entityType, id: entityId }), {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json', ...csrfHeaders() },
+                body: JSON.stringify({ ids }),
+            }, false);
+
+            if (result.success) {
+                renderEntityPhotos(manager, result.data);
+                showToast(result.message || 'Ordem atualizada.', 'success');
+                markModalFormPristine();
+            } else {
+                showToast(result.error || 'Erro ao atualizar ordem.', 'error');
+            }
+        } catch (err) {
+            console.error(err);
+            showToast('Erro ao atualizar ordem.', 'error');
+        }
+    }
+
+    window.loadEntityPhotos = loadEntityPhotos;
+    window.uploadEntityPhotos = uploadEntityPhotos;
+    window.setEntityPhotoCover = setEntityPhotoCover;
+    window.deleteEntityPhoto = deleteEntityPhoto;
+    window.updateEntityPhotoCaption = updateEntityPhotoCaption;
+    window.reorderEntityPhotos = reorderEntityPhotos;
+    window.handleEntityMediaDrop = handleEntityMediaDrop;
 
     function openModal(title, contentHtml) {
         document.getElementById('modal-title').textContent = title;
@@ -1427,11 +1901,12 @@ document.addEventListener('DOMContentLoaded', () => {
             enhanceItemFilterField(itemForm.elements.filtros?.value || '');
             enhanceOpeningHoursField();
         }
+        initEntityMediaManagers();
         markModalFormPristine();
     }
 
     function closeModal(options = {}) {
-        if (!options.force && isFormDirty() && !confirm('Existem alteracoes nao salvas. Deseja fechar mesmo assim?')) {
+        if (!options.force && isFormDirty() && !confirm('Existem alterações não salvas. Deseja fechar mesmo assim?')) {
             return false;
         }
 
@@ -1452,10 +1927,61 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
+        const mediaButton = event.target.closest('[data-media-action]');
+        if (mediaButton?.dataset.mediaAction === 'cover') {
+            setEntityPhotoCover(mediaButton);
+            return;
+        }
+        if (mediaButton?.dataset.mediaAction === 'delete') {
+            deleteEntityPhoto(mediaButton);
+            return;
+        }
+        if (mediaButton?.dataset.mediaAction === 'move-up' || mediaButton?.dataset.mediaAction === 'move-down') {
+            reorderEntityPhotos(mediaButton);
+            return;
+        }
+
         if (event.target === modalOverlay) {
             closeModalSafely();
         }
     });
+    modalOverlay.addEventListener('change', (event) => {
+        const target = event.target;
+        if (target?.dataset?.mediaAction === 'upload') {
+            uploadEntityPhotos(target);
+            return;
+        }
+        if (target?.dataset?.mediaAction === 'caption') {
+            updateEntityPhotoCaption(target);
+        }
+    });
+    modalOverlay.addEventListener('dragenter', (event) => {
+        const dropzone = event.target.closest('[data-media-dropzone]');
+        if (!dropzone) {
+            return;
+        }
+
+        event.preventDefault();
+        dropzone.classList.add('is-dragover');
+    });
+    modalOverlay.addEventListener('dragover', (event) => {
+        const dropzone = event.target.closest('[data-media-dropzone]');
+        if (!dropzone) {
+            return;
+        }
+
+        event.preventDefault();
+        dropzone.classList.add('is-dragover');
+    });
+    modalOverlay.addEventListener('dragleave', (event) => {
+        const dropzone = event.target.closest('[data-media-dropzone]');
+        if (!dropzone || (event.relatedTarget instanceof Node && dropzone.contains(event.relatedTarget))) {
+            return;
+        }
+
+        dropzone.classList.remove('is-dragover');
+    });
+    modalOverlay.addEventListener('drop', handleEntityMediaDrop);
     document.addEventListener('keydown', (event) => {
         if (event.key === 'Escape' && !modalOverlay.classList.contains('hidden')) {
             closeModalSafely();
@@ -1626,13 +2152,13 @@ document.addEventListener('DOMContentLoaded', () => {
                         </select>
                     </div>
                     <div class="form-group">
-                        <label>Faixa de Preco</label>
+                        <label>Faixa de Preço</label>
                         <select class="form-control" name="hosting_extra_faixa_preco">
                             ${renderHostingSelectOptions(HOSTING_EXTRA_SCHEMA.priceOptions, extra.faixa_preco)}
                         </select>
                     </div>
                     <div class="form-group">
-                        <label>Media de Diaria</label>
+                        <label>Média de Diária</label>
                         <input type="text" class="form-control" name="hosting_extra_media_diaria" placeholder="Ex: R$ 200,00" value="${escapeAttr(extra.media_diaria || '')}">
                     </div>
                     <div class="form-group">
@@ -1649,7 +2175,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         <label>Diferenciais</label>
                         <div class="hosting-extra__toggles">
                             ${renderHostingToggle('hosting_extra_aceita_pets', 'Aceita Pets', extra.aceita_pets)}
-                            ${renderHostingToggle('hosting_extra_cafe_manha_incluso', 'Cafe da manha incluso', extra.cafe_manha_incluso)}
+                            ${renderHostingToggle('hosting_extra_cafe_manha_incluso', 'Café da manhã incluso', extra.cafe_manha_incluso)}
                         </div>
                     </div>
                     <div class="form-group">
@@ -1661,7 +2187,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         <input type="time" class="form-control" name="hosting_extra_checkout" value="${escapeAttr(extra.checkout || '')}">
                     </div>
                     <div class="form-group hosting-extra__wide">
-                        <label>Observacoes Uteis</label>
+                        <label>Observações Úteis</label>
                         <textarea class="form-control" name="hosting_extra_observacoes_uteis" rows="3" placeholder="Ex: Confirmar disponibilidade pelo WhatsApp.">${escapeHtml(extra.observacoes_uteis || '')}</textarea>
                     </div>
                 </div>
@@ -1748,19 +2274,19 @@ document.addEventListener('DOMContentLoaded', () => {
                         </select>
                     </div>
                     <div class="form-group">
-                        <label>Faixa de Preco</label>
+                        <label>Faixa de Preço</label>
                         <select class="form-control" name="gastronomy_extra_faixa_preco">
                             ${renderGastronomySelectOptions(GASTRONOMY_EXTRA_SCHEMA.priceOptions, extra.faixa_preco)}
                         </select>
                     </div>
                     <div class="form-group gastronomy-extra__wide">
-                        <label>Refeicoes</label>
+                        <label>Refeições</label>
                         <div class="gastronomy-extra__options">
                             ${renderGastronomyCheckboxOptions(GASTRONOMY_EXTRA_SCHEMA.mealOptions, extra.refeicoes, 'gastronomy_extra_refeicoes')}
                         </div>
                     </div>
                     <div class="form-group gastronomy-extra__wide">
-                        <label>Servicos</label>
+                        <label>Serviços</label>
                         <div class="gastronomy-extra__options">
                             ${renderGastronomyCheckboxOptions(GASTRONOMY_EXTRA_SCHEMA.serviceOptions, extra.servicos, 'gastronomy_extra_servicos')}
                         </div>
@@ -1772,7 +2298,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         </div>
                     </div>
                     <div class="form-group">
-                        <label>Link do cardapio</label>
+                        <label>Link do cardápio</label>
                         <input type="url" class="form-control" name="gastronomy_extra_link_cardapio" placeholder="Ex: https://www.restaurante.com.br/cardapio" value="${escapeAttr(extra.link_cardapio || '')}">
                     </div>
                     <div class="form-group gastronomy-extra__wide">
@@ -1782,7 +2308,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         </div>
                     </div>
                     <div class="form-group gastronomy-extra__wide">
-                        <label>Observacoes Uteis</label>
+                        <label>Observações Úteis</label>
                         <textarea class="form-control" name="gastronomy_extra_observacoes_uteis" rows="3" placeholder="Ex: Atendimento por ordem de chegada aos domingos.">${escapeHtml(extra.observacoes_uteis || '')}</textarea>
                     </div>
                 </div>
@@ -1863,17 +2389,17 @@ document.addEventListener('DOMContentLoaded', () => {
         return `
             <section class="services-extra" data-extra-scope="servicos">
                 <div class="services-extra__header">
-                    <h3>Dados do servico</h3>
+                    <h3>Dados do serviço</h3>
                 </div>
                 <div class="services-extra__grid">
                     <div class="form-group">
-                        <label>Tipo de servico</label>
+                        <label>Tipo de serviço</label>
                         <select class="form-control" name="services_extra_tipo_servico">
                             ${renderServicesSelectOptions(SERVICES_EXTRA_SCHEMA.typeOptions, extra.tipo_servico)}
                         </select>
                     </div>
                     <div class="form-group">
-                        <label>Area de atendimento</label>
+                        <label>Área de atendimento</label>
                         <select class="form-control" name="services_extra_area_atendimento">
                             ${renderServicesSelectOptions(SERVICES_EXTRA_SCHEMA.areaOptions, extra.area_atendimento)}
                         </select>
@@ -1892,7 +2418,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         </div>
                     </div>
                     <div class="form-group">
-                        <label>Link do servico</label>
+                        <label>Link do serviço</label>
                         <input type="url" class="form-control" name="services_extra_link_servico" placeholder="Ex: https://www.servico.com.br/agenda" value="${escapeAttr(extra.link_servico || '')}">
                     </div>
                     <div class="form-group services-extra__wide">
@@ -1902,7 +2428,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         </div>
                     </div>
                     <div class="form-group services-extra__wide">
-                        <label>Observacoes Uteis</label>
+                        <label>Observações Úteis</label>
                         <textarea class="form-control" name="services_extra_observacoes_uteis" rows="3" placeholder="Ex: Atendimento mediante agendamento pelo WhatsApp.">${escapeHtml(extra.observacoes_uteis || '')}</textarea>
                     </div>
                 </div>
@@ -1979,37 +2505,37 @@ document.addEventListener('DOMContentLoaded', () => {
         return `
             <section class="experiences-extra" data-extra-scope="experiencias">
                 <div class="experiences-extra__header">
-                    <h3>Dados da experiencia</h3>
+                    <h3>Dados da experiência</h3>
                 </div>
                 <div class="experiences-extra__grid">
                     <div class="form-group">
-                        <label>Tipo de experiencia</label>
+                        <label>Tipo de experiência</label>
                         <select class="form-control" name="experiences_extra_tipo_experiencia">
                             ${renderExperiencesSelectOptions(EXPERIENCES_EXTRA_SCHEMA.typeOptions, extra.tipo_experiencia)}
                         </select>
                     </div>
                     <div class="form-group">
-                        <label>Nivel de dificuldade</label>
+                        <label>Nível de dificuldade</label>
                         <select class="form-control" name="experiences_extra_nivel_dificuldade">
                             ${renderExperiencesSelectOptions(EXPERIENCES_EXTRA_SCHEMA.difficultyOptions, extra.nivel_dificuldade)}
                         </select>
                     </div>
                     <div class="form-group">
-                        <label>Duracao media</label>
+                        <label>Duração média</label>
                         <input type="text" class="form-control" name="experiences_extra_duracao_media" placeholder="Ex: 2 horas" value="${escapeAttr(extra.duracao_media || '')}">
                     </div>
                     <div class="form-group">
-                        <label>Melhor periodo</label>
-                        <input type="text" class="form-control" name="experiences_extra_melhor_periodo" placeholder="Ex: Manha, seca, fim de tarde" value="${escapeAttr(extra.melhor_periodo || '')}">
+                        <label>Melhor período</label>
+                            <input type="text" class="form-control" name="experiences_extra_melhor_periodo" placeholder="Ex: Manhã, seca, fim de tarde" value="${escapeAttr(extra.melhor_periodo || '')}">
                     </div>
                     <div class="form-group experiences-extra__wide">
-                        <label>Publico indicado</label>
+                        <label>Público indicado</label>
                         <div class="experiences-extra__options">
                             ${renderExperiencesCheckboxOptions(EXPERIENCES_EXTRA_SCHEMA.audienceOptions, extra.publico_indicado, 'experiences_extra_publico_indicado')}
                         </div>
                     </div>
                     <div class="form-group experiences-extra__wide">
-                        <label>Estrutura disponivel</label>
+                        <label>Estrutura disponível</label>
                         <div class="experiences-extra__options">
                             ${renderExperiencesCheckboxOptions(EXPERIENCES_EXTRA_SCHEMA.structureOptions, extra.estrutura_disponivel, 'experiences_extra_estrutura_disponivel')}
                         </div>
@@ -2017,21 +2543,21 @@ document.addEventListener('DOMContentLoaded', () => {
                     <div class="form-group experiences-extra__wide">
                         <label>Diferenciais</label>
                         <div class="experiences-extra__toggles">
-                            ${renderExperiencesToggle('experiences_extra_agendamento_obrigatorio', 'Agendamento obrigatorio', extra.agendamento_obrigatorio)}
+                            ${renderExperiencesToggle('experiences_extra_agendamento_obrigatorio', 'Agendamento obrigatório', extra.agendamento_obrigatorio)}
                             ${renderExperiencesToggle('experiences_extra_entrada_gratuita', 'Entrada gratuita', extra.entrada_gratuita)}
                         </div>
                     </div>
                     <div class="form-group">
-                        <label>Preco base</label>
+                        <label>Preço base</label>
                         <input type="text" class="form-control" name="experiences_extra_preco_base" placeholder="Ex: Gratuito ou R$ 50 por pessoa" value="${escapeAttr(extra.preco_base || '')}">
                     </div>
                     <div class="form-group">
-                        <label>Link de informacoes</label>
+                        <label>Link de informações</label>
                         <input type="url" class="form-control" name="experiences_extra_link_informacoes" placeholder="Ex: https://www.experiencia.com.br" value="${escapeAttr(extra.link_informacoes || '')}">
                     </div>
                     <div class="form-group experiences-extra__wide">
-                        <label>Observacoes Uteis</label>
-                        <textarea class="form-control" name="experiences_extra_observacoes_uteis" rows="3" placeholder="Ex: Levar agua, calcado fechado e protetor solar.">${escapeHtml(extra.observacoes_uteis || '')}</textarea>
+                        <label>Observações Úteis</label>
+                        <textarea class="form-control" name="experiences_extra_observacoes_uteis" rows="3" placeholder="Ex: Levar água, calçado fechado e protetor solar.">${escapeHtml(extra.observacoes_uteis || '')}</textarea>
                     </div>
                 </div>
             </section>
@@ -2100,7 +2626,6 @@ document.addEventListener('DOMContentLoaded', () => {
     
     function getItemFormHTML(item, categoryFieldHtml, id = null, context = getCurrentItemContext()) {
         const categorySlug = isOtherItemsContext(context) ? '' : context.categorySlug;
-        const currentImage = safeImagePath(item?.imagem_capa || '');
         return `
             <form id="form-item" data-item-context="${escapeAttr(context.key)}" data-category-slug="${escapeAttr(categorySlug || '')}" onsubmit="window.saveItem(event, ${id ? safeInt(id) : 'null'})">
                 <div class="form-group">
@@ -2148,19 +2673,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 ${renderGastronomyExtraFields(item, context)}
                 ${renderServicesExtraFields(item, context)}
                 ${renderExperiencesExtraFields(item, context)}
-                <div class="form-group">
-                    <label>${escapeHtml(context.imageLabel)}</label>
-                    <input type="file" class="form-control" id="item-image" accept="image/jpeg,image/png,image/webp">
-                    <input type="hidden" name="imagem_capa" id="imagem_capa_hidden" value="${item ? escapeAttr(item.imagem_capa) : ''}">
-                    ${currentImage ? `
-                        <div class="image-control__current">
-                            <small data-image-status="item">Imagem atual salva.</small>
-                            <button type="button" class="image-control__remove" data-image-action="remove-item-image">Remover imagem atual</button>
-                        </div>
-                    ` : ''}
-                </div>
+                <input type="hidden" name="imagem_capa" id="imagem_capa_hidden" value="${item ? escapeAttr(item.imagem_capa || '') : ''}">
+                ${renderEntityMediaManager('item', id, item?.imagem_capa || '', context.imageLabel)}
                 <input type="hidden" name="is_destaque" value="${item && isCheckedValue(item.is_destaque) ? '1' : ''}">
-                <div class="form-group">
+                <div class="form-group entity-media__followup-toggle">
                     <label style="display:flex; align-items:center; gap:10px;">
                         <input type="checkbox" name="ativo" value="1" ${!item || isCheckedValue(item.ativo) ? 'checked' : ''}>
                         ${escapeHtml(context.activeLabel)}
@@ -2184,23 +2700,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 btn.textContent = defaultButtonText;
                 btn.disabled = false;
                 return;
-            }
-
-            // Check if there is an image to upload first
-            const fileInput = document.getElementById('item-image');
-            if(fileInput.files.length > 0) {
-                const imgData = new FormData();
-                imgData.append('image', fileInput.files[0]);
-                
-                const upResult = await fetchJson('api/upload.php', { method: 'POST', headers: csrfHeaders(), body: imgData }, false);
-                if(upResult.success) {
-                    document.getElementById('imagem_capa_hidden').value = upResult.data.url;
-                } else {
-                    showToast('Erro ao enviar imagem: ' + (upResult.error || 'upload invalido'), 'error');
-                    btn.textContent = defaultButtonText;
-                    btn.disabled = false;
-                    return;
-                }
             }
 
             const formData = new FormData(form);
@@ -2362,18 +2861,23 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
 
                 visibleItems.forEach(item => {
+                    const typeLabel = getItemTypeLabelForTable(item, context);
                     tbody.innerHTML += `
                         <tr>
                             <td>
                                 ${safeImagePath(item.imagem_capa) ? `<img src="../${escapeAttr(safeImagePath(item.imagem_capa))}" style="width:50px; height:50px; object-fit:cover; border-radius:8px;" alt="">` : '<div style="width:50px; height:50px; background:#333; border-radius:8px;"></div>'}
                             </td>
                             <td><strong>${escapeHtml(item.titulo)}</strong><br><small class="text-muted">${escapeHtml(item.endereco)}</small></td>
-                            <td>${escapeHtml(item.categoria_nome || 'Sem Categoria')}</td>
+                            <td>${escapeHtml(typeLabel)}</td>
                             <td><span class="status-badge ${item.ativo ? 'status-active' : ''}">${item.ativo ? 'Ativo' : 'Inativo'}</span></td>
                             <td>
                                 <div class="table-actions">
-                                    <button class="btn" style="padding: 6px 12px; background: rgba(255,255,255,0.1); border-radius: 6px;" onclick="editItem(${safeInt(item.id)})">Editar</button>
-                                    <button class="btn btn-danger" style="padding: 6px 12px; border-radius: 6px;" onclick="deleteItem(${safeInt(item.id)})">Excluir</button>
+                                    <button type="button" class="table-action-btn table-action-btn--edit" onclick="editItem(${safeInt(item.id)})" title="Editar item" aria-label="Editar item">
+                                        <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><path d="M505 122.9L517.1 135C526.5 144.4 526.5 159.6 517.1 168.9L488 198.1L441.9 152L471 122.9C480.4 113.5 495.6 113.5 504.9 122.9zM273.8 320.2L408 185.9L454.1 232L319.8 366.2C316.9 369.1 313.3 371.2 309.4 372.3L250.9 389L267.6 330.5C268.7 326.6 270.8 323 273.7 320.1zM437.1 89L239.8 286.2C231.1 294.9 224.8 305.6 221.5 317.3L192.9 417.3C190.5 425.7 192.8 434.7 199 440.9C205.2 447.1 214.2 449.4 222.6 447L322.6 418.4C334.4 415 345.1 408.7 353.7 400.1L551 202.9C579.1 174.8 579.1 129.2 551 101.1L538.9 89C510.8 60.9 465.2 60.9 437.1 89zM152 128C103.4 128 64 167.4 64 216L64 488C64 536.6 103.4 576 152 576L424 576C472.6 576 512 536.6 512 488L512 376C512 362.7 501.3 352 488 352C474.7 352 464 362.7 464 376L464 488C464 510.1 446.1 528 424 528L152 528C129.9 528 112 510.1 112 488L112 216C112 193.9 129.9 176 152 176L264 176C277.3 176 288 165.3 288 152C288 138.7 277.3 128 264 128L152 128z"/></svg>
+                                    </button>
+                                    <button type="button" class="table-action-btn table-action-btn--delete" onclick="deleteItem(${safeInt(item.id)})" title="Excluir item" aria-label="Excluir item">
+                                        <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><path d="M262.2 48C248.9 48 236.9 56.3 232.2 68.8L216 112L120 112C106.7 112 96 122.7 96 136C96 149.3 106.7 160 120 160L520 160C533.3 160 544 149.3 544 136C544 122.7 533.3 112 520 112L424 112L407.8 68.8C403.1 56.3 391.2 48 377.8 48L262.2 48zM128 208L128 512C128 547.3 156.7 576 192 576L448 576C483.3 576 512 547.3 512 512L512 208L464 208L464 512C464 520.8 456.8 528 448 528L192 528C183.2 528 176 520.8 176 512L176 208L128 208zM288 280C288 266.7 277.3 256 264 256C250.7 256 240 266.7 240 280L240 456C240 469.3 250.7 480 264 480C277.3 480 288 469.3 288 456L288 280zM400 280C400 266.7 389.3 256 376 256C362.7 256 352 266.7 352 280L352 456C352 469.3 362.7 480 376 480C389.3 480 400 469.3 400 456L400 280z"/></svg>
+                                    </button>
                                 </div>
                             </td>
                         </tr>
@@ -2472,7 +2976,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <input type="text" class="form-control" name="local_nome" placeholder="Ex: Praça Central de Pancas" value="${ev ? escapeAttr(ev.local_nome) : ''}">
                 </div>
                 <div class="form-group">
-                    <label>Endereco</label>
+                    <label>Endereço</label>
                     <input type="text" class="form-control" name="endereco" placeholder="Ex: Centro, Pancas - ES" value="${ev ? escapeAttr(ev.endereco) : ''}">
                 </div>
                 <div class="form-group">
@@ -2492,15 +2996,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     <input type="url" class="form-control" name="link_ingressos" placeholder="Ex: https://site.com/ingressos" value="${ev ? escapeAttr(ev.link_ingressos) : ''}">
                 </div>
                 <div class="form-group">
-                    <label>Preco base</label>
+                    <label>Preço base</label>
                     <input type="text" class="form-control" name="preco_base" placeholder="Ex: Entrada gratuita - ou - A partir de R$ 20" value="${ev ? escapeAttr(ev.preco_base) : ''}">
                 </div>
-                <div class="form-group">
-                    <label>Upload de Capa (JPG/PNG)</label>
-                    <input type="file" class="form-control" id="event-image" accept="image/jpeg,image/png,image/webp">
-                    <input type="hidden" name="imagem_capa" id="event_imagem_capa_hidden" value="${ev ? escapeAttr(ev.imagem_capa) : ''}">
-                    ${ev && ev.imagem_capa ? `<small style="display:block; margin-top:8px;">Imagem atual salva.</small>` : ''}
-                </div>
+                <input type="hidden" name="imagem_capa" id="event_imagem_capa_hidden" value="${ev ? escapeAttr(ev.imagem_capa || '') : ''}">
+                ${renderEntityMediaManager('evento', id, ev?.imagem_capa || '', 'Fotos do evento')}
                 <div class="form-group">
                     <label style="display:flex; align-items:center; gap:10px;">
                         <input type="checkbox" name="is_destaque" value="1" ${ev && isCheckedValue(ev.is_destaque) ? 'checked' : ''}>
@@ -2526,22 +3026,6 @@ document.addEventListener('DOMContentLoaded', () => {
         btn.disabled = true;
 
         try {
-            const fileInput = document.getElementById('event-image');
-            if(fileInput.files.length > 0) {
-                const imgData = new FormData();
-                imgData.append('image', fileInput.files[0]);
-                
-                const upResult = await fetchJson('api/upload.php', { method: 'POST', headers: csrfHeaders(), body: imgData }, false);
-                if(upResult.success) {
-                    document.getElementById('event_imagem_capa_hidden').value = upResult.data.url;
-                } else {
-                    alert('Erro ao enviar imagem: ' + upResult.error);
-                    btn.textContent = 'Salvar Evento';
-                    btn.disabled = false;
-                    return;
-                }
-            }
-
             const formData = new FormData(form);
             const data = Object.fromEntries(formData.entries());
             if(!data.categoria_id) data.categoria_id = null;
@@ -2659,6 +3143,421 @@ document.addEventListener('DOMContentLoaded', () => {
             console.error(err);
         }
     };
+
+    const GALLERY_UPLOAD_ACTION_SELECTOR = '[data-gallery-action="upload"]';
+    const GALLERY_COVER_LIMIT = 7;
+    const GALLERY_COVER_LABELS = ['Capa 1', 'Capa 2', 'Capa 3', 'Capa 4', 'Capa 5', 'Capa 6', 'Capa 7'];
+    const GALLERY_CREATE_ENDPOINT = 'api/gallery.php?action=create';
+    const GALLERY_REORDER_ENDPOINT = 'api/gallery.php?action=reorder';
+    const GALLERY_SET_COVER_ENDPOINT = 'api/gallery.php?action=set_cover';
+
+    function galleryApiUrl(action, params = {}) {
+        const query = new URLSearchParams({ action, ...params });
+        return `api/gallery.php?${query.toString()}`;
+    }
+
+    function galleryPhotosFromResponse(result) {
+        if (Array.isArray(result?.data)) {
+            return result.data;
+        }
+
+        if (Array.isArray(result?.data?.photos)) {
+            return result.data.photos;
+        }
+
+        return [];
+    }
+
+    function getGalleryManager() {
+        return document.querySelector('[data-gallery-manager]');
+    }
+
+    function renderGalleryCoverOptions(currentSlot, occupiedCoverSlots = new Set()) {
+        let options = `<option value="0" ${safeInt(currentSlot) === 0 ? 'selected' : ''}>Sem atribuição</option>`;
+        for (let slot = 1; slot <= GALLERY_COVER_LIMIT; slot += 1) {
+            const isCurrent = safeInt(currentSlot) === slot;
+            const isOccupied = occupiedCoverSlots.has(slot) && !isCurrent;
+            const label = GALLERY_COVER_LABELS[slot - 1] || `Capa ${slot}`;
+            const suffix = isCurrent ? ' - atual' : (isOccupied ? ' - ocupada' : '');
+            options += `<option value="${slot}" data-occupied="${isOccupied ? 'true' : 'false'}" ${isCurrent ? 'selected' : ''}>${label}${suffix}</option>`;
+        }
+        return options;
+    }
+
+    function showGalleryCaptionLimitPopup(input) {
+        const wrapper = input?.parentElement;
+        if (!wrapper) {
+            return;
+        }
+
+        wrapper.querySelectorAll('.gallery-caption-limit-popup').forEach((popup) => popup.remove());
+        const popup = document.createElement('span');
+        popup.className = 'gallery-caption-limit-popup';
+        popup.textContent = 'Máximo de caracteres 160';
+        wrapper.append(popup);
+        setTimeout(() => popup.remove(), 2500);
+    }
+
+    function renderGalleryPhotos(photos) {
+        const manager = getGalleryManager();
+        const grid = manager?.querySelector('[data-gallery-grid]');
+        const status = manager?.querySelector('[data-gallery-status]');
+        if (!grid || !status) {
+            return;
+        }
+
+        const validPhotos = Array.isArray(photos) ? photos.filter((photo) => safeImagePath(photo.url_imagem)) : [];
+        if (validPhotos.length === 0) {
+            status.textContent = 'Nenhuma imagem cadastrada.';
+            grid.innerHTML = '<p class="entity-media__caption" style="grid-column: 1 / -1;">Nenhuma foto na galeria.</p>';
+            return;
+        }
+
+        status.textContent = `${validPhotos.length} imagem(ns) cadastrada(s).`;
+        const occupiedCoverSlots = new Set(validPhotos
+            .map((photo) => safeInt(photo.cover_slot))
+            .filter((slot) => slot >= 1 && slot <= GALLERY_COVER_LIMIT));
+        grid.innerHTML = validPhotos.map((photo, index) => {
+            const photoId = safeInt(photo.id);
+            const image = safeImagePath(photo.url_imagem);
+            const coverSlot = safeInt(photo.cover_slot);
+
+            return `
+                <article class="entity-media__thumb gallery-media__thumb" data-gallery-photo-id="${photoId}">
+                    <div class="entity-media__image" style="background-image:url('../${escapeAttr(image)}')">
+                        ${coverSlot ? `<span class="entity-media__cover-badge">Capa ${coverSlot}</span>` : ''}
+                    </div>
+                    <div class="entity-media__body">
+                        <input type="text" class="form-control entity-media__caption-input" value="${escapeAttr(photo.legenda || '')}" placeholder="Legenda da imagem" maxlength="160" data-gallery-action="caption" data-photo-id="${photoId}">
+                        <select class="form-control gallery-media__cover-select" data-gallery-action="cover-slot" data-photo-id="${photoId}" aria-label="Definir posicao de capa">
+                            ${renderGalleryCoverOptions(coverSlot, occupiedCoverSlots)}
+                        </select>
+                        <div class="entity-media__actions">
+                            <button type="button" class="entity-media__button entity-media__button--icon" data-gallery-action="move-up" data-photo-id="${photoId}" title="Subir imagem" aria-label="Subir imagem" ${index === 0 ? 'disabled' : ''}>
+                                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><path d="M300.3 199.2C312.9 188.9 331.4 189.7 343.1 201.4L471.1 329.4C480.3 338.6 483 352.3 478 364.3C473 376.3 461.4 384 448.5 384L192.5 384C179.6 384 167.9 376.2 162.9 364.2C157.9 352.2 160.7 338.5 169.9 329.4L297.9 201.4L300.3 199.2z"/></svg>
+                            </button>
+                            <button type="button" class="entity-media__button entity-media__button--icon" data-gallery-action="move-down" data-photo-id="${photoId}" title="Descer imagem" aria-label="Descer imagem" ${index === validPhotos.length - 1 ? 'disabled' : ''}>
+                                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><path d="M300.3 440.8C312.9 451 331.4 450.3 343.1 438.6L471.1 310.6C480.3 301.4 483 287.7 478 275.7C473 263.7 461.4 256 448.5 256L192.5 256C179.6 256 167.9 263.8 162.9 275.8C157.9 287.8 160.7 301.5 169.9 310.6L297.9 438.6L300.3 440.8z"/></svg>
+                            </button>
+                            <button type="button" class="entity-media__button entity-media__button--icon entity-media__button--danger" data-gallery-action="delete" data-photo-id="${photoId}" title="Excluir imagem" aria-label="Excluir imagem">
+                                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><path d="M262.2 48C248.9 48 236.9 56.3 232.2 68.8L216 112L120 112C106.7 112 96 122.7 96 136C96 149.3 106.7 160 120 160L520 160C533.3 160 544 149.3 544 136C544 122.7 533.3 112 520 112L424 112L407.8 68.8C403.1 56.3 391.2 48 377.8 48L262.2 48zM128 208L128 512C128 547.3 156.7 576 192 576L448 576C483.3 576 512 547.3 512 512L512 208L464 208L464 512C464 520.8 456.8 528 448 528L192 528C183.2 528 176 520.8 176 512L176 208L128 208zM288 280C288 266.7 277.3 256 264 256C250.7 256 240 266.7 240 280L240 456C240 469.3 250.7 480 264 480C277.3 480 288 469.3 288 456L288 280zM400 280C400 266.7 389.3 256 376 256C362.7 256 352 266.7 352 280L352 456C352 469.3 362.7 480 376 480C389.3 480 400 469.3 400 456L400 280z"/></svg>
+                            </button>
+                        </div>
+                    </div>
+                </article>
+            `;
+        }).join('');
+    }
+
+    async function loadGallery() {
+        const manager = getGalleryManager();
+        const grid = manager?.querySelector('[data-gallery-grid]');
+        const status = manager?.querySelector('[data-gallery-status]');
+        if(!grid || !status) return;
+        status.textContent = 'Carregando imagens...';
+
+        try {
+            const data = await fetchJson('api/gallery.php?action=list');
+            if (data.success && data.data) {
+                renderGalleryPhotos(galleryPhotosFromResponse(data));
+            }
+        } catch(e) {
+            console.error('Erro ao carregar galeria', e);
+            status.textContent = 'Erro ao carregar.';
+        }
+    }
+
+    async function uploadGalleryPhotoFiles(files) {
+        const fileList = Array.from(files || []);
+        if(!fileList.length) return;
+
+        const status = getGalleryManager()?.querySelector('[data-gallery-status]');
+        if (status) {
+            status.textContent = 'Enviando imagens...';
+        }
+
+        const formData = new FormData();
+        fileList.forEach((file) => formData.append('images[]', file));
+
+        try {
+            const result = await fetchJson(GALLERY_CREATE_ENDPOINT, {
+                method: 'POST',
+                headers: csrfHeaders(),
+                body: formData
+            }, false);
+            if(result.success) {
+                renderGalleryPhotos(galleryPhotosFromResponse(result));
+                showToast(result.message || 'Imagem enviada.', 'success');
+                if (Array.isArray(result.data?.skipped) && result.data.skipped.length > 0) {
+                    showToast(uploadErrorMessageFromSkipped(result.data?.skipped, 'Algumas imagens foram ignoradas.'), 'warning');
+                }
+            } else {
+                showToast(uploadErrorMessageFromApi(result.error, 'Erro ao enviar foto.'), 'error');
+            }
+        } catch(err) {
+            console.error(err);
+            showToast('Erro ao enviar foto.', 'error');
+        }
+    }
+
+    function handleGalleryMediaDrop(event) {
+        const dropzone = event.target.closest('[data-gallery-dropzone]');
+        if (!dropzone) {
+            return;
+        }
+
+        event.preventDefault();
+        dropzone.classList.remove('is-dragover');
+        uploadGalleryPhotoFiles(event.dataTransfer.files);
+    }
+
+    window.uploadGalleryPhoto = async (e) => {
+        await uploadGalleryPhotoFiles(e?.target?.files);
+        if (e?.target) {
+            e.target.value = '';
+        }
+    };
+
+    async function updateGalleryPhotoCaption(input) {
+        const id = safeInt(input?.dataset.photoId);
+        if (!id) {
+            return;
+        }
+
+        try {
+            const formData = new FormData();
+            formData.append('legenda', input.value.trim());
+            const result = await fetchJson(galleryApiUrl('update_legenda', { id }), {
+                method: 'POST',
+                headers: csrfHeaders(),
+                body: formData
+            }, false);
+
+            if (result.success) {
+                renderGalleryPhotos(galleryPhotosFromResponse(result));
+                showToast(result.message || 'Legenda atualizada.', 'success');
+            } else {
+                showToast(result.error || 'Erro ao atualizar legenda.', 'error');
+            }
+        } catch(err) {
+            console.error(err);
+            showToast('Erro ao atualizar legenda.', 'error');
+        }
+    }
+
+    window.updatePhotoLegenda = async (id, legenda) => {
+        const input = document.createElement('input');
+        input.dataset.photoId = String(safeInt(id));
+        input.value = legenda;
+        await updateGalleryPhotoCaption(input);
+    };
+
+    async function reorderGalleryPhotos(button) {
+        const manager = button?.closest('[data-gallery-manager]');
+        const photoId = safeInt(button?.dataset.photoId);
+        const direction = button?.dataset.galleryAction === 'move-up' ? -1 : 1;
+        if (!manager || !photoId) {
+            return;
+        }
+
+        const ids = Array.from(manager.querySelectorAll('[data-gallery-photo-id]'))
+            .map((card) => safeInt(card.dataset.galleryPhotoId))
+            .filter(Boolean);
+        const index = ids.indexOf(photoId);
+        const targetIndex = index + direction;
+        if (index < 0 || targetIndex < 0 || targetIndex >= ids.length) {
+            return;
+        }
+
+        [ids[index], ids[targetIndex]] = [ids[targetIndex], ids[index]];
+
+        try {
+            const result = await fetchJson(GALLERY_REORDER_ENDPOINT, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json', ...csrfHeaders() },
+                body: JSON.stringify({ ids }),
+            }, false);
+
+            if (result.success) {
+                renderGalleryPhotos(galleryPhotosFromResponse(result));
+                showToast(result.message || 'Ordem atualizada.', 'success');
+            } else {
+                showToast(result.error || 'Erro ao atualizar ordem.', 'error');
+            }
+        } catch (err) {
+            console.error(err);
+            showToast('Erro ao atualizar ordem.', 'error');
+        }
+    }
+
+    async function setGalleryCoverSlot(select) {
+        const photoId = safeInt(select?.dataset.photoId);
+        const slot = Number.parseInt(select?.value, 10);
+        if (!photoId || Number.isNaN(slot)) {
+            return;
+        }
+
+        try {
+            const result = await fetchJson(`${GALLERY_SET_COVER_ENDPOINT}&id=${photoId}`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json', ...csrfHeaders() },
+                body: JSON.stringify({ slot }),
+            }, false);
+
+            if (result.success) {
+                renderGalleryPhotos(galleryPhotosFromResponse(result));
+                showToast(result.message || 'Capa atualizada.', 'success');
+            } else {
+                showToast(result.error || 'Erro ao definir capa.', 'error');
+            }
+        } catch (err) {
+            console.error(err);
+            showToast('Erro ao definir capa.', 'error');
+        }
+    }
+
+    window.deleteGalleryPhoto = async (id) => {
+        if(!confirm('Tem certeza que deseja excluir esta foto da galeria?')) return;
+
+        try {
+            const result = await fetchJson(galleryApiUrl('delete', { id: safeInt(id) }), {
+                method: 'DELETE',
+                headers: csrfHeaders()
+            }, false);
+            if(result.success) {
+                renderGalleryPhotos(galleryPhotosFromResponse(result));
+                showToast(result.message || 'Foto removida.', 'success');
+            } else {
+                showToast(result.error || 'Erro ao deletar foto.', 'error');
+            }
+        } catch(err) {
+            console.error(err);
+            showToast('Erro ao deletar foto.', 'error');
+        }
+    };
+
+    document.addEventListener('click', (event) => {
+        const galleryButton = event.target.closest('[data-gallery-action]');
+        if (!galleryButton?.closest('[data-gallery-manager]')) {
+            return;
+        }
+
+        if (galleryButton.dataset.galleryAction === 'delete') {
+            window.deleteGalleryPhoto(galleryButton.dataset.photoId);
+            return;
+        }
+
+        if (galleryButton.dataset.galleryAction === 'move-up' || galleryButton.dataset.galleryAction === 'move-down') {
+            reorderGalleryPhotos(galleryButton);
+        }
+    });
+
+    document.addEventListener('change', (event) => {
+        const target = event.target;
+        if (!target?.closest?.('[data-gallery-manager]')) {
+            return;
+        }
+
+        if (target.matches(GALLERY_UPLOAD_ACTION_SELECTOR)) {
+            window.uploadGalleryPhoto({ target });
+            return;
+        }
+
+        if (target.dataset.galleryAction === 'caption') {
+            updateGalleryPhotoCaption(target);
+            return;
+        }
+
+        if (target.dataset.galleryAction === 'cover-slot') {
+            setGalleryCoverSlot(target);
+        }
+    });
+
+    document.addEventListener('input', (event) => {
+        const target = event.target;
+        if (target?.dataset?.galleryAction !== 'caption') {
+            return;
+        }
+
+        const maxLength = Number.parseInt(target.getAttribute('maxlength') || '160', 10);
+        if (target.value.length > maxLength) {
+            target.value = target.value.slice(0, maxLength);
+            showGalleryCaptionLimitPopup(target);
+        }
+    });
+
+    document.addEventListener('keydown', (event) => {
+        const target = event.target;
+        if (target?.dataset?.galleryAction !== 'caption') {
+            return;
+        }
+
+        const maxLength = Number.parseInt(target.getAttribute('maxlength') || '160', 10);
+        const allowedKeys = [
+            'Backspace',
+            'Delete',
+            'ArrowLeft',
+            'ArrowRight',
+            'ArrowUp',
+            'ArrowDown',
+            'Home',
+            'End',
+            'Tab',
+            'Enter',
+            'Escape',
+        ];
+        const hasSelection = target.selectionStart !== target.selectionEnd;
+        if (
+            target.value.length >= maxLength &&
+            !hasSelection &&
+            event.key.length === 1 &&
+            !event.ctrlKey &&
+            !event.metaKey &&
+            !event.altKey &&
+            !allowedKeys.includes(event.key)
+        ) {
+            event.preventDefault();
+            showGalleryCaptionLimitPopup(target);
+        }
+    });
+
+    document.addEventListener('dragenter', (event) => {
+        const dropzone = event.target.closest('[data-gallery-dropzone]');
+        if (!dropzone) {
+            return;
+        }
+
+        event.preventDefault();
+        dropzone.classList.add('is-dragover');
+    });
+
+    document.addEventListener('dragover', (event) => {
+        const dropzone = event.target.closest('[data-gallery-dropzone]');
+        if (!dropzone) {
+            return;
+        }
+
+        event.preventDefault();
+        dropzone.classList.add('is-dragover');
+    });
+
+    document.addEventListener('dragleave', (event) => {
+        const dropzone = event.target.closest('[data-gallery-dropzone]');
+        if (!dropzone || (event.relatedTarget instanceof Node && dropzone.contains(event.relatedTarget))) {
+            return;
+        }
+
+        dropzone.classList.remove('is-dragover');
+    });
+
+    document.addEventListener('drop', handleGalleryMediaDrop);
+
+    window.renderGalleryPhotos = renderGalleryPhotos;
+    window.uploadGalleryPhotoFiles = uploadGalleryPhotoFiles;
+    window.handleGalleryMediaDrop = handleGalleryMediaDrop;
+    window.updateGalleryPhotoCaption = updateGalleryPhotoCaption;
+    window.reorderGalleryPhotos = reorderGalleryPhotos;
+    window.setGalleryCoverSlot = setGalleryCoverSlot;
 
     // Initial load
     setupItemSorting();

@@ -62,7 +62,7 @@ include 'includes/header.php';
 <main class="directory-page">
     <?php
     $breadcrumbs = [
-        ['label' => 'Inicio', 'url' => './index.php'],
+        ['label' => 'Início', 'url' => './index.php'],
         ['label' => 'O que fazer', 'url' => './o-que-fazer.php'],
         ['label' => $categoria ? $categoria['nome'] : 'Categoria'],
     ];

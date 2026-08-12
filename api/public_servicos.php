@@ -24,6 +24,42 @@ function publicServiceHttpUrl($value): string
     return $scheme && in_array(strtolower($scheme), ['http', 'https'], true) ? $value : '';
 }
 
+function publicServiceEntityPhotos(PDO $pdo, string $type, int $entityId, string $coverImage = ''): array
+{
+    $photos = [];
+    $seen = [];
+    $addPhoto = static function ($value) use (&$photos, &$seen): void {
+        $image = publicServiceImagePath($value);
+        if ($image === '') {
+            return;
+        }
+
+        $key = preg_replace('#^\./#', '', $image);
+        if (isset($seen[$key])) {
+            return;
+        }
+
+        $seen[$key] = true;
+        $photos[] = $image;
+    };
+
+    $addPhoto($coverImage);
+
+    $stmt = $pdo->prepare("
+        SELECT url_imagem
+        FROM fotos
+        WHERE entidade_tipo = ? AND entidade_id = ?
+        ORDER BY ordem ASC, id ASC
+    ");
+    $stmt->execute([$type, $entityId]);
+
+    foreach ($stmt->fetchAll() as $photo) {
+        $addPhoto($photo['url_imagem'] ?? '');
+    }
+
+    return $photos;
+}
+
 function decodePublicServiceExtraData($value): array
 {
     if (is_array($value)) {
@@ -59,20 +95,20 @@ function publicServiceExtraLabelList($values, array $labels): string
 function buildPublicServiceExtra(array $extra): array
 {
     $typeLabels = [
-        'condutor-turistico' => 'Condutor turistico',
-        'imobiliaria' => 'Imobiliaria',
-        'materiais-construcao' => 'Materiais de construcao',
+        'condutor-turistico' => 'Condutor turístico',
+        'imobiliaria' => 'Imobiliária',
+        'materiais-construcao' => 'Materiais de construção',
         'transporte' => 'Transporte',
-        'comercio-local' => 'Comercio local',
-        'saude' => 'Saude',
+        'comercio-local' => 'Comércio local',
+        'saude' => 'Saúde',
         'oficina' => 'Oficina',
         'outros' => 'Outros',
     ];
     $areaLabels = [
         'pancas' => 'Pancas',
-        'regiao' => 'Regiao',
+        'regiao' => 'Região',
         'online' => 'Online',
-        'domicilio' => 'Atendimento em domicilio',
+        'domicilio' => 'Atendimento em domicílio',
     ];
     $attendanceLabels = [
         'presencial' => 'Presencial',
@@ -82,7 +118,7 @@ function buildPublicServiceExtra(array $extra): array
     ];
     $paymentLabels = [
         'pix' => 'Pix',
-        'cartao' => 'Cartao',
+        'cartao' => 'Cartão',
         'dinheiro' => 'Dinheiro',
     ];
 
@@ -168,11 +204,11 @@ try {
             'whatsapp' => $whatsappDigits !== '' ? 'https://wa.me/' . $whatsappDigits : '',
             'website' => $website,
             'ticket' => $serviceUrl ? [
-                'label' => 'Abrir servico',
+                'label' => 'Abrir serviço',
                 'url' => $serviceUrl,
             ] : null,
             'serviceExtra' => $serviceExtra,
-            'photos' => array_values(array_filter([$image]))
+            'photos' => publicServiceEntityPhotos($pdo, 'item', (int) $item['id'], $image)
         ];
     }
 
@@ -180,5 +216,5 @@ try {
 } catch (Throwable $e) {
     error_log($e->getMessage());
     http_response_code(500);
-    echo json_encode(['error' => 'Nao foi possivel carregar os servicos.'], JSON_UNESCAPED_UNICODE);
+    echo json_encode(['error' => 'Não foi possível carregar os serviços.'], JSON_UNESCAPED_UNICODE);
 }

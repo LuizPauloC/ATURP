@@ -11,18 +11,18 @@ $action = $_GET['action'] ?? '';
 function filterLabelFromSlug(string $slug): string
 {
     $labels = [
-        'cafe-da-manha' => 'Cafe da manha',
-        'almoco' => 'Almoco',
+        'cafe-da-manha' => 'Café da manhã',
+        'almoco' => 'Almoço',
         'lanches' => 'Lanches',
         'jantar' => 'Jantar',
-        'cafe' => 'Cafe',
+        'cafe' => 'Café',
         'restaurante' => 'Restaurante',
         'lanchonete' => 'Lanchonete',
         'pousada' => 'Pousada',
         'camping' => 'Camping',
-        'condutor-turistico' => 'Condutor turistico',
-        'imobiliaria' => 'Imobiliaria',
-        'materiais-construcao' => 'Materiais de construcao',
+        'condutor-turistico' => 'Condutor turístico',
+        'imobiliaria' => 'Imobiliária',
+        'materiais-construcao' => 'Materiais de construção',
     ];
 
     if (isset($labels[$slug])) {
@@ -35,7 +35,7 @@ function filterLabelFromSlug(string $slug): string
 function filterGroupFromSlug(string $slug): string
 {
     if (in_array($slug, ['cafe-da-manha', 'almoco', 'lanches', 'jantar', 'cafe'], true)) {
-        return 'Gastronomia - refeicoes';
+        return 'Gastronomia - refeições';
     }
 
     if (in_array($slug, ['restaurante', 'lanchonete'], true)) {
@@ -46,7 +46,7 @@ function filterGroupFromSlug(string $slug): string
         return 'Hospedagem';
     }
 
-    return 'Servicos e outros';
+    return 'Serviços e outros';
 }
 
 function normalizeFilterOption(array $row): array

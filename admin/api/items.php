@@ -381,7 +381,7 @@ function getItemCategorySlug(PDO $pdo, ?int $categoryId): string {
 function normalizeItemPayload(array $data, array $existingExtraData = [], string $categorySlug = ''): array {
     $titulo = cleanString($data['titulo'] ?? '', 160);
     if ($titulo === '') {
-        sendError('Titulo e obrigatorio.');
+        sendError('Título é obrigatório.');
     }
 
     $slugBase = generateSlug($titulo);

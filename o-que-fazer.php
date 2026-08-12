@@ -29,7 +29,7 @@ include 'includes/header.php';
 		<main class="main-content">
 			<?php
 			$breadcrumbs = [
-				['label' => 'Inicio', 'url' => './index.php'],
+				['label' => 'Início', 'url' => './index.php'],
 				['label' => 'O que fazer'],
 			];
 			include 'includes/breadcrumb.php';

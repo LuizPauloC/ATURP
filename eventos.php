@@ -91,7 +91,7 @@ HTML;
 <main class="layout-container" style="padding-top: 3rem; padding-bottom: 5rem;">
     <?php
     $breadcrumbs = [
-        ['label' => 'Inicio', 'url' => './index.php'],
+        ['label' => 'Início', 'url' => './index.php'],
         ['label' => 'O que fazer', 'url' => './o-que-fazer.php'],
         ['label' => 'Eventos'],
     ];

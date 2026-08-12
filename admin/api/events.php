@@ -35,11 +35,11 @@ function normalizeDateTimeValue($value): string {
 function normalizeEventPayload(array $data): array {
     $titulo = cleanString($data['titulo'] ?? '', 160);
     if ($titulo === '') {
-        sendError('Titulo e obrigatorio.');
+        sendError('Título é obrigatório.');
     }
 
     if (empty($data['data_inicio']) || empty($data['data_fim'])) {
-        sendError('Data de inicio e data de termino sao obrigatorias.');
+        sendError('Data de início e data de término são obrigatórias.');
     }
 
     $slugBase = generateSlug($titulo);

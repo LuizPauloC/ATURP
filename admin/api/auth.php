@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $action === 'login') {
     $password = (string) ($_POST['password'] ?? '');
 
     if (!$email || $password === '') {
-        sendError('E-mail e senha sao obrigatorios.');
+        sendError('E-mail e senha são obrigatórios.');
     }
 
     $stmt = $pdo->prepare("SELECT id, nome, email, senha_hash, nivel_acesso FROM usuarios_admin WHERE email = :email");
@@ -51,7 +51,7 @@ if ($action === 'check') {
         ]);
     }
 
-    sendError('Nao logado.', 401);
+    sendError('Não logado.', 401);
 }
 
 sendError('Acao invalida.', 400);

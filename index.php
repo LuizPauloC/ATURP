@@ -201,10 +201,23 @@ include 'includes/header.php';
 							SELECT id, url_imagem, legenda
 							FROM fotos
 							WHERE entidade_tipo = 'galeria_global'
+							AND ordem BETWEEN 10 AND 70
 							ORDER BY ordem ASC, id DESC
-							LIMIT 6
+							LIMIT 7
 						");
 						$fotosHome = $stmtGaleria->fetchAll();
+						$hasAssignedGalleryCovers = !empty($fotosHome);
+						if (!$hasAssignedGalleryCovers) {
+							$stmtGaleria = $pdoGaleria->query("
+								SELECT id, url_imagem, legenda
+								FROM fotos
+								WHERE entidade_tipo = 'galeria_global'
+								AND ordem <= 0
+								ORDER BY ordem ASC, id DESC
+								LIMIT 7
+							");
+							$fotosHome = $stmtGaleria->fetchAll();
+						}
 						$renderedHomePhotos = 0;
 						$invalidHomePhotos = 0;
 						

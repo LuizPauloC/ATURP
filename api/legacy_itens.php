@@ -24,11 +24,46 @@ function publicHttpUrl($value): string {
     return $scheme && in_array(strtolower($scheme), ['http', 'https'], true) ? $value : '';
 }
 
+function publicEntityPhotos(PDO $pdo, string $type, int $entityId, string $coverImage = ''): array {
+    $photos = [];
+    $seen = [];
+    $addPhoto = static function ($value) use (&$photos, &$seen): void {
+        $image = publicImagePath($value);
+        if ($image === '') {
+            return;
+        }
+
+        $key = preg_replace('#^\./#', '', $image);
+        if (isset($seen[$key])) {
+            return;
+        }
+
+        $seen[$key] = true;
+        $photos[] = $image;
+    };
+
+    $addPhoto($coverImage);
+
+    $stmt = $pdo->prepare("
+        SELECT url_imagem
+        FROM fotos
+        WHERE entidade_tipo = ? AND entidade_id = ?
+        ORDER BY ordem ASC, id ASC
+    ");
+    $stmt->execute([$type, $entityId]);
+
+    foreach ($stmt->fetchAll() as $photo) {
+        $addPhoto($photo['url_imagem'] ?? '');
+    }
+
+    return $photos;
+}
+
 function publicItemDefaultSpecialty(string $catSlug): string {
     $defaults = [
         'onde-ficar' => 'Hospedagem',
         'onde-comer' => 'Gastronomia',
-        'experiencias' => 'Experiencia',
+        'experiencias' => 'Experiência',
     ];
 
     return $defaults[$catSlug] ?? 'Item';
@@ -76,7 +111,7 @@ function buildPublicHostingAmenities(array $extra): array {
     }
 
     if (!empty($extra['cafe_manha_incluso'])) {
-        $amenities[] = ['icon' => 'coffee', 'label' => 'Cafe da manha incluso'];
+        $amenities[] = ['icon' => 'coffee', 'label' => 'Café da manhã incluso'];
     }
 
     return array_values($amenities);
@@ -87,12 +122,12 @@ function buildPublicHostingExtra(array $extra): array {
         'pousada' => 'Pousada',
         'hotel' => 'Hotel',
         'camping' => 'Camping',
-        'chale' => 'Chale',
-        'cama-e-cafe' => 'Cama & Cafe',
+        'chale' => 'Chalé',
+        'cama-e-cafe' => 'Cama & Café',
     ];
     $priceLabels = [
-        'economico' => 'Economico $',
-        'intermediario' => 'Intermediario $$',
+        'economico' => 'Econômico $',
+        'intermediario' => 'Intermediário $$',
         'luxo' => 'Luxo $$$',
     ];
 
@@ -137,13 +172,13 @@ function buildPublicGastronomyExtra(array $extra): array {
         'outros' => 'Outros',
     ];
     $priceLabels = [
-        'economico' => 'Economico $',
-        'intermediario' => 'Intermediario $$',
+        'economico' => 'Econômico $',
+        'intermediario' => 'Intermediário $$',
         'alto' => 'Alto $$$',
     ];
     $mealLabels = [
-        'cafe-da-manha' => 'Cafe da manha',
-        'almoco' => 'Almoco',
+        'cafe-da-manha' => 'Café da manhã',
+        'almoco' => 'Almoço',
         'lanches' => 'Lanches',
         'jantar' => 'Jantar',
     ];
@@ -154,7 +189,7 @@ function buildPublicGastronomyExtra(array $extra): array {
     ];
     $paymentLabels = [
         'pix' => 'Pix',
-        'cartao' => 'Cartao',
+        'cartao' => 'Cartão',
         'dinheiro' => 'Dinheiro',
     ];
 
@@ -181,17 +216,17 @@ function buildPublicExperienceExtra(array $extra): array {
         'roteiro-cultural' => 'Roteiro cultural',
         'turismo-rural' => 'Turismo rural',
         'aventura' => 'Aventura',
-        'contemplacao' => 'Contemplacao',
+        'contemplacao' => 'Contemplação',
         'outros' => 'Outros',
     ];
     $difficultyLabels = [
-        'facil' => 'Facil',
+        'facil' => 'Fácil',
         'moderado' => 'Moderado',
-        'dificil' => 'Dificil',
+        'dificil' => 'Difícil',
     ];
     $audienceLabels = [
-        'familias' => 'Familias',
-        'criancas' => 'Criancas',
+        'familias' => 'Famílias',
+        'criancas' => 'Crianças',
         'casais' => 'Casais',
         'grupos' => 'Grupos',
         'aventureiros' => 'Aventureiros',
@@ -200,8 +235,8 @@ function buildPublicExperienceExtra(array $extra): array {
         'guia' => 'Guia',
         'estacionamento' => 'Estacionamento',
         'banheiro' => 'Banheiro',
-        'alimentacao' => 'Alimentacao',
-        'sinalizacao' => 'Sinalizacao',
+        'alimentacao' => 'Alimentação',
+        'sinalizacao' => 'Sinalização',
         'acessibilidade' => 'Acessibilidade',
     ];
 
@@ -316,12 +351,12 @@ try {
             ];
         } elseif ($menuUrl) {
             $ticket = [
-                'label' => 'Ver cardapio',
+                'label' => 'Ver cardápio',
                 'url' => $menuUrl,
             ];
         } elseif ($experienceInfoUrl) {
             $ticket = [
-                'label' => 'Ver informacoes',
+                'label' => 'Ver informações',
                 'url' => $experienceInfoUrl,
             ];
         }
@@ -362,9 +397,7 @@ try {
             'gastronomyExtra' => $gastronomyExtra,
             'experienceExtra' => $experienceExtra,
             'amenities' => $hostingAmenities,
-            'photos' => array_values(array_filter([
-                $image
-            ]))
+            'photos' => publicEntityPhotos($pdo, 'item', (int) $item['id'], $image)
         ];
         
         $jsonOutput[] = $place;
@@ -389,5 +422,5 @@ try {
 } catch (Throwable $e) {
     error_log($e->getMessage());
     http_response_code(500);
-    echo json_encode(['error' => 'Nao foi possivel carregar os dados.'], JSON_UNESCAPED_UNICODE);
+    echo json_encode(['error' => 'Não foi possível carregar os dados.'], JSON_UNESCAPED_UNICODE);
 }

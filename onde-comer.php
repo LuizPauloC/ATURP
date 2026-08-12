@@ -19,7 +19,7 @@ include 'includes/header.php';
 		<main class="directory-page food-page">
 			<?php
 			$breadcrumbs = [
-				['label' => 'Inicio', 'url' => './index.php'],
+				['label' => 'Início', 'url' => './index.php'],
 				['label' => 'Onde comer'],
 			];
 			include 'includes/breadcrumb.php';

@@ -6,7 +6,7 @@ include 'includes/header.php';
 
 <main class="main-content detail-page-main">
 			<nav class="detail-breadcrumb layout-container" data-detail-breadcrumb aria-label="Caminho da pagina">
-				<a href="./index.php" class="detail-breadcrumb__link">Inicio</a>
+				<a href="./index.php" class="detail-breadcrumb__link">Início</a>
 				<span class="detail-breadcrumb__separator" aria-hidden="true">/</span>
 				<span class="detail-breadcrumb__current">Carregando...</span>
 			</nav>

@@ -21,7 +21,7 @@ include 'includes/header.php';
 		<main class="directory-page quick-guide-page">
 			<?php
 			$breadcrumbs = [
-				['label' => 'Inicio', 'url' => './index.php'],
+				['label' => 'Início', 'url' => './index.php'],
 				['label' => 'Guia'],
 			];
 			include 'includes/breadcrumb.php';

@@ -24,12 +24,12 @@ function generateSlug($string) {
 function normalizeCategoryPayload(array $data): array {
     $nome = cleanString($data['nome'] ?? '', 120);
     if ($nome === '') {
-        sendError('O nome da categoria e obrigatorio.');
+        sendError('O nome da categoria é obrigatório.');
     }
 
     $tipo = cleanString($data['tipo_aplicacao'] ?? 'item', 20);
     if (!in_array($tipo, ['item', 'evento'], true)) {
-        sendError('Tipo de aplicacao invalido.');
+        sendError('Tipo de aplicação inválido.');
     }
 
     $slug = generateSlug($nome);

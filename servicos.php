@@ -69,9 +69,8 @@ try {
     if ($categoria) {
         $stmtItens = $pdo->prepare("
             SELECT
-                id, slug, titulo, subtitulo, descricao_completa, imagem_capa,
-                horario_funcionamento, endereco, link_google_maps,
-                telefone_whatsapp, website, instagram
+                id, slug, titulo, descricao_completa, imagem_capa,
+                horario_funcionamento, endereco, link_google_maps
             FROM itens
             WHERE categoria_id = ? AND ativo = 1 AND deletado_em IS NULL
             ORDER BY titulo ASC
@@ -103,8 +102,8 @@ include 'includes/header.php';
 <main class="directory-page services-page">
     <?php
     $breadcrumbs = [
-        ['label' => 'Inicio', 'url' => './index.php'],
-        ['label' => 'Servicos'],
+        ['label' => 'Início', 'url' => './index.php'],
+        ['label' => 'Serviços'],
     ];
     include 'includes/breadcrumb.php';
     ?>
@@ -124,23 +123,16 @@ include 'includes/header.php';
                     <?php foreach ($itens as $item): ?>
                         <?php
                         $detailUrl = aturpServiceDetailUrl($item);
-                        $serviceCategory = trim((string) ($item['subtitulo'] ?? ''));
-                        if ($serviceCategory === '') {
-                            $serviceCategory = (string) ($categoria['nome'] ?? 'Serviços');
-                        }
-
                         $imageSrc = aturpPublicImageSrc(
                             $item['imagem_capa'] ?? '',
                             'assets/placeholders/rock-silhouette-placeholder.png'
                         );
                         $hours = trim((string) ($item['horario_funcionamento'] ?? ''));
                         $address = trim((string) ($item['endereco'] ?? ''));
+                        $locationLabel = $address !== '' ? $address : 'Pancas, ES';
                         $mapUrl = aturpPublicHttpUrl($item['link_google_maps'] ?? '');
-                        $whatsappUrl = aturpWhatsAppUrl($item['telefone_whatsapp'] ?? '');
                         ?>
                         <article class="directory-card services-card" role="listitem">
-                            <p class="services-card__category"><?= aturpHtml($serviceCategory) ?></p>
-
                             <h3 class="directory-card__title">
                                 <a href="<?= aturpHtml($detailUrl) ?>" class="directory-card__title-link">
                                     <?= aturpHtml($item['titulo']) ?>
@@ -168,13 +160,6 @@ include 'includes/header.php';
                                     </svg>
                                     <span><strong>Horário:</strong> <?= aturpHtml($hours !== '' ? $hours : 'Sob consulta') ?></span>
                                 </li>
-
-                                <li class="services-card__meta-item">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" class="services-card__meta-icon" aria-hidden="true">
-                                        <path d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 256c-35.3 0-64-28.7-64-64s28.7-64 64-64s64 28.7 64 64s-28.7 64-64 64z"/>
-                                    </svg>
-                                    <span><strong>Localização:</strong> <?= aturpHtml($address !== '' ? $address : 'Pancas, ES') ?></span>
-                                </li>
                             </ul>
 
                             <div class="directory-card__footer">
@@ -182,26 +167,16 @@ include 'includes/header.php';
 
                                 <?php if ($mapUrl): ?>
                                     <a href="<?= aturpHtml($mapUrl) ?>" target="_blank" rel="noreferrer" class="directory-card__link">
-                                        <span class="directory-card__link-main">
-                                            <span class="directory-card__icon directory-card__icon--leading">
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" aria-hidden="true"><path d="M128 252.6C128 148.4 214 64 320 64C426 64 512 148.4 512 252.6C512 371.9 391.8 514.9 341.6 569.4C329.8 582.2 310.1 582.2 298.3 569.4C248.1 514.9 127.9 371.9 127.9 252.6zM320 320C355.3 320 384 291.3 384 256C384 220.7 355.3 192 320 192C284.7 192 256 220.7 256 256C256 291.3 284.7 320 320 320z"/></svg>
-                                            </span>
-                                            <span class="directory-card__link-text">Ver no mapa</span>
-                                        </span>
-                                        <span class="directory-card__icon directory-card__icon--trailing">
-                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" aria-hidden="true"><path d="M384 64C366.3 64 352 78.3 352 96C352 113.7 366.3 128 384 128L466.7 128L265.3 329.4C252.8 341.9 252.8 362.2 265.3 374.7C277.8 387.2 298.1 387.2 310.6 374.7L512 173.3L512 256C512 273.7 526.3 288 544 288C561.7 288 576 273.7 576 256L576 96C576 78.3 561.7 64 544 64L384 64zM144 160C99.8 160 64 195.8 64 240L64 496C64 540.2 99.8 576 144 576L400 576C444.2 576 480 540.2 480 496L480 416C480 398.3 465.7 384 448 384C430.3 384 416 398.3 416 416L416 496C416 504.8 408.8 512 400 512L144 512C135.2 512 128 504.8 128 496L128 240C128 231.2 135.2 224 144 224L224 224C241.7 224 256 209.7 256 192C256 174.3 241.7 160 224 160L144 160z"/></svg>
-                                        </span>
+                                        <span class="directory-card__link-text"><?= aturpHtml($locationLabel) ?></span>
                                     </a>
-                                <?php endif; ?>
-
-                                <?php if ($whatsappUrl): ?>
-                                    <a href="<?= aturpHtml($whatsappUrl) ?>" target="_blank" rel="noreferrer" class="directory-card__social">
-                                        Falar no WhatsApp
-                                    </a>
+                                <?php else: ?>
+                                    <p class="directory-card__landmark">
+                                        <span class="directory-card__link-text"><?= aturpHtml($locationLabel) ?></span>
+                                    </p>
                                 <?php endif; ?>
 
                                 <a href="<?= aturpHtml($detailUrl) ?>" class="directory-card__cta">
-                                    <span class="directory-card__link-text">Ver mais detalhes</span>
+                                    <span class="directory-card__link-text">Ver mais detalhes &rarr;</span>
                                 </a>
                             </div>
                         </article>
