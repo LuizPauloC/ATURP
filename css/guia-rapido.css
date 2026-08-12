@@ -5,20 +5,19 @@
 	--guide-brand-green: #00c464;
 	--guide-text: #263238;
 	background-color: #f7faf7;
-
 }
 
 /* -----HERO----- */
 .quick-guide-hero {
 	display: flex;
 	align-items: flex-end;
-	min-height: 78svh;
+	min-height: 72svh;
 	padding-top: 8rem;
 	padding-bottom: 3.75rem;
 	background-color: #17221c;
 	background-image:
 		linear-gradient(180deg, rgba(7, 13, 11, 0.42) 0%, rgba(7, 13, 11, 0.22) 42%, rgba(7, 13, 11, 0.86) 100%),
-		url("../assets/hero/quick-guide-pedra-sunset.jpg");
+		url('../assets/hero/quick-guide-pedra-sunset.jpg');
 	background-position: center;
 	background-size: cover;
 }
@@ -26,8 +25,6 @@
 .quick-guide-hero__content {
 	display: flex;
 	flex-direction: column;
-	align-items: center;
-	text-align: center;
 }
 
 .quick-guide-hero__title {
@@ -55,14 +52,6 @@
 	padding-top: 76px;
 	padding-bottom: 76px;
 	scroll-margin-top: 96px;
-}
-
-.quick-guide__section--soft {
-	background-color: rgb(242 245 245 / 0.88);
-}
-
-.quick-guide__section--contrast {
-	background-color: #f5f8f4;
 }
 
 .quick-guide__intro {
@@ -98,7 +87,6 @@
 	appearance: none;
 	text-align: left;
 	text-decoration: none;
-	box-shadow: 0 18px 42px -34px rgba(4, 120, 87, 0.65);
 	transition:
 		transform 0.2s ease,
 		box-shadow 0.2s ease,
@@ -229,7 +217,6 @@
 	background-color: #17221c;
 	background-size: cover;
 	background-position: center;
-	box-shadow: 0 24px 52px -38px rgba(15, 23, 42, 0.62);
 	overflow: hidden;
 	transition: transform 0.25s ease;
 }
@@ -246,15 +233,15 @@
 }
 
 .quick-guide__card--flight {
-	background-image: url("../assets/events/voo_livre.jpg");
+	background-image: url('../assets/events/voo_livre.jpg');
 }
 
 .quick-guide__card--monument {
-	background-image: url("../assets/landmarks/pedra-agulha-historic.jpg");
+	background-image: url('../assets/landmarks/pedra-agulha-historic.jpg');
 }
 
 .quick-guide__card--trails {
-	background-image: url("../assets/placeholders/trilhas.jpg");
+	background-image: url('../assets/placeholders/trilhas.jpg');
 }
 
 .quick-guide__card-kicker {
@@ -290,18 +277,15 @@
 	border: 1px solid rgb(4 120 87 / 0.14);
 	border-radius: 1rem;
 	background-color: rgb(255 255 255 / 0.95);
-	box-shadow: 0 16px 36px -30px rgba(15, 23, 42, 0.34);
 	overflow: hidden;
 	transition:
 		border-color 0.28s ease,
-		background-color 0.28s ease,
-		box-shadow 0.28s ease;
+		background-color 0.28s ease;
 }
 
 .quick-guide__accordion[open] {
 	border-color: rgb(0 196 100 / 0.32);
 	background-color: #fff;
-	box-shadow: 0 20px 40px -30px rgba(4, 120, 87, 0.28);
 }
 
 .quick-guide__accordion.is-animating {
@@ -339,13 +323,20 @@
 	line-height: 1;
 }
 
+.quick-guide__accordion-icon svg {
+	display: block;
+	width: 1.2rem;
+	height: 1.2rem;
+	fill: currentColor;
+}
+
 .quick-guide__accordion-summary::-webkit-details-marker {
 	display: none;
 }
 
 .quick-guide__accordion-summary::before,
 .quick-guide__accordion-summary::after {
-	content: "";
+	content: '';
 	position: absolute;
 	top: 50%;
 	right: 1.25rem;
@@ -404,7 +395,7 @@
 	padding-left: 0.95rem;
 	color: #3f4b56;
 	font-size: 1rem;
-	background-image: radial-gradient(circle, rgb(0 196 100 / 0.7) 0 0.13rem, transparent 0.15rem);
+	background-image:radial-gradient(circle, black 0 0.13rem, transparent 0.15rem) ;
 	background-repeat: no-repeat;
 	background-size: 0.72rem 1.75em;
 	background-position: 0.02rem 0;
@@ -417,9 +408,6 @@
 	padding: 1.15rem;
 	border: 1px solid rgb(0 196 100 / 0.22);
 	border-radius: 1rem;
-	background:
-		linear-gradient(180deg, rgb(232 255 241 / 0.94), rgb(255 255 255 / 0.98)),
-		#fff;
 }
 
 .quick-guide__contact-label {
@@ -454,13 +442,11 @@
 	color: #fff;
 	text-decoration: none;
 	transition:
-		transform 0.2s ease,
 		background-color 0.2s ease;
 }
 
 .quick-guide__contact-link:hover,
 .quick-guide__contact-link:focus-visible {
-	transform: translateY(-1px);
 	background-color: #101816;
 }
 
@@ -495,7 +481,6 @@
 	padding: 1rem;
 	border: 1px solid rgb(0 196 100 / 0.2);
 	border-radius: 1rem;
-	background-color: rgb(232 255 241 / 0.82);
 }
 
 /* -----EMERGENCY LINKS----- */
@@ -517,13 +502,11 @@
 	color: #fff;
 	text-decoration: none;
 	transition:
-		transform 0.2s ease,
 		background-color 0.2s ease;
 }
 
 .quick-guide__emergency-link:hover,
 .quick-guide__emergency-link:focus-visible {
-	transform: translateY(-1px);
 	background-color: #0f2a21;
 }
 
@@ -563,8 +546,10 @@
 	border: 1px solid rgb(4 120 87 / 0.14);
 	border-radius: 5px;
 	overflow: hidden;
-	box-shadow: 0 20px 48px -36px rgba(4, 120, 87, 0.4);
-	transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+	transition:
+		transform 0.3s ease,
+		box-shadow 0.3s ease,
+		border-color 0.3s ease;
 }
 
 .tour-guide-card__image-container {
@@ -636,7 +621,9 @@
 	font-weight: 700;
 	font-size: 0.98rem;
 	text-decoration: none;
-	transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+	transition:
+		transform 0.2s ease,
+		background-color 0.2s ease;
 	cursor: pointer;
 }
 
@@ -653,7 +640,6 @@
 
 .guide-contact-btn--instagram:hover {
 	background-color: #e8e8e8;
-	transform: translateY(-1px);
 }
 
 .guide-contact-btn--whatsapp {
@@ -663,8 +649,6 @@
 
 .guide-contact-btn--whatsapp:hover {
 	background-color: #035a41;
-	transform: translateY(-1px);
-	box-shadow: 0 8px 20px -6px rgba(4, 120, 87, 0.4);
 }
 
 .guide-contact-btn:focus-visible {

@@ -104,9 +104,16 @@
 			</nav>
 		</aside>
 
+		<?php
+		$currentMobileBottomPage = basename($_SERVER['PHP_SELF'] ?? '');
+		function mobileBottomNavItemClass(string $page): string {
+			global $currentMobileBottomPage;
+			return $currentMobileBottomPage === $page ? 'bottom-nav__item active' : 'bottom-nav__item';
+		}
+		?>
 		<!-- Mobile Bottom Navigation -->
 		<nav class="mobile-bottom-nav" aria-label="Navegação inferior">
-			<div class="bottom-nav__item">
+			<div class="<?= mobileBottomNavItemClass('onde-ficar.php') ?>">
 				<a href="./onde-ficar.php" aria-label="Onde Ficar">
 					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" aria-hidden="true">
 						<path
@@ -115,7 +122,7 @@
 					</svg>
 				</a>
 			</div>
-			<div class="bottom-nav__item">
+			<div class="<?= mobileBottomNavItemClass('onde-comer.php') ?>">
 				<a href="./onde-comer.php" aria-label="Onde Comer">
 					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" aria-hidden="true">
 						<path
@@ -125,7 +132,7 @@
 				</a>
 			</div>
 
-			<div class="bottom-nav__item <?php echo (basename($_SERVER['PHP_SELF']) == 'index.php') ? 'active' : ''; ?>">
+			<div class="<?= mobileBottomNavItemClass('index.php') ?>">
 				<a href="./index.php" aria-label="Início">
 					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" aria-hidden="true">
 						<path
@@ -135,7 +142,7 @@
 				</a>
 			</div>
 
-			<div class="bottom-nav__item">
+			<div class="<?= mobileBottomNavItemClass('o-que-fazer.php') ?>">
 				<a href="./o-que-fazer.php" aria-label="O que Fazer">
 					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" aria-hidden="true">
 						<path
@@ -144,7 +151,7 @@
 					</svg>
 				</a>
 			</div>
-			<div class="bottom-nav__item">
+			<div class="<?= mobileBottomNavItemClass('guia-rapido.php') ?>">
 				<a href="./guia-rapido.php" aria-label="Guia do Turista">
 					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" aria-hidden="true">
 						<path

@@ -226,7 +226,11 @@ include 'includes/header.php';
 					<div class="quick-guide__accordion-group">
 						<details class="quick-guide__accordion" open>
 							<summary class="quick-guide__accordion-summary">
-								<span class="quick-guide__accordion-icon" aria-hidden="true">💡</span>
+								<span class="quick-guide__accordion-icon" aria-hidden="true">
+									<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+										<path d="M424.5 355.1C449 329.2 464 294.4 464 256C464 176.5 399.5 112 320 112C240.5 112 176 176.5 176 256C176 294.4 191 329.2 215.5 355.1C236.8 377.5 260.4 409.1 268.8 448L371.2 448C379.6 409 403.2 377.5 424.5 355.1zM459.3 388.1C435.7 413 416 443.4 416 477.7L416 496C416 540.2 380.2 576 336 576L304 576C259.8 576 224 540.2 224 496L224 477.7C224 443.4 204.3 413 180.7 388.1C148 353.7 128 307.2 128 256C128 150 214 64 320 64C426 64 512 150 512 256C512 307.2 492 353.7 459.3 388.1zM272 248C272 261.3 261.3 272 248 272C234.7 272 224 261.3 224 248C224 199.4 263.4 160 312 160C325.3 160 336 170.7 336 184C336 197.3 325.3 208 312 208C289.9 208 272 225.9 272 248z"/>
+									</svg>
+								</span>
 								<span>Dicas</span>
 							</summary>
 							<div class="quick-guide__accordion-content">
@@ -249,7 +253,11 @@ include 'includes/header.php';
 
 						<details class="quick-guide__accordion">
 							<summary class="quick-guide__accordion-summary">
-								<span class="quick-guide__accordion-icon" aria-hidden="true">📍</span>
+								<span class="quick-guide__accordion-icon" aria-hidden="true">
+									<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+										<path d="M352 348.4C416.1 333.9 464 276.5 464 208C464 128.5 399.5 64 320 64C240.5 64 176 128.5 176 208C176 276.5 223.9 333.9 288 348.4L288 544C288 561.7 302.3 576 320 576C337.7 576 352 561.7 352 544L352 348.4zM328 160C297.1 160 272 185.1 272 216C272 229.3 261.3 240 248 240C234.7 240 224 229.3 224 216C224 158.6 270.6 112 328 112C341.3 112 352 122.7 352 136C352 149.3 341.3 160 328 160z"/>
+									</svg>
+								</span>
 								<span>Chegada</span>
 							</summary>
 							<div class="quick-guide__accordion-content">
@@ -274,7 +282,11 @@ include 'includes/header.php';
 
 						<details class="quick-guide__accordion">
 							<summary class="quick-guide__accordion-summary">
-								<span class="quick-guide__accordion-icon" aria-hidden="true">🗺️</span>
+								<span class="quick-guide__accordion-icon" aria-hidden="true">
+									<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+										<path d="M576 112C576 100.9 570.3 90.6 560.8 84.8C551.3 79 539.6 78.4 529.7 83.4L413.5 141.5L234.1 81.6C226 78.9 217.3 79.5 209.7 83.3L81.7 147.3C70.8 152.8 64 163.9 64 176L64 528C64 539.1 69.7 549.4 79.2 555.2C88.7 561 100.4 561.6 110.3 556.6L226.4 498.5L405.8 558.3C413.9 561 422.6 560.4 430.2 556.6L558.2 492.6C569 487.2 575.9 476.1 575.9 464L575.9 112zM256 440.9L256 156.4L384 199.1L384 483.6L256 440.9z"/>
+									</svg>
+								</span>
 								<span>Roteiro</span>
 							</summary>
 							<div class="quick-guide__accordion-content">
@@ -298,7 +310,11 @@ include 'includes/header.php';
 
 						<details class="quick-guide__accordion">
 							<summary class="quick-guide__accordion-summary">
-								<span class="quick-guide__accordion-icon" aria-hidden="true">☀️</span>
+								<span class="quick-guide__accordion-icon" aria-hidden="true">
+									<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+										<path d="M208.3 256C251.4 256 288.8 280.4 307.5 316.1C322.2 298.9 343.9 288 368.3 288C412.5 288 448.3 323.8 448.3 368C448.3 373.5 447.7 378.9 446.7 384C447.2 384 447.8 384 448.3 384C501.3 384 544.3 427 544.3 480C544.3 533 501.3 576 448.3 576L128.3 576C75.3 576 32.3 533 32.3 480C32.3 437.5 60 401.5 98.3 388.8C97 382 96.3 375.1 96.3 368C96.3 306.1 146.4 256 208.3 256zM400.3 32.2C405.6 32.2 410.6 34.9 413.6 39.3L460.9 109.7L544.2 93.4C549.4 92.4 554.8 94.1 558.5 97.8C562.3 101.6 563.9 107 562.9 112.2L546.6 195.5L617 242.8C621.4 245.8 624.1 250.8 624.1 256.1C624.1 261.4 621.5 266.4 617.1 269.3L546.7 316.6L561.2 390.8C544 369.1 520.8 352.4 494 343.5C491.5 330.8 487.1 318.9 481.2 307.8C490.8 292.9 496.4 275.1 496.4 256.1C496.4 203.1 453.4 160.1 400.4 160.1C352.5 160.1 312.8 195.2 305.6 241C284.7 225 259.7 214 232.5 209.9L254 195.4L237.7 112.2L237.4 110.2C237.1 105.6 238.7 101.1 242 97.8C245.8 94 251.2 92.4 256.4 93.4L339.7 109.7L387 39.3L388.2 37.7C391.2 34.2 395.6 32.2 400.3 32.2zM400.3 208C426.8 208 448.3 229.5 448.3 256C448.3 259.8 447.8 263.6 446.9 267.1C425.2 250.2 398 240 368.3 240C363.7 240 359.2 240.2 354.8 240.7C361.2 221.7 379.1 208 400.3 208z"/>
+									</svg>
+								</span>
 								<span>Clima</span>
 							</summary>
 							<div class="quick-guide__accordion-content">
@@ -322,7 +338,11 @@ include 'includes/header.php';
 
 						<details class="quick-guide__accordion">
 							<summary class="quick-guide__accordion-summary">
-								<span class="quick-guide__accordion-icon" aria-hidden="true">🎒</span>
+								<span class="quick-guide__accordion-icon" aria-hidden="true">
+									<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+										<path d="M272 88C272 83.6 275.6 80 280 80L360 80C364.4 80 368 83.6 368 88L368 160L272 160L272 88zM448 160L416 160L416 88C416 57.1 390.9 32 360 32L280 32C249.1 32 224 57.1 224 88L224 160L192 160C156.7 160 128 188.7 128 224L128 512C128 547.3 156.7 576 192 576C192 593.7 206.3 608 224 608C241.7 608 256 593.7 256 576L384 576C384 593.7 398.3 608 416 608C433.7 608 448 593.7 448 576C483.3 576 512 547.3 512 512L512 224C512 188.7 483.3 160 448 160zM248 272L392 272C405.3 272 416 282.7 416 296C416 309.3 405.3 320 392 320L248 320C234.7 320 224 309.3 224 296C224 282.7 234.7 272 248 272zM248 400L392 400C405.3 400 416 410.7 416 424C416 437.3 405.3 448 392 448L248 448C234.7 448 224 437.3 224 424C224 410.7 234.7 400 248 400z"/>
+									</svg>
+								</span>
 								<span>Antes da viagem</span>
 							</summary>
 							<div class="quick-guide__accordion-content">
@@ -341,7 +361,11 @@ include 'includes/header.php';
 
 						<details class="quick-guide__accordion">
 							<summary class="quick-guide__accordion-summary">
-								<span class="quick-guide__accordion-icon" aria-hidden="true">✨</span>
+								<span class="quick-guide__accordion-icon" aria-hidden="true">
+									<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+										<path d="M328.3 88C328.3 57.1 353.4 32 384.3 32C415.2 32 440.3 57.1 440.3 88C440.3 118.9 415.2 144 384.3 144C353.4 144 328.3 118.9 328.3 88zM320.3 269.3L297.7 291.9C291.7 297.9 288.3 306 288.3 314.5L288.3 352C288.3 364.3 281.3 375 271.1 380.4C270.2 384.6 268.7 388.8 266.8 392.7L197.8 530.8L197 530.4L169.3 585.7C159.4 605.5 135.4 613.5 115.6 603.6L78.6 585C58.8 575.1 50.8 551.1 60.7 531.3L111.3 430.3C121.2 410.5 145.2 402.5 165 412.4L195.7 427.7L224 371.1C224.3 370.5 224.4 369.9 224.4 369.3L224.4 352.4C224.4 352.2 224.4 352.1 224.4 351.9L224.4 314.4C224.4 288.9 234.5 264.5 252.5 246.5L287.6 211.4C310.4 188.6 341.2 175.8 373.4 175.8C410.3 175.8 445.2 192.6 468.2 221.4L486.1 244C492.2 251.6 501.4 256 511.1 256L544.3 256C562 256 576.3 270.3 576.3 288C576.3 305.7 562 320 544.3 320L511.1 320C481.9 320 454.4 306.7 436.1 284L432.3 279.3L432.3 394.5L466.8 424.1C484.5 439.3 496.1 460.3 499.4 483.4L512 571.5C514.5 589 502.3 605.2 484.8 607.7C467.3 610.2 451.1 598 448.6 580.5L436 492.4C434.9 484.7 431 477.7 425.1 472.6L353.7 411.4C332.4 393.2 320.2 366.5 320.2 338.5L320.2 269.2zM320.4 435.1C322.8 437.4 325.2 439.7 327.8 441.9L373.8 481.3L371.6 488.9C367.1 504.6 358.7 518.9 347.2 530.4L278.9 598.7C266.4 611.2 246.1 611.2 233.6 598.7C221.1 586.2 221.1 565.9 233.6 553.4L302 485.1C305.8 481.3 308.6 476.5 310.1 471.3L320.4 435z"/>
+									</svg>
+								</span>
 								<span>Depois da viagem</span>
 							</summary>
 							<div class="quick-guide__accordion-content">
@@ -361,7 +385,11 @@ include 'includes/header.php';
 
 						<details class="quick-guide__accordion">
 							<summary class="quick-guide__accordion-summary">
-								<span class="quick-guide__accordion-icon" aria-hidden="true">☎️</span>
+								<span class="quick-guide__accordion-icon" aria-hidden="true">
+									<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+										<path d="M224.2 89C216.3 70.1 195.7 60.1 176.1 65.4L170.6 66.9C106 84.5 50.8 147.1 66.9 223.3C104 398.3 241.7 536 416.7 573.1C493 589.3 555.5 534 573.1 469.4L574.6 463.9C580 444.2 569.9 423.6 551.1 415.8L453.8 375.3C437.3 368.4 418.2 373.2 406.8 387.1L368.2 434.3C297.9 399.4 241.3 341 208.8 269.3L253 233.3C266.9 222 271.6 202.9 264.8 186.3L224.2 89z"/>
+									</svg>
+								</span>
 								<span>Contato da ATURP</span>
 							</summary>
 							<div class="quick-guide__accordion-content">
@@ -383,7 +411,7 @@ include 'includes/header.php';
 									>
 										<span class="quick-guide__contact-link-copy">
 											<strong>Turismo</strong>
-											<span>(27) 12345-6789</span>
+											<span>(00) 00000-0000</span>
 										</span>
 										<span class="quick-guide__contact-link-arrow" aria-hidden="true">Ligar</span>
 									</a>
