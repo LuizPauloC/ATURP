@@ -8,7 +8,8 @@ header('Content-Type: application/json; charset=utf-8');
 header('X-Content-Type-Options: nosniff');
 
 function publicImagePath($value): string {
-    return aturpPublicImageSrc($value, './assets/placeholders/eventos.jpeg');
+    $path = aturpPublicImageSrc($value);
+    return $path !== '' ? './' . $path : '';
 }
 
 function publicHttpUrl($value): string {
@@ -19,6 +20,64 @@ function publicHttpUrl($value): string {
 
     $scheme = parse_url($value, PHP_URL_SCHEME);
     return $scheme && in_array(strtolower($scheme), ['http', 'https'], true) ? $value : '';
+}
+
+function decodePublicEventExtraData($value): array {
+    if (is_array($value)) {
+        return $value;
+    }
+
+    $value = trim((string) ($value ?? ''));
+    if ($value === '') {
+        return [];
+    }
+
+    $decoded = json_decode($value, true);
+    return is_array($decoded) ? $decoded : [];
+}
+
+function publicEventExtraLabelList($values, array $labels): string {
+    if (!is_array($values)) {
+        $values = array_map('trim', explode(',', (string) $values));
+    }
+
+    $formatted = [];
+    foreach ($values as $value) {
+        $slug = aturpCanonicalCategorySlug($value);
+        if (isset($labels[$slug])) {
+            $formatted[] = $labels[$slug];
+        }
+    }
+
+    return implode(', ', array_values(array_unique($formatted)));
+}
+
+function buildPublicEventExtra(array $extra): array {
+    $structureLabels = [
+        'banheiros' => 'Banheiros',
+        'alimentacao' => 'Alimentação',
+        'area-coberta' => 'Área coberta',
+        'seguranca' => 'Segurança',
+        'area-infantil' => 'Área infantil',
+        'acessibilidade' => 'Acessibilidade',
+    ];
+
+    return array_filter([
+        'programacao' => trim((string) ($extra['programacao'] ?? '')),
+        'publicoAlvo' => trim((string) ($extra['publico_alvo'] ?? '')),
+        'classificacaoIndicativa' => trim((string) ($extra['classificacao_indicativa'] ?? '')),
+        'instrucoesIngresso' => trim((string) ($extra['instrucoes_ingresso'] ?? '')),
+        'comoChegar' => trim((string) ($extra['como_chegar'] ?? '')),
+        'estacionamento' => trim((string) ($extra['estacionamento'] ?? '')),
+        'acessibilidade' => trim((string) ($extra['acessibilidade'] ?? '')),
+        'estruturaDisponivel' => publicEventExtraLabelList($extra['estrutura_disponivel'] ?? [], $structureLabels),
+        'regrasAvisos' => trim((string) ($extra['regras_avisos'] ?? '')),
+        'pontoEncontro' => trim((string) ($extra['ponto_encontro'] ?? '')),
+        'gratuitoInscricao' => !empty($extra['gratuito_inscricao']) ? 'Sim' : '',
+        'canaisOficiais' => trim((string) ($extra['canais_oficiais'] ?? '')),
+        'realizacaoApoio' => trim((string) ($extra['realizacao_apoio'] ?? '')),
+        'observacoesUteis' => trim((string) ($extra['observacoes_uteis'] ?? '')),
+    ], static fn($value) => $value !== '');
 }
 
 function publicEventEntityPhotos(PDO $pdo, string $type, int $entityId, string $coverImage = ''): array {
@@ -67,7 +126,7 @@ try {
         SELECT
             id, slug, titulo, descricao_completa, imagem_capa, data_inicio,
             data_fim, local_nome, endereco, telefone_contato, link_ingressos,
-            preco_base
+            preco_base, dados_extra
         FROM eventos
         WHERE deletado_em IS NULL AND ativo = 1
         ORDER BY data_inicio ASC
@@ -75,7 +134,6 @@ try {
     $eventos = $stmt->fetchAll();
     
     $jsonOutput = [];
-    $meses = ['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez'];
     
     foreach ($eventos as $ev) {
         $dataStr = "A definir";
@@ -83,15 +141,12 @@ try {
         
         if ($ev['data_inicio'] && $ev['data_fim']) {
             $di = new DateTime($ev['data_inicio']);
-            $df = new DateTime($ev['data_fim']);
-            
-            $di_str = sprintf("%02d %s. %s", $di->format('d'), $meses[$di->format('n')-1], $di->format('y'));
-            
-            if ($ev['data_inicio'] !== $ev['data_fim']) {
-                $df_str = sprintf("%02d %s. %s", $df->format('d'), $meses[$df->format('n')-1], $df->format('y'));
-                $dataStr = "$di_str > $df_str";
-            } else {
-                $dataStr = $di_str;
+
+            $dataStr = $di->format('d/m/Y');
+
+            if (!empty($ev['data_fim']) && $ev['data_fim'] !== '0000-00-00 00:00:00') {
+                $df = new DateTime($ev['data_fim']);
+                $dataStr .= " > " . $df->format('d/m/Y');
             }
             
             $timeStr = $di->format('H:i');
@@ -100,13 +155,14 @@ try {
         $image = publicImagePath($ev['imagem_capa'] ?? '');
         $linkInfo = publicHttpUrl($ev['link_ingressos'] ?? '');
         $price = trim((string) ($ev['preco_base'] ?? ''));
+        $eventExtra = buildPublicEventExtra(decodePublicEventExtraData($ev['dados_extra'] ?? null));
 
         $place = [
             'id' => $ev['slug'],
             'slug' => $ev['slug'],
             'title' => $ev['titulo'],
             'image' => $image,
-            'photos' => publicEventEntityPhotos($pdo, 'evento', (int) $ev['id'], $ev['imagem_capa'] ?? '') ?: array_values(array_filter([$image])),
+            'photos' => publicEventEntityPhotos($pdo, 'evento', (int) $ev['id'], $ev['imagem_capa'] ?? ''),
             'date' => $dataStr,
             'time' => $timeStr,
             'local' => $ev['local_nome'] ?: $ev['endereco'],
@@ -121,6 +177,7 @@ try {
                 'url' => $linkInfo
             ],
             'whatsapp' => $ev['telefone_contato'] ? 'https://wa.me/' . preg_replace('/\D/', '', $ev['telefone_contato']) : '',
+            'eventExtra' => $eventExtra,
             'social' => [
                 'label' => '',
                 'url' => ''

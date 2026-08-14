@@ -19,11 +19,11 @@ $hoje = new DateTime();
 $todos = [];
 $proximos = [];
 $passados = [];
-$confirmacao = [];
 
 foreach($eventos as $ev) {
     if (!$ev['data_inicio'] || !$ev['data_fim'] || $ev['data_inicio'] == '0000-00-00 00:00:00') {
-        $confirmacao[] = $ev;
+        $todos[] = $ev;
+        continue;
     } else {
         $dataInicio = new DateTime($ev['data_inicio']);
         if ($dataInicio >= $hoje) {
@@ -35,33 +35,32 @@ foreach($eventos as $ev) {
     $todos[] = $ev;
 }
 
-function renderEventCard($ev, $statusClass, $statusLabel) {
+function renderEventCard($ev) {
     $link = "./detalhe.php?type=evento&id=" . urlencode($ev['slug']);
-    $imagem = aturpPublicImageSrc($ev['imagem_capa'] ?? '', 'assets/placeholders/eventos.jpeg');
+    $focusId = aturpHtml(aturpCanonicalCategorySlug($ev['slug'] ?? ''));
+    $imagem = aturpPublicImageSrc($ev['imagem_capa'] ?? '');
     
     $dataStr = "A definir";
     if ($ev['data_inicio'] && $ev['data_inicio'] != '0000-00-00 00:00:00') {
         $di = new DateTime($ev['data_inicio']);
-        $df = new DateTime($ev['data_fim']);
-        
-        $meses = ['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez'];
-        $di_str = sprintf("%02d %s. %s", $di->format('d'), $meses[$di->format('n')-1], $di->format('y'));
-        
-        if ($ev['data_inicio'] !== $ev['data_fim']) {
-            $df_str = sprintf("%02d %s. %s", $df->format('d'), $meses[$df->format('n')-1], $df->format('y'));
-            $dataStr = "$di_str > $df_str";
-        } else {
-            $dataStr = $di_str;
+
+        $dataStr = $di->format('d/m/Y');
+
+        if (!empty($ev['data_fim']) && $ev['data_fim'] !== '0000-00-00 00:00:00') {
+            $df = new DateTime($ev['data_fim']);
+            $dataStr .= " > " . $df->format('d/m/Y');
         }
     }
     
     $local = aturpHtml($ev['local_nome'] ?: $ev['endereco']);
     $titulo = aturpHtml($ev['titulo']);
     $imagem = aturpHtml($imagem);
+    $backgroundStyle = $imagem
+        ? "background-image: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.6) 50%, rgba(0, 0, 0, 0.2) 100%), url('{$imagem}'); background-size: cover; background-position: center;"
+        : '';
     
     return <<<HTML
-    <a href="{$link}" class="calendar-grid__event-card" style="background-image: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.6) 50%, rgba(0, 0, 0, 0.2) 100%), url('{$imagem}'); background-size: cover; background-position: center;">
-        <div class="status-tag status-tag--{$statusClass}">{$statusLabel}</div>
+    <a href="{$link}" id="item-{$focusId}" data-detail-id="{$focusId}" class="calendar-grid__event-card" style="{$backgroundStyle}">
         <div class="event-card__content-wrapper">
             <h3 class="event-card__event-title">{$titulo}</h3>
             <span class="event-card__event-local">
@@ -78,7 +77,7 @@ HTML;
 }
 ?>
 
-<section class="page-hero" aria-labelledby="page-hero-title" style="background-image: linear-gradient(180deg, rgba(8, 10, 11, 0.6) 0%, rgba(8, 10, 11, 0.9) 52%, rgba(8, 10, 11, 0.94) 100%), url('./assets/placeholders/eventos.jpeg'); background-position: center; background-size: cover; min-height: 50vh; display: flex; align-items: flex-end; padding-bottom: 3.5rem; padding-top: 8rem;">
+<section class="page-hero" aria-labelledby="page-hero-title" style="background-image: linear-gradient(180deg, rgba(8, 10, 11, 0.72) 0%, rgba(8, 10, 11, 0.92) 52%, rgba(8, 10, 11, 0.96) 100%); background-color: #111827; background-position: center; background-size: cover; min-height: 50vh; display: flex; align-items: flex-end; padding-bottom: 3.5rem; padding-top: 8rem;">
     <div class="page-hero__content layout-container">
         <p class="eyebrow eyebrow--on-dark">Calendário</p>
         <h1 id="page-hero-title" class="page-hero__title section-title--on-dark" style="color: #fff; font-size: clamp(2.5rem, 7vw, 4.75rem); font-weight: 700; line-height: 0.95;">Todos os Eventos</h1>
@@ -102,7 +101,6 @@ HTML;
         <button class="events-tab-btn active" onclick="switchTab(event, 'todos')">Todos</button>
         <button class="events-tab-btn" onclick="switchTab(event, 'proximos')">Próximos Eventos</button>
         <button class="events-tab-btn" onclick="switchTab(event, 'passados')">Eventos passados</button>
-        <button class="events-tab-btn" onclick="switchTab(event, 'confirmacao')">Em confirmação</button>
     </div>
 
     <!-- ABA: TODOS -->
@@ -111,13 +109,7 @@ HTML;
             <?php
             if (empty($todos)) echo "<p style='grid-column: 1/-1; text-align: center; color: #888;'>Nenhum evento encontrado.</p>";
             foreach ($todos as $ev) {
-                $isConfirmacao = (!$ev['data_inicio'] || $ev['data_inicio'] == '0000-00-00 00:00:00');
-                $isPassado = !$isConfirmacao && (new DateTime($ev['data_inicio']) < clone $hoje);
-                
-                $statusClass = $isConfirmacao ? 'confirmar' : ($isPassado ? 'passado' : 'confirmado');
-                $statusLabel = $isConfirmacao ? 'A confirmar' : ($isPassado ? 'Passado' : 'Confirmado');
-                
-                echo renderEventCard($ev, $statusClass, $statusLabel);
+                echo renderEventCard($ev);
             }
             ?>
         </div>
@@ -129,7 +121,7 @@ HTML;
             <?php
             if (empty($proximos)) echo "<p style='grid-column: 1/-1; text-align: center; color: #888;'>Nenhum evento próximo programado.</p>";
             foreach ($proximos as $ev) {
-                echo renderEventCard($ev, 'confirmado', 'Confirmado');
+                echo renderEventCard($ev);
             }
             ?>
         </div>
@@ -141,19 +133,7 @@ HTML;
             <?php
             if (empty($passados)) echo "<p style='grid-column: 1/-1; text-align: center; color: #888;'>Nenhum evento passado.</p>";
             foreach ($passados as $ev) {
-                echo renderEventCard($ev, 'passado', 'Passado');
-            }
-            ?>
-        </div>
-    </div>
-
-    <!-- ABA: CONFIRMACAO -->
-    <div id="section-confirmacao" class="events-section-container">
-        <div class="events-section__calendar-grid">
-            <?php
-            if (empty($confirmacao)) echo "<p style='grid-column: 1/-1; text-align: center; color: #888;'>Nenhum evento em confirmação.</p>";
-            foreach ($confirmacao as $ev) {
-                echo renderEventCard($ev, 'confirmar', 'A confirmar');
+                echo renderEventCard($ev);
             }
             ?>
         </div>
@@ -173,6 +153,18 @@ function switchTab(event, tabId) {
 	event.currentTarget.classList.add('active');
 	document.getElementById('section-' + tabId).classList.add('active');
 }
+
+(() => {
+	const focus = new URLSearchParams(window.location.search).get('focus');
+	if (!focus || !window.CSS || !CSS.escape) return;
+
+	const target = document.querySelector(`[data-detail-id="${CSS.escape(focus)}"]`);
+	if (!target) return;
+
+	target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+	target.classList.add('directory-card--focused');
+	setTimeout(() => target.classList.remove('directory-card--focused'), 2200);
+})();
 </script>
 
 <?php

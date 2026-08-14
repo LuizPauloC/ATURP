@@ -72,6 +72,11 @@
 	box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
 }
 
+.directory-card--focused {
+	outline: 3px solid color-mix(in srgb, var(--directory-accent) 70%, #ffffff);
+	outline-offset: 4px;
+}
+
 .event-card__content-wrapper {
 	display: flex;
 	flex-direction: column;
@@ -117,35 +122,25 @@
 }
 
 .event-card__text {
+	font-size: 15px;
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
 	min-width: 0;
 }
 
-.status-tag {
-	position: absolute;
-	top: 15px;
-	right: 15px;
-	background-color: rgba(0, 0, 0, 0.6);
-	backdrop-filter: blur(4px);
-	padding: 4px 10px;
-	border-radius: 6px;
-	font-size: 0.75rem;
-	font-weight: 700;
-	text-transform: uppercase;
-	letter-spacing: 0.05em;
-	z-index: 10;
-}
+@media (min-width: 768px) {
+	.calendar-grid__event-card {
+		height: 380px;
+		width: 260px;
+	}
 
-.status-tag--confirmado {
-	border-left: 3px solid #10b981;
-}
+	.event-card__event-title {
+		font-size: 1.5rem;
+	}
 
-.status-tag--passado {
-	border-left: 3px solid #6b7280;
-}
-
-.status-tag--confirmar {
-	border-left: 3px solid #f59e0b;
+	.event-card__event-local,
+	.event-card__event-date {
+		font-size: 0.8rem;
+	}
 }

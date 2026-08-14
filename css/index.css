@@ -247,11 +247,16 @@ main {
 	background-color: #059669;
 	color: white;
 	border-radius: 8px;
-	overflow-y: hidden;
+	overflow: hidden;
+	text-decoration: none;
+	position: relative;
+	transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease;
 }
 
 .calendar-grid__event-card:hover {
 	cursor: pointer;
+	transform: translateY(-4px);
+	box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
 }
 
 .event-card__content-wrapper {
@@ -262,6 +267,7 @@ main {
 	gap: 3px;
 	padding: 30px 16px;
 	background-image: linear-gradient(to top, #00000090, #00000090, #00000060, #00000000);
+	box-sizing: border-box;
 }
 
 .event-card__event-title {
@@ -284,6 +290,7 @@ main {
 	gap: 3px;
 	font-size: 0.8rem;
 	font-weight: 400;
+	color: #e5e7eb;
 	width: 100%;
 	overflow: hidden;
 }
@@ -297,6 +304,7 @@ main {
 }
 
 .event-card__text {
+	font-size: 15px;
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
@@ -399,11 +407,6 @@ main {
 	.calendar-grid__event-card {
 		height: 380px;
 		width: 260px;
-		transition: 0.3s;
-	}
-
-	.calendar-grid__event-card:hover {
-		transform: scale(102%);
 	}
 
 	.event-card__event-title {
